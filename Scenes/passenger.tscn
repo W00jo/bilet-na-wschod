@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cil42wn4fnd17"]
+
+[ext_resource type="Script" uid="uid://hv5gif5mgo2b" path="res://Scripts/passenger.gd" id="1_lyrvh"]
+[ext_resource type="Texture2D" uid="uid://4astocb3u2sn" path="res://icon.svg" id="1_plka5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyrvh"]
+size = Vector2(55, 185)
+
+[node name="Passenger" type="Node2D"]
+script = ExtResource("1_lyrvh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_plka5")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_lyrvh")

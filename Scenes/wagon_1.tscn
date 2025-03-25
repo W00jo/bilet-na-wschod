@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=4 uid="uid://colmr5d1cvaxu"]
+
+[ext_resource type="PackedScene" uid="uid://c7yik5t20fnmm" path="res://Scenes/parallax_bg.tscn" id="1_dknhe"]
+[ext_resource type="Script" uid="uid://bpt4s0ma6hsjy" path="res://Scripts/wagon.gd" id="1_xcg6c"]
+[ext_resource type="TileSet" uid="uid://buvia4xnoyvec" path="res://Resources/wagon_tileset.tres" id="2_ed3vb"]
+[ext_resource type="TileSet" uid="uid://c7pvh4kvbyymp" path="res://Resources/chairs_tileset.tres" id="4_5p62l"]
+
+[node name="Wagon1" type="Node2D"]
+script = ExtResource("1_xcg6c")
+
+[node name="ParallaxBg" parent="." instance=ExtResource("1_dknhe")]
+
+[node name="Wagon" type="TileMapLayer" parent="."]
+position = Vector2(0, 64.005)
+scale = Vector2(4, 3.7)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAACAAAAAAAEAAAAAAADAAAAAAAFAAAAAAABAAAAAAAGAAAAAAACAAAAAAAHAAAAAAADAAAAAAAIAAAAAAABAAAAAAAJAAAAAAACAAAAAAAKAAAAAAABAAAAAAALAAAAAAADAAAAAAAMAAAAAAAEAAAAAAA=")
+tile_set = ExtResource("2_ed3vb")
+
+[node name="YSort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="ChairsAC" type="TileMapLayer" parent="YSort"]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAIAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAMAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAASAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAAIAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAASAAYAAAAAAAAAAAAUAAYAAAAAAAAAAAA=")
+tile_set = ExtResource("4_5p62l")
+
+[node name="PlayerInstance" type="Node2D" parent="YSort"]
+
+[node name="ChairsBD" type="TileMapLayer" parent="YSort"]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAHAA0AAAABAAAAAAAJAA0AAAABAAAAAAALAA0AAAABAAAAAAANAA0AAAABAAAAAAAPAA0AAAABAAAAAAARAA0AAAABAAAAAAATAA0AAAABAAAAAAAHAAcAAAABAAAAAAAJAAcAAAABAAAAAAALAAcAAAABAAAAAAANAAcAAAABAAAAAAAPAAcAAAABAAAAAAARAAcAAAABAAAAAAATAAcAAAABAAAAAAA=")
+tile_set = ExtResource("4_5p62l")
+
+[node name="Passengers" type="Node2D" parent="YSort"]
+y_sort_enabled = true

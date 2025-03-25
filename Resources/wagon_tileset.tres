@@ -1,0 +1,25 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://buvia4xnoyvec"]
+
+[ext_resource type="Texture2D" uid="uid://cy44a0o7m3fa0" path="res://Assets/Sprites/wagon_blockout.png" id="1_bawbe"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mj251"]
+texture = ExtResource("1_bawbe")
+texture_region_size = Vector2i(60, 120)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -60, 30, -60, 30, -30.0526, -3.04681, -29.8152, -3.04681, 49.6194, 30, 49.4018, 30, 60, -30, 60)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -60, 30, -60, 30, -30.0526, -30, -29.3696)
+1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-30, 60, 30, 60, 30, 49.7696, -30, 50.2963)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -60, 30, -60, 30, -30, -30, -30)
+2:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-30, 60, 30, 60, 30, 50.3437, -30, 50.025)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -60, 30, -60, 30, -30, -30, -30)
+3:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-30, 60, 30, 60, 30, 50.3437, -30, 50.025)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -60, 30, -60, 30, 60, -30, 60, -30, 49.7696, 2.89664, 50.2963, 2.27922, -29.737, -30, -29.7564)
+
+[resource]
+tile_size = Vector2i(60, 120)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_mj251")
