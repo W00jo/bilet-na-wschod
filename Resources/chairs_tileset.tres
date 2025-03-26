@@ -1,20 +1,17 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c7pvh4kvbyymp"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://c7pvh4kvbyymp"]
 
-[ext_resource type="Texture2D" uid="uid://dmlmtuu3jtesj" path="res://Assets/Sprites/chairs.png" id="1_3qui0"]
+[ext_resource type="PackedScene" uid="uid://q6sm327r0sy7" path="res://Scenes/chair_front_forward.tscn" id="1_7i2yp"]
+[ext_resource type="PackedScene" uid="uid://c5o5fcu144i4x" path="res://Scenes/chair_back_forward.tscn" id="2_0tnn6"]
+[ext_resource type="PackedScene" uid="uid://dbv1u7w2bxqqx" path="res://Scenes/chair_front_backward.tscn" id="3_kqy4t"]
+[ext_resource type="PackedScene" uid="uid://ce8uirf5gg3xr" path="res://Scenes/chair_back_backward.tscn" id="4_oi7uh"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfcus"]
-texture = ExtResource("1_3qui0")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
-3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_3qui0"]
+scenes/1/scene = ExtResource("1_7i2yp")
+scenes/2/scene = ExtResource("2_0tnn6")
+scenes/3/scene = ExtResource("3_kqy4t")
+scenes/4/scene = ExtResource("4_oi7uh")
 
 [resource]
 tile_shape = 2
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_qfcus")
+sources/1 = SubResource("TileSetScenesCollectionSource_3qui0")

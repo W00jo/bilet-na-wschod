@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbv1u7w2bxqqx"]
+
+[ext_resource type="Texture2D" uid="uid://dmlmtuu3jtesj" path="res://Assets/Sprites/chairs.png" id="1_hwsym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ughjk"]
+size = Vector2(26, 32)
+
+[node name="ChairFrontBackward" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hwsym")
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_ughjk")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+visible = false
+position = Vector2(3, 4)
