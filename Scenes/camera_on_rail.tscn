@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://4e61xs8kmtjg"]
+
+[ext_resource type="Script" uid="uid://blc26kx3ik1us" path="res://Scripts/camera_on_rail.gd" id="1_jvngo"]
+
+[sub_resource type="Curve2D" id="Curve2D_jfb60"]
+
+[node name="CameraOnRail" type="Path2D"]
+curve = SubResource("Curve2D_jfb60")
+script = ExtResource("1_jvngo")
+lerp_speed = 7.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+cubic_interp = false
+loop = false
+
+[node name="Camera2D" type="Camera2D" parent="PathFollow2D"]

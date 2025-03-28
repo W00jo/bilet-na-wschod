@@ -1,31 +1,42 @@
-[gd_scene load_steps=5 format=4 uid="uid://colmr5d1cvaxu"]
+[gd_scene load_steps=7 format=4 uid="uid://colmr5d1cvaxu"]
 
-[ext_resource type="PackedScene" uid="uid://c7yik5t20fnmm" path="res://Scenes/parallax_bg.tscn" id="1_dknhe"]
 [ext_resource type="Script" uid="uid://bpt4s0ma6hsjy" path="res://Scripts/wagon.gd" id="1_xcg6c"]
 [ext_resource type="TileSet" uid="uid://buvia4xnoyvec" path="res://Resources/wagon_tileset.tres" id="2_ed3vb"]
 [ext_resource type="TileSet" uid="uid://c7pvh4kvbyymp" path="res://Resources/chairs_tileset.tres" id="4_5p62l"]
+[ext_resource type="PackedScene" uid="uid://wwm4tiq852hf" path="res://Scenes/player.tscn" id="5_5p62l"]
+[ext_resource type="PackedScene" uid="uid://4e61xs8kmtjg" path="res://Scenes/camera_on_rail.tscn" id="6_jwpte"]
+
+[sub_resource type="Curve2D" id="Curve2D_5p62l"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2160, 0)
+}
+point_count = 2
 
 [node name="Wagon1" type="Node2D"]
 script = ExtResource("1_xcg6c")
 
-[node name="ParallaxBg" parent="." instance=ExtResource("1_dknhe")]
-
 [node name="Wagon" type="TileMapLayer" parent="."]
-position = Vector2(0, 64.005)
+position = Vector2(0, 96.005)
 scale = Vector2(4, 3.7)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAACAAAAAAAEAAAAAAADAAAAAAAFAAAAAAABAAAAAAAGAAAAAAACAAAAAAAHAAAAAAADAAAAAAAIAAAAAAABAAAAAAAJAAAAAAACAAAAAAAKAAAAAAABAAAAAAALAAAAAAADAAAAAAAMAAAAAAAEAAAAAAA=")
 tile_set = ExtResource("2_ed3vb")
 
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
+position = Vector2(0, 32)
 
 [node name="Chairs" type="TileMapLayer" parent="YSort"]
 y_sort_enabled = true
-scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAIAAYAAQAAAAAAAgAKAAYAAQAAAAAAAgAMAAYAAQAAAAAAAgAOAAYAAQAAAAAAAgAQAAYAAQAAAAAAAgASAAYAAQAAAAAAAgAIAAwAAQAAAAAAAgAKAAwAAQAAAAAAAgAMAAwAAQAAAAAAAgAOAAwAAQAAAAAAAgAQAAwAAQAAAAAAAgASAAwAAQAAAAAAAgAHAAcAAQAAAAAAAQAJAAcAAQAAAAAAAQALAAcAAQAAAAAAAQANAAcAAQAAAAAAAQAPAAcAAQAAAAAAAQARAAcAAQAAAAAAAQAHAA0AAQAAAAAAAQAJAA0AAQAAAAAAAQALAA0AAQAAAAAAAQANAA0AAQAAAAAAAQAPAA0AAQAAAAAAAQARAA0AAQAAAAAAAQAUAAcAAQAAAAAAAwAaAAYAAQAAAAAABAAWAAcAAQAAAAAAAwAYAAcAAQAAAAAAAwAaAAcAAQAAAAAAAwAUAA0AAQAAAAAAAwAWAA0AAQAAAAAAAwAYAA0AAQAAAAAAAwAaAA0AAQAAAAAAAwAUAAYAAQAAAAAABAAWAAYAAQAAAAAABAAYAAYAAQAAAAAABAAUAAwAAQAAAAAABAAWAAwAAQAAAAAABAAYAAwAAQAAAAAABAAaAAwAAQAAAAAABAA=")
+scale = Vector2(3.5, 3.5)
+tile_map_data = PackedByteArray("AAAEAAcAAQAAAAAAAgAGAAcAAQAAAAAAAgAIAAcAAQAAAAAAAgAKAAcAAQAAAAAAAgAMAAcAAQAAAAAAAgAEAAgAAQAAAAAAAQAGAAgAAQAAAAAAAQAIAAgAAQAAAAAAAQAKAAgAAQAAAAAAAQAMAAgAAQAAAAAAAQAEAA8AAQAAAAAAAQAGAA8AAQAAAAAAAQAIAA8AAQAAAAAAAQAKAA8AAQAAAAAAAQAMAA8AAQAAAAAAAQAFAA4AAQAAAAAAAgAHAA4AAQAAAAAAAgAJAA4AAQAAAAAAAgALAA4AAQAAAAAAAgANAA4AAQAAAAAAAgA=")
 tile_set = ExtResource("4_5p62l")
 
-[node name="PlayerInstance" type="Node2D" parent="YSort"]
+[node name="Player" parent="YSort" instance=ExtResource("5_5p62l")]
+position = Vector2(480, 270)
 
 [node name="Passengers" type="Node2D" parent="YSort"]
 y_sort_enabled = true
+
+[node name="CameraOnRail" parent="." instance=ExtResource("6_jwpte")]
+position = Vector2(480, 270)
+curve = SubResource("Curve2D_5p62l")

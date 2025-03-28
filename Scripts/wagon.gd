@@ -5,6 +5,7 @@ extends Node2D
 
 func _ready() -> void:
 	spawn_passengers()
+	
 
 func spawn_passengers():
 	var cells:Array = chairs.get_used_cells() # an array of all chair coords

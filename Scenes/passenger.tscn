@@ -7,13 +7,23 @@
 size = Vector2(55, 185)
 
 [node name="Passenger" type="Node2D"]
+scale = Vector2(1.25, 1.25)
 script = ExtResource("1_lyrvh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+modulate = Color(0.485764, 0.795777, 0.128893, 1)
+position = Vector2(-0.999999, -14)
+scale = Vector2(0.307292, 0.4375)
+texture = ExtResource("1_plka5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 0.48108, 0.280285, 1)
+position = Vector2(-1.33333, -35.3333)
+scale = Vector2(0.270833, 0.230469)
 texture = ExtResource("1_plka5")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0.5, 4.5)

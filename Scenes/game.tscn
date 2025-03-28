@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://biklendtsf7dq"]
+[gd_scene load_steps=12 format=3 uid="uid://biklendtsf7dq"]
 
 [ext_resource type="Texture2D" uid="uid://b5uk131mh71kd" path="res://Assets/Sprites/splash_screen.png" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://c7yik5t20fnmm" path="res://Scenes/parallax_bg.tscn" id="1_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://colmr5d1cvaxu" path="res://Scenes/wagon_1.tscn" id="2_3dryh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxrlw"]
 atlas = ExtResource("1_ebmjs")
@@ -61,11 +63,37 @@ animations = [{
 
 [node name="Game" type="Node2D"]
 
-[node name="Levels" type="Node2D" parent="."]
+[node name="Train" type="Node2D" parent="."]
+
+[node name="Wagon1" parent="Train" instance=ExtResource("2_3dryh")]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SubViewport" type="SubViewport" parent="Background/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="ParallaxBg" parent="Background/SubViewportContainer/SubViewport" instance=ExtResource("1_wrm1d")]
+follow_viewport_enabled = false
 
 [node name="SplashScreenKonduktorzy" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SplashScreenKonduktorzy"]
+visible = false
 position = Vector2(480, 270)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_h4fw4")
