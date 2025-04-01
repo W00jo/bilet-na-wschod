@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bpt4s0ma6hsjy" path="res://Scripts/wagon.gd" id="1_xcg6c"]
 [ext_resource type="TileSet" uid="uid://buvia4xnoyvec" path="res://Resources/wagon_tileset.tres" id="2_ed3vb"]
 [ext_resource type="TileSet" uid="uid://c7pvh4kvbyymp" path="res://Resources/chairs_tileset.tres" id="4_5p62l"]
-[ext_resource type="PackedScene" uid="uid://wwm4tiq852hf" path="res://Scenes/player.tscn" id="5_5p62l"]
 [ext_resource type="PackedScene" uid="uid://4e61xs8kmtjg" path="res://Scenes/camera_on_rail.tscn" id="6_jwpte"]
 
 [sub_resource type="Curve2D" id="Curve2D_5p62l"]
@@ -12,12 +11,15 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcg6c"]
+size = Vector2(20, 275)
+
 [node name="Wagon1" type="Node2D"]
 script = ExtResource("1_xcg6c")
 
 [node name="Wagon" type="TileMapLayer" parent="."]
-position = Vector2(0, 96.005)
-scale = Vector2(4, 3.7)
+position = Vector2(0, 60)
+scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAACAAAAAAAEAAAAAAADAAAAAAAFAAAAAAABAAAAAAAGAAAAAAACAAAAAAAHAAAAAAADAAAAAAAIAAAAAAABAAAAAAAJAAAAAAACAAAAAAAKAAAAAAABAAAAAAALAAAAAAADAAAAAAAMAAAAAAAEAAAAAAA=")
 tile_set = ExtResource("2_ed3vb")
 
@@ -28,11 +30,8 @@ position = Vector2(0, 32)
 [node name="Chairs" type="TileMapLayer" parent="YSort"]
 y_sort_enabled = true
 scale = Vector2(3.5, 3.5)
-tile_map_data = PackedByteArray("AAAEAAcAAQAAAAAAAgAGAAcAAQAAAAAAAgAIAAcAAQAAAAAAAgAKAAcAAQAAAAAAAgAMAAcAAQAAAAAAAgAEAAgAAQAAAAAAAQAGAAgAAQAAAAAAAQAIAAgAAQAAAAAAAQAKAAgAAQAAAAAAAQAMAAgAAQAAAAAAAQAEAA8AAQAAAAAAAQAGAA8AAQAAAAAAAQAIAA8AAQAAAAAAAQAKAA8AAQAAAAAAAQAMAA8AAQAAAAAAAQAFAA4AAQAAAAAAAgAHAA4AAQAAAAAAAgAJAA4AAQAAAAAAAgALAA4AAQAAAAAAAgANAA4AAQAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAAEAAQAAQAAAAAAAgAGAAQAAQAAAAAAAgAIAAQAAQAAAAAAAgAKAAQAAQAAAAAAAgAMAAQAAQAAAAAAAgADAAUAAQAAAAAAAQAFAAUAAQAAAAAAAQAHAAUAAQAAAAAAAQAJAAUAAQAAAAAAAQALAAUAAQAAAAAAAQADAAsAAQAAAAAAAgAFAAsAAQAAAAAAAgAHAAsAAQAAAAAAAgAJAAsAAQAAAAAAAgALAAsAAQAAAAAAAgADAAwAAQAAAAAAAQAFAAwAAQAAAAAAAQAHAAwAAQAAAAAAAQAJAAwAAQAAAAAAAQALAAwAAQAAAAAAAQA=")
 tile_set = ExtResource("4_5p62l")
-
-[node name="Player" parent="YSort" instance=ExtResource("5_5p62l")]
-position = Vector2(480, 270)
 
 [node name="Passengers" type="Node2D" parent="YSort"]
 y_sort_enabled = true
@@ -40,3 +39,35 @@ y_sort_enabled = true
 [node name="CameraOnRail" parent="." instance=ExtResource("6_jwpte")]
 position = Vector2(480, 270)
 curve = SubResource("Curve2D_5p62l")
+
+[node name="LeftExitArea" type="Area2D" parent="."]
+position = Vector2(116, 322)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftExitArea"]
+position = Vector2(0, 41.5)
+shape = SubResource("RectangleShape2D_xcg6c")
+
+[node name="RightExitArea" type="Area2D" parent="."]
+position = Vector2(3004, 322)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightExitArea"]
+position = Vector2(0, 41.5)
+shape = SubResource("RectangleShape2D_xcg6c")
+
+[node name="LeftEntranceMarker" type="Marker2D" parent="."]
+position = Vector2(209, 334)
+
+[node name="LeftCameraMarker" type="Marker2D" parent="."]
+position = Vector2(480, 270)
+
+[node name="RightEntranceMarker" type="Marker2D" parent="."]
+position = Vector2(2877, 334)
+
+[node name="RightCameraMarker" type="Marker2D" parent="."]
+position = Vector2(2640, 270)
+
+[connection signal="child_entered_tree" from="YSort" to="." method="_on_y_sort_child_entered_tree"]
+[connection signal="body_entered" from="LeftExitArea" to="." method="_on_left_exit_area_body_entered"]
+[connection signal="body_entered" from="RightExitArea" to="." method="_on_right_exit_area_body_entered"]
+
+[editable path="CameraOnRail"]

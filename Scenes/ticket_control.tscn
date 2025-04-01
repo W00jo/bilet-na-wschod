@@ -1,0 +1,135 @@
+[gd_scene load_steps=6 format=3 uid="uid://b80uyautrg11t"]
+
+[ext_resource type="Script" uid="uid://cyfqyufsg3au3" path="res://Scripts/ticket_control.gd" id="1_o2i80"]
+[ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/ui_box.png" id="2_4tmf3"]
+[ext_resource type="Texture2D" uid="uid://dtro4ywj78emd" path="res://Assets/Sprites/ui_inner_box.png" id="3_a7phc"]
+[ext_resource type="Texture2D" uid="uid://dosx0feyhydt0" path="res://Assets/Sprites/ui_inner_window.png" id="4_d7iwj"]
+[ext_resource type="PackedScene" uid="uid://l5od68vreoyv" path="res://Scenes/passenger_avatar.tscn" id="5_4tmf3"]
+
+[node name="TicketControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o2i80")
+
+[node name="Box" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture = ExtResource("2_4tmf3")
+region_rect = Rect2(0, 0, 15, 15)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="Box"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.08
+anchor_right = 0.95
+anchor_bottom = 0.92
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="InnerBox" type="NinePatchRect" parent="Box/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.05
+texture = ExtResource("3_a7phc")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="Box/VBox/InnerBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Box/VBox/InnerBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Margin" type="MarginContainer" parent="Box/VBox/InnerBox/HBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.58
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 2
+
+[node name="AvatarWindow" type="NinePatchRect" parent="Box/VBox/InnerBox/HBox/VBox/Margin"]
+layout_mode = 2
+texture = ExtResource("4_d7iwj")
+region_rect = Rect2(0, 0, 15, 15)
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Margin" type="MarginContainer" parent="Box/VBox/InnerBox/HBox/VBox/Margin/AvatarWindow"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="PassengerAvatar" parent="Box/VBox/InnerBox/HBox/VBox/Margin/AvatarWindow/Margin" instance=ExtResource("5_4tmf3")]
+clip_contents = true
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Box/VBox/InnerBox/HBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Box/VBox/InnerBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Box/VBox/InnerBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect2" type="NinePatchRect" parent="Box/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a7phc")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 97.0
+offset_right = 814.0
+offset_bottom = 128.0
+text = "  X  "
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

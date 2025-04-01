@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://wwm4tiq852hf"]
+[gd_scene load_steps=23 format=3 uid="uid://wwm4tiq852hf"]
 
 [ext_resource type="Script" uid="uid://decdo0yokrms" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dvdno1or8t6yk" path="res://Assets/Sprites/player.png" id="2_6t5aa"]
@@ -39,8 +39,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_3smsa"]
-resource_name = "idle_down"
+[sub_resource type="Animation" id="Animation_gymyn"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,8 +54,8 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_8erm5"]
-resource_name = "idle_up"
+[sub_resource type="Animation" id="Animation_3smsa"]
+resource_name = "idle_down"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -66,7 +66,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_f1ek2"]
@@ -99,8 +99,8 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_gymyn"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_8erm5"]
+resource_name = "idle_up"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -111,7 +111,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pu2lt"]
@@ -160,10 +160,14 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4iuc"]
 size = Vector2(24, 21.5)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(49, 37)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -10)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x3wgy")
 
@@ -178,6 +182,18 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, 30)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_h4iuc")
+
+[node name="InteractionArea" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_cvnsp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

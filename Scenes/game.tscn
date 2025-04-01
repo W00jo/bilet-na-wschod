@@ -1,71 +1,80 @@
-[gd_scene load_steps=12 format=3 uid="uid://biklendtsf7dq"]
+[gd_scene load_steps=9 format=3 uid="uid://biklendtsf7dq"]
 
-[ext_resource type="Texture2D" uid="uid://b5uk131mh71kd" path="res://Assets/Sprites/splash_screen.png" id="1_ebmjs"]
-[ext_resource type="PackedScene" uid="uid://c7yik5t20fnmm" path="res://Scenes/parallax_bg.tscn" id="1_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://colmr5d1cvaxu" path="res://Scenes/wagon_1.tscn" id="2_3dryh"]
+[ext_resource type="Script" uid="uid://dvwkktrn6dvo0" path="res://Scripts/game.gd" id="1_3dryh"]
+[ext_resource type="PackedScene" uid="uid://bekremb8qkq02" path="res://Scenes/parallax_bg.tscn" id="1_wrm1d"]
+[ext_resource type="Script" uid="uid://bbqr58l40g7ue" path="res://Scripts/wagon_controller.gd" id="2_3dryh"]
+[ext_resource type="PackedScene" uid="uid://b80uyautrg11t" path="res://Scenes/ticket_control.tscn" id="3_3dryh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qxrlw"]
-atlas = ExtResource("1_ebmjs")
-region = Rect2(0, 0, 480, 270)
+[sub_resource type="Animation" id="Animation_wowpa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SceneTransitionLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wrm1d"]
-atlas = ExtResource("1_ebmjs")
-region = Rect2(480, 0, 480, 270)
+[sub_resource type="Animation" id="Animation_i6g32"]
+resource_name = "enter_wagon"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SceneTransitionLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3dryh"]
-atlas = ExtResource("1_ebmjs")
-region = Rect2(960, 0, 480, 270)
+[sub_resource type="Animation" id="Animation_3dryh"]
+resource_name = "leave_wagon"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SceneTransitionLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wowpa"]
-atlas = ExtResource("1_ebmjs")
-region = Rect2(1440, 0, 480, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i6g32"]
-atlas = ExtResource("1_ebmjs")
-region = Rect2(1920, 0, 480, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1l0tm"]
-atlas = ExtResource("1_ebmjs")
-region = Rect2(2400, 0, 480, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v158k"]
-atlas = ExtResource("1_ebmjs")
-region = Rect2(2880, 0, 480, 270)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_h4fw4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qxrlw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wrm1d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3dryh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wowpa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i6g32")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1l0tm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v158k")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i6g32"]
+_data = {
+&"RESET": SubResource("Animation_wowpa"),
+&"enter_wagon": SubResource("Animation_i6g32"),
+&"leave_wagon": SubResource("Animation_3dryh")
+}
 
 [node name="Game" type="Node2D"]
+process_mode = 3
+position = Vector2(0, -1)
+script = ExtResource("1_3dryh")
 
-[node name="Train" type="Node2D" parent="."]
+[node name="WagonController" type="Node2D" parent="."]
+process_mode = 1
+script = ExtResource("2_3dryh")
 
-[node name="Wagon1" parent="Train" instance=ExtResource("2_3dryh")]
+[node name="TicketControlLayer" type="CanvasLayer" parent="."]
+layer = 10
+visible = false
+
+[node name="TicketControl" parent="TicketControlLayer" instance=ExtResource("3_3dryh")]
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -100
@@ -74,8 +83,6 @@ layer = -100
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -83,20 +90,25 @@ size_flags_vertical = 3
 
 [node name="SubViewport" type="SubViewport" parent="Background/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(1920, 1080)
+size = Vector2i(960, 540)
 render_target_update_mode = 4
 
 [node name="ParallaxBg" parent="Background/SubViewportContainer/SubViewport" instance=ExtResource("1_wrm1d")]
-follow_viewport_enabled = false
 
-[node name="SplashScreenKonduktorzy" type="CanvasLayer" parent="."]
-visible = false
+[node name="SceneTransitionLayer" type="CanvasLayer" parent="."]
+layer = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SplashScreenKonduktorzy"]
-visible = false
-position = Vector2(480, 270)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_h4fw4")
-autoplay = "default"
-frame = 5
-frame_progress = 0.325965
+[node name="ColorRect" type="ColorRect" parent="SceneTransitionLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i6g32")
+}
+speed_scale = 0.7

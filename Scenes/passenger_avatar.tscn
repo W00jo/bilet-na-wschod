@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://l5od68vreoyv"]
+
+[ext_resource type="Script" uid="uid://dt66tp4b0unih" path="res://Scripts/passenger_avatar.gd" id="1_6ykna"]
+
+[node name="PassengerAvatar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6ykna")

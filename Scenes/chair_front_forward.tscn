@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dmlmtuu3jtesj" path="res://Assets/Sprites/chairs.png" id="1_nsp1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ughjk"]
-size = Vector2(26, 18)
+size = Vector2(38, 9)
 
 [node name="ChairFrontForward" type="StaticBody2D"]
 
@@ -14,7 +14,7 @@ region_rect = Rect2(32, 0, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(1, 7)
+position = Vector2(1, 2.5)
 shape = SubResource("RectangleShape2D_ughjk")
 
 [node name="Marker2D" type="Marker2D" parent="."]

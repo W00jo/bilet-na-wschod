@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://4e61xs8kmtjg"]
 
 [ext_resource type="Script" uid="uid://blc26kx3ik1us" path="res://Scripts/camera_on_rail.gd" id="1_jvngo"]
-
-[sub_resource type="Curve2D" id="Curve2D_jfb60"]
+[ext_resource type="Curve2D" uid="uid://b7587o7iililb" path="res://Resources/camera_rail_curve.tres" id="1_qt81r"]
 
 [node name="CameraOnRail" type="Path2D"]
-curve = SubResource("Curve2D_jfb60")
+curve = ExtResource("1_qt81r")
 script = ExtResource("1_jvngo")
 lerp_speed = 7.0
 
