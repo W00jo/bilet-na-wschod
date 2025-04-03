@@ -69,5 +69,3 @@ position = Vector2(2640, 270)
 [connection signal="child_entered_tree" from="YSort" to="." method="_on_y_sort_child_entered_tree"]
 [connection signal="body_entered" from="LeftExitArea" to="." method="_on_left_exit_area_body_entered"]
 [connection signal="body_entered" from="RightExitArea" to="." method="_on_right_exit_area_body_entered"]
-
-[editable path="CameraOnRail"]

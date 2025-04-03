@@ -13,4 +13,4 @@ rotates = false
 cubic_interp = false
 loop = false
 
-[node name="Camera2D" type="Camera2D" parent="PathFollow2D"]
+[node name="Camera2D" type="Camera2D" parent="PathFollow2D" groups=["Camera"]]

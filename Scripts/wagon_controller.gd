@@ -3,8 +3,8 @@ extends Node2D
 @onready var anim = $"../AnimationPlayer"
 
 var min_wagons = 2
-var max_wagons = 3
-var wagon_scenes = ["res://Scenes/wagon_1.tscn","res://Scenes/wagon_1.tscn"]
+var max_wagons = 5
+var wagon_scenes = ["res://Scenes/wagon_1.tscn"]
 var player_scene = load("res://Scenes/player.tscn")
 
 var wagon_count = randi_range(min_wagons, max_wagons)
@@ -35,11 +35,13 @@ func put_player_in_first_wagon():
 func change_wagons(player, side):
 	var current_wagon = player.get_parent().get_parent()
 	var j = all_wagons.find(current_wagon)
+	var entrance_marker
+	var camera_marker
 	if side == "left":
 		if current_wagon != all_wagons[0]:
 			var previous_wagon = all_wagons[j-1]
-			var entrance_marker = "RightEntranceMarker"
-			var camera_marker = "RightCameraMarker"
+			entrance_marker = "RightEntranceMarker"
+			camera_marker = "RightCameraMarker"
 			anim.play("leave_wagon")
 			await anim.animation_finished
 			player.queue_free()
@@ -47,8 +49,8 @@ func change_wagons(player, side):
 	elif side == "right":
 		if current_wagon != all_wagons[wagon_count-1]:
 			var next_wagon = all_wagons[j+1]
-			var entrance_marker = "LeftEntranceMarker"
-			var camera_marker = "LeftCameraMarker"
+			entrance_marker = "LeftEntranceMarker"
+			camera_marker = "LeftCameraMarker"
 			anim.play("leave_wagon")
 			await anim.animation_finished
 			player.queue_free()
@@ -67,8 +69,11 @@ func move_player_to_wagon(entrance_marker, camera_marker, old_wagon, new_wagon):
 	new_wagon.visible = true
 	new_wagon.set("process_mode", 1)
 	
+	var all_cameras = get_tree().get_nodes_in_group("Camera")
+	for camera in all_cameras:
+		camera.enabled = false
+	
 	var cam_pathfollow = new_wagon.get_node('CameraOnRail/PathFollow2D')
-	print(get_path_to(cam_pathfollow))
 	cam_pathfollow.position.x = new_wagon.get_node(camera_marker).position.x
 	cam_pathfollow.get_node('Camera2D').enabled = true
 	
