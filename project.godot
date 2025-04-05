@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-PassengerDataBus="*res://Scripts/Passenger_Data_Bus.gd"
+PassengerDataBus="*res://Scripts/PassengerDataBus.gd"
 
 [display]
 

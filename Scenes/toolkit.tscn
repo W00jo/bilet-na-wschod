@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=3 uid="uid://dig63qkl2leqy"]
+
+[ext_resource type="Texture2D" uid="uid://cxosu70wp28v" path="res://Assets/Sprites/ui_toolkit_box.png" id="1_l1e7m"]
+[ext_resource type="Texture2D" uid="uid://tked8lqmd2kc" path="res://Assets/Sprites/stress_progressbar_under.png" id="2_pbac2"]
+[ext_resource type="Texture2D" uid="uid://8vgbhxttc7vy" path="res://Assets/Sprites/toolkit_circle.png" id="2_tufta"]
+[ext_resource type="Texture2D" uid="uid://bltjl53k4djw5" path="res://Assets/Sprites/stress_progressbar_over.png" id="3_l1e7m"]
+[ext_resource type="Texture2D" uid="uid://ca2mdqmw6ekml" path="res://Assets/Sprites/stress_progressbar_progress.png" id="4_wiadr"]
+[ext_resource type="Texture2D" uid="uid://eyq02llj6a26" path="res://Assets/Sprites/watch_tool.png" id="5_errsu"]
+[ext_resource type="Texture2D" uid="uid://byp8b1c0mkd0q" path="res://Assets/Sprites/whistle_tool.png" id="6_gu6cm"]
+[ext_resource type="Texture2D" uid="uid://csywo326a8e4b" path="res://Assets/Sprites/hole_punch_tool.png" id="7_3j5vt"]
+[ext_resource type="Texture2D" uid="uid://bialcnx8q332y" path="res://Assets/Sprites/journal_tool.png" id="8_ocakr"]
+[ext_resource type="Texture2D" uid="uid://dy2fraxsxmuuu" path="res://Assets/Sprites/tickets_tool.png" id="9_3m3gv"]
+
+[node name="Toolkit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 108.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 1.015
+offset_top = -110.0
+offset_bottom = -110.1
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_l1e7m")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
+visible = false
+layout_mode = 0
+offset_left = -13.0
+offset_top = -101.0
+offset_right = 111.0
+offset_bottom = 22.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_tufta")
+stretch_mode = 5
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.899
+anchor_bottom = 0.899
+offset_left = 34.0
+offset_top = -134.011
+offset_right = 106.0
+offset_bottom = -54.0109
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+value = 27.0
+fill_mode = 3
+texture_under = ExtResource("2_pbac2")
+texture_over = ExtResource("3_l1e7m")
+texture_progress = ExtResource("4_wiadr")
+tint_under = Color(0.854396, 1, 0.463536, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -846.0
+offset_top = 1.0
+offset_right = -169.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Watch" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_errsu")
+stretch_mode = 5
+
+[node name="Whistle" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_gu6cm")
+stretch_mode = 5
+
+[node name="HolePunch" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_3j5vt")
+stretch_mode = 5
+flip_h = true
+flip_v = true
+
+[node name="Journal" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_ocakr")
+stretch_mode = 5
+
+[node name="Tickets" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_3m3gv")
+stretch_mode = 5

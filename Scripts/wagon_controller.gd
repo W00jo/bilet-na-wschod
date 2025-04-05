@@ -13,7 +13,7 @@ var all_wagons = []
 
 func _ready() -> void:
 	spawn_wagons()
-	print(wagon_count)
+	print("wagon count: "+str(wagon_count))
 
 func spawn_wagons():
 	for i in wagon_count:

@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var chairs = $YSort/Chairs
 
-var min_passengers:int = 15
-var max_passengers:int = 19
+var min_passengers:int = 20
+var max_passengers:int = 24
 
 signal player_entered
 
@@ -23,14 +23,32 @@ func spawn_passengers():
 		# converting tilemap coords to scene coords
 		var tile_pos = chairs.map_to_local(cell)
 		# spawning passengers
-		var passenger = load("res://Scenes/passenger.tscn").instantiate()
+		var passenger:Passenger = load("res://Scenes/passenger.tscn").instantiate()
 		$YSort/Passengers.add_child(passenger)
 		passenger.position = tile_pos * chairs.scale
+		passenger.update_interaction_position(calculate_area_position(cell, tile_pos*chairs.scale))
 		# checking if all passengers are instanced
 		instance_count +=1
 		if instance_count == num_of_passengers:
 			break
 
+func calculate_area_position(cell_pos, global_pos):
+	var passenger_position:Vector2
+	match cell_pos.y:
+		5:
+			passenger_position.y = 250
+			passenger_position.x = global_pos.x + 10
+		6:
+			passenger_position.y = 250
+			passenger_position.x = global_pos.x - 10
+		12:
+			passenger_position.y = 350
+			passenger_position.x = global_pos.x + 10
+		13:
+			passenger_position.y = 350
+			passenger_position.x = global_pos.x - 10
+	return passenger_position
+			
 
 func _on_left_exit_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

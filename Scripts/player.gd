@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var anim_tree = $AnimationTree
 
-const SPEED = 600.0
+const SPEED = 300.0
 
 var passengers:Array
 
@@ -21,7 +21,7 @@ func _on_timer_timeout() -> void:
 	find_closest()
 	
 func find_closest():
-	passengers = get_parent().get_node("Passengers").get_children()
+	passengers = $InteractionArea.get_overlapping_areas()
 	var closest_passenger
 	var lowest_distance = INF
 	for passenger in passengers:
@@ -29,9 +29,15 @@ func find_closest():
 		if distance < lowest_distance:
 			closest_passenger = passenger
 			lowest_distance = distance
-	make_interactible(closest_passenger)
+	if passengers.size() > 0:
+		make_interactible(closest_passenger)
 
 func make_interactible(passenger):
 	for p in passengers:
 		p.hide_interaction_label()
 	passenger.display_interaction_label()
+
+
+func _on_interaction_area_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Passenger"):
+		area.hide_interaction_label()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://biklendtsf7dq"]
+[gd_scene load_steps=10 format=3 uid="uid://biklendtsf7dq"]
 
 [ext_resource type="Script" uid="uid://dvwkktrn6dvo0" path="res://Scripts/game.gd" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bekremb8qkq02" path="res://Scenes/parallax_bg.tscn" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://bbqr58l40g7ue" path="res://Scripts/wagon_controller.gd" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://b80uyautrg11t" path="res://Scenes/ticket_control.tscn" id="3_3dryh"]
+[ext_resource type="PackedScene" uid="uid://dig63qkl2leqy" path="res://Scenes/toolkit.tscn" id="5_wowpa"]
 
 [sub_resource type="Animation" id="Animation_wowpa"]
 length = 0.001
@@ -63,7 +64,6 @@ _data = {
 
 [node name="Game" type="Node2D"]
 process_mode = 3
-position = Vector2(0, -1)
 script = ExtResource("1_3dryh")
 
 [node name="WagonController" type="Node2D" parent="."]
@@ -90,6 +90,7 @@ size_flags_vertical = 3
 
 [node name="SubViewport" type="SubViewport" parent="Background/SubViewportContainer"]
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
 size = Vector2i(960, 540)
 render_target_update_mode = 4
 
@@ -106,6 +107,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="ToolkitLayer" type="CanvasLayer" parent="."]
+
+[node name="Toolkit" parent="ToolkitLayer" instance=ExtResource("5_wowpa")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

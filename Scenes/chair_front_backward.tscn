@@ -2,21 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://dmlmtuu3jtesj" path="res://Assets/Sprites/chairs.png" id="1_hwsym"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ughjk"]
-size = Vector2(36, 9)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwsym"]
+size = Vector2(68, 13)
 
 [node name="ChairFrontBackward" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_hwsym")
 region_enabled = true
-region_rect = Rect2(64, 0, 32, 32)
+region_rect = Rect2(105, 0, 35, 70)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_ughjk")
-
-[node name="Marker2D" type="Marker2D" parent="."]
-visible = false
-position = Vector2(3, 4)
+position = Vector2(2, 4.5)
+shape = SubResource("RectangleShape2D_hwsym")
+disabled = true

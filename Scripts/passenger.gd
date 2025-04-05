@@ -100,6 +100,11 @@ func avatar_path_data_collector(gender, component_name, component_file_name):
 		avatar_path_data.append(component_file_name)
 
 ## INTERACTIONS ##
+
+func update_interaction_position(pos:Vector2):
+	$InteractionArea.global_position = pos
+
+
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		interaction_enabled = true
@@ -109,13 +114,13 @@ func _on_area_exited(area: Area2D) -> void:
 		interaction_enabled = false
 
 func display_interaction_label():
-	if interaction_enabled == true:
+	if interaction_enabled:
 		$InteractLabel.visible = true
 		
 func hide_interaction_label():
 	$InteractLabel.visible = false
 	
 func _input(event: InputEvent) -> void:
-	if interaction_enabled==true and $InteractLabel.visible==true and Input.is_action_just_pressed("Interact"):
+	if interaction_enabled and $InteractLabel.visible and Input.is_action_just_pressed("Interact"):
 		PassengerDataBus.transfer_passenger_data(gender, avatar_path_data, avatar_colors, eye_color)
 		PassengerDataBus.game.start_ticket_control()

@@ -3,16 +3,16 @@
 [ext_resource type="Script" uid="uid://hv5gif5mgo2b" path="res://Scripts/passenger.gd" id="1_lyrvh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyrvh"]
-size = Vector2(36.675, 79.6)
 
 [node name="Passenger" type="Area2D" groups=["Passenger"]]
-position = Vector2(202, 209)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2.25, 2.25)
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_lyrvh")
 
 [node name="Sprites" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="InteractionArea" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lyrvh")
 
 [node name="InteractLabel" type="Label" parent="."]
