@@ -2,9 +2,9 @@ extends Node2D
 
 @onready var anim = $"../AnimationPlayer"
 
-var min_wagons = 2
+var min_wagons = 3
 var max_wagons = 5
-var wagon_scenes = ["res://Scenes/wagon_1.tscn"]
+var wagon_scenes = ["res://Scenes/wagon_2.tscn"]
 var player_scene = load("res://Scenes/player.tscn")
 
 var wagon_count = randi_range(min_wagons, max_wagons)
@@ -15,16 +15,32 @@ func _ready() -> void:
 	spawn_wagons()
 	print("wagon count: "+str(wagon_count))
 
+
 func spawn_wagons():
-	for i in wagon_count:
+	# first wagon
+	var first_wagon = load("res://Scenes/wagon_first.tscn").instantiate()
+	all_wagons.append(first_wagon)
+	add_child(first_wagon)
+	
+	# middle wagons
+	for i in wagon_count-2: # 2 for the two mandatory wagons(first and last w.), this loop is only for middle wagons
 		var wagon = load(wagon_scenes.pick_random()).instantiate()
 		add_child(wagon)
 		wagon.visible = false
 		wagon.set("process_mode", 4)
 		all_wagons.append(wagon)
+	
+	# last wagon
+	var last_wagon = load("res://Scenes/wagon_last.tscn").instantiate()
+	all_wagons.append(last_wagon)
+	add_child(last_wagon)
+	last_wagon.visible = false
+	last_wagon.set("process_mode", 4)
+	
 	put_player_in_first_wagon()
 
 func put_player_in_first_wagon():
+	print(all_wagons)
 	var first_wagon = all_wagons[0]
 	first_wagon.visible = true
 	first_wagon.set("process_mode", 0)
@@ -35,6 +51,7 @@ func put_player_in_first_wagon():
 func change_wagons(player, side):
 	var current_wagon = player.get_parent().get_parent()
 	var j = all_wagons.find(current_wagon)
+	print(j)
 	var entrance_marker
 	var camera_marker
 	if side == "left":
