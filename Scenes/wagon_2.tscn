@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://dcuicb6yl7h7m"]
+[gd_scene load_steps=9 format=4 uid="uid://dcuicb6yl7h7m"]
 
 [ext_resource type="Script" uid="uid://bpt4s0ma6hsjy" path="res://Scripts/wagon.gd" id="1_mq5fo"]
 [ext_resource type="TileSet" uid="uid://buvia4xnoyvec" path="res://Resources/wagon_tileset.tres" id="2_okys2"]
+[ext_resource type="Texture2D" uid="uid://cc0i252pgylxq" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_8wkxq"]
 [ext_resource type="TileSet" uid="uid://c7pvh4kvbyymp" path="res://Resources/chairs_tileset.tres" id="3_g4tbb"]
 [ext_resource type="Texture2D" uid="uid://dbgqnimhon67a" path="res://Assets/Sprites/suitcase_shelves.png" id="3_okys2"]
 [ext_resource type="PackedScene" uid="uid://4e61xs8kmtjg" path="res://Scenes/camera_on_rail.tscn" id="4_8wkxq"]
@@ -23,6 +24,20 @@ position = Vector2(-50, 4.76837e-07)
 scale = Vector2(1.75, 1.8)
 tile_map_data = PackedByteArray("AAACAAAAAAAFAAAAAAADAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAADAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAADAAAAAAAIAAAAAAAEAAAAAAABAAAAAAACAAAAAAAJAAAAAAAGAAAAAAAKAAAAAAAIAAAAAAALAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=")
 tile_set = ExtResource("2_okys2")
+
+[node name="LeftExitArrow" type="Sprite2D" parent="."]
+position = Vector2(135, 135)
+scale = Vector2(1.75, 1.8)
+texture = ExtResource("3_8wkxq")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="RightExitArrow" type="Sprite2D" parent="."]
+position = Vector2(1553, 135)
+scale = Vector2(1.75, 1.8)
+texture = ExtResource("3_8wkxq")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
 
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -72,13 +87,13 @@ position = Vector2(0, 41.5)
 shape = SubResource("RectangleShape2D_xcg6c")
 
 [node name="LeftEntranceMarker" type="Marker2D" parent="."]
-position = Vector2(238, 326)
+position = Vector2(186, 279)
 
 [node name="LeftCameraMarker" type="Marker2D" parent="."]
 position = Vector2(472, 270)
 
 [node name="RightEntranceMarker" type="Marker2D" parent="."]
-position = Vector2(1421, 318)
+position = Vector2(1502, 274)
 
 [node name="RightCameraMarker" type="Marker2D" parent="."]
 position = Vector2(1104, 270)

@@ -10,7 +10,7 @@ size = Vector2(68, 13)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_2bekx")
 region_enabled = true
-region_rect = Rect2(70, 0, 35, 70)
+region_rect = Rect2(111, 0, 37, 73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
