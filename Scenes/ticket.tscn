@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8hjil3ghytl"]
+
+[ext_resource type="Texture2D" uid="uid://4kygu28nt7lk" path="res://Assets/Sprites/ticket.png" id="1_41og6"]
+[ext_resource type="Script" uid="uid://cj8m6m8ykovap" path="res://Scripts/ticket.gd" id="2_5yuud"]
+[ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_iydsi"]
+
+[node name="Ticket" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_5yuud")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -70.0
+offset_top = -49.0
+offset_right = 80.0
+offset_bottom = 51.0
+texture = ExtResource("1_41og6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -33.0
+offset_right = 70.0
+offset_bottom = -5.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.627451, 0.592157, 0.501961, 1)
+theme_override_fonts/font = ExtResource("2_iydsi")
+theme_override_font_sizes/font_size = 0
+text = "31102 SAN"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -21.0
+offset_right = 142.0
+offset_bottom = 7.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0.627451, 0.592157, 0.501961, 1)
+theme_override_fonts/font = ExtResource("2_iydsi")
+theme_override_font_sizes/font_size = 0
+text = "2KL. POC. OSOBOWY"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -33.0
+offset_top = 30.0
+offset_right = 167.0
+offset_bottom = 58.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0.627451, 0.592157, 0.501961, 1)
+theme_override_fonts/font = ExtResource("2_iydsi")
+theme_override_font_sizes/font_size = 0
+text = "85KM    WAŻNY 1 DZIEŃ"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -35.0
+offset_top = 3.0
+offset_right = 127.0
+offset_bottom = 62.0
+rotation = -0.270526
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0.528195, 0.602081, 0.692169, 1)
+theme_override_colors/font_outline_color = Color(0.441, 0.5292, 0.63, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_iydsi")
+theme_override_font_sizes/font_size = 0
+text = "       07.04.1999
+BILET NORMALNY"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 40.0
+offset_right = 168.0
+offset_bottom = 68.0
+rotation = -1.5708
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0.46, 0.37168, 0.3496, 1)
+theme_override_fonts/font = ExtResource("2_iydsi")
+theme_override_font_sizes/font_size = 0
+text = "TU   KASOWAĆ"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(5.5, 3.5)
+scale = Vector2(6.85, 4.15)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

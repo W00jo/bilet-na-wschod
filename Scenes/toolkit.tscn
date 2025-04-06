@@ -11,6 +11,81 @@
 [ext_resource type="Texture2D" uid="uid://bialcnx8q332y" path="res://Assets/Sprites/journal_tool.png" id="8_ocakr"]
 [ext_resource type="Texture2D" uid="uid://dy2fraxsxmuuu" path="res://Assets/Sprites/tickets_tool.png" id="9_3m3gv"]
 
+[sub_resource type="Animation" id="Animation_errsu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect/HBoxContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect/TextureProgressBar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NinePatchRect:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 89)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NinePatchRect:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 349)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DialogueOverlay:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DialogueOverlay:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.866667, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_wiadr"]
 resource_name = "Un-dialogue"
 length = 0.25
@@ -87,81 +162,6 @@ tracks/5/keys = {
 "values": [Color(0.866667, 1, 1, 0.52549), Color(0.866667, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_errsu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NinePatchRect/HBoxContainer:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("NinePatchRect/TextureProgressBar:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("NinePatchRect:size")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(960, 221)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("NinePatchRect:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 217)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("DialogueOverlay:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("DialogueOverlay:color")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.866667, 1, 1, 0.52549)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gu6cm"]
 _data = {
 &"RESET": SubResource("Animation_errsu"),
@@ -189,7 +189,8 @@ anchor_bottom = 0.8
 offset_right = -320.0
 offset_bottom = -180.0
 scale = Vector2(1.5, 1.5)
-color = Color(0.866667, 1, 1, 0.52549)
+mouse_filter = 2
+color = Color(0.866667, 1, 1, 0)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -197,7 +198,7 @@ anchors_preset = -1
 anchor_top = 0.85
 anchor_right = 1.0
 anchor_bottom = 1.015
-offset_top = -242.0
+offset_top = -110.0
 offset_bottom = -110.1
 grow_vertical = 0
 size_flags_horizontal = 3
@@ -209,18 +210,17 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="NinePatchRect"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.899
 anchor_bottom = 0.899
 offset_left = 34.0
-offset_top = -134.011
+offset_top = -118.011
 offset_right = 106.0
-offset_bottom = -54.0109
+offset_bottom = -38.0109
 grow_vertical = 0
 scale = Vector2(1.5, 1.5)
-value = 27.0
+value = 15.0
 fill_mode = 3
 texture_under = ExtResource("2_pbac2")
 texture_over = ExtResource("3_l1e7m")
@@ -228,7 +228,6 @@ texture_progress = ExtResource("4_wiadr")
 tint_under = Color(0.854396, 1, 0.463536, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -246,16 +245,19 @@ alignment = 1
 
 [node name="Watch" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("5_errsu")
 stretch_mode = 5
 
 [node name="Whistle" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("6_gu6cm")
 stretch_mode = 5
 
 [node name="HolePunch" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("7_3j5vt")
 stretch_mode = 5
 flip_h = true
@@ -263,11 +265,13 @@ flip_v = true
 
 [node name="Journal" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("8_ocakr")
 stretch_mode = 5
 
 [node name="Tickets" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("9_3m3gv")
 stretch_mode = 5
 
@@ -275,3 +279,5 @@ stretch_mode = 5
 libraries = {
 &"": SubResource("AnimationLibrary_gu6cm")
 }
+
+[connection signal="pressed" from="NinePatchRect/HBoxContainer/HolePunch" to="." method="_on_hole_punch_pressed"]

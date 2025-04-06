@@ -3,6 +3,7 @@ class_name Passenger
 
 @onready var sprites:Node2D = $Sprites
 
+var is_skasowaned = false
 
 var gender = ["m","f"].pick_random()
 
@@ -124,3 +125,4 @@ func _input(event: InputEvent) -> void:
 	if interaction_enabled and $InteractLabel.visible and Input.is_action_just_pressed("Interact"):
 		PassengerDataBus.transfer_passenger_data(gender, avatar_path_data, avatar_colors, eye_color)
 		PassengerDataBus.game.start_ticket_control()
+		PassengerDataBus.currently_checked_passenger = self

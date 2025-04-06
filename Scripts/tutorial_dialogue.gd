@@ -5,10 +5,12 @@ extends Control
 
 var tween: Tween
 
-var greeting_dialogue = ["Witaj,  konduktorze!", "Cieszę  się,  że  dołączyłeś  do  naszego  zespołu!", 
-						"Praca  na  torach  to  nie  tylko  wyzwanie,  ale  i  ogromna  odpowiedzialność.", 
-						"Wierzę  jednak,  że  sobie  poradzisz  :)", 
-						"Zadbajmy  wspólnie  o  bezpieczeństwo  naszych  pasażerów!"]
+var greeting_dialogue = ["Czołem, konduktorze! Nowy na trasie, co?", 
+						"Nie martw się, wszyscy kiedyś zaczynaliśmy.", 
+						"Tu nie tylko bilety się sprawdza- tu się pilnuje porządku, dba o pasażerów...", 
+						"...i czasem załatwia sprawy \"między wierszami\", rozumiesz?",
+						"No, słuchaj się i będą z ciebie ludzie.",
+						"Tylko nie kombinuj, bo tu się wszystko roznosi szybciej niż gazeta z kiosku!"]
 var page = 0
 
 
@@ -24,6 +26,7 @@ func _ready() -> void:
 	setup_dialogue_label()
 
 func setup_dialogue_label():
+	$ArrowIndicator.visible = false
 	dialogue_label.set_text(greeting_dialogue[page])
 	dialogue_label.set_visible_characters(0)
 

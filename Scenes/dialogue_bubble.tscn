@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxu28hak0ccth"]
+
+[ext_resource type="Texture2D" uid="uid://bn6wbqd7argw2" path="res://Assets/Sprites/dialogue_bubble.png" id="1_2utb4"]
+[ext_resource type="Script" uid="uid://bsrs1u0n15vr3" path="res://Scripts/dialogue_bubble.gd" id="1_thsaj"]
+[ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_e4rbf"]
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 136.0
+offset_bottom = 44.0
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_thsaj")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_2utb4")
+region_rect = Rect2(0, 0, 15, 15)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_e4rbf")
+theme_override_font_sizes/font_size = 0
+text = "Dzień dobry."
+vertical_alignment = 1

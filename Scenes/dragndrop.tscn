@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr8ivjccb2gnq"]
+
+[ext_resource type="PackedScene" uid="uid://c8hjil3ghytl" path="res://Scenes/ticket.tscn" id="1_ewkey"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(500, 44, 499, 419, 906, 418, 911, 45, 502, 43, 505, 28, 921, 29, 916, 435, 485, 440, 490, 27, 505, 28)
+
+[node name="Ticket" parent="." instance=ExtResource("1_ewkey")]
+position = Vector2(690, 201)
