@@ -6,6 +6,7 @@ extends Control
 func _on_button_pressed() -> void:
 	print("pressed")
 	ticket_layer.visible = false
+	
 
 
 func _on_option_1_pressed() -> void:

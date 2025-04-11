@@ -4,13 +4,13 @@ extends Control
 
 func start_dialogue():
 	anim.speed_scale = 4
-	anim.play_backwards("Un-dialogue")
+	anim.play("dialogue")
 	await anim.animation_finished
 	anim.speed_scale = 1
 
 
 func undialogue():
-	anim.play("Un-dialogue")
+	anim.play_backwards("dialogue")
 
 func control_started():
 	print("control")

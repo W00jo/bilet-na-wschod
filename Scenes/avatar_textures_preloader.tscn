@@ -1,0 +1,17 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1tx61hlrlger"]
+
+[ext_resource type="Texture2D" uid="uid://ynwb2helknwh" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Eyes/eyes_blue.png" id="1_2xyb4"]
+[ext_resource type="Texture2D" uid="uid://dxbkh0q0yag46" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Eyes/eyes_green.png" id="2_lw1gd"]
+[ext_resource type="Texture2D" uid="uid://cy84saj0cvmr6" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Female/f_body_1.png" id="3_2lhw5"]
+[ext_resource type="Texture2D" uid="uid://ct54w4fn7cgfg" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Female/f_hair_1.png" id="4_bwx7h"]
+[ext_resource type="Texture2D" uid="uid://byuv428xeff8a" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Female/f_hair_2.png" id="5_ynka3"]
+[ext_resource type="Texture2D" uid="uid://bhht7u3302olb" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Female/f_shirt_1.png" id="6_62m0w"]
+[ext_resource type="Texture2D" uid="uid://ejkpkynoss4u" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Female/f_shirt_2.png" id="7_ifu38"]
+[ext_resource type="Texture2D" uid="uid://b7p6xilrjfcqy" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Male/m_body_1.png" id="8_clqln"]
+[ext_resource type="Texture2D" uid="uid://bqjdrlns4wovt" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Male/m_hair_1.png" id="9_4kqhe"]
+[ext_resource type="Texture2D" uid="uid://cmylf45wt5xg7" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Male/m_hair_2.png" id="10_aobc6"]
+[ext_resource type="Texture2D" uid="uid://cof76u0psqtgn" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Male/m_shirt_1.png" id="11_cxkst"]
+[ext_resource type="Texture2D" uid="uid://85kl707fufxg" path="res://Assets/Sprites/PassengerComponents/UIAvatars/Male/m_shirt_2.png" id="12_tw5pb"]
+
+[node name="AvatarTexturesPreloader" type="ResourcePreloader"]
+resources = [PackedStringArray("eyes_blue", "eyes_green", "f_body_1", "f_hair_1", "f_hair_2", "f_shirt_1", "f_shirt_2", "m_body_1", "m_hair_1", "m_hair_2", "m_shirt_1", "m_shirt_2"), [ExtResource("1_2xyb4"), ExtResource("2_lw1gd"), ExtResource("3_2lhw5"), ExtResource("4_bwx7h"), ExtResource("5_ynka3"), ExtResource("6_62m0w"), ExtResource("7_ifu38"), ExtResource("8_clqln"), ExtResource("9_4kqhe"), ExtResource("10_aobc6"), ExtResource("11_cxkst"), ExtResource("12_tw5pb")]]

@@ -1,6 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cil42wn4fnd17"]
+[gd_scene load_steps=19 format=3 uid="uid://cil42wn4fnd17"]
 
 [ext_resource type="Script" uid="uid://hv5gif5mgo2b" path="res://Scripts/passenger.gd" id="1_lyrvh"]
+[ext_resource type="Texture2D" uid="uid://dqqc8uebcdag6" path="res://Assets/Sprites/PassengerComponents/Female/Bodies/f_body_1.png" id="2_c41tx"]
+[ext_resource type="Texture2D" uid="uid://bgu1lpjuajnpj" path="res://Assets/Sprites/PassengerComponents/Female/Hairs/f_hair_1.png" id="3_isiub"]
+[ext_resource type="Texture2D" uid="uid://bjl3nmukgu7dq" path="res://Assets/Sprites/PassengerComponents/Female/Hairs/f_hair_2.png" id="4_xpb53"]
+[ext_resource type="Texture2D" uid="uid://u7hiw1y8cvpe" path="res://Assets/Sprites/PassengerComponents/Female/Pants/f_pants_1.png" id="5_6fnwx"]
+[ext_resource type="Texture2D" uid="uid://c4xrt72s2lbqu" path="res://Assets/Sprites/PassengerComponents/Female/Pants/f_pants_2.png" id="6_ydpdr"]
+[ext_resource type="Texture2D" uid="uid://cq81mymrtkrhi" path="res://Assets/Sprites/PassengerComponents/Female/Shirts/f_shirt_1.png" id="7_pp5ga"]
+[ext_resource type="Texture2D" uid="uid://dwsod4jeihkfr" path="res://Assets/Sprites/PassengerComponents/Female/Shirts/f_shirt_2.png" id="8_b5e5l"]
+[ext_resource type="Texture2D" uid="uid://d3p32t0ndi2yq" path="res://Assets/Sprites/PassengerComponents/Female/Shoes/f_shoes_1.png" id="9_cwt38"]
+[ext_resource type="Texture2D" uid="uid://dw1o6kwe3s2o" path="res://Assets/Sprites/PassengerComponents/Male/Bodies/m_body_1.png" id="10_y2mvl"]
+[ext_resource type="Texture2D" uid="uid://xyhya6ifdql6" path="res://Assets/Sprites/PassengerComponents/Male/Hairs/m_hair_1.png" id="11_gk8le"]
+[ext_resource type="Texture2D" uid="uid://mjrcnflsmghu" path="res://Assets/Sprites/PassengerComponents/Male/Hairs/m_hair_2.png" id="12_sprw4"]
+[ext_resource type="Texture2D" uid="uid://dbp76r3qpoita" path="res://Assets/Sprites/PassengerComponents/Male/Pants/m_pants_1.png" id="13_xg6mb"]
+[ext_resource type="Texture2D" uid="uid://hy4cq8thfshu" path="res://Assets/Sprites/PassengerComponents/Male/Pants/m_pants_2.png" id="14_8rggp"]
+[ext_resource type="Texture2D" uid="uid://bv8uphwcki1mr" path="res://Assets/Sprites/PassengerComponents/Male/Shirts/m_shirt_1.png" id="15_3lk1v"]
+[ext_resource type="Texture2D" uid="uid://bj8vod8hqunu4" path="res://Assets/Sprites/PassengerComponents/Male/Shirts/m_shirt_2.png" id="16_yokwh"]
+[ext_resource type="Texture2D" uid="uid://dcjmm4y03m8wn" path="res://Assets/Sprites/PassengerComponents/Male/Shoes/m_shoes_1.png" id="17_5m6mx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyrvh"]
 
@@ -27,6 +43,9 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 30
 text = "[E] Interact"
+
+[node name="Textures" type="ResourcePreloader" parent="."]
+resources = [PackedStringArray("f_body_1", "f_hair_1", "f_hair_2", "f_pants_1", "f_pants_2", "f_shirt_1", "f_shirt_2", "f_shoes_1", "m_body_1", "m_hair_1", "m_hair_2", "m_pants_1", "m_pants_2", "m_shirt_1", "m_shirt_2", "m_shoes_1"), [ExtResource("2_c41tx"), ExtResource("3_isiub"), ExtResource("4_xpb53"), ExtResource("5_6fnwx"), ExtResource("6_ydpdr"), ExtResource("7_pp5ga"), ExtResource("8_b5e5l"), ExtResource("9_cwt38"), ExtResource("10_y2mvl"), ExtResource("11_gk8le"), ExtResource("12_sprw4"), ExtResource("13_xg6mb"), ExtResource("14_8rggp"), ExtResource("15_3lk1v"), ExtResource("16_yokwh"), ExtResource("17_5m6mx")]]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

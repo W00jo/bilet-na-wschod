@@ -15,7 +15,7 @@ var shoes_tex:Texture
 
 var component_file_name:String
 
-var avatar_path_data = []
+var avatar_textures = []
 var avatar_colors = []
 
 var body_colors = [Color.BISQUE, Color.BURLYWOOD, Color.PERU, Color.NAVAJO_WHITE, Color.TAN]
@@ -34,18 +34,18 @@ func _ready() -> void:
 	texture_assigner()
 
 func texture_assigner():
-	var component_dir:String = "res://Assets/Sprites/PassengerComponents/"
-	var gender_dir:String
-	match gender:
-		"f": 
-			gender_dir = "Female/"
-		"m": 
-			gender_dir = "Male/"
-	body_tex = load(texture_getter(component_dir + gender_dir + "Bodies/", "_body_"))
-	hair_tex = load(texture_getter(component_dir + gender_dir + "Hairs/", "_hair_"))
-	shirt_tex = load(texture_getter(component_dir + gender_dir + "Shirts/", "_shirt_"))
-	pants_tex = load(texture_getter(component_dir + gender_dir + "Pants/", "_pants_"))
-	shoes_tex = load(texture_getter(component_dir + gender_dir + "Shoes/", "_shoes_"))
+	#var component_dir:String = "res://Assets/Sprites/PassengerComponents/"
+	#var gender_dir:String
+	#match gender:
+		#"f": 
+			#gender_dir = "Female/"
+		#"m": 
+			#gender_dir = "Male/"
+	body_tex = $Textures.get_resource(get_random_body_part(gender,"body")) ##onready
+	hair_tex = $Textures.get_resource(get_random_body_part(gender,"hair"))
+	shirt_tex = $Textures.get_resource(get_random_body_part(gender,"shirt"))
+	pants_tex = $Textures.get_resource(get_random_body_part(gender,"pants"))
+	shoes_tex = $Textures.get_resource(get_random_body_part(gender,"shoes"))
 	
 	passenger_dress_up()
 
@@ -79,15 +79,28 @@ func passenger_dress_up():
 	sprites.add_child(shoes)
 	
 
-func texture_getter(component_dir_path, component_name):
-	var dir = Array(DirAccess.get_files_at(component_dir_path))
-	for file in dir:
-		if file.get_extension() == "import":
-			dir.erase(file)
-	component_file_name = str(dir.pick_random())
-	avatar_path_data_collector(gender, component_name, component_file_name)
-	var texture = component_dir_path + component_file_name
+#func texture_getter(component_dir_path, component_name):
+	##var dir = Array(DirAccess.get_files_at(component_dir_path))
+	#var dir = $Textures.get_resource_list()
+	#for file in dir:
+		#if file.get_extension() == "import":
+			#dir.erase(file)
+	#component_file_name = str(dir.pick_random())
+	#avatar_path_data_collector(gender, component_name, component_file_name)
+	#var texture = component_dir_path + component_file_name
+	#print(dir)
+	#return texture
+
+func get_random_body_part(gender, body_part:String):
+	var body_part_textures = $Textures.get_resource_list()
+	var body_part_textures_to_rand = []
+	for bp_tex in body_part_textures:
+		if bp_tex.begins_with(gender + "_" + body_part):
+			body_part_textures_to_rand.append(bp_tex)
+	var texture = body_part_textures_to_rand.pick_random()
+	avatar_texture_collector(gender,body_part,texture)
 	return texture
+
 
 func texture_setter(component, comp_tex):
 	component.set_texture(comp_tex)
@@ -96,9 +109,10 @@ func color_setter(component, comp_color_arr):
 	var rand_color = comp_color_arr.pick_random()
 	component.set_modulate(rand_color)
 
-func avatar_path_data_collector(gender, component_name, component_file_name):
-	if component_name == "_body_" or component_name == "_hair_" or component_name == "_shirt_":
-		avatar_path_data.append(component_file_name)
+func avatar_texture_collector(gender, body_part, file_name):
+	if body_part == "body" or body_part == "hair" or body_part == "shirt":
+		avatar_textures.append(file_name)
+		
 
 ## INTERACTIONS ##
 
@@ -123,6 +137,6 @@ func hide_interaction_label():
 	
 func _input(event: InputEvent) -> void:
 	if interaction_enabled and $InteractLabel.visible and Input.is_action_just_pressed("Interact"):
-		PassengerDataBus.transfer_passenger_data(gender, avatar_path_data, avatar_colors, eye_color)
+		PassengerDataBus.transfer_passenger_data(avatar_textures, avatar_colors, eye_color)
 		PassengerDataBus.game.start_ticket_control()
 		PassengerDataBus.currently_checked_passenger = self

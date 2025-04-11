@@ -23,6 +23,7 @@ PassengerDataBus="*res://Scripts/PassengerDataBus.gd"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
