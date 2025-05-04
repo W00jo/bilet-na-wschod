@@ -16,8 +16,7 @@ func _ready() -> void:
 	PassengerDataBus.passenger_avatar = self
 
 func get_texture(texture_array):
-	var children = get_children()
-	for child in children:
+	for child in get_children():
 		remove_child(child)
 	texture_preloader = load("res://Scenes/avatar_textures_preloader.tscn").instantiate()
 	add_child(texture_preloader)
@@ -34,8 +33,6 @@ func get_color_scheme(colors, eyes):
 
 
 func draw_avatar():
-	for c in get_children():
-		c.queue_free()
 	var body = TextureRect.new()
 	body.set_texture(body_tex)
 	body.set_modulate(skin_color)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dw378puvhlvou"]
 
 [ext_resource type="Script" uid="uid://m32lr1ntq7vr" path="res://Scripts/tutorial_dialogue.gd" id="1_sgmdw"]
-[ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/ui_box.png" id="2_v1laq"]
-[ext_resource type="Texture2D" uid="uid://tw8wjivgyyiy" path="res://Assets/Sprites/tutorial_guy.png" id="3_3cu57"]
+[ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_v1laq"]
+[ext_resource type="Texture2D" uid="uid://tw8wjivgyyiy" path="res://Assets/Sprites/UIElements/tutorial_guy.png" id="3_3cu57"]
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="4_fpvfr"]
-[ext_resource type="Texture2D" uid="uid://gwryjk5prq1e" path="res://Assets/Sprites/arrow_indicator.png" id="5_qfs1g"]
+[ext_resource type="Texture2D" uid="uid://gwryjk5prq1e" path="res://Assets/Sprites/UIElements/arrow_indicator.png" id="5_qfs1g"]
 
 [sub_resource type="Animation" id="Animation_76ty3"]
 length = 0.001
@@ -171,9 +171,9 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.042
 offset_left = 786.0
-offset_top = 79.0
+offset_top = 78.9495
 offset_right = 777.68
-offset_bottom = 111.0
+offset_bottom = 110.949
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("5_qfs1g")
 

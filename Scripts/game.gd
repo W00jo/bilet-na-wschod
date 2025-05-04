@@ -10,3 +10,10 @@ extends Node2D
 
 func start_ticket_control():
 	ticket_layer.visible = true
+	$TicketControlLayer/TicketControl.start_control()
+	get_tree().get_first_node_in_group("Player").can_move = false
+
+func end_ticket_control():
+	get_tree().get_first_node_in_group("Player").can_move = true
+	ticket_layer.visible = false
+	

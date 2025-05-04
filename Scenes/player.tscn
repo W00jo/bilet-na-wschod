@@ -493,7 +493,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false
 parameters/conditions/is_walking = false
 parameters/Idle/blend_position = Vector2(-0.610526, -0.838565)
-parameters/Walking/blend_position = Vector2(0.256778, 0.147982)
+parameters/Walking/blend_position = Vector2(0.165877, -0.186813)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -506,6 +506,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(3, -1)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Timer" type="Timer" parent="."]

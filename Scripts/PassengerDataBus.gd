@@ -1,7 +1,7 @@
 extends Node
 
 @onready var game = get_tree().root.get_node('Game')
-var passenger_avatar:Control
+var passenger_avatar:Control  ## assigned in ready by passenger_avatar scene
 
 var checked_passengers = []
 var currently_checked_passenger

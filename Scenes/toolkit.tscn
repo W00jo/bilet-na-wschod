@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dig63qkl2leqy"]
+[gd_scene load_steps=11 format=3 uid="uid://dig63qkl2leqy"]
 
-[ext_resource type="Texture2D" uid="uid://cxosu70wp28v" path="res://Assets/Sprites/ui_toolkit_box.png" id="1_l1e7m"]
+[ext_resource type="Texture2D" uid="uid://cxosu70wp28v" path="res://Assets/Sprites/UIElements/ui_toolkit_box.png" id="1_l1e7m"]
 [ext_resource type="Script" uid="uid://btm12wlm5yhja" path="res://Scripts/toolkit.gd" id="1_tufta"]
 [ext_resource type="Texture2D" uid="uid://tked8lqmd2kc" path="res://Assets/Sprites/stress_progressbar_under.png" id="2_pbac2"]
 [ext_resource type="Texture2D" uid="uid://bltjl53k4djw5" path="res://Assets/Sprites/stress_progressbar_over.png" id="3_l1e7m"]
@@ -10,163 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://csywo326a8e4b" path="res://Assets/Sprites/hole_punch_tool.png" id="7_3j5vt"]
 [ext_resource type="Texture2D" uid="uid://bialcnx8q332y" path="res://Assets/Sprites/journal_tool.png" id="8_ocakr"]
 [ext_resource type="Texture2D" uid="uid://dy2fraxsxmuuu" path="res://Assets/Sprites/tickets_tool.png" id="9_3m3gv"]
-
-[sub_resource type="Animation" id="Animation_tufta"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NinePatchRect:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(960, 89)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("NinePatchRect/TextureProgressBar:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("NinePatchRect/HBoxContainer:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("NinePatchRect:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 451)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("DialogueOverlay:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("DialogueOverlay:color")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.866667, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_pbac2"]
-resource_name = "dialogue"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NinePatchRect:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(960, 89), Vector2(960, 223)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("NinePatchRect/TextureProgressBar:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("NinePatchRect/HBoxContainer:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("NinePatchRect:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 451), Vector2(0, 317)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("DialogueOverlay:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("DialogueOverlay:color")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.0333333, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.866667, 1, 1, 0), Color(0.87, 1, 1, 0.298039)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gu6cm"]
-_data = {
-&"RESET": SubResource("Animation_tufta"),
-&"dialogue": SubResource("Animation_pbac2")
-}
 
 [node name="Toolkit" type="Control"]
 process_mode = 3
@@ -198,9 +41,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -480.0
-offset_top = -89.0
-offset_right = 480.0
+offset_left = -482.0
+offset_top = -105.0
+offset_right = 482.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
@@ -211,55 +55,35 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="NinePatchRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0354167
-anchor_top = -0.426966
-anchor_right = 0.147917
-anchor_bottom = 0.92135
-offset_right = -36.0
-offset_bottom = -40.0001
-grow_vertical = 0
-scale = Vector2(1.5, 1.5)
-value = 15.0
-fill_mode = 3
-texture_under = ExtResource("2_pbac2")
-texture_over = ExtResource("3_l1e7m")
-texture_progress = ExtResource("4_wiadr")
-tint_under = Color(0.854396, 1, 0.463536, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0864583
-anchor_top = 0.0116036
-anchor_right = 1.00052
-anchor_bottom = 0.951804
-offset_right = -175.5
-offset_bottom = -16.7356
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.25, 1.25)
-theme_override_constants/separation = 60
-alignment = 1
-metadata/_edit_use_anchors_ = true
+layout_mode = 0
+offset_left = 167.0
+offset_top = 8.0
+offset_right = 928.0
+offset_bottom = 97.0
 
 [node name="Watch" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 disabled = true
 texture_normal = ExtResource("5_errsu")
 stretch_mode = 5
 
 [node name="Whistle" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 disabled = true
 texture_normal = ExtResource("6_gu6cm")
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="HolePunch" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 disabled = true
 texture_normal = ExtResource("7_3j5vt")
 stretch_mode = 5
@@ -268,19 +92,34 @@ flip_v = true
 
 [node name="Journal" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 disabled = true
 texture_normal = ExtResource("8_ocakr")
 stretch_mode = 5
 
 [node name="Tickets" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 disabled = true
 texture_normal = ExtResource("9_3m3gv")
 stretch_mode = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_gu6cm")
-}
-
-[connection signal="pressed" from="NinePatchRect/HBoxContainer/HolePunch" to="." method="_on_hole_punch_pressed"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.702852
+anchor_right = 0.179635
+anchor_bottom = 1.00762
+offset_right = -64.05
+offset_bottom = -78.6351
+grow_vertical = 0
+scale = Vector2(1.915, 1.915)
+size_flags_horizontal = 3
+value = 15.0
+fill_mode = 3
+texture_under = ExtResource("2_pbac2")
+texture_over = ExtResource("3_l1e7m")
+texture_progress = ExtResource("4_wiadr")
+tint_under = Color(0.854396, 1, 0.463536, 1)
+metadata/_edit_use_anchors_ = true

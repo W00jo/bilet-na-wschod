@@ -1,24 +1,24 @@
 [gd_scene load_steps=23 format=3 uid="uid://b80uyautrg11t"]
 
 [ext_resource type="Script" uid="uid://cyfqyufsg3au3" path="res://Scripts/ticket_control.gd" id="1_o2i80"]
-[ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/ui_box.png" id="2_4tmf3"]
+[ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_4tmf3"]
 [ext_resource type="PackedScene" uid="uid://dig63qkl2leqy" path="res://Scenes/toolkit.tscn" id="3_2j5bm"]
-[ext_resource type="Texture2D" uid="uid://dtro4ywj78emd" path="res://Assets/Sprites/ui_inner_box.png" id="3_a7phc"]
-[ext_resource type="Texture2D" uid="uid://cy0c1s0yjqobc" path="res://Assets/Sprites/ui_inner_box_empty.png" id="4_2aeyl"]
-[ext_resource type="Texture2D" uid="uid://dxjurjn5vjgmi" path="res://Assets/Sprites/button_close_pressed.png" id="4_d7iwj"]
+[ext_resource type="Texture2D" uid="uid://dtro4ywj78emd" path="res://Assets/Sprites/UIElements/ui_inner_box.png" id="3_a7phc"]
+[ext_resource type="Texture2D" uid="uid://cy0c1s0yjqobc" path="res://Assets/Sprites/UIElements/ui_inner_box_empty.png" id="4_2aeyl"]
+[ext_resource type="Texture2D" uid="uid://dxjurjn5vjgmi" path="res://Assets/Sprites/UIElements/button_close_pressed.png" id="4_d7iwj"]
 [ext_resource type="PackedScene" uid="uid://l5od68vreoyv" path="res://Scenes/passenger_avatar.tscn" id="5_4tmf3"]
-[ext_resource type="Texture2D" uid="uid://cjut3khed75ku" path="res://Assets/Sprites/ui_document_box.png" id="5_7fm02"]
-[ext_resource type="Texture2D" uid="uid://mnpjkiv43ens" path="res://Assets/Sprites/button_close_hover.png" id="5_xpyt6"]
+[ext_resource type="Texture2D" uid="uid://cjut3khed75ku" path="res://Assets/Sprites/UIElements/ui_document_box.png" id="5_7fm02"]
+[ext_resource type="Texture2D" uid="uid://mnpjkiv43ens" path="res://Assets/Sprites/UIElements/button_close_hover.png" id="5_xpyt6"]
 [ext_resource type="PackedScene" uid="uid://dxu28hak0ccth" path="res://Scenes/dialogue_bubble.tscn" id="6_ewriu"]
-[ext_resource type="Texture2D" uid="uid://cond2jaipmxpy" path="res://Assets/Sprites/button_close.png" id="6_wctca"]
-[ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/button_dialogue_option.png" id="7_w25t7"]
-[ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/button_dialogue_option_pressed.png" id="8_oyhfx"]
+[ext_resource type="Texture2D" uid="uid://cond2jaipmxpy" path="res://Assets/Sprites/UIElements/button_close.png" id="6_wctca"]
+[ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="7_w25t7"]
+[ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="8_oyhfx"]
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="8_w25t7"]
 [ext_resource type="PackedScene" uid="uid://c8hjil3ghytl" path="res://Scenes/ticket.tscn" id="9_ewriu"]
-[ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/button_dialogue_option_hover.png" id="9_fa7hl"]
-[ext_resource type="Texture2D" uid="uid://dvqlfbbfqlj13" path="res://Assets/Sprites/button_dialogue_option_disabled.png" id="10_fa7hl"]
+[ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_fa7hl"]
+[ext_resource type="Texture2D" uid="uid://dvqlfbbfqlj13" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="10_fa7hl"]
 [ext_resource type="Texture2D" uid="uid://dgceclpi5u5lf" path="res://Assets/Sprites/hole.png" id="14_ivvik"]
-[ext_resource type="Texture2D" uid="uid://gwryjk5prq1e" path="res://Assets/Sprites/arrow_indicator.png" id="19_s0lvg"]
+[ext_resource type="Texture2D" uid="uid://gwryjk5prq1e" path="res://Assets/Sprites/UIElements/arrow_indicator.png" id="19_s0lvg"]
 
 [sub_resource type="Animation" id="Animation_jwvxh"]
 length = 0.001
@@ -167,6 +167,7 @@ size_flags_horizontal = 8
 text = "Życzę miłej podróży."
 
 [node name="Container" type="Container" parent="Box/DialogueBox/ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -356,31 +357,7 @@ texture_hover = ExtResource("5_xpyt6")
 
 [node name="Toolkit" parent="." instance=ExtResource("3_2j5bm")]
 layout_mode = 1
-mouse_filter = 2
-metadata/_edit_lock_ = true
-
-[node name="DialogueOverlay" parent="Toolkit" index="0"]
-offset_left = 94.0
-offset_top = 22.0
-offset_right = -226.0
-offset_bottom = -158.0
-
-[node name="TextureProgressBar" parent="Toolkit/NinePatchRect" index="0"]
-anchor_left = 0.003125
-anchor_top = 1.04507
-anchor_right = 0.115625
-anchor_bottom = 2.39338
-offset_left = 23.0
-offset_top = -208.011
-offset_right = 95.0
-offset_bottom = -128.011
-scale = Vector2(2.5, 2.5)
-
-[node name="HBoxContainer" parent="Toolkit/NinePatchRect" index="1"]
-anchor_left = 0.442708
-anchor_right = 1.35677
-offset_left = -789.0
-offset_right = -158.0
+offset_top = 451.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -397,6 +374,4 @@ libraries = {
 }
 
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/DialogueOptions/VBoxContainer/Option1" to="." method="_on_option_1_pressed"]
-[connection signal="pressed" from="ButtonClose" to="." method="_on_button_pressed"]
-
-[editable path="Toolkit"]
+[connection signal="pressed" from="ButtonClose" to="." method="_on_button_close_pressed"]
