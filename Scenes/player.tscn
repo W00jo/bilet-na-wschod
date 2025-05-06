@@ -474,6 +474,7 @@ size = Vector2(24, 21.5)
 size = Vector2(49, 37)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(1.5, 2)
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -492,14 +493,14 @@ tree_root = SubResource("AnimationNodeStateMachine_8erm5")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false
 parameters/conditions/is_walking = false
-parameters/Idle/blend_position = Vector2(-0.610526, -0.838565)
+parameters/Idle/blend_position = Vector2(0.0060966, 1.01099)
 parameters/Walking/blend_position = Vector2(0.165877, -0.186813)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, 30)
+position = Vector2(4, 20.5)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_h4iuc")
+debug_color = Color(0.794626, 0.279696, 0.800561, 0.42)
 
 [node name="InteractionArea" type="Area2D" parent="." groups=["Player"]]
 collision_layer = 4

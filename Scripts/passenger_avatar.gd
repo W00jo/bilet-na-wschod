@@ -56,6 +56,7 @@ func draw_avatar():
 	add_child(shirt)
 	shirt.set_scale(Vector2(0.7,0.7))
 	
+	
 func eyes_getter():
 	eye_tex
 	match eye_color:

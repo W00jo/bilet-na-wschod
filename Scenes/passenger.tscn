@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://cil42wn4fnd17"]
+[gd_scene load_steps=82 format=3 uid="uid://cil42wn4fnd17"]
 
 [ext_resource type="Script" uid="uid://hv5gif5mgo2b" path="res://Scripts/passenger.gd" id="1_lyrvh"]
 [ext_resource type="Texture2D" uid="uid://bji13v156yfly" path="res://Assets/Sprites/PassengerComponents/Female/Bodies/f_elderly_body_1.png" id="2_ept2x"]
@@ -77,13 +77,14 @@
 [ext_resource type="Texture2D" uid="uid://w5s45vr5ccui" path="res://Assets/Sprites/PassengerComponents/Male/Pants/m_youth_pants_1.png" id="77_5e8ir"]
 [ext_resource type="Texture2D" uid="uid://cj04j8ex5mush" path="res://Assets/Sprites/PassengerComponents/Male/Pants/m_youth_pants_2.png" id="78_dq2um"]
 [ext_resource type="Texture2D" uid="uid://beip83coce84e" path="res://Assets/Sprites/PassengerComponents/Male/Shirts/m_youth_shirt_1.png" id="79_7hymf"]
+[ext_resource type="Script" uid="uid://5bjxe8x6pulo" path="res://Scripts/document_manager.gd" id="80_p16m8"]
 [ext_resource type="Texture2D" uid="uid://df8ui1vxl34uu" path="res://Assets/Sprites/PassengerComponents/Male/Shirts/m_youth_shirt_2.png" id="80_wnlf4"]
 [ext_resource type="Texture2D" uid="uid://b4awgbacatm2g" path="res://Assets/Sprites/PassengerComponents/Male/Shoes/m_youth_shoes_1.png" id="81_7agpx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyrvh"]
 
 [node name="Passenger" type="Area2D" groups=["Passenger"]]
-scale = Vector2(2.25, 2.25)
+scale = Vector2(3.25, 3.25)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_lyrvh")
@@ -108,6 +109,9 @@ text = "[E] Interact"
 
 [node name="Textures" type="ResourcePreloader" parent="."]
 resources = [PackedStringArray("f_elderly_body_1", "f_elderly_hair_1", "f_elderly_hair_2", "f_elderly_pants_1", "f_elderly_pants_2", "f_elderly_shirt_1", "f_elderly_shirt_2", "f_elderly_shoes_1", "f_middle_age_body_1", "f_middle_age_hair_1", "f_middle_age_hair_2", "f_middle_age_pants_1", "f_middle_age_pants_2", "f_middle_age_shirt_1", "f_middle_age_shirt_2", "f_middle_age_shoes_1", "f_senior_body_1", "f_senior_hair_1", "f_senior_hair_2", "f_senior_pants_1", "f_senior_pants_2", "f_senior_shirt_1", "f_senior_shirt_2", "f_senior_shoes_1", "f_young_adult_body_1", "f_young_adult_hair_1", "f_young_adult_hair_2", "f_young_adult_pants_1", "f_young_adult_pants_2", "f_young_adult_shirt_1", "f_young_adult_shirt_2", "f_young_adult_shoes_1", "f_youth_body_1", "f_youth_hair_1", "f_youth_hair_2", "f_youth_pants_1", "f_youth_pants_2", "f_youth_shirt_1", "f_youth_shirt_2", "f_youth_shoes_1", "m_elderly_body_1", "m_elderly_hair_1", "m_elderly_hair_2", "m_elderly_pants_1", "m_elderly_shirt_1", "m_elderly_shirt_2", "m_elderly_shoes_1", "m_middle_age_body_1", "m_middle_age_hair_1", "m_middle_age_hair_2", "m_middle_age_pants_1", "m_middle_age_pants_2", "m_middle_age_shirt_1", "m_middle_age_shirt_2", "m_middle_age_shoes_1", "m_senior_body_1", "m_senior_hair_1", "m_senior_hair_2", "m_senior_pants_1", "m_senior_shirt_1", "m_senior_shirt_2", "m_senior_shoes_1", "m_young_adult_body_1", "m_young_adult_hair_1", "m_young_adult_hair_2", "m_young_adult_pants_1", "m_young_adult_pants_2", "m_young_adult_shirt_1", "m_young_adult_shirt_2", "m_young_adult_shoes_1", "m_youth_body_1", "m_youth_hair_1", "m_youth_hair_2", "m_youth_pants_1", "m_youth_pants_2", "m_youth_shirt_1", "m_youth_shirt_2", "m_youth_shoes_1"), [ExtResource("2_ept2x"), ExtResource("3_c025g"), ExtResource("4_32e6i"), ExtResource("5_4o5qw"), ExtResource("6_jtcv1"), ExtResource("7_no5d1"), ExtResource("8_q74ab"), ExtResource("9_dophe"), ExtResource("10_h4e2g"), ExtResource("11_vd08x"), ExtResource("12_qu3to"), ExtResource("13_atl6u"), ExtResource("14_mt0ln"), ExtResource("15_swn81"), ExtResource("16_7u8sy"), ExtResource("17_vdpr8"), ExtResource("18_37tp4"), ExtResource("19_ndp25"), ExtResource("20_vijkx"), ExtResource("21_j715g"), ExtResource("22_svpeo"), ExtResource("23_5o47e"), ExtResource("24_a7eoa"), ExtResource("25_bvf8m"), ExtResource("26_r8ws8"), ExtResource("27_imon4"), ExtResource("28_lng75"), ExtResource("29_f0kbu"), ExtResource("30_jmtk4"), ExtResource("31_3vhbx"), ExtResource("32_tpa3r"), ExtResource("33_6e58f"), ExtResource("34_33frf"), ExtResource("35_dyotm"), ExtResource("36_3v7ak"), ExtResource("37_ta3uv"), ExtResource("38_3x4n6"), ExtResource("39_ywsbj"), ExtResource("40_nvl83"), ExtResource("41_11jdj"), ExtResource("42_ow1i6"), ExtResource("43_phncl"), ExtResource("44_snle5"), ExtResource("45_nu8aq"), ExtResource("47_lxs10"), ExtResource("48_xt6d4"), ExtResource("49_cvspl"), ExtResource("50_edeww"), ExtResource("51_jdwiy"), ExtResource("52_18o80"), ExtResource("53_q1bh5"), ExtResource("54_fya02"), ExtResource("55_7e6s4"), ExtResource("56_klvt4"), ExtResource("57_4owpg"), ExtResource("58_nn7tl"), ExtResource("59_1vl7d"), ExtResource("60_v5hhe"), ExtResource("61_70jru"), ExtResource("63_8ndp2"), ExtResource("64_1qyoy"), ExtResource("65_3cbck"), ExtResource("66_8r2bg"), ExtResource("67_q8op1"), ExtResource("68_ojamp"), ExtResource("69_mmr7v"), ExtResource("70_u31xb"), ExtResource("71_1s8xn"), ExtResource("72_a5ttb"), ExtResource("73_kcspv"), ExtResource("74_4114e"), ExtResource("75_2mvsn"), ExtResource("76_durp1"), ExtResource("77_5e8ir"), ExtResource("78_dq2um"), ExtResource("79_7hymf"), ExtResource("80_wnlf4"), ExtResource("81_7agpx")]]
+
+[node name="DocumentManager" type="Node" parent="."]
+script = ExtResource("80_p16m8")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

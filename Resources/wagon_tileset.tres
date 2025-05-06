@@ -6,32 +6,16 @@
 texture = ExtResource("1_bawbe")
 texture_region_size = Vector2i(88, 270)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44, -135, 44, -135, 44, 135, -44, 135)
 1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44, -135, 44, -135, 44, 135, -44, 135)
 2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44, -135, 44, -135, 44, -5.39999, -40.48, -5.39999, -40.48, 91.8, 44, 91.8, 44, 135, -44, 135)
 3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44, -135, 44, -135, 44, -5.39999, -44, -5.39999)
-3:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-44, 135, 44, 135, 44, 91.8, -44, 91.8)
 4:0/0 = 0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44, -135, 44, -135, 44, -5.39999, -44, -5.39999)
-4:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-44, 135, 44, 135, 44, 91.8, -44, 91.8)
 5:0/0 = 0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44, -135, 44, -135, 44, -5.39999, -44, -5.39999)
-5:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-44, 135, 44, 135, 44, 91.8, -44, 91.8)
 6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44, -135, 44, -135, 44, -5.39999, -44, -5.39999)
-6:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-44, 135, 44, 135, 44, 91.8, -44, 91.8)
 7:0/0 = 0
-7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44, -135, 44, -135, 44, -5.39999, -44, -5.39999)
-7:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-44, 135, 44, 135, 44, 91.8, -44, 91.8)
 8:0/0 = 0
-8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44, -135, 44, -135, 44, 135, -44, 135, -44, 91.8, 10.56, 91.8, 10.56, -5.39999, -44, -5.39999)
 9:0/0 = 0
-9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44, -135, 44, -135, 44, 135, -44, 135, -44, 91.8, 10.56, 91.8, 10.56, -5.39999, -44, -5.39999)
 10:0/0 = 0
-10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44, -135, 44, -135, 44, 135, -44, 135)
 
 [resource]
 tile_size = Vector2i(88, 270)

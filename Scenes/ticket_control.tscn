@@ -1,15 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://b80uyautrg11t"]
+[gd_scene load_steps=26 format=3 uid="uid://b80uyautrg11t"]
 
 [ext_resource type="Script" uid="uid://cyfqyufsg3au3" path="res://Scripts/ticket_control.gd" id="1_o2i80"]
 [ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_4tmf3"]
-[ext_resource type="PackedScene" uid="uid://dig63qkl2leqy" path="res://Scenes/toolkit.tscn" id="3_2j5bm"]
 [ext_resource type="Texture2D" uid="uid://dtro4ywj78emd" path="res://Assets/Sprites/UIElements/ui_inner_box.png" id="3_a7phc"]
 [ext_resource type="Texture2D" uid="uid://cy0c1s0yjqobc" path="res://Assets/Sprites/UIElements/ui_inner_box_empty.png" id="4_2aeyl"]
 [ext_resource type="Texture2D" uid="uid://dxjurjn5vjgmi" path="res://Assets/Sprites/UIElements/button_close_pressed.png" id="4_d7iwj"]
 [ext_resource type="PackedScene" uid="uid://l5od68vreoyv" path="res://Scenes/passenger_avatar.tscn" id="5_4tmf3"]
-[ext_resource type="Texture2D" uid="uid://cjut3khed75ku" path="res://Assets/Sprites/UIElements/ui_document_box.png" id="5_7fm02"]
+[ext_resource type="Texture2D" uid="uid://cxiqi60hmpdii" path="res://Assets/Sprites/UIElements/ui_document_box.png" id="5_7fm02"]
 [ext_resource type="Texture2D" uid="uid://mnpjkiv43ens" path="res://Assets/Sprites/UIElements/button_close_hover.png" id="5_xpyt6"]
-[ext_resource type="PackedScene" uid="uid://dxu28hak0ccth" path="res://Scenes/dialogue_bubble.tscn" id="6_ewriu"]
 [ext_resource type="Texture2D" uid="uid://cond2jaipmxpy" path="res://Assets/Sprites/UIElements/button_close.png" id="6_wctca"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="7_w25t7"]
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="8_oyhfx"]
@@ -20,12 +18,26 @@
 [ext_resource type="Texture2D" uid="uid://dgceclpi5u5lf" path="res://Assets/Sprites/hole.png" id="14_ivvik"]
 [ext_resource type="Texture2D" uid="uid://gwryjk5prq1e" path="res://Assets/Sprites/UIElements/arrow_indicator.png" id="19_s0lvg"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0lvg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4xp8"]
+texture = ExtResource("10_fa7hl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwvxh"]
+texture = ExtResource("9_fa7hl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_okt6h"]
+texture = ExtResource("8_oyhfx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x8ygp"]
+texture = ExtResource("7_w25t7")
+
 [sub_resource type="Animation" id="Animation_jwvxh"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/path = NodePath("Arrow:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,24 +49,24 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:position")
+tracks/1/path = NodePath("Arrow:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(558, 382)]
+"values": [Vector2(943.636, 919.091)]
 }
 
 [sub_resource type="Animation" id="Animation_t4xp8"]
 resource_name = "updown"
-length = 0.8
+length = 1.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/path = NodePath("Arrow:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -66,14 +78,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:position")
+tracks/1/path = NodePath("Arrow:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(558, 382), Vector2(558, 421), Vector2(558, 382)]
+"values": [Vector2(943.636, 919.091), Vector2(943.636, 939.091), Vector2(943.636, 896.364), Vector2(943.636, 919.091)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_okt6h"]
@@ -88,8 +100,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -66.0
+offset_right = -125.0
+offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.1, 1.1)
 mouse_filter = 2
 script = ExtResource("1_o2i80")
 
@@ -98,11 +115,13 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -720.0
-offset_bottom = -405.0
+offset_left = 216.0
+offset_top = 101.0
+offset_right = -504.0
+offset_bottom = -304.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(4, 4)
+scale = Vector2(1.25, 1.25)
 mouse_filter = 0
 texture = ExtResource("2_4tmf3")
 region_rect = Rect2(0, 0, 15, 15)
@@ -111,95 +130,18 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="DialogueBox" type="NinePatchRect" parent="Box"]
-clip_contents = true
-layout_mode = 2
-offset_left = 58.0
-offset_top = 11.0
-offset_right = 121.0
-offset_bottom = 67.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.49
-mouse_filter = 0
-texture = ExtResource("4_2aeyl")
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Box/DialogueBox"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 296.0
-offset_bottom = 256.0
-scale = Vector2(0.2, 0.2)
-mouse_filter = 0
-mouse_force_pass_scroll_events = false
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Box/DialogueBox/ScrollContainer"]
-clip_contents = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-
-[node name="MarginContainer" parent="Box/DialogueBox/ScrollContainer/VBoxContainer" instance=ExtResource("6_ewriu")]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 3
-text = "Dzień dobry.  Bilet proszę"
-
-[node name="MarginContainer2" parent="Box/DialogueBox/ScrollContainer/VBoxContainer" instance=ExtResource("6_ewriu")]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Proszę."
-
-[node name="MarginContainer4" parent="Box/DialogueBox/ScrollContainer/VBoxContainer" instance=ExtResource("6_ewriu")]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 8
-text = "Życzę miłej podróży."
-
-[node name="Container" type="Container" parent="Box/DialogueBox/ScrollContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Container3" type="Container" parent="Box/DialogueBox/ScrollContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Container2" type="Container" parent="Box/DialogueBox/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Container4" type="Container" parent="Box/DialogueBox/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Container5" type="Container" parent="Box/DialogueBox/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
 [node name="HBox" type="HBoxContainer" parent="Box"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = 11.0
-offset_right = -12.0
-offset_bottom = -29.0
+offset_left = 46.0
+offset_top = 54.0
+offset_right = -46.0
+offset_bottom = -39.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 3
+theme_override_constants/separation = 9
 alignment = 1
 
 [node name="Left" type="VBoxContainer" parent="Box/HBox"]
@@ -223,93 +165,133 @@ anchors_preset = -1
 anchor_top = 0.17
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -10.8
+offset_top = -22.3527
+offset_right = -10.8
+offset_bottom = -22.3527
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(5.5, 5.5)
 
 [node name="Container" type="Container" parent="Box/HBox/Left"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.65
+size_flags_stretch_ratio = 1.03
 
 [node name="Middle" type="VBoxContainer" parent="Box/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.51
+theme_override_constants/separation = 15
 
-[node name="Container" type="Container" parent="Box/HBox/Middle"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.6
-
-[node name="OptionBox" type="NinePatchRect" parent="Box/HBox/Middle"]
+[node name="DialogueBox" type="NinePatchRect" parent="Box/HBox/Middle"]
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.3
+size_flags_stretch_ratio = 0.49
+mouse_filter = 0
 texture = ExtResource("4_2aeyl")
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="DialogueOptions" type="MarginContainer" parent="Box/HBox/Middle/OptionBox"]
+[node name="Dialogue" type="RichTextLabel" parent="Box/HBox/Middle/DialogueBox"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.25
-offset_bottom = -0.75
+anchors_preset = -1
+anchor_left = 0.0214067
+anchor_top = 0.0237288
+anchor_right = 0.981651
+anchor_bottom = 0.979661
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 1
-theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 2
+theme_override_fonts/normal_font = ExtResource("8_w25t7")
+bbcode_enabled = true
+text = "[right]Dzień dobry.
+Poproszę bilet do kontroli.
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Box/HBox/Middle/OptionBox/DialogueOptions"]
+[left]Proszę."
+scroll_active = false
+scroll_following = true
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionBox" type="NinePatchRect" parent="Box/HBox/Middle"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.45
+texture = ExtResource("4_2aeyl")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Box/HBox/Middle/OptionBox"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 4.25
+offset_right = 325.0
+offset_bottom = 269.25
 theme_override_constants/separation = 0
 
-[node name="Option1" type="TextureButton" parent="Box/HBox/Middle/OptionBox/DialogueOptions/VBoxContainer"]
+[node name="Option1" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture_normal = ExtResource("7_w25t7")
-texture_pressed = ExtResource("8_oyhfx")
-texture_hover = ExtResource("9_fa7hl")
-texture_disabled = ExtResource("10_fa7hl")
-stretch_mode = 0
-
-[node name="Label2" type="Label" parent="Box/HBox/Middle/OptionBox/DialogueOptions/VBoxContainer/Option1"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 3.75
-offset_right = 229.0
-offset_bottom = 31.75
-scale = Vector2(0.24, 0.24)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_outline_color = Color(0.0714149, 0.260118, 0.311629, 1)
+theme_override_colors/font_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_w25t7")
-theme_override_font_sizes/font_size = 0
-text = "Poproś  o  bilet"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s0lvg")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_t4xp8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jwvxh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_okt6h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x8ygp")
+text = "Poproś  o  pokazanie  biletu"
 
-[node name="Option2" type="TextureButton" parent="Box/HBox/Middle/OptionBox/DialogueOptions/VBoxContainer"]
+[node name="Option2" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-disabled = true
-texture_normal = ExtResource("7_w25t7")
-texture_disabled = ExtResource("10_fa7hl")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Box/HBox/Middle/OptionBox/DialogueOptions/VBoxContainer/Option2"]
-layout_mode = 0
-offset_left = 3.25
-offset_top = 4.0
-offset_right = 225.25
-offset_bottom = 32.0
-scale = Vector2(0.24, 0.24)
-theme_override_colors/font_color = Color(0.38, 0.38, 0.38, 1)
+theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_outline_color = Color(0.0714149, 0.260118, 0.311629, 1)
+theme_override_colors/font_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_w25t7")
-theme_override_font_sizes/font_size = 0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s0lvg")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_t4xp8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jwvxh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_okt6h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x8ygp")
 text = "Zapytaj  o  legitymację"
+
+[node name="Option3" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_outline_color = Color(0.0714149, 0.260118, 0.311629, 1)
+theme_override_colors/font_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_w25t7")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s0lvg")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_t4xp8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jwvxh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_okt6h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x8ygp")
+text = "Zapytaj  o  dowód   osobisty"
 
 [node name="DocumentBox" type="NinePatchRect" parent="Box/HBox"]
 layout_mode = 2
@@ -317,24 +299,21 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.84
 mouse_filter = 0
 texture = ExtResource("5_7fm02")
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
 
-[node name="Container" type="Container" parent="Box/HBox/DocumentBox"]
-clip_contents = true
-layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 102.0
-offset_bottom = 93.0
-
-[node name="Ticket" parent="Box/HBox/DocumentBox/Container" instance=ExtResource("9_ewriu")]
+[node name="Ticket" parent="Box/HBox/DocumentBox" instance=ExtResource("9_ewriu")]
 visible = false
 layout_mode = 2
+offset_left = 304.564
+offset_top = 448.473
+offset_right = 304.564
+offset_bottom = 448.473
+scale = Vector2(2, 2)
 
-[node name="TextureRect2" type="TextureRect" parent="Box/HBox/DocumentBox/Container/Ticket"]
+[node name="Hole" type="TextureRect" parent="Box/HBox/DocumentBox/Ticket"]
 visible = false
 layout_mode = 0
 offset_left = 45.5
@@ -344,28 +323,35 @@ offset_bottom = 33.5
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_ivvik")
 
+[node name="Container" type="Container" parent="Box/HBox/DocumentBox"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00556586
+anchor_top = 0.00343643
+anchor_right = 1.00186
+anchor_bottom = 1.00172
+metadata/_edit_use_anchors_ = true
+
 [node name="ButtonClose" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 889.0
-offset_top = 19.0
-offset_right = 907.0
-offset_bottom = 36.0
-scale = Vector2(3, 3)
+offset_left = 1591.0
+offset_top = 146.0
+offset_right = 1609.0
+offset_bottom = 163.0
+scale = Vector2(5.5, 5.5)
 texture_normal = ExtResource("6_wctca")
 texture_pressed = ExtResource("4_d7iwj")
 texture_hover = ExtResource("5_xpyt6")
 
-[node name="Toolkit" parent="." instance=ExtResource("3_2j5bm")]
-layout_mode = 1
-offset_top = 451.0
-
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Arrow" type="TextureRect" parent="."]
 visible = false
+modulate = Color(0.25, 0.25, 0.25, 1)
 layout_mode = 0
-offset_left = 558.0
-offset_top = 382.0
-offset_right = 598.0
-offset_bottom = 422.0
+offset_left = 943.636
+offset_top = 898.953
+offset_right = 983.636
+offset_bottom = 938.953
 texture = ExtResource("19_s0lvg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -373,5 +359,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_okt6h")
 }
 
-[connection signal="pressed" from="Box/HBox/Middle/OptionBox/DialogueOptions/VBoxContainer/Option1" to="." method="_on_option_1_pressed"]
+[node name="DocumentMarker" type="Marker2D" parent="."]
+position = Vector2(1267.27, 377.273)
+
+[connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/Option2" to="." method="_on_option_2_pressed"]
 [connection signal="pressed" from="ButtonClose" to="." method="_on_button_close_pressed"]

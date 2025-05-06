@@ -3,14 +3,17 @@ class_name Passenger
 
 @onready var sprites:Node2D = $Sprites
 @onready var textures = $Textures
+@onready var doc_manager = $DocumentManager
 
 var is_skasowaned = false
 
 var gender = ["m","f"].pick_random()
-var age = randi_range(15, 95)
-
+var age = randi_range(12, 95)
+var age_range:String
 #  15-24  25-39  40-64  65-79  80-95
 #  młodziez  młodsi-dorośli  starsi-dorośli  seniorzy  starcy
+var ticket_type:String
+var document:PackedScene
 
 var body_tex:Texture
 var hair_tex:Texture
@@ -18,7 +21,6 @@ var shirt_tex:Texture
 var pants_tex:Texture
 var shoes_tex:Texture
 
-var age_range:String
 
 var avatar_textures = []
 var avatar_colors = []
@@ -38,7 +40,7 @@ func _ready() -> void:
 	age_range_assigner()
 
 func age_range_assigner():
-	if age>=15 and age<=24:
+	if age>=12 and age<=24:
 		age_range = "youth"
 	if age>=25 and age<=39:
 		age_range = "young_adult"
@@ -50,6 +52,7 @@ func age_range_assigner():
 		age_range = "elderly"
 		
 	texture_assigner()
+	doc_manager.assign_ticket(age, age_range)
 	
 func texture_assigner():
 	body_tex = textures.get_resource(get_random_body_part(gender,"body"))

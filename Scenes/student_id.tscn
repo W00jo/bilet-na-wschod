@@ -1,0 +1,986 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2r23wbfg0p8k"]
+
+[ext_resource type="Texture2D" uid="uid://d0xpxrtvmeqne" path="res://Assets/Sprites/student_id.png" id="1_1leoy"]
+[ext_resource type="Script" uid="uid://716lyreksvpy" path="res://Scripts/student_id.gd" id="1_sgl21"]
+[ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_wt25s"]
+[ext_resource type="FontFile" uid="uid://cwy1ws1immec6" path="res://Assets/Fonts/CoveredByYourGrace-Regular.ttf" id="3_g8tnp"]
+[ext_resource type="FontFile" uid="uid://dy54cuo4rbn8a" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_sgl21"]
+[ext_resource type="FontFile" uid="uid://csst3yoqdnyvm" path="res://Assets/Fonts/ByteBounce.ttf" id="5_y0fc1"]
+[ext_resource type="Texture2D" uid="uid://bhjgpugjg5rls" path="res://Assets/Sprites/student_id_round_stamp.png" id="6_kxmqv"]
+
+[node name="StudentID" type="Node2D"]
+script = ExtResource("1_sgl21")
+
+[node name="StudentIDTexture" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = -0.109375
+anchor_top = -0.124074
+anchor_right = 0.109375
+anchor_bottom = 0.125926
+offset_left = -105.0
+offset_top = -67.0
+offset_right = 105.0
+offset_bottom = 68.0
+texture = ExtResource("1_1leoy")
+
+[node name="PhotoBase" type="Polygon2D" parent="."]
+position = Vector2(20.7568, 9.66667)
+scale = Vector2(1.21622, 1.16667)
+polygon = PackedVector2Array(-96, -59.7143, -96, -10, -77.5547, -10, -59, -10, -59, -58)
+
+[node name="LegitymacjaStudencka" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.05
+anchor_top = -0.0888889
+anchor_right = -0.0102446
+anchor_bottom = -0.0559937
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 208.0
+offset_bottom = 67.0
+rotation = 0.0134103
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "LEGITYMACJA
+STUDENCKA"
+
+[node name="Dots1" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.05
+anchor_top = -0.0518519
+anchor_right = -0.00333333
+anchor_bottom = -0.0305556
+offset_left = -48.0
+offset_top = -28.0
+offset_right = 355.2
+offset_bottom = 75.5
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "................................................"
+
+[node name="NrAlbumu" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0375
+anchor_top = -0.0444444
+anchor_right = -0.025
+anchor_bottom = -0.0386111
+offset_left = -36.0
+offset_top = -24.0
+offset_right = 35.0
+offset_bottom = -3.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 12
+text = "Nr albumu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Dots2" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0958333
+anchor_top = 0.00555556
+anchor_right = -0.0125
+anchor_bottom = 0.0268519
+offset_left = -92.0
+offset_top = 3.0
+offset_right = 708.0
+offset_bottom = 106.5
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "...................................................................................................."
+metadata/_edit_use_anchors_ = true
+
+[node name="Podpis" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.071875
+anchor_top = 0.012963
+anchor_right = -0.0360937
+anchor_bottom = 0.0187963
+offset_left = -69.0
+offset_top = 7.0
+offset_right = 160.0
+offset_bottom = 28.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 12
+text = "(podpis właściciela legitymacji)"
+metadata/_edit_use_anchors_ = true
+
+[node name="Dots3" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0958333
+anchor_top = 0.0240741
+anchor_right = -0.0125
+anchor_bottom = 0.0453704
+offset_left = -92.0
+offset_top = 13.0
+offset_right = 708.0
+offset_bottom = 116.5
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "...................................................................................................."
+metadata/_edit_use_anchors_ = true
+
+[node name="ImieNazwisko" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0625
+anchor_top = 0.0314815
+anchor_right = -0.0267187
+anchor_bottom = 0.0373148
+offset_left = -60.0
+offset_top = 17.0
+offset_right = 134.65
+offset_bottom = 38.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 12
+text = "(imię i nazwisko)"
+metadata/_edit_use_anchors_ = true
+
+[node name="ZamieszkalW" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0958333
+anchor_top = 0.0444444
+anchor_right = -0.0120833
+anchor_bottom = 0.0657407
+offset_left = -92.0
+offset_top = 24.0
+offset_right = 712.0
+offset_bottom = 127.5
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "zamieszkał......  w  ............................................................."
+metadata/_edit_use_anchors_ = true
+
+[node name="Dots5" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0958333
+anchor_top = 0.0555556
+anchor_right = -0.0125
+anchor_bottom = 0.0768519
+offset_left = -92.0
+offset_top = 30.0
+offset_right = 708.0
+offset_bottom = 133.5
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "...................................................................................................."
+metadata/_edit_use_anchors_ = true
+
+[node name="DokladnyAdres" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0645833
+anchor_top = 0.062963
+anchor_right = -0.0288021
+anchor_bottom = 0.0687963
+offset_left = -62.0
+offset_top = 34.0
+offset_right = 132.65
+offset_bottom = 55.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 12
+text = "(dokładny adres)"
+metadata/_edit_use_anchors_ = true
+
+[node name="JestStudentem" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0958333
+anchor_top = 0.0740741
+anchor_right = -0.0125
+anchor_bottom = 0.0953704
+offset_left = -92.0
+offset_top = 40.0
+offset_right = 708.0
+offset_bottom = 143.5
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "jest  studentem.............................................................."
+metadata/_edit_use_anchors_ = true
+
+[node name="PodluznaPieczec" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0552083
+anchor_top = 0.0814815
+anchor_right = -0.0194271
+anchor_bottom = 0.0873148
+offset_left = -53.0
+offset_top = 44.0
+offset_right = 141.65
+offset_bottom = 65.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 12
+text = "podłużna pieczęć szkoły"
+metadata/_edit_use_anchors_ = true
+
+[node name="Dots6" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0958333
+anchor_top = 0.0925926
+anchor_right = -0.0125
+anchor_bottom = 0.113889
+offset_left = -92.0
+offset_top = 50.0
+offset_right = 708.0
+offset_bottom = 153.5
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "......................................                              ................................"
+metadata/_edit_use_anchors_ = true
+
+[node name="DataPodpis" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.084375
+anchor_top = 0.1
+anchor_right = -0.0164062
+anchor_bottom = 0.105833
+offset_left = -81.0
+offset_top = 54.0
+offset_right = 354.0
+offset_bottom = 75.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 12
+text = "data                                                                                             podpis  wystawcy"
+metadata/_edit_use_anchors_ = true
+
+[node name="Uprawnia" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.03125
+anchor_top = -0.101852
+anchor_right = 0.07825
+anchor_bottom = -0.0848148
+offset_left = 30.0
+offset_top = -55.0
+offset_right = 554.0
+offset_bottom = 50.8
+scale = Vector2(0.08, 0.08)
+theme_override_colors/font_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "Uprawnia    do    korzystania"
+metadata/_edit_use_anchors_ = true
+
+[node name="NaPKP" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.0229167
+anchor_top = -0.0944444
+anchor_right = 0.0845833
+anchor_bottom = -0.0774074
+offset_left = 22.0
+offset_top = -51.0
+offset_right = 762.0
+offset_bottom = 54.8
+scale = Vector2(0.08, 0.08)
+theme_override_colors/font_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "na    Polskich    Kolejach    Państwowych"
+metadata/_edit_use_anchors_ = true
+
+[node name="ZBiletow" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.0260417
+anchor_top = -0.087037
+anchor_right = 0.0830417
+anchor_bottom = -0.07
+offset_left = 25.0
+offset_top = -47.0
+offset_right = 709.0
+offset_bottom = 58.8
+scale = Vector2(0.08, 0.08)
+theme_override_colors/font_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -14
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "z   biletów   miesięcznych   szkolnych
+na   dojazdy   do   szkoły"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="OdStDoSt" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.0104167
+anchor_top = -0.0703704
+anchor_right = 0.0945833
+anchor_bottom = -0.0490741
+offset_left = 10.0
+offset_top = -38.0
+offset_right = 818.0
+offset_bottom = 65.5
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "od st. ...............................        do st.  ................................."
+metadata/_edit_use_anchors_ = true
+
+[node name="NaDojazdy" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.0229167
+anchor_top = -0.0592593
+anchor_right = 0.08525
+anchor_bottom = -0.0422222
+offset_left = 22.0
+offset_top = -32.0
+offset_right = 770.0
+offset_bottom = 73.8
+scale = Vector2(0.08, 0.08)
+theme_override_colors/font_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -14
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "na    dojazdy   na   zajęcia   praktyczne"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="WazneDoDnia" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.021875
+anchor_top = -0.037037
+anchor_right = 0.0842083
+anchor_bottom = -0.02
+offset_left = 21.0
+offset_top = -20.0
+offset_right = 709.16
+offset_bottom = 85.8
+scale = Vector2(0.08, 0.08)
+theme_override_colors/font_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -14
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "Ważne   do   dnia"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="OdStDoSt2" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.009375
+anchor_top = -0.05
+anchor_right = 0.0935417
+anchor_bottom = -0.0287037
+offset_left = 9.0
+offset_top = -27.0
+offset_right = 817.0
+offset_bottom = 76.5
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "od st. ...............................        do st.  ................................."
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.0177083
+anchor_top = -0.0277778
+anchor_right = 0.0864583
+anchor_bottom = 0.100815
+offset_left = 17.0
+offset_top = -15.0
+offset_right = 842.0
+offset_bottom = 853.0
+scale = Vector2(0.08, 0.08)
+theme_override_constants/h_separation = 67
+theme_override_constants/v_separation = -16
+columns = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Date1" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+marca
+............. r.
+
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Date2" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+paźdz.
+............. r.
+
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Date3" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+marca
+............. r.
+
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Date4" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+paźdz.
+............. r.
+
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Date5" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+marca
+............. r.
+
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Date6" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+paźdz.
+............. r.
+
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Date7" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+marca
+............. r.
+
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Date8" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+paźdz.
+............. r.
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Date9" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+marca
+............. r.
+
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Date10" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+paźdz.
+............. r.
+
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Date11" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+marca
+............. r.
+
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Date12" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.54902)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/paragraph_spacing = -19
+theme_override_fonts/font = ExtResource("2_wt25s")
+theme_override_font_sizes/font_size = 32
+text = "31
+paźdz.
+............. r.
+
+
+pieczęć
+okrągła
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AlbumNumber" type="Label" parent="."]
+offset_left = -37.0
+offset_top = -32.0
+offset_right = 207.0
+offset_bottom = 14.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "56514"
+
+[node name="Signature" type="Label" parent="."]
+offset_left = -74.0
+offset_top = 1.0
+offset_right = 170.0
+offset_bottom = 47.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("4_sgl21")
+theme_override_font_sizes/font_size = 24
+text = "JanKowalski"
+
+[node name="Name" type="Label" parent="."]
+offset_left = -68.0
+offset_top = 9.0
+offset_right = 176.0
+offset_bottom = 55.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "Jan Kowalski"
+
+[node name="Suffix" type="Label" parent="."]
+offset_left = -70.0
+offset_top = 21.0
+offset_right = 174.0
+offset_bottom = 67.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "y"
+
+[node name="City" type="Label" parent="."]
+offset_left = -57.0
+offset_top = 21.0
+offset_right = 187.0
+offset_bottom = 67.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "Lublinie"
+
+[node name="Adress2" type="Label" parent="."]
+offset_left = -64.0
+offset_top = 33.0
+offset_right = 225.0
+offset_bottom = 110.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.74, 0.1628, 0.32634, 0.556863)
+theme_override_fonts/font = ExtResource("5_y0fc1")
+theme_override_font_sizes/font_size = 18
+text = "Uniwersytet Marii Curie-Skłodowskiej
+Wydział Humanistyczny
+20-031 Lublin Pl.Marii Curie-Skłodowskiej 4
+tel. 81 121 34 00 fax 81 121 34 03
+"
+horizontal_alignment = 1
+
+[node name="Adress" type="Label" parent="."]
+offset_left = -81.0
+offset_top = 28.0
+offset_right = 165.0
+offset_bottom = 74.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "ul. Głęboka 7 m 8"
+
+[node name="Date" type="Label" parent="."]
+offset_left = -90.0
+offset_top = 46.0
+offset_right = 156.0
+offset_bottom = 92.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "Lbn 06.05.99r."
+
+[node name="IssuerSignature" type="Label" parent="."]
+offset_left = -48.0
+offset_top = 47.0
+offset_right = 198.0
+offset_bottom = 93.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "Aleksandra Nowak"
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(0, 0.25)
+points = PackedVector2Array(22, -37, 41, -37, 45, -37)
+width = 0.25
+default_color = Color(0.176471, 0, 0.572549, 1)
+joint_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(44, 0.25)
+points = PackedVector2Array(22, -37, 41, -37, 45, -37)
+width = 0.25
+default_color = Color(0.176471, 0, 0.572549, 1)
+joint_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="."]
+position = Vector2(-1.75, 11.5)
+points = PackedVector2Array(22, -37, 41, -37, 45, -37)
+width = 0.25
+default_color = Color(0.176471, 0, 0.572549, 1)
+joint_mode = 2
+
+[node name="Line2D4" type="Line2D" parent="."]
+position = Vector2(42.25, 11.25)
+points = PackedVector2Array(22, -37, 41, -37, 45, -37)
+width = 0.25
+default_color = Color(0.176471, 0, 0.572549, 1)
+joint_mode = 2
+
+[node name="Stamp1" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(23, -5)
+texture = ExtResource("6_kxmqv")
+
+[node name="Stamp2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(41, -5)
+texture = ExtResource("6_kxmqv")
+
+[node name="Stamp3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(59, -6)
+texture = ExtResource("6_kxmqv")
+
+[node name="Stamp4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(78, -4)
+texture = ExtResource("6_kxmqv")
+
+[node name="Stamp5" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(24, 20)
+texture = ExtResource("6_kxmqv")
+
+[node name="Stamp6" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(39, 18)
+texture = ExtResource("6_kxmqv")
+
+[node name="Stamp7" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(59, 16)
+texture = ExtResource("6_kxmqv")
+
+[node name="Stamp8" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(78, 17)
+texture = ExtResource("6_kxmqv")
+
+[node name="Stamp9" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(22, 41)
+texture = ExtResource("6_kxmqv")
+
+[node name="Stamp10" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(40, 40)
+texture = ExtResource("6_kxmqv")
+
+[node name="Stamp11" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(59, 44)
+texture = ExtResource("6_kxmqv")
+
+[node name="Year1" type="Label" parent="."]
+offset_left = 20.0
+offset_top = -11.0
+offset_right = 50.0
+offset_bottom = 35.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "94"
+metadata/_edit_use_anchors_ = true
+
+[node name="Year2" type="Label" parent="."]
+offset_left = 37.0
+offset_top = -11.0
+offset_right = 67.0
+offset_bottom = 35.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "94"
+metadata/_edit_use_anchors_ = true
+
+[node name="Year3" type="Label" parent="."]
+offset_left = 56.0
+offset_top = -11.0
+offset_right = 86.0
+offset_bottom = 35.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "95"
+metadata/_edit_use_anchors_ = true
+
+[node name="Year4" type="Label" parent="."]
+offset_left = 73.0
+offset_top = -11.0
+offset_right = 103.0
+offset_bottom = 35.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "95"
+metadata/_edit_use_anchors_ = true
+
+[node name="Year5" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 11.0
+offset_right = 50.0
+offset_bottom = 57.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "96"
+metadata/_edit_use_anchors_ = true
+
+[node name="Year6" type="Label" parent="."]
+offset_left = 38.0
+offset_top = 12.0
+offset_right = 68.0
+offset_bottom = 58.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "96"
+metadata/_edit_use_anchors_ = true
+
+[node name="Year7" type="Label" parent="."]
+offset_left = 56.0
+offset_top = 11.0
+offset_right = 86.0
+offset_bottom = 57.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "97"
+metadata/_edit_use_anchors_ = true
+
+[node name="Year8" type="Label" parent="."]
+offset_left = 73.0
+offset_top = 13.0
+offset_right = 103.0
+offset_bottom = 59.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "97"
+metadata/_edit_use_anchors_ = true
+
+[node name="Year9" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 34.0
+offset_right = 49.0
+offset_bottom = 80.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "98"
+metadata/_edit_use_anchors_ = true
+
+[node name="Year10" type="Label" parent="."]
+offset_left = 38.0
+offset_top = 34.0
+offset_right = 68.0
+offset_bottom = 80.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "98"
+metadata/_edit_use_anchors_ = true
+
+[node name="Year11" type="Label" parent="."]
+offset_left = 56.0
+offset_top = 34.0
+offset_right = 86.0
+offset_bottom = 80.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "99"
+metadata/_edit_use_anchors_ = true
+
+[node name="Photo" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -94.0
+offset_top = -55.0
+offset_right = -54.0
+offset_bottom = -15.0
+pivot_offset = Vector2(2.5, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -63.0
+offset_right = 100.0
+offset_bottom = 65.0
+
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
