@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b80uyautrg11t"]
+[gd_scene load_steps=23 format=3 uid="uid://b80uyautrg11t"]
 
 [ext_resource type="Script" uid="uid://cyfqyufsg3au3" path="res://Scripts/ticket_control.gd" id="1_o2i80"]
 [ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_4tmf3"]
@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://c8hjil3ghytl" path="res://Scenes/ticket.tscn" id="9_ewriu"]
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_fa7hl"]
 [ext_resource type="Texture2D" uid="uid://dvqlfbbfqlj13" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="10_fa7hl"]
-[ext_resource type="Texture2D" uid="uid://dgceclpi5u5lf" path="res://Assets/Sprites/hole.png" id="14_ivvik"]
-[ext_resource type="Texture2D" uid="uid://gwryjk5prq1e" path="res://Assets/Sprites/UIElements/arrow_indicator.png" id="19_s0lvg"]
+[ext_resource type="Texture2D" uid="uid://tked8lqmd2kc" path="res://Assets/Sprites/stress_progressbar_under.png" id="18_s0lvg"]
+[ext_resource type="Texture2D" uid="uid://ca2mdqmw6ekml" path="res://Assets/Sprites/stress_progressbar_progress.png" id="19_t4xp8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0lvg"]
 
@@ -32,93 +32,30 @@ texture = ExtResource("8_oyhfx")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x8ygp"]
 texture = ExtResource("7_w25t7")
 
-[sub_resource type="Animation" id="Animation_jwvxh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Arrow:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Arrow:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(943.636, 919.091)]
-}
-
-[sub_resource type="Animation" id="Animation_t4xp8"]
-resource_name = "updown"
-length = 1.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Arrow:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Arrow:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(943.636, 919.091), Vector2(943.636, 939.091), Vector2(943.636, 896.364), Vector2(943.636, 919.091)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_okt6h"]
-_data = {
-&"RESET": SubResource("Animation_jwvxh"),
-&"updown": SubResource("Animation_t4xp8")
-}
-
 [node name="TicketControl" type="Control"]
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -125.0
-offset_top = -66.0
-offset_right = -125.0
-offset_bottom = -66.0
+offset_left = 238.0
+offset_top = 152.0
+offset_right = -345.0
+offset_bottom = -237.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
+size_flags_vertical = 3
 mouse_filter = 2
 script = ExtResource("1_o2i80")
 
 [node name="Box" type="NinePatchRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 216.0
-offset_top = 101.0
-offset_right = -504.0
-offset_bottom = -304.0
+offset_right = -267.0
+offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.25, 1.25)
@@ -165,13 +102,13 @@ anchors_preset = -1
 anchor_top = 0.17
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -10.8
-offset_top = -22.3527
-offset_right = -10.8
-offset_bottom = -22.3527
+offset_left = 4.18182
+offset_top = -14.4318
+offset_right = 4.18182
+offset_bottom = -14.4318
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(5.5, 5.5)
+scale = Vector2(4.5, 4.5)
 
 [node name="Container" type="Container" parent="Box/HBox/Left"]
 layout_mode = 2
@@ -208,10 +145,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("8_w25t7")
 bbcode_enabled = true
-text = "[right]Dzień dobry.
-Poproszę bilet do kontroli.
-
-[left]Proszę."
+text = "[right]Dzień dobry!
+[left]Dzień dobry."
 scroll_active = false
 scroll_following = true
 metadata/_edit_use_anchors_ = true
@@ -229,10 +164,10 @@ patch_margin_bottom = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/HBox/Middle/OptionBox"]
 layout_mode = 2
-offset_left = 2.0
-offset_top = 4.25
-offset_right = 325.0
-offset_bottom = 269.25
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 283.0
+offset_bottom = 209.0
 theme_override_constants/separation = 0
 
 [node name="Option1" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
@@ -252,7 +187,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_t4xp8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jwvxh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_okt6h")
 theme_override_styles/normal = SubResource("StyleBoxTexture_x8ygp")
-text = "Poproś  o  pokazanie  biletu"
+text = "Poproś o  pokazanie  biletu"
 
 [node name="Option2" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
 layout_mode = 2
@@ -304,63 +239,46 @@ patch_margin_top = 20
 patch_margin_right = 20
 patch_margin_bottom = 20
 
-[node name="Ticket" parent="Box/HBox/DocumentBox" instance=ExtResource("9_ewriu")]
-visible = false
-layout_mode = 2
-offset_left = 304.564
-offset_top = 448.473
-offset_right = 304.564
-offset_bottom = 448.473
-scale = Vector2(2, 2)
-
-[node name="Hole" type="TextureRect" parent="Box/HBox/DocumentBox/Ticket"]
-visible = false
-layout_mode = 0
-offset_left = 45.5
-offset_top = -6.5
-offset_right = 85.5
-offset_bottom = 33.5
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_ivvik")
-
-[node name="Container" type="Container" parent="Box/HBox/DocumentBox"]
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.00556586
-anchor_top = 0.00343643
-anchor_right = 1.00186
-anchor_bottom = 1.00172
-metadata/_edit_use_anchors_ = true
-
 [node name="ButtonClose" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1591.0
-offset_top = 146.0
-offset_right = 1609.0
-offset_bottom = 163.0
+offset_left = 1217.27
+offset_top = 38.1818
+offset_right = 1235.27
+offset_bottom = 55.1818
 scale = Vector2(5.5, 5.5)
 texture_normal = ExtResource("6_wctca")
 texture_pressed = ExtResource("4_d7iwj")
 texture_hover = ExtResource("5_xpyt6")
 
-[node name="Arrow" type="TextureRect" parent="."]
+[node name="Ticket" parent="." instance=ExtResource("9_ewriu")]
 visible = false
-modulate = Color(0.25, 0.25, 0.25, 1)
-layout_mode = 0
-offset_left = 943.636
-offset_top = 898.953
-offset_right = 983.636
-offset_bottom = 938.953
-texture = ExtResource("19_s0lvg")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_okt6h")
-}
+layout_mode = 2
+anchor_left = 0.724144
+anchor_top = 0.63018
+anchor_right = 0.724144
+anchor_bottom = 0.63018
+scale = Vector2(1, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="DocumentMarker" type="Marker2D" parent="."]
-position = Vector2(1267.27, 377.273)
+position = Vector2(922.727, 244.545)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.157068
+anchor_top = -0.184186
+anchor_right = -0.0134256
+anchor_bottom = 0.0019716
+offset_right = -64.05
+offset_bottom = -78.6351
+grow_vertical = 0
+scale = Vector2(3, 2)
+size_flags_horizontal = 3
+value = 46.0
+texture_under = ExtResource("18_s0lvg")
+texture_progress = ExtResource("19_t4xp8")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/Option1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/Option2" to="." method="_on_option_2_pressed"]

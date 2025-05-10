@@ -174,18 +174,16 @@ speed_scale = 0.7
 
 [node name="ToolkitLayer" type="CanvasLayer" parent="."]
 process_mode = 1
+layer = 2
+
+[node name="TicketControl" parent="ToolkitLayer" instance=ExtResource("3_3dryh")]
+visible = false
 
 [node name="Toolkit" parent="ToolkitLayer" instance=ExtResource("5_wowpa")]
 
-[node name="TicketControlLayer" type="CanvasLayer" parent="."]
-process_mode = 1
-layer = 2
-visible = false
-
-[node name="TicketControl" parent="TicketControlLayer" instance=ExtResource("3_3dryh")]
-
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
 process_mode = 1
+visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_i6g32")]
 process_mode = 3

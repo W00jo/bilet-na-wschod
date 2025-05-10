@@ -18,5 +18,6 @@ func control_started():
 
 
 func _on_hole_punch_pressed() -> void:
+	print("Hole punched")
 	$NinePatchRect/HBoxContainer/HolePunch.texture_normal = load("res://Assets/Sprites/hole_punch_tool.png")
-	get_parent().ticket_checked()
+	get_parent().get_node('TicketControl').ticket_checked()

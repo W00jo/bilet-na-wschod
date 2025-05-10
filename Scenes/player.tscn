@@ -1,7 +1,9 @@
-[gd_scene load_steps=61 format=3 uid="uid://wwm4tiq852hf"]
+[gd_scene load_steps=62 format=3 uid="uid://wwm4tiq852hf"]
 
 [ext_resource type="Script" uid="uid://decdo0yokrms" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dvdno1or8t6yk" path="res://Assets/Sprites/player.png" id="2_6t5aa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvnsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("2_6t5aa")
@@ -474,6 +476,7 @@ size = Vector2(24, 21.5)
 size = Vector2(49, 37)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+material = SubResource("ShaderMaterial_cvnsp")
 scale = Vector2(1.5, 2)
 script = ExtResource("1_cvnsp")
 

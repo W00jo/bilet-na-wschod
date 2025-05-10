@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2r23wbfg0p8k"]
+[gd_scene load_steps=10 format=3 uid="uid://d2r23wbfg0p8k"]
 
 [ext_resource type="Texture2D" uid="uid://d0xpxrtvmeqne" path="res://Assets/Sprites/student_id.png" id="1_1leoy"]
 [ext_resource type="Script" uid="uid://716lyreksvpy" path="res://Scripts/student_id.gd" id="1_sgl21"]
@@ -7,6 +7,10 @@
 [ext_resource type="FontFile" uid="uid://dy54cuo4rbn8a" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_sgl21"]
 [ext_resource type="FontFile" uid="uid://csst3yoqdnyvm" path="res://Assets/Fonts/ByteBounce.ttf" id="5_y0fc1"]
 [ext_resource type="Texture2D" uid="uid://bhjgpugjg5rls" path="res://Assets/Sprites/student_id_round_stamp.png" id="6_kxmqv"]
+[ext_resource type="Shader" uid="uid://mvcthl1i5nuk" path="res://Shaders/sepia.gdshader" id="8_y0fc1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y0fc1"]
+shader = ExtResource("8_y0fc1")
 
 [node name="StudentID" type="Node2D"]
 script = ExtResource("1_sgl21")
@@ -26,7 +30,8 @@ texture = ExtResource("1_1leoy")
 [node name="PhotoBase" type="Polygon2D" parent="."]
 position = Vector2(20.7568, 9.66667)
 scale = Vector2(1.21622, 1.16667)
-polygon = PackedVector2Array(-96, -59.7143, -96, -10, -77.5547, -10, -59, -10, -59, -58)
+color = Color(0.847167, 0.85, 0.816, 1)
+polygon = PackedVector2Array(-96, -59.7143, -95.9997, -16.8571, -65.5776, -16.8571, -65.5776, -57.1427)
 
 [node name="LegitymacjaStudencka" type="Label" parent="."]
 anchors_preset = -1
@@ -966,14 +971,20 @@ theme_override_font_sizes/font_size = 32
 text = "99"
 metadata/_edit_use_anchors_ = true
 
-[node name="Photo" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -94.0
-offset_top = -55.0
-offset_right = -54.0
-offset_bottom = -15.0
-pivot_offset = Vector2(2.5, 0)
+[node name="PhotoCont" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_y0fc1")
+offset_left = -99.0
+offset_top = -52.0
+offset_right = 29.0
+offset_bottom = 76.0
+
+[node name="Photo" type="SubViewport" parent="PhotoCont"]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(40, 42)
+size_2d_override_stretch = true
+render_target_update_mode = 4
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

@@ -13,10 +13,12 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-			scale = Vector2(2.25, 2.25)
+			scale = Vector2(2, 2)
 			selected = false
+			z_index = 0
 
 func _on_control_gui_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("LMB"):
-		scale = Vector2(2.75, 2.75)
+		scale = Vector2(2.5, 2.5)
 		selected = true
+		z_index = 1
