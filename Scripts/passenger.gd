@@ -33,11 +33,15 @@ var shoes_colors = [Color.NAVY_BLUE, Color.SADDLE_BROWN, Color.WEB_MAROON, Color
 
 var eye_color = ["green", "blue"].pick_random()
 
+var first_name
+var last_name
+
 var interaction_enabled:bool = false
 
 
 func _ready() -> void:
 	age_range_assigner()
+	personal_data_assigner()
 
 func age_range_assigner():
 	if age>=12 and age<=24:
@@ -53,7 +57,18 @@ func age_range_assigner():
 		
 	texture_assigner()
 	doc_manager.assign_ticket(age, age_range)
+
+func personal_data_assigner():
+	match gender:
+		"m":
+			first_name = $PersonalDataManager.male_names.pick_random()
+			last_name = $PersonalDataManager.male_surnames.pick_random()
+		"f":
+			first_name = $PersonalDataManager.female_names.pick_random()
+			last_name = $PersonalDataManager.female_surnames.pick_random()
+	print(first_name + " " + last_name)
 	
+
 func texture_assigner():
 	body_tex = textures.get_resource(get_random_body_part(gender,"body"))
 	hair_tex = textures.get_resource(get_random_body_part(gender,"hair"))
