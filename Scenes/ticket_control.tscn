@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b80uyautrg11t"]
+[gd_scene load_steps=24 format=3 uid="uid://b80uyautrg11t"]
 
 [ext_resource type="Script" uid="uid://cyfqyufsg3au3" path="res://Scripts/ticket_control.gd" id="1_o2i80"]
 [ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_4tmf3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cxiqi60hmpdii" path="res://Assets/Sprites/UIElements/ui_document_box.png" id="5_7fm02"]
 [ext_resource type="Texture2D" uid="uid://mnpjkiv43ens" path="res://Assets/Sprites/UIElements/button_close_hover.png" id="5_xpyt6"]
 [ext_resource type="Texture2D" uid="uid://cond2jaipmxpy" path="res://Assets/Sprites/UIElements/button_close.png" id="6_wctca"]
+[ext_resource type="Texture2D" uid="uid://da2yv31oue55m" path="res://Assets/Sprites/UIElements/ui_inner_box_under_buttons.png" id="7_ivvik"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="7_w25t7"]
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="8_oyhfx"]
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="8_w25t7"]
@@ -61,11 +62,11 @@ grow_vertical = 2
 scale = Vector2(1.25, 1.25)
 mouse_filter = 0
 texture = ExtResource("2_4tmf3")
-region_rect = Rect2(0, 0, 15, 15)
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
+region_rect = Rect2(0, 0, 120.007, 120.017)
+patch_margin_left = 46
+patch_margin_top = 47
+patch_margin_right = 43
+patch_margin_bottom = 43
 
 [node name="HBox" type="HBoxContainer" parent="Box"]
 layout_mode = 1
@@ -91,10 +92,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("3_a7phc")
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
+region_rect = Rect2(0, 0, 120, 120)
+patch_margin_left = 18
+patch_margin_top = 28
+patch_margin_right = 17
+patch_margin_bottom = 19
 
 [node name="PassengerAvatar" parent="Box/HBox/Left/NinePatchRect" instance=ExtResource("5_4tmf3")]
 layout_mode = 1
@@ -129,18 +131,19 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.49
 mouse_filter = 0
 texture = ExtResource("4_2aeyl")
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
+region_rect = Rect2(0, 0, 60.0266, 60.0212)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
 
 [node name="Dialogue" type="RichTextLabel" parent="Box/HBox/Middle/DialogueBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0214067
-anchor_top = 0.0237288
-anchor_right = 0.981651
-anchor_bottom = 0.979661
+anchor_left = 0.0347222
+anchor_top = 0.0472103
+anchor_right = 0.96875
+anchor_bottom = 0.982833
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("8_w25t7")
@@ -156,18 +159,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.45
-texture = ExtResource("4_2aeyl")
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
+texture = ExtResource("7_ivvik")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/HBox/Middle/OptionBox"]
 layout_mode = 2
 offset_left = 4.0
-offset_top = 5.0
+offset_top = 23.0909
 offset_right = 283.0
-offset_bottom = 209.0
+offset_bottom = 195.091
 theme_override_constants/separation = 0
 
 [node name="Option1" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
@@ -175,10 +178,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.0705882, 0.258824, 0.309804, 1)
-theme_override_colors/font_outline_color = Color(0.0714149, 0.260118, 0.311629, 1)
-theme_override_colors/font_color = Color(0.0705882, 0.258824, 0.309804, 1)
-theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_w25t7")
 theme_override_font_sizes/font_size = 16
@@ -194,10 +197,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.0705882, 0.258824, 0.309804, 1)
-theme_override_colors/font_outline_color = Color(0.0714149, 0.260118, 0.311629, 1)
-theme_override_colors/font_color = Color(0.0705882, 0.258824, 0.309804, 1)
-theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_w25t7")
 theme_override_font_sizes/font_size = 16
@@ -206,7 +209,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_t4xp8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jwvxh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_okt6h")
 theme_override_styles/normal = SubResource("StyleBoxTexture_x8ygp")
-text = "Zapytaj  o  legitymację"
+text = "Zapytaj  o  dokument"
 
 [node name="Option3" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
 visible = false
@@ -234,10 +237,11 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.84
 mouse_filter = 0
 texture = ExtResource("5_7fm02")
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
+region_rect = Rect2(0, 0, 292, 292)
+patch_margin_left = 27
+patch_margin_top = 58
+patch_margin_right = 61
+patch_margin_bottom = 30
 
 [node name="ButtonClose" type="TextureButton" parent="."]
 layout_mode = 0
