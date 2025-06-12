@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da2yv31oue55m"
-path="res://.godot/imported/ui_inner_box_under_buttons.png-122b0a4babd0ab085ba6e47c83e2a88f.ctex"
+uid="uid://drnegoyywdsto"
+path="res://.godot/imported/ui_inner_box_under_buttons.png-83781e522949e4d96fddd921dc473868.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UIElements/ui_inner_box_under_buttons.png"
-dest_files=["res://.godot/imported/ui_inner_box_under_buttons.png-122b0a4babd0ab085ba6e47c83e2a88f.ctex"]
+source_file="res://Scenes/ui_inner_box_under_buttons.png"
+dest_files=["res://.godot/imported/ui_inner_box_under_buttons.png-83781e522949e4d96fddd921dc473868.ctex"]
 
 [params]
 

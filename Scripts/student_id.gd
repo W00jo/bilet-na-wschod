@@ -3,6 +3,19 @@ extends Node2D
 var selected = false
 var is_on_screen:bool
 
+func _ready() -> void:
+	var testdict = {
+		"dict1": {
+			"d1_key1": ["1_1zero", "1_1one", "1_1two"],
+			"d1_key2": ["1_2zero", "1_2one", "1_2two"]
+			},
+		"dict2": {
+			"d1_key1": ["2_1zero", "2_1one", "2_1two"],
+			"d1_key2": ["2_2zero", "2_2one", "2_2two"]
+			}
+		}
+	print(testdict.dict1.d1_key1.pick_random())
+
 func _physics_process(delta: float) -> void:
 	if selected:
 		global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
@@ -22,3 +35,4 @@ func _on_control_gui_input(event: InputEvent) -> void:
 		scale = Vector2(2.5, 2.5)
 		selected = true
 		z_index = 1
+	
