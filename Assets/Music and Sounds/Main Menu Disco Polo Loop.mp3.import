@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cyauvrtlhxyan"
+path="res://.godot/imported/Main Menu Disco Polo Loop.mp3-193a7271f5ccd3f3f96ea7be90db7f1a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music and Sounds/Main Menu Disco Polo Loop.mp3"
+dest_files=["res://.godot/imported/Main Menu Disco Polo Loop.mp3-193a7271f5ccd3f3f96ea7be90db7f1a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
