@@ -7,15 +7,20 @@ var name_lastname
 
 func assign_data():
 	name_lastname = current_passenger.full_name
-	$AlbumNumber.text = str(current_passenger.album_number)
+	$LastName.text = current_passenger.last_name
+	$FirstName.text = current_passenger.first_name
+	$Height.text = current_passenger.height
+	match current_passenger.eye_color:
+		"green":
+			$Eyes.text = "zielone"
+		"blue":
+			$Eyes.text = "niebieskie"
+		"brown":
+			$Eyes.text = "brązowe"
+	$SpecialMarks.text = "nie ma"
+	$Pesel.text = current_passenger.pesel
 	$Signature.text = name_lastname
-	$Name.text = name_lastname
-	match current_passenger.gender:
-		"m":
-			$Suffix.text = "y"
-		"f":
-			$Suffix.text = "a"
-	$Adress.text = current_passenger.adress
+	
 	
 
 func _physics_process(delta: float) -> void:
@@ -23,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 	else:
 		#if global_position <= Vector2(500,40) or global_position >= Vector2(910,400):
-		global_position = lerp(global_position, get_parent().get_node('DocumentMarker'), 10*delta)
+		global_position = lerp(global_position, get_parent().get_node('DocumentMarker').global_position, 10*delta)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

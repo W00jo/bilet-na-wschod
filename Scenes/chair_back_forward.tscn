@@ -8,10 +8,9 @@ size = Vector2(68, 13)
 [node name="ChairBackForward" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 3)
 texture = ExtResource("1_oijav")
 region_enabled = true
-region_rect = Rect2(0, 0, 37, 73)
+region_rect = Rect2(0, 0, 46, 73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

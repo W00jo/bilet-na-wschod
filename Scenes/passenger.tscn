@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://cil42wn4fnd17"]
+[gd_scene load_steps=85 format=3 uid="uid://cil42wn4fnd17"]
 
 [ext_resource type="Script" uid="uid://hv5gif5mgo2b" path="res://Scripts/passenger.gd" id="1_lyrvh"]
 [ext_resource type="Texture2D" uid="uid://bji13v156yfly" path="res://Assets/Sprites/PassengerComponents/Female/Bodies/f_elderly_body_1.png" id="2_ept2x"]
@@ -81,12 +81,14 @@
 [ext_resource type="Texture2D" uid="uid://df8ui1vxl34uu" path="res://Assets/Sprites/PassengerComponents/Male/Shirts/m_youth_shirt_2.png" id="80_wnlf4"]
 [ext_resource type="Texture2D" uid="uid://b4awgbacatm2g" path="res://Assets/Sprites/PassengerComponents/Male/Shoes/m_youth_shoes_1.png" id="81_7agpx"]
 [ext_resource type="Script" uid="uid://mhqdikl06ik5" path="res://Scripts/personal_data_manager.gd" id="81_c025g"]
+[ext_resource type="JSON" path="res://Scripts/Jsons/passenger_adresses.json" id="82_32e6i"]
 [ext_resource type="JSON" path="res://Scripts/Jsons/passenger_names.json" id="82_c025g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyrvh"]
+size = Vector2(25.1429, 26)
 
 [node name="Passenger" type="Area2D" groups=["Passenger"]]
-scale = Vector2(3.25, 3.25)
+scale = Vector2(3.5, 3.5)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_lyrvh")
@@ -94,6 +96,8 @@ script = ExtResource("1_lyrvh")
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="InteractionArea" type="CollisionShape2D" parent="."]
+position = Vector2(2.38419e-07, 2.38419e-07)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lyrvh")
 
 [node name="InteractLabel" type="Label" parent="."]
@@ -104,8 +108,8 @@ offset_right = 142.6
 offset_bottom = 10.4
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 30
 text = "[E] Porozmawiaj"
 
@@ -119,7 +123,7 @@ script = ExtResource("80_p16m8")
 script = ExtResource("81_c025g")
 
 [node name="JSONs" type="ResourcePreloader" parent="."]
-resources = [PackedStringArray("passenger_names"), [ExtResource("82_c025g")]]
+resources = [PackedStringArray("passenger_adresses", "passenger_names"), [ExtResource("82_32e6i"), ExtResource("82_c025g")]]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

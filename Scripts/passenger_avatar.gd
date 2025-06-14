@@ -64,4 +64,6 @@ func eyes_getter():
 			eye_tex= texture_preloader.get_resource("eyes_green")
 		"blue":
 			eye_tex= texture_preloader.get_resource("eyes_blue")
+		"brown":
+			eye_tex= texture_preloader.get_resource("eyes_brown")
 	return eye_tex

@@ -35,18 +35,18 @@ func spawn_passengers():
 func calculate_area_position(cell_pos, global_pos):
 	var passenger_position:Vector2
 	match cell_pos.y:
-		9:
-			passenger_position.y = 575
-			passenger_position.x = global_pos.x + 10
-		10:
-			passenger_position.y = 575
-			passenger_position.x = global_pos.x - 10
-		17:
-			passenger_position.y = 775
-			passenger_position.x = global_pos.x + 10
-		18:
-			passenger_position.y = 775
-			passenger_position.x = global_pos.x - 10
+		37:
+			passenger_position.y = 590
+			passenger_position.x = global_pos.x + 25
+		41:
+			passenger_position.y = 590
+			passenger_position.x = global_pos.x - 25
+		58:
+			passenger_position.y = 745
+			passenger_position.x = global_pos.x + 25
+		62:
+			passenger_position.y = 745
+			passenger_position.x = global_pos.x - 25
 	return passenger_position
 			
 

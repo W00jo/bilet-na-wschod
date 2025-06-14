@@ -14,6 +14,13 @@ var age_range:String
 #  młodziez  młodsi-dorośli  starsi-dorośli  seniorzy  starcy
 var ticket_type:String
 var document:PackedScene
+var first_name
+var last_name
+var full_name
+var album_number = randi_range(21370, 99769)
+var adress
+var height = ["niski", "średni", "wysoki"].pick_random()
+var pesel
 
 var body_tex:Texture
 var hair_tex:Texture
@@ -31,10 +38,8 @@ var shirt_colors = [Color.DARK_ORANGE, Color.MEDIUM_AQUAMARINE, Color.DARK_OLIVE
 var pants_colors = [Color.WEB_PURPLE, Color.WEB_GRAY, Color.WEB_GREEN, Color.STEEL_BLUE]
 var shoes_colors = [Color.NAVY_BLUE, Color.SADDLE_BROWN, Color.WEB_MAROON, Color.DIM_GRAY]
 
-var eye_color = ["green", "blue"].pick_random()
+var eye_color = ["green", "blue", "brown"].pick_random()
 
-var first_name
-var last_name
 
 var interaction_enabled:bool = false
 
@@ -66,7 +71,9 @@ func personal_data_assigner():
 		"f":
 			first_name = $PersonalDataManager.female_names.pick_random()
 			last_name = $PersonalDataManager.female_surnames.pick_random()
-	print(first_name + " " + last_name)
+	full_name = first_name + " " + last_name
+	adress = $PersonalDataManager.adresses.pick_random()
+	
 	
 
 func texture_assigner():
@@ -158,6 +165,7 @@ func hide_interaction_label():
 	
 func _input(event: InputEvent) -> void:
 	if interaction_enabled and $InteractLabel.visible and Input.is_action_just_pressed("Interact"):
+		PassengerDataBus.currently_checked_passenger = self
 		PassengerDataBus.transfer_passenger_data(avatar_textures, avatar_colors, eye_color)
 		PassengerDataBus.game.start_ticket_control()
-		PassengerDataBus.currently_checked_passenger = self
+		

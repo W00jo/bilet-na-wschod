@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://biklendtsf7dq"]
+[gd_scene load_steps=25 format=3 uid="uid://biklendtsf7dq"]
 
 [ext_resource type="Script" uid="uid://dvwkktrn6dvo0" path="res://Scripts/game.gd" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bekremb8qkq02" path="res://Scenes/parallax_bg.tscn" id="1_wrm1d"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://b80uyautrg11t" path="res://Scenes/ticket_control.tscn" id="3_3dryh"]
 [ext_resource type="PackedScene" uid="uid://dig63qkl2leqy" path="res://Scenes/toolkit.tscn" id="5_wowpa"]
 [ext_resource type="PackedScene" uid="uid://db0se2prb2bru" path="res://Scenes/pause_menu.tscn" id="6_i6g32"]
+[ext_resource type="Texture2D" uid="uid://dsd866rvd5tyu" path="res://Assets/Sprites/UIElements/stress_bar_under.png" id="6_rku1e"]
 [ext_resource type="PackedScene" uid="uid://dg4cgtxqjd65l" path="res://Scenes/start_menu.tscn" id="7_h4fw4"]
+[ext_resource type="Texture2D" uid="uid://bp46xr7w38ybf" path="res://Assets/Sprites/UIElements/stress_bar_over.png" id="7_rfjv2"]
+[ext_resource type="Texture2D" uid="uid://di7qdb2j2bdsg" path="res://Assets/Sprites/UIElements/stress_bar_progress.png" id="8_1phco"]
 [ext_resource type="Texture2D" uid="uid://b5uk131mh71kd" path="res://Assets/Sprites/UIElements/splash_screen.png" id="8_ldgsr"]
 [ext_resource type="AudioStream" uid="uid://egsp032xt05" path="res://Assets/SFX/choochoo_spedup.mp3" id="9_o5yvi"]
 
@@ -180,6 +183,17 @@ layer = 2
 visible = false
 
 [node name="Toolkit" parent="ToolkitLayer" instance=ExtResource("5_wowpa")]
+
+[node name="StressBar" type="TextureProgressBar" parent="ToolkitLayer"]
+offset_left = -102.0
+offset_top = -33.0
+offset_right = 198.0
+offset_bottom = 67.0
+scale = Vector2(2, 2)
+texture_under = ExtResource("6_rku1e")
+texture_over = ExtResource("7_rfjv2")
+texture_progress = ExtResource("8_1phco")
+texture_progress_offset = Vector2(90, 0)
 
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
 process_mode = 1

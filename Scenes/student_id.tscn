@@ -664,14 +664,13 @@ theme_override_font_sizes/font_size = 32
 text = "56514"
 
 [node name="Signature" type="Label" parent="."]
-offset_left = -74.0
-offset_top = 1.0
-offset_right = 170.0
-offset_bottom = 47.0
+offset_left = -75.0
+offset_right = 169.0
+offset_bottom = 46.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("4_sgl21")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "JanKowalski"
 
 [node name="Name" type="Label" parent="."]
@@ -707,7 +706,18 @@ theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
 text = "Lublinie"
 
-[node name="Adress2" type="Label" parent="."]
+[node name="Adress" type="Label" parent="."]
+offset_left = -81.0
+offset_top = 28.0
+offset_right = 165.0
+offset_bottom = 74.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "ul. Głęboka 7 m 8"
+
+[node name="Stamp" type="Label" parent="."]
 offset_left = -64.0
 offset_top = 33.0
 offset_right = 225.0
@@ -723,17 +733,6 @@ tel. 81 121 34 00 fax 81 121 34 03
 "
 horizontal_alignment = 1
 
-[node name="Adress" type="Label" parent="."]
-offset_left = -81.0
-offset_top = 28.0
-offset_right = 165.0
-offset_bottom = 74.0
-scale = Vector2(0.2, 0.2)
-theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
-theme_override_fonts/font = ExtResource("3_g8tnp")
-theme_override_font_sizes/font_size = 32
-text = "ul. Głęboka 7 m 8"
-
 [node name="Date" type="Label" parent="."]
 offset_left = -90.0
 offset_top = 46.0
@@ -743,17 +742,17 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "Lbn 06.05.99r."
+text = "Lbn 01.09.94r."
 
 [node name="IssuerSignature" type="Label" parent="."]
-offset_left = -48.0
-offset_top = 47.0
-offset_right = 198.0
-offset_bottom = 93.0
+offset_left = -47.0
+offset_top = 49.0
+offset_right = 199.0
+offset_bottom = 95.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
-theme_override_fonts/font = ExtResource("3_g8tnp")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("4_sgl21")
+theme_override_font_sizes/font_size = 20
 text = "Aleksandra Nowak"
 
 [node name="Line2D" type="Line2D" parent="."]

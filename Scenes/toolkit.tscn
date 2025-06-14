@@ -14,7 +14,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 931.0
+offset_top = 961.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tufta")
@@ -39,7 +39,7 @@ layout_mode = 0
 offset_left = 321.0
 offset_top = 8.0
 offset_right = 1584.0
-offset_bottom = 132.0
+offset_bottom = 110.0
 
 [node name="Watch" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2

@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var anim = $"../AnimationPlayer"
 
-var min_wagons = 3
-var max_wagons = 4
+var min_wagons = 2
+var max_wagons = 3
 var wagon_scenes = ["res://Scenes/wagon_2.tscn"]
 var player_scene = load("res://Scenes/player.tscn")
 

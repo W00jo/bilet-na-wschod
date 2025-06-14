@@ -7,5 +7,14 @@ func _on_start_button_pressed() -> void:
 	visible = false
 
 
+func _on_credits_button_pressed() -> void:
+	$Darken.visible = true
+	$Credits.visible = true
+	
+func _on_credits_pressed() -> void:
+	$Darken.visible = false
+	$Credits.visible = false
+
+
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
