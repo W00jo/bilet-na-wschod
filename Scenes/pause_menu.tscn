@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://db0se2prb2bru"]
+[gd_scene load_steps=15 format=3 uid="uid://db0se2prb2bru"]
 
 [ext_resource type="Shader" uid="uid://cxnskg0bi7o7w" path="res://Shaders/blur.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://fr68yidptdhf" path="res://Scripts/pause.gd" id="1_sjs17"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="4_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="5_stj27"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="6_ix48p"]
+[ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="8_u8tnp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0w1u"]
 shader = ExtResource("1_emv3i")
@@ -117,6 +118,9 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_uscpe")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_taale")
 theme_override_styles/normal = SubResource("StyleBoxTexture_q7fiq")
 text = "Wyjdź do menu"
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_u8tnp")
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

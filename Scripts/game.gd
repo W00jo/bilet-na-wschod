@@ -4,16 +4,18 @@ extends Node2D
 @onready var ticket_control = $ToolkitLayer/TicketControl
 
 
-#func _ready() -> void:
-	#await get_tree().create_timer(5).timeout
-	#$KonduktorzySplashScreen.queue_free()
-	#get_tree().paused = true
-	#$StartMenu.visible = true
-	#### set ChooChoo to Autoplay
+func _ready() -> void:
+	await get_tree().create_timer(5).timeout
+	$KonduktorzySplashScreen.queue_free()
+	get_tree().paused = true
+	$StartMenu.visible = true
+	### set ChooChoo to Autoplay
+	#await get_tree().create_timer(2).timeout
+	$Music.play()
 	
-#### UNCOMMENT FOR THE DIALOGUE TUTORIAL
-	#$ToolkitLayer/Toolkit.start_dialogue()
-	#$TutorialLayer.add_child(tutorial_dialogue)
+#func start_dialogue():
+	#get_tree().paused = false
+	#$ToolkitLayer/TutorialDialogue.start_tutorial_dialogue()
 
 func start_ticket_control():
 	ticket_control.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b80uyautrg11t"]
+[gd_scene load_steps=23 format=3 uid="uid://b80uyautrg11t"]
 
 [ext_resource type="Script" uid="uid://cyfqyufsg3au3" path="res://Scripts/ticket_control.gd" id="1_o2i80"]
 [ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_4tmf3"]
@@ -15,6 +15,8 @@
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="8_w25t7"]
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_fa7hl"]
 [ext_resource type="Texture2D" uid="uid://dvqlfbbfqlj13" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="10_fa7hl"]
+[ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="16_fa7hl"]
+[ext_resource type="AudioStream" uid="uid://dkuchwlj8aal" path="res://Assets/SFX/ticket_validation.wav" id="17_ivvik"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0lvg"]
 
@@ -268,6 +270,34 @@ position = Vector2(934.545, 504.545)
 
 [node name="DocumentMarker" type="Marker2D" parent="."]
 position = Vector2(922.727, 206.364)
+
+[node name="MagnifiedView" type="CanvasLayer" parent="."]
+layer = 3
+visible = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MagnifiedView"]
+offset_left = 268.0
+offset_top = 166.0
+offset_right = 1668.0
+offset_bottom = 966.0
+
+[node name="SubViewport" type="SubViewport" parent="MagnifiedView/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1400, 750)
+render_target_update_mode = 0
+
+[node name="MagnDocMarker" type="Marker2D" parent="MagnifiedView/SubViewportContainer/SubViewport"]
+position = Vector2(680, 371)
+
+[node name="MagnTicketMarker" type="Marker2D" parent="MagnifiedView/SubViewportContainer/SubViewport"]
+position = Vector2(472, 246)
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_fa7hl")
+
+[node name="TicketValidationSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_ivvik")
 
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket" to="." method="_on_ask_ticket_pressed"]
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument" to="." method="_on_ask_document_pressed"]

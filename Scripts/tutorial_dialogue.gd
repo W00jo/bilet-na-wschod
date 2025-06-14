@@ -14,12 +14,8 @@ var greeting_dialogue = ["Czołem, konduktorze! Nowy na trasie, co?",
 var page = 0
 
 
-func _ready() -> void:
-	get_parent().visible = false
-	await get_tree().create_timer(0.25).timeout
-	get_parent().visible = true
-	set_modulate(Color.TRANSPARENT)
-	get_tree().paused = true
+func start_tutorial_dialogue():
+	visible = true
 	$ArrowIndicator.visible = false
 	tween = create_tween()
 	tween.tween_property(self, "modulate", Color.WHITE, 0.1)
@@ -37,7 +33,7 @@ func _on_timer_timeout() -> void:
 		anim.play("arrow_next")
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Dialogue"):
+	if Input.is_action_just_pressed("Dialogue") and visible == true:
 		if dialogue_label.get_visible_characters() > dialogue_label.get_total_character_count():
 			if page < greeting_dialogue.size()-1:
 				page += 1
@@ -52,6 +48,4 @@ func end_dialogue_sequence():
 	tween = create_tween()
 	tween.tween_property(self, "modulate", Color.TRANSPARENT, 0.1)
 	await tween.finished
-	get_parent().visible = false
-	get_parent().get_parent().get_node('ToolkitLayer/Toolkit').undialogue()
 	get_tree().paused = false

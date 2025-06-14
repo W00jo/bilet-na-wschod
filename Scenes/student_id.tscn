@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2r23wbfg0p8k"]
+[gd_scene load_steps=12 format=3 uid="uid://d2r23wbfg0p8k"]
 
 [ext_resource type="Texture2D" uid="uid://d0xpxrtvmeqne" path="res://Assets/Sprites/student_id.png" id="1_1leoy"]
 [ext_resource type="Script" uid="uid://716lyreksvpy" path="res://Scripts/student_id.gd" id="1_sgl21"]
@@ -8,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://csst3yoqdnyvm" path="res://Assets/Fonts/ByteBounce.ttf" id="5_y0fc1"]
 [ext_resource type="Texture2D" uid="uid://bhjgpugjg5rls" path="res://Assets/Sprites/student_id_round_stamp.png" id="6_kxmqv"]
 [ext_resource type="Shader" uid="uid://mvcthl1i5nuk" path="res://Shaders/sepia.gdshader" id="8_y0fc1"]
+[ext_resource type="Texture2D" uid="uid://b164d3d1cjr44" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="9_kxmqv"]
+[ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="10_ojrje"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y0fc1"]
 shader = ExtResource("8_y0fc1")
@@ -992,5 +994,17 @@ offset_left = -101.0
 offset_top = -63.0
 offset_right = 100.0
 offset_bottom = 65.0
+
+[node name="MagnifyInstruction" type="TextureRect" parent="."]
+visible = false
+offset_left = -24.0
+offset_top = -94.0
+offset_right = 28.0
+offset_bottom = -54.0
+scale = Vector2(0.938, 0.75)
+texture = ExtResource("9_kxmqv")
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ojrje")
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]

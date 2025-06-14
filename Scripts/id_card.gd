@@ -36,10 +36,13 @@ func _input(event: InputEvent) -> void:
 			scale = Vector2(2, 2)
 			selected = false
 			z_index = 0
+			#$ButtonSFX.play()
 
 func _on_control_gui_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("LMB"):
-		scale = Vector2(2.5, 2.5)
+		scale = Vector2(4, 4)
 		selected = true
 		z_index = 1
+	if Input.is_action_just_pressed("LMB"):
+		$ButtonSFX.play()
 	
