@@ -63,6 +63,6 @@ func _on_button_close_pressed() -> void:
 	remove_child(document)
 	ticket.queue_free()
 	$ButtonSFX.play()
-	
+	get_parent().get_node('Toolkit/NinePatchRect/HBoxContainer/HolePunch').disabled = true
 	
 	
