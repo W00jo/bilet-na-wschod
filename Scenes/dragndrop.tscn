@@ -10,4 +10,7 @@
 polygon = PackedVector2Array(500, 44, 499, 419, 906, 418, 911, 45, 502, 43, 505, 28, 921, 29, 916, 435, 485, 440, 490, 27, 505, 28)
 
 [node name="Ticket" parent="." instance=ExtResource("1_ewkey")]
-position = Vector2(690, 201)
+offset_left = 690.0
+offset_top = 201.0
+offset_right = 690.0
+offset_bottom = 201.0
