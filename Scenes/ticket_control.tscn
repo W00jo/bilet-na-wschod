@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cxiqi60hmpdii" path="res://Assets/Sprites/UIElements/ui_document_box.png" id="5_7fm02"]
 [ext_resource type="Texture2D" uid="uid://mnpjkiv43ens" path="res://Assets/Sprites/UIElements/button_close_hover.png" id="5_xpyt6"]
 [ext_resource type="Texture2D" uid="uid://cond2jaipmxpy" path="res://Assets/Sprites/UIElements/button_close.png" id="6_wctca"]
-[ext_resource type="Texture2D" uid="uid://da2yv31oue55m" path="res://Assets/Sprites/UIElements/ui_inner_box_under_buttons.png" id="7_ivvik"]
+[ext_resource type="Texture2D" uid="uid://drnegoyywdsto" path="res://Assets/Sprites/UIElements/ui_inner_box_under_buttons.png" id="7_ivvik"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="7_w25t7"]
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="8_oyhfx"]
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="8_w25t7"]
