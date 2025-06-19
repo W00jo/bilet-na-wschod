@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://xl5t10h5uhae"]
+
+[ext_resource type="Script" uid="uid://b2484cdi8etxu" path="res://Scripts/test_dialogue.gd" id="1_ul7up"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ul7up")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 299.0
+offset_right = 1420.0
+offset_bottom = 779.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 3.0
+offset_right = 757.0
+offset_bottom = 398.0
+bbcode_enabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 713.0
+offset_right = 1425.0
+offset_bottom = 787.0
+
+[node name="Bilet" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Bilet"
+
+[node name="Id" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "ID"
+
+[connection signal="pressed" from="VBoxContainer/Bilet" to="." method="_on_bilet_pressed"]
+[connection signal="pressed" from="VBoxContainer/Id" to="." method="_on_id_pressed"]

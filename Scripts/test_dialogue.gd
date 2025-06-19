@@ -9,11 +9,7 @@ var dialogue = {
 		"greetings": ["Dzień dobry!", "Czołem Panie konduktorze!"],
 		"ticket_yes": ["Proszę oto bilet, proszę Pana."],
 		"ticket_no": ["O nie... chyba mi wypadł..."],
-<<<<<<< Updated upstream:Scripts/dialogues_test.gd
-		"id_yes": ["Proszę bardzo. [P] Wszystko się zgadza, mam nadzieję?"],
-=======
 		"id_yes": ["Proszę bardzo. Wszystko się zgadza, prawda?"],
->>>>>>> Stashed changes:Scripts/test_dialogue.gd
 		"id_no": ["Chyba został w innych spodniach..."]
 	},
 	"rude": {
@@ -34,6 +30,8 @@ var dialogue = {
 
 var dialogue_box: RichTextLabel
 var personality: String
+var bilet_button: Button
+var id_button: Button
 
 # Helper to type out only the dialogue, not the tags
 func show_text_typewriter(bbcode_blocks: Array, prefix: String = "") -> void:
@@ -66,18 +64,14 @@ func build_bbcode_from_blocks(blocks: Array) -> String:
 
 func _ready():
 	dialogue_box = $Panel/RichTextLabel
-	# Przy starcie sceny powinno wybierać losowo osbowość :3
+	bilet_button = $VBoxContainer/Bilet
+	id_button = $VBoxContainer/Id
 	var personalities = ["polite", "rude", "fraidy"]
 	personality = personalities.pick_random()
-	# "greetings" używa tylko na starcie
 	var greeting = dialogue[personality]["greetings"].pick_random()
-<<<<<<< Updated upstream:Scripts/dialogues_test.gd
-	dialogue_box.text = "[left]" + greeting + "[/left]"
-=======
 	var blocks = build_bbcode_blocks([{"align": "left", "text": greeting}])
 	displayed_bbcode = build_bbcode_from_blocks(blocks)
 	dialogue_box.text = displayed_bbcode
->>>>>>> Stashed changes:Scripts/test_dialogue.gd
 
 func _on_bilet_pressed():
 	if is_typing:
@@ -85,10 +79,6 @@ func _on_bilet_pressed():
 	var yes_or_no = ["ticket_yes", "ticket_no"].pick_random()
 	var npc_text = dialogue[personality][yes_or_no].pick_random()
 	var player_text = "Proszę bilet"
-<<<<<<< Updated upstream:Scripts/dialogues_test.gd
-	dialogue_box.text = "[left]%s[/left]\n[right]%s[/right]" % [npc_text, player_text]
-	print("Bilet pressed, personality:", personality, "key:", yes_or_no, "npc:", npc_text)
-=======
 	var new_lines = [
 		{"align": "right", "text": player_text},
 		{"align": "left", "text": npc_text}
@@ -98,18 +88,12 @@ func _on_bilet_pressed():
 	displayed_bbcode += build_bbcode_from_blocks(blocks)
 	bilet_button.disabled = true
 	print("Bilet pressed, personality: ", personality, "key: ", yes_or_no, "npc: ", npc_text)
->>>>>>> Stashed changes:Scripts/test_dialogue.gd
 
 func _on_id_pressed():
 	if is_typing:
 		return
 	var yes_or_no = ["id_yes", "id_no"].pick_random()
 	var npc_text = dialogue[personality][yes_or_no].pick_random()
-<<<<<<< Updated upstream:Scripts/dialogues_test.gd
-	var player_text = "Proszę bilet"
-	dialogue_box.text = "[left]%s[/left]\n[right]%s[/right]" % [npc_text, player_text]
-	print("Bilet pressed, personality:", personality, "key:", yes_or_no, "npc:", npc_text)
-=======
 	var player_text = "Proszę się wylegitymować"
 	var new_lines = [
 		{"align": "right", "text": player_text},
@@ -131,4 +115,3 @@ func parse_bbcode_lines(bbcode: String) -> Array:
 		var text = result.get_string(2)
 		lines.append({"align": align, "text": text})
 	return lines
->>>>>>> Stashed changes:Scripts/test_dialogue.gd
