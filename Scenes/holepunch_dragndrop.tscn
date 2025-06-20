@@ -8,17 +8,23 @@
 script = ExtResource("1_kkgm5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_6ti0c")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -165.0
-offset_top = -146.0
-offset_right = 153.0
-offset_bottom = 159.0
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 22.0
+offset_bottom = 24.0
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_sh62t")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(22, -20)
+collide_with_areas = true
+collide_with_bodies = false
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]

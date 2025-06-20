@@ -20,7 +20,7 @@ shader_parameter/use_different_texture = true
 shader_parameter/mask_texture = ExtResource("3_ppn6r")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iydsi"]
-size = Vector2(38, 82)
+size = Vector2(66, 165)
 
 [node name="Ticket" type="Control"]
 layout_mode = 3
@@ -120,11 +120,10 @@ theme_override_fonts/font = ExtResource("2_iydsi")
 theme_override_font_sizes/font_size = 0
 text = "TU   KASOWAĆ"
 
-[node name="ValidationArea" type="Area2D" parent="."]
-visible = false
+[node name="ValidationArea" type="Area2D" parent="." groups=["TicketArea"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ValidationArea"]
-position = Vector2(53, 3)
+position = Vector2(169, 48)
 shape = SubResource("RectangleShape2D_iydsi")
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]

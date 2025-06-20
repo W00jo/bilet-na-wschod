@@ -11,12 +11,6 @@ func assign_data():
 	$AlbumNumber.text = str(current_passenger.album_number)
 	$Signature.text = name_lastname
 	$Name.text = name_lastname
-	match current_passenger.gender:
-		"m":
-			$Suffix.text = "y"
-		"f":
-			$Suffix.text = "a"
-	$Adress.text = current_passenger.adress
 	
 
 func _physics_process(delta: float) -> void:

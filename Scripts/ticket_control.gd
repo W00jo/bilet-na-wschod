@@ -38,9 +38,10 @@ func set_document_data():
 	document.name_lastname = PassengerDataBus.currently_checked_passenger.full_name
 	document.assign_data()
 
-func ticket_checked():
+func validate_ticket():
 	if is_ticket_checked == false:
 		ticket.get_node("TextureAndLabels").material.set_shader_parameter("mask_size", Vector2(0.2, 0.25))
+		ticket.get_node("ValidationArea").queue_free()
 		is_ticket_checked = true
 		$TicketValidationSFX.play()
 		PassengerDataBus.currently_checked_passenger.is_skasowaned = true
@@ -49,8 +50,8 @@ func ticket_checked():
 func _on_ask_ticket_pressed() -> void:
 	if is_ticket_checked == false:
 		ticket.visible = true
-		PassengerDataBus.game.get_node('ToolkitLayer/Toolkit').control_started()
-		get_parent().get_node('Toolkit/NinePatchRect/HBoxContainer/HolePunch').disabled = false
+		#PassengerDataBus.game.get_node('ToolkitLayer/Toolkit').control_started()
+		#get_parent().get_node('Toolkit/NinePatchRect/HBoxContainer/HolePunch').disabled = false
 		$ButtonSFX.play()
 
 
@@ -63,6 +64,5 @@ func _on_button_close_pressed() -> void:
 	remove_child(document)
 	ticket.queue_free()
 	$ButtonSFX.play()
-	get_parent().get_node('Toolkit/NinePatchRect/HBoxContainer/HolePunch').disabled = true
 	
 	
