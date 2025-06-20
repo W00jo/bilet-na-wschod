@@ -11,7 +11,7 @@ func _ready() -> void:
 	$StartMenu.visible = true
 	### set ChooChoo to Autoplay
 	#await get_tree().create_timer(2).timeout
-	$Music.play()
+	$MenuMusic.play()
 	
 #func start_dialogue():
 	#get_tree().paused = false

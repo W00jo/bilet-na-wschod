@@ -6,6 +6,8 @@ func _on_start_button_pressed() -> void:
 	get_tree().paused = false
 	visible = false
 	$ButtonSFX.play()
+	$"../MenuMusic".stop()
+	$"../GameMusic".play()
 	#await get_tree().create_timer(2).timeout
 	#get_parent().start_dialogue()
 

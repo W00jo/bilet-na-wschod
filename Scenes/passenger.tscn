@@ -97,7 +97,6 @@ script = ExtResource("1_lyrvh")
 
 [node name="InteractionArea" type="CollisionShape2D" parent="."]
 position = Vector2(2.38419e-07, 2.38419e-07)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lyrvh")
 
 [node name="InteractLabel" type="Label" parent="."]
