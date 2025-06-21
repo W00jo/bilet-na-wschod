@@ -199,15 +199,15 @@ texture_progress_offset = Vector2(90, 0)
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_i6g32")]
 process_mode = 3
-layer = 3
+layer = 4
 visible = false
 
 [node name="StartMenu" parent="." instance=ExtResource("7_h4fw4")]
-layer = 3
+layer = 4
 visible = false
 
 [node name="KonduktorzySplashScreen" type="CanvasLayer" parent="."]
-layer = 4
+layer = 5
 visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="KonduktorzySplashScreen"]

@@ -9,6 +9,7 @@ var is_skasowaned = false
 
 var gender = ["m","f"].pick_random()
 var age = randi_range(12, 95)
+#var age = randi_range(19, 20)
 var age_range:String
 #  15-24  25-39  40-64  65-79  80-95
 #  młodziez  młodsi-dorośli  starsi-dorośli  seniorzy  starcy
@@ -20,6 +21,7 @@ var full_name
 var album_number = randi_range(21370, 99769)
 var adress
 var height = ["niski", "średni", "wysoki"].pick_random()
+var birth_date
 var pesel
 
 var body_tex:Texture
@@ -27,6 +29,7 @@ var hair_tex:Texture
 var shirt_tex:Texture
 var pants_tex:Texture
 var shoes_tex:Texture
+var eyes_tex:Texture
 
 
 var avatar_textures = []
@@ -82,6 +85,7 @@ func texture_assigner():
 	shirt_tex = textures.get_resource(get_random_body_part(gender,"shirt"))
 	pants_tex = textures.get_resource(get_random_body_part(gender,"pants"))
 	shoes_tex = textures.get_resource(get_random_body_part(gender,"shoes"))
+	eyes_tex = textures.get_resource(get_random_body_part(gender,"eyes"))
 	
 	passenger_dress_up()
 
@@ -118,13 +122,20 @@ func passenger_dress_up():
 
 func get_random_body_part(gender, body_part:String):
 	var body_part_textures = textures.get_resource_list()
-	var body_part_textures_to_rand = []
-	for bp_tex in body_part_textures:
-		if bp_tex.begins_with(gender + "_" + age_range + "_" + body_part):
-			body_part_textures_to_rand.append(bp_tex)
-	var texture = body_part_textures_to_rand.pick_random()
-	avatar_texture_collector(gender,body_part,texture)
-	return texture
+	if body_part != "eyes":
+		var body_part_textures_to_rand = []
+		for bp_tex in body_part_textures:
+			if bp_tex.begins_with(gender + "_" + age_range + "_" + body_part):
+				body_part_textures_to_rand.append(bp_tex)
+		var texture = body_part_textures_to_rand.pick_random()
+		avatar_texture_collector(gender,body_part,texture)
+		return texture
+	else:
+		for bp_tex in body_part_textures:
+			if bp_tex.ends_with(age_range + "_" + body_part + "_" + eye_color):
+				var texture = bp_tex
+				avatar_texture_collector(gender, body_part, texture)
+				return texture
 
 
 func texture_setter(component, comp_tex):
@@ -138,7 +149,7 @@ func color_setter(component, comp_color_arr):
 		component.set_modulate(rand_color)
 
 func avatar_texture_collector(gender, body_part, file_name):
-	if body_part == "body" or body_part == "hair" or body_part == "shirt":
+	if body_part == "body" or body_part == "hair" or body_part == "shirt" or body_part == "eyes":
 		avatar_textures.append(file_name)
 		
 
@@ -166,6 +177,7 @@ func hide_interaction_label():
 func _input(event: InputEvent) -> void:
 	if interaction_enabled and $InteractLabel.visible and Input.is_action_just_pressed("Interact") and is_skasowaned == false:
 		PassengerDataBus.currently_checked_passenger = self
+		interaction_enabled = false
 		PassengerDataBus.transfer_passenger_data(avatar_textures, avatar_colors, eye_color)
 		PassengerDataBus.game.start_ticket_control()
 		

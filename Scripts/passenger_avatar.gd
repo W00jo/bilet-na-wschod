@@ -10,7 +10,6 @@ var eye_tex
 var skin_color:Color
 var hair_color:Color
 var shirt_color:Color
-var eye_color:String
 
 func _ready() -> void:
 	PassengerDataBus.passenger_avatar = self
@@ -23,12 +22,12 @@ func get_texture(texture_array):
 	body_tex = texture_preloader.get_resource(texture_array[0])
 	hair_tex = texture_preloader.get_resource(texture_array[1])
 	shirt_tex = texture_preloader.get_resource(texture_array[2])
+	eye_tex = texture_preloader.get_resource(texture_array[3])
 
 func get_color_scheme(colors, eyes):
 	skin_color = colors[0]
 	hair_color = colors[1]
 	shirt_color = colors[2]
-	eye_color = eyes
 	draw_avatar()
 
 
@@ -40,7 +39,7 @@ func draw_avatar():
 	body.set_scale(Vector2(0.7,0.7))
 
 	var eyes = TextureRect.new()
-	eyes.set_texture(eyes_getter())
+	eyes.set_texture(eye_tex)
 	add_child(eyes)
 	eyes.set_scale(Vector2(0.7,0.7))
 	
@@ -55,15 +54,3 @@ func draw_avatar():
 	shirt.set_modulate(shirt_color)
 	add_child(shirt)
 	shirt.set_scale(Vector2(0.7,0.7))
-	
-	
-func eyes_getter():
-	eye_tex
-	match eye_color:
-		"green":
-			eye_tex= texture_preloader.get_resource("eyes_green")
-		"blue":
-			eye_tex= texture_preloader.get_resource("eyes_blue")
-		"brown":
-			eye_tex= texture_preloader.get_resource("eyes_brown")
-	return eye_tex

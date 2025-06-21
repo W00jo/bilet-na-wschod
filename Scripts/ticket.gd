@@ -8,12 +8,16 @@ var selected = false
 var buy_date = "      07.04.1999"
 var ticket_type
 
+func _ready() -> void:
+	$TextureAndLabels.material.set_shader_parameter("mask_size", Vector2(0, 0))
+
 func _physics_process(delta: float) -> void:
-	if selected:
-		global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
-	else:
-		#if global_position <= Vector2(500,40) or global_position >= Vector2(910,400):
-		global_position = lerp(global_position, get_parent().get_node('TicketMarker').global_position, 10*delta)
+	if get_parent() is not SubViewport:
+		if selected:
+			global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
+		else:
+			#if global_position <= Vector2(500,40) or global_position >= Vector2(910,400):
+			global_position = lerp(global_position, get_parent().get_node('TicketMarker').global_position, 10*delta)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("LMB"):

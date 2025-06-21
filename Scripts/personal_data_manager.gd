@@ -12,13 +12,21 @@ var female_names = []
 var female_surnames = []
 
 var adresses = []
+var months = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"]
 
-var current_year = 99
+var current_year = 1999
 var pesel
+var birth_date
+
+var b_year
+var b_month
+var b_month_num
+var b_day
 
 func _ready() -> void:
 	read_names()
 	read_adresses()
+	passenger.birth_date = generate_birth_date()
 	passenger.pesel = generate_pesel()
 
 func read_names():
@@ -32,17 +40,37 @@ func read_adresses():
 	adresses_dict = json_preloader.get_resource("passenger_adresses").get_data()
 	adresses = adresses_dict["adresses"]
 
+func generate_birth_date():
+	b_year = current_year - passenger.age
+	b_month = months.pick_random()
+	b_month_num = months.find(b_month) + 1
+	b_day = randi_range(1,28)
+	birth_date = str(b_day) + " " + b_month + " " + str(b_year) + "r."
+	return birth_date
+
 func generate_pesel():
-	var birth_year = str(current_year - passenger.age)
+	var birth_year = str(b_year - 1900)
 	if birth_year.length() == 1:
-		birth_year = "0" + birth_year
-	var month = str(randi_range(1, 12))
+		birth_year = "0 " + birth_year
+	else:
+		var unit = birth_year[1]
+		birth_year = birth_year.left(-1) + " " + unit
+		
+	var month = str(b_month_num)
 	if month.length() == 1:
-		month = "0" + month
-	var day = str(randi_range(1, 28))
+		month = "0 " + month
+	else:
+		var unit = month[1]
+		month = month.left(-1) + " " + unit
+		
+	var day = str(b_day)
 	if day.length() == 1:
-		day = "0" + day
-	var three_randoms = str(randi_range(111,999))
+		day = "0 " + day
+	else:
+		var unit = day[1]
+		day = day.left(-1) + " " + unit
+		
+	var three_randoms = str(randi_range(1,9)) + " " + str(randi_range(1,9)) + " " + str(randi_range(1,9))
 	var gender_num
 	match passenger.gender:
 		"m":
@@ -50,5 +78,5 @@ func generate_pesel():
 		"f":
 			gender_num = str([0,2,4,6,8].pick_random())
 	var last_num = str(randi_range(1,9))
-	pesel = birth_year + month + day + three_randoms + gender_num + last_num
+	pesel = birth_year + " " + month + " " + day + " " + three_randoms + " " + gender_num + " " + last_num
 	return pesel

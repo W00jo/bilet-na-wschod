@@ -19,7 +19,7 @@ extends Node2D
 
 func start_ticket_control():
 	ticket_control.visible = true
-	$ToolkitLayer/TicketControl.start_control()
+	ticket_control.start_control()
 	get_tree().get_first_node_in_group("Player").can_move = false
 
 func end_ticket_control():

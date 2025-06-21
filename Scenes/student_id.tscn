@@ -670,10 +670,10 @@ texture = ExtResource("6_kxmqv")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -101.0
-offset_top = -68.0
-offset_right = 100.0
-offset_bottom = 60.0
+offset_left = -98.0
+offset_top = -62.0
+offset_right = 103.0
+offset_bottom = 66.0
 
 [node name="MagnifyInstruction" type="TextureRect" parent="."]
 visible = false
@@ -688,3 +688,5 @@ texture = ExtResource("9_kxmqv")
 stream = ExtResource("10_ojrje")
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]
