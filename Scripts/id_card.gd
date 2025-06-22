@@ -30,7 +30,6 @@ func _physics_process(delta: float) -> void:
 			global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 			disable_zoom()
 		else:
-			#if global_position <= Vector2(500,40) or global_position >= Vector2(910,400):
 			global_position = lerp(global_position, get_parent().get_node('DocumentMarker').global_position, 10*delta)
 
 func _input(event: InputEvent) -> void:
@@ -81,3 +80,4 @@ func magnify():
 	var mag_layer= get_parent().get_node('MagnifiedDocument')
 	mag_layer.visible = true
 	magnified = true
+	selected = false

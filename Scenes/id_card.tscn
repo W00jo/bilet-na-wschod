@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cou8yaiuxwc02" path="res://Assets/Sprites/id_card.png" id="1_nd1qd"]
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_eb8q5"]
 [ext_resource type="FontFile" uid="uid://cwy1ws1immec6" path="res://Assets/Fonts/CoveredByYourGrace-Regular.ttf" id="3_8t6xa"]
-[ext_resource type="FontFile" uid="uid://cego08elbun1h" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="4_d12lp"]
+[ext_resource type="FontFile" uid="uid://b7i0qbttnwogf" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="4_d12lp"]
 [ext_resource type="FontFile" uid="uid://dy54cuo4rbn8a" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_rfsya"]
 [ext_resource type="Shader" uid="uid://mvcthl1i5nuk" path="res://Shaders/sepia.gdshader" id="5_d12lp"]
 [ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="7_8t6xa"]
@@ -300,11 +300,11 @@ text = "Jan Kowalski"
 
 [node name="PhotoCont" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_y0fc1")
-offset_left = -51.0
-offset_top = -12.0
-offset_right = 77.0
-offset_bottom = 116.0
-scale = Vector2(0.75, 0.785)
+offset_left = -47.0
+offset_top = -5.0
+offset_right = 81.0
+offset_bottom = 123.0
+scale = Vector2(0.6, 0.62)
 
 [node name="Photo" type="SubViewport" parent="PhotoCont"]
 transparent_bg = true
@@ -333,10 +333,10 @@ texture = ExtResource("9_0qw8e")
 
 [node name="MagnifyInstruction" type="TextureRect" parent="."]
 visible = false
-offset_left = -29.0
-offset_top = -88.0
-offset_right = 30.0
-offset_bottom = -48.0
+offset_left = -31.0
+offset_top = -90.0
+offset_right = 38.0
+offset_bottom = -44.0
 scale = Vector2(0.75, 0.6)
 texture = ExtResource("9_u1vt4")
 

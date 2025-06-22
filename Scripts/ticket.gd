@@ -4,36 +4,77 @@ extends Control
 @onready var ticket_type_label = $TextureAndLabels/SubViewport/TicketType
 
 var selected = false
+var zoom_enabled = false
+var magnified = false
 
-var buy_date = "      07.04.1999"
+var buy_date = "      07.04.1995"
 var ticket_type
 
 func _ready() -> void:
 	$TextureAndLabels.material.set_shader_parameter("mask_size", Vector2(0, 0))
+	$TextureAndLabels/SubViewport/HoleOutline.visible = false
 
 func _physics_process(delta: float) -> void:
 	if get_parent() is not SubViewport:
 		if selected:
 			global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
+			disable_zoom()
 		else:
-			#if global_position <= Vector2(500,40) or global_position >= Vector2(910,400):
 			global_position = lerp(global_position, get_parent().get_node('TicketMarker').global_position, 10*delta)
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_released("LMB"):
-		scale = Vector2(1, 1)
-		selected = false
-		z_index = 0
-		#$ButtonSFX.play()
-
-func _on_gui_input(event: InputEvent) -> void:
-	if Input.is_action_pressed("LMB"):
-		scale = Vector2(2, 2)
-		selected = true
-		z_index = 1
-	if Input.is_action_just_pressed("LMB"):
-		$ButtonSFX.play()
+	#if Input.is_action_just_released("LMB"):
+		#scale = Vector2(1, 1)
+		#selected = false
+		#z_index = 0
+		##$ButtonSFX.play()
+	if Input.is_action_just_pressed("Magnify") and zoom_enabled and magnified == false:
+		magnify()
+	elif Input.is_action_just_pressed("Magnify"):# and magnified == true:
+		if get_parent().get_node('MagnifiedTicket').visible:
+			get_parent().get_node('MagnifiedTicket').visible = false
+			magnified = false
 
 func assign_data():
 	buy_date_label.text = buy_date
 	ticket_type_label.text = ticket_type
+	
+func _on_control_gui_input(event: InputEvent) -> void:
+	if Input.is_action_pressed("LMB"):
+		scale = Vector2(1.2, 1.2)
+		selected = true
+		z_index = 1
+	else:
+		scale = Vector2(1, 1)
+		selected = false
+		z_index = 0
+	if Input.is_action_just_released("LMB"):
+		scale = Vector2(1, 1)
+		selected = false
+		enable_zoom()
+		$ButtonSFX.play()
+		z_index = 0
+	
+	if Input.is_action_just_pressed("LMB"):
+		$ButtonSFX.play()
+		
+func _on_control_mouse_entered() -> void:
+	enable_zoom()
+
+func _on_control_mouse_exited() -> void:
+	disable_zoom()
+
+func enable_zoom():
+	$MagnifyInstruction.visible = true
+	zoom_enabled = true
+	
+func disable_zoom():
+	$MagnifyInstruction.visible = false
+	zoom_enabled = false
+
+func magnify():
+	var mag_layer= get_parent().get_node('MagnifiedTicket')
+	mag_layer.visible = true
+	if get_parent().is_ticket_checked:
+		pass
+	magnified = true

@@ -457,61 +457,72 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "Lbn 01.09.94r."
+text = "Lbn 01.09.89r."
 
 [node name="Stamp1" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(23, -12)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Stamp2" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(41, -12)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Stamp3" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(61, -13)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Stamp4" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(82, -11)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Stamp5" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(22, 13)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Stamp6" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(40, 15)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Stamp7" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(61, 13)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Stamp8" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(81, 14)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Stamp9" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(22, 41)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Stamp10" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(41, 41)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Stamp11" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(62, 41)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Year1" type="Label" parent="."]
@@ -523,7 +534,7 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "94"
+text = "90"
 metadata/_edit_use_anchors_ = true
 
 [node name="Year2" type="Label" parent="."]
@@ -535,7 +546,7 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "94"
+text = "90"
 metadata/_edit_use_anchors_ = true
 
 [node name="Year3" type="Label" parent="."]
@@ -547,7 +558,7 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "95"
+text = "91"
 metadata/_edit_use_anchors_ = true
 
 [node name="Year4" type="Label" parent="."]
@@ -559,7 +570,7 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "95"
+text = "91"
 metadata/_edit_use_anchors_ = true
 
 [node name="Year5" type="Label" parent="."]
@@ -571,7 +582,7 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "96"
+text = "92"
 metadata/_edit_use_anchors_ = true
 
 [node name="Year6" type="Label" parent="."]
@@ -583,7 +594,7 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "96"
+text = "92"
 metadata/_edit_use_anchors_ = true
 
 [node name="Year7" type="Label" parent="."]
@@ -595,7 +606,7 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "97"
+text = "93"
 metadata/_edit_use_anchors_ = true
 
 [node name="Year8" type="Label" parent="."]
@@ -607,7 +618,7 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "97"
+text = "93"
 metadata/_edit_use_anchors_ = true
 
 [node name="Year9" type="Label" parent="."]
@@ -619,7 +630,7 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "98"
+text = "94"
 metadata/_edit_use_anchors_ = true
 
 [node name="Year10" type="Label" parent="."]
@@ -631,7 +642,7 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "98"
+text = "94"
 metadata/_edit_use_anchors_ = true
 
 [node name="Year11" type="Label" parent="."]
@@ -643,16 +654,16 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
-text = "99"
+text = "95"
 metadata/_edit_use_anchors_ = true
 
 [node name="PhotoCont" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_y0fc1")
-offset_left = -92.0
-offset_top = -45.0
-offset_right = 36.0
-offset_bottom = 83.0
-scale = Vector2(0.8, 0.8)
+offset_left = -91.0
+offset_top = -46.0
+offset_right = 37.0
+offset_bottom = 82.0
+scale = Vector2(0.75, 0.81)
 
 [node name="Photo" type="SubViewport" parent="PhotoCont"]
 transparent_bg = true
@@ -665,6 +676,7 @@ render_target_update_mode = 4
 [node name="Orzelek" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54, 0.54, 0.47451)
 position = Vector2(-57, -12)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
 [node name="Control" type="Control" parent="."]

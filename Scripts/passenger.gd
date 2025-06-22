@@ -109,15 +109,17 @@ func passenger_dress_up():
 	sprites.add_child(shirt)
 	avatar_colors.append(shirt.modulate)
 	
+	var shoes = Sprite2D.new()
+	texture_setter(shoes, shoes_tex)
+	color_setter(shoes, shoes_colors)
+	sprites.add_child(shoes)
+	
 	var pants = Sprite2D.new()
 	texture_setter(pants, pants_tex)
 	color_setter(pants, pants_colors)
 	sprites.add_child(pants)
 	
-	var shoes = Sprite2D.new()
-	texture_setter(shoes, shoes_tex)
-	color_setter(shoes, shoes_colors)
-	sprites.add_child(shoes)
+
 	
 
 func get_random_body_part(gender, body_part:String):

@@ -12,9 +12,9 @@ var female_names = []
 var female_surnames = []
 
 var adresses = []
-var months = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"]
+var months = ["sty", "lut", "mar", "kwie", "maja", "czer", "lip", "sier", "wrze", "paź", "lis", "gru"]
 
-var current_year = 1999
+var current_year = 1995
 var pesel
 var birth_date
 

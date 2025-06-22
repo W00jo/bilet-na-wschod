@@ -24,19 +24,23 @@ func start_control():
 func create_ticket():
 	var ticket_instance = load("res://Scenes/ticket.tscn").instantiate()
 	add_child(ticket_instance)
-	var mag_ticket_instance = load("res://Scenes/ticket.tscn").instantiate()
-	mag_ticket_sub.add_child(mag_ticket_instance)
+	create_magnified_ticket()
 	ticket = ticket_instance
-	mag_ticket = mag_ticket_instance
 	ticket.visible = false
 	ticket.global_position = $TicketMarker.global_position
-	set_ticket_data()
+	set_ticket_data(ticket)
 
-func set_ticket_data():
-	ticket.ticket_type = PassengerDataBus.currently_checked_passenger.ticket_type
-	mag_ticket.ticket_type = PassengerDataBus.currently_checked_passenger.ticket_type
-	ticket.assign_data()
-	mag_ticket.assign_data()
+func create_magnified_ticket():
+	var mag_ticket_instance = load("res://Scenes/ticket.tscn").instantiate()
+	mag_ticket_sub.add_child(mag_ticket_instance)
+	mag_ticket = mag_ticket_instance
+	mag_ticket.set_scale(Vector2(2, 2))
+	mag_ticket.global_position = Vector2(690,400)
+	set_ticket_data(mag_ticket)
+
+func set_ticket_data(t):
+	t.ticket_type = PassengerDataBus.currently_checked_passenger.ticket_type
+	t.assign_data()
 
 func create_document():
 	document = PassengerDataBus.currently_checked_passenger.document.instantiate()
@@ -75,7 +79,9 @@ func create_document_avatar(doc):
 
 func validate_ticket():
 	if is_ticket_checked == false:
-		ticket.get_node("TextureAndLabels").material.set_shader_parameter("mask_size", Vector2(0.2, 0.25))
+		ticket.get_node("TextureAndLabels").material.set_shader_parameter("mask_size", Vector2(0.25, 0.25))
+		ticket.get_node("TextureAndLabels/SubViewport/HoleOutline").visible = true
+		mag_ticket.get_node("TextureAndLabels/SubViewport/HoleOutline").visible = true
 		ticket.get_node("ValidationArea").queue_free()
 		is_ticket_checked = true
 		ticket_validation_sfx.play()
