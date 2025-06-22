@@ -26,6 +26,7 @@ size = Vector2(163, 135)
 [node name="Ticket" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(0.75, 0.75)
 script = ExtResource("2_5yuud")
 
 [node name="TextureAndLabels" type="SubViewportContainer" parent="."]
