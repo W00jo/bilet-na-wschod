@@ -257,19 +257,19 @@ patch_margin_bottom = 30
 
 [node name="Calendar" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 383.636
-offset_right = 58.0
-offset_bottom = 431.636
-scale = Vector2(6, 6)
+offset_left = 0.909093
+offset_top = 363.636
+offset_right = 139.909
+offset_bottom = 506.636
+scale = Vector2(2.15, 2.15)
 texture = ExtResource("13_jwvxh")
 
 [node name="Year" type="Label" parent="."]
 layout_mode = 2
-offset_left = 120.0
-offset_top = 417.273
-offset_right = 188.0
-offset_bottom = 446.273
+offset_left = 122.727
+offset_top = 426.364
+offset_right = 190.727
+offset_bottom = 455.364
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(0.321569, 0.12549, 0.145098, 1)
@@ -279,23 +279,23 @@ text = "1995"
 
 [node name="Month" type="Label" parent="."]
 layout_mode = 2
-offset_left = 74.5454
-offset_top = 451.818
-offset_right = 236.546
-offset_bottom = 488.818
+offset_left = 64.5454
+offset_top = 453.636
+offset_right = 246.545
+offset_bottom = 491.636
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(0.321569, 0.12549, 0.145098, 1)
 theme_override_fonts/font = ExtResource("18_jwvxh")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 54
 text = "KWIECIEŃ"
 
 [node name="Days" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 41.8181
-offset_top = 500.0
-offset_right = 265.819
-offset_bottom = 677.0
+offset_left = 44.5454
+offset_top = 497.273
+offset_right = 268.546
+offset_bottom = 674.273
 theme_override_colors/default_color = Color(0.321569, 0.12549, 0.145098, 1)
 theme_override_colors/font_outline_color = Color(0.321569, 0.12549, 0.145098, 1)
 theme_override_constants/outline_size = 4

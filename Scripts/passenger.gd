@@ -1,7 +1,7 @@
 extends Node2D
 class_name Passenger
 
-@onready var sprites:Node2D = $Sprites
+@onready var sprites:SubViewport = $TexContainer/Sprites
 @onready var textures = $Textures
 @onready var doc_manager = $DocumentManager
 
@@ -91,35 +91,43 @@ func texture_assigner():
 
 
 func passenger_dress_up():
-	var body = Sprite2D.new()
+	var body = TextureRect.new()
 	texture_setter(body, body_tex)
 	color_setter(body, body_colors)
 	sprites.add_child(body)
 	avatar_colors.append(body.modulate)
 	
-	var hair = Sprite2D.new()
+	var hair = TextureRect.new()
 	texture_setter(hair, hair_tex)
 	color_setter(hair, hair_colors)
 	sprites.add_child(hair)
 	avatar_colors.append(hair.modulate)
 	
-	var shirt = Sprite2D.new()
+	var shirt = TextureRect.new()
 	texture_setter(shirt, shirt_tex)
 	color_setter(shirt, shirt_colors)
 	sprites.add_child(shirt)
 	avatar_colors.append(shirt.modulate)
 	
-	var shoes = Sprite2D.new()
+	var shoes = TextureRect.new()
 	texture_setter(shoes, shoes_tex)
 	color_setter(shoes, shoes_colors)
 	sprites.add_child(shoes)
 	
-	var pants = Sprite2D.new()
+	var pants = TextureRect.new()
 	texture_setter(pants, pants_tex)
 	color_setter(pants, pants_colors)
 	sprites.add_child(pants)
 	
+	outline_creator()
 
+func outline_creator():
+	$TexContainer.set("material", ShaderMaterial.new())
+	$TexContainer.material.set("shader", load("res://Shaders/hsv_outline.gdshader"))
+	$TexContainer.material.set_shader_parameter("type", 1)
+	$TexContainer.material.set_shader_parameter("thickness", 1)
+	$TexContainer.material.set_shader_parameter("saturation", 1)
+	
 	
 
 func get_random_body_part(gender, body_part:String):
@@ -153,7 +161,11 @@ func color_setter(component, comp_color_arr):
 func avatar_texture_collector(gender, body_part, file_name):
 	if body_part == "body" or body_part == "hair" or body_part == "shirt" or body_part == "eyes":
 		avatar_textures.append(file_name)
-		
+
+func interactive_look_remover():
+	$TexContainer.material.set_shader_parameter("type", 0)
+	$TexContainer.material.set_shader_parameter("saturation", 0.3)
+
 
 ## INTERACTIONS ##
 

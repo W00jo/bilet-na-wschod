@@ -86,6 +86,7 @@ func validate_ticket():
 		is_ticket_checked = true
 		ticket_validation_sfx.play()
 		PassengerDataBus.currently_checked_passenger.is_skasowaned = true
+		PassengerDataBus.currently_checked_passenger.interactive_look_remover()
 		PassengerDataBus.currently_checked_passenger.hide_interaction_label()
 
 func _on_ask_ticket_pressed() -> void:
