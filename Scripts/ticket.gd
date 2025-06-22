@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 			global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 			disable_zoom()
 		else:
-			global_position = lerp(global_position, get_parent().get_node('TicketMarker').global_position, 10*delta)
+			global_position = lerp(global_position, find_closest().global_position, 10*delta)
 
 func _input(event: InputEvent) -> void:
 	#if Input.is_action_just_released("LMB"):
@@ -41,15 +41,15 @@ func assign_data():
 	
 func _on_control_gui_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("LMB"):
-		scale = Vector2(1.2, 1.2)
+		scale = Vector2(0.9, 0.9)
 		selected = true
 		z_index = 1
 	else:
-		scale = Vector2(1, 1)
+		scale = Vector2(0.75, 0.75)
 		selected = false
 		z_index = 0
 	if Input.is_action_just_released("LMB"):
-		scale = Vector2(1, 1)
+		scale = Vector2(0.75, 0.75)
 		selected = false
 		enable_zoom()
 		$ButtonSFX.play()
@@ -78,3 +78,15 @@ func magnify():
 	if get_parent().is_ticket_checked:
 		pass
 	magnified = true
+
+func find_closest():
+	var markers = get_parent().get_node('Markers').get_children()
+	var closest_marker
+	var lowest_distance = INF
+	for marker in markers:
+		var distance = marker.global_position.distance_to(global_position)
+		if distance < lowest_distance:
+			closest_marker = marker
+			lowest_distance = distance
+	if markers.size() > 0:
+		return closest_marker

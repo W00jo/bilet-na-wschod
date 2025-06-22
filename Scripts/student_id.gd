@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 			global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 			disable_zoom()
 		else:
-			global_position = lerp(global_position, get_parent().get_node('DocumentMarker').global_position, 10*delta)
+			global_position = lerp(global_position, find_closest().global_position, 25*delta)
 
 func _input(event: InputEvent) -> void:
 	#if event is InputEventMouseButton:
@@ -70,3 +70,15 @@ func magnify():
 	var mag_layer= get_parent().get_node('MagnifiedDocument')
 	mag_layer.visible = true
 	magnified = true
+
+func find_closest():
+	var markers = get_parent().get_node('Markers').get_children()
+	var closest_marker
+	var lowest_distance = INF
+	for marker in markers:
+		var distance = marker.global_position.distance_to(global_position)
+		if distance < lowest_distance:
+			closest_marker = marker
+			lowest_distance = distance
+	if markers.size() > 0:
+		return closest_marker
