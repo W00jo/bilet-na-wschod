@@ -22,7 +22,9 @@ func _physics_process(delta: float) -> void:
 			anim_tree.set("parameters/conditions/is_walking", true)
 			anim_tree.set("parameters/Walking/blend_position", directon)
 			anim_tree.set("parameters/Idle/blend_position", directon)
-			
+	else:
+		velocity = Vector2(0,0)
+		
 	move_and_slide()
 	
 func _on_timer_timeout() -> void:

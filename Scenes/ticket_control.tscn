@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b80uyautrg11t"]
+[gd_scene load_steps=27 format=3 uid="uid://b80uyautrg11t"]
 
 [ext_resource type="Script" uid="uid://cyfqyufsg3au3" path="res://Scripts/ticket_control.gd" id="1_o2i80"]
 [ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_4tmf3"]
@@ -15,6 +15,7 @@
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="8_w25t7"]
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_fa7hl"]
 [ext_resource type="Texture2D" uid="uid://dvqlfbbfqlj13" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="10_fa7hl"]
+[ext_resource type="Texture2D" uid="uid://b4jao0iy64la2" path="res://Assets/Sprites/UIElements/calendar.png" id="13_jwvxh"]
 [ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="16_fa7hl"]
 [ext_resource type="Texture2D" uid="uid://cppg6v5puexub" path="res://Assets/Sprites/UIElements/ticketcontrol_close_instruction.png" id="16_ivvik"]
 [ext_resource type="AudioStream" uid="uid://dkuchwlj8aal" path="res://Assets/SFX/ticket_validation.wav" id="17_ivvik"]
@@ -106,16 +107,17 @@ patch_margin_bottom = 19
 [node name="PassengerAvatar" parent="Box/HBox/Left/NinePatchRect" instance=ExtResource("5_4tmf3")]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.039
 anchor_top = 0.17
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -6.14546
-offset_top = -11.0936
-offset_right = -6.14546
-offset_bottom = -11.0936
+anchor_right = 0.964
+anchor_bottom = 0.959
+offset_left = -6.06246
+offset_top = -0.741837
+offset_right = 9.16252
+offset_bottom = 9.42615
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(4.75, 4.75)
+scale = Vector2(4.4, 4.5)
 
 [node name="Container" type="Container" parent="Box/HBox/Left"]
 layout_mode = 2
@@ -253,6 +255,54 @@ patch_margin_top = 58
 patch_margin_right = 61
 patch_margin_bottom = 30
 
+[node name="Calendar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 383.636
+offset_right = 58.0
+offset_bottom = 431.636
+scale = Vector2(6, 6)
+texture = ExtResource("13_jwvxh")
+
+[node name="Year" type="Label" parent="."]
+layout_mode = 2
+offset_left = 120.0
+offset_top = 417.273
+offset_right = 188.0
+offset_bottom = 446.273
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_fonts/font = ExtResource("18_jwvxh")
+theme_override_font_sizes/font_size = 42
+text = "1995"
+
+[node name="Month" type="Label" parent="."]
+layout_mode = 2
+offset_left = 74.5454
+offset_top = 451.818
+offset_right = 236.546
+offset_bottom = 488.818
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_fonts/font = ExtResource("18_jwvxh")
+theme_override_font_sizes/font_size = 48
+text = "KWIECIEŃ"
+
+[node name="Days" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 41.8181
+offset_top = 500.0
+offset_right = 265.819
+offset_bottom = 677.0
+theme_override_colors/default_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_colors/font_outline_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[table=7] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell]    1[/cell] [cell][color=#87202b][outline_color=#87202b]    2[/outline_color][/color][/cell] [cell]    3[/cell] [cell]    4[/cell] [cell]    5[/cell] [cell]    6[/cell] [cell]    7[/cell] [cell]    8[/cell] [cell][color=#87202b][outline_color=#87202b]    9[/outline_color][/color][/cell] [cell]  10[/cell] [cell]  11[/cell] [cell]  12[/cell] [cell]  13[/cell] [cell]  14[/cell] [cell]  15[/cell] [cell][color=#87202b][outline_color=#87202b]  16[/outline_color][/color][/cell] [cell]  17[/cell] [cell]  18[/cell] [cell]  19[/cell] [cell]  20[/cell] [cell]  21[/cell] [cell]  22[/cell] [cell][color=#87202b][outline_color=#87202b]  23[/outline_color][/color][/cell] [cell]  24[/cell] [cell]  25[/cell] [cell]  26[/cell] [cell]  27[/cell] [cell]  28[/cell] [cell]  29[/cell] [cell][color=#87202b][outline_color=#87202b]  30[/outline_color][/color][/cell]  [/table]"
+
 [node name="ButtonClose" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -287,6 +337,14 @@ position = Vector2(922.727, 206.364)
 layer = 3
 visible = false
 
+[node name="ColorRect" type="ColorRect" parent="MagnifiedTicket"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.694118)
+
 [node name="SVCont" type="SubViewportContainer" parent="MagnifiedTicket"]
 anchors_preset = -1
 anchor_left = 0.139583
@@ -298,9 +356,31 @@ metadata/_edit_use_anchors_ = true
 [node name="SV" type="SubViewport" parent="MagnifiedTicket/SVCont"]
 transparent_bg = true
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
 gui_disable_input = true
 size = Vector2i(1400, 750)
 render_target_update_mode = 0
+
+[node name="CloseInstruction" type="TextureRect" parent="MagnifiedTicket"]
+offset_left = 838.0
+offset_top = 164.0
+offset_right = 1111.0
+offset_bottom = 262.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("17_t4xp8")
+
+[node name="CloseLabel" type="Label" parent="MagnifiedTicket"]
+offset_left = 854.8
+offset_top = 186.4
+offset_right = 1013.8
+offset_bottom = 230.4
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("18_jwvxh")
+theme_override_font_sizes/font_size = 52
+text = "ZAMKNIJ"
 
 [node name="MagnifiedDocument" type="CanvasLayer" parent="."]
 layer = 3

@@ -42,10 +42,10 @@ func calculate_area_position(cell_pos, global_pos):
 			passenger_position.y = 590
 			passenger_position.x = global_pos.x - 25
 		58:
-			passenger_position.y = 745
+			passenger_position.y = 730
 			passenger_position.x = global_pos.x + 25
 		62:
-			passenger_position.y = 745
+			passenger_position.y = 730
 			passenger_position.x = global_pos.x - 25
 	return passenger_position
 			

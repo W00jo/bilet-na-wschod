@@ -20,8 +20,7 @@ func _physics_process(delta: float) -> void:
 			global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 			disable_zoom()
 		else:
-			if get_parent().name != "SubViewport":
-				global_position = lerp(global_position, get_parent().get_node('DocumentMarker').global_position, 10*delta)
+			global_position = lerp(global_position, get_parent().get_node('DocumentMarker').global_position, 10*delta)
 
 func _input(event: InputEvent) -> void:
 	#if event is InputEventMouseButton:
