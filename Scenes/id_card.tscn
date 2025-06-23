@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cou8yaiuxwc02" path="res://Assets/Sprites/id_card.png" id="1_nd1qd"]
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_eb8q5"]
 [ext_resource type="FontFile" uid="uid://cwy1ws1immec6" path="res://Assets/Fonts/CoveredByYourGrace-Regular.ttf" id="3_8t6xa"]
-[ext_resource type="FontFile" uid="uid://b7i0qbttnwogf" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="4_d12lp"]
+[ext_resource type="FontFile" uid="uid://cego08elbun1h" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="4_d12lp"]
 [ext_resource type="FontFile" uid="uid://dy54cuo4rbn8a" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_rfsya"]
 [ext_resource type="Shader" uid="uid://mvcthl1i5nuk" path="res://Shaders/sepia.gdshader" id="5_d12lp"]
 [ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="7_8t6xa"]
