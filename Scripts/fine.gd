@@ -1,0 +1,55 @@
+extends Control
+
+@onready var reason_options = $ReasonOptions
+@onready var sum_options = $SumOptions
+@onready var indicator = $Indicator
+@onready var anim = $AnimationPlayer
+
+var reason_given = false
+var sum_given = false
+var signed = false
+
+func _ready() -> void: ### TEMPORARY
+	start_writing()
+
+func start_writing():
+	indicator.visible = true
+	indicator.position = $ReasonMarker.position
+	anim.play("indicator")
+
+
+func _on_reason_options_item_selected(index: int) -> void:
+	reason_given = true
+	check_ready()
+	if sum_given == false:
+		indicator.position = $SumMarker.position
+	elif signed == false:
+		indicator.position = $SignatureMarker.position
+
+func _on_sum_options_item_selected(index: int) -> void:
+	sum_given = true
+	check_ready()
+	if reason_given == false:
+		indicator.position = $ReasonMarker.position
+	elif signed == false:
+		indicator.position = $SignatureMarker.position
+
+func _on_sign_pressed() -> void:
+	$ConductorSignature.visible = true
+	signed = true
+	check_ready()
+	if reason_given == false:
+		indicator.position = $ReasonMarker.position
+	elif sum_given == false:
+		indicator.position = $SumMarker.position
+
+func check_ready():
+	if reason_given and sum_given and signed:
+		$Ready.disabled = false
+		indicator.visible = false
+
+func _on_ready_pressed() -> void:
+	$PassengerSignature.visible = true
+	await get_tree().create_timer(3).timeout
+	$Ready.disabled = true
+	get_tree().quit() ###  TEMPORARY

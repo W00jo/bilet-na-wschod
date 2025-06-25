@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 			global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 			disable_zoom()
 		else:
-			global_position = lerp(global_position, find_closest().global_position, 10*delta)
+			global_position = lerp(global_position, find_closest().global_position, 20*delta)
 
 func _input(event: InputEvent) -> void:
 	#if Input.is_action_just_released("LMB"):

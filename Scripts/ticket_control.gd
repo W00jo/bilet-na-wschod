@@ -112,6 +112,7 @@ func _on_button_close_pressed() -> void:
 func close():
 	if passenger.is_skasowaned == false:
 		passenger.interaction_enabled = true
+	PassengerDataBus.currently_checked_passenger = null
 	PassengerDataBus.game.end_ticket_control()
 	remove_child(document)
 	ticket.queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b80uyautrg11t"]
+[gd_scene load_steps=34 format=3 uid="uid://b80uyautrg11t"]
 
 [ext_resource type="Script" uid="uid://cyfqyufsg3au3" path="res://Scripts/ticket_control.gd" id="1_o2i80"]
 [ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_4tmf3"]
@@ -16,12 +16,29 @@
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="8_w25t7"]
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_fa7hl"]
 [ext_resource type="Texture2D" uid="uid://dvqlfbbfqlj13" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="10_fa7hl"]
-[ext_resource type="Texture2D" uid="uid://b4jao0iy64la2" path="res://Assets/Sprites/UIElements/calendar.png" id="13_jwvxh"]
+[ext_resource type="Texture2D" uid="uid://cqwu7fj5plmbv" path="res://Assets/Sprites/UIElements/calendar.png" id="13_jwvxh"]
 [ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="16_fa7hl"]
-[ext_resource type="Texture2D" uid="uid://cppg6v5puexub" path="res://Assets/Sprites/UIElements/ticketcontrol_close_instruction.png" id="16_ivvik"]
+[ext_resource type="Texture2D" uid="uid://iprkcfdrhqy1" path="res://Assets/Sprites/UIElements/ticketcontrol_close_instruction.png" id="16_ivvik"]
 [ext_resource type="AudioStream" uid="uid://dkuchwlj8aal" path="res://Assets/SFX/ticket_validation.wav" id="17_ivvik"]
-[ext_resource type="Texture2D" uid="uid://dgt7xpqk3e0ry" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="17_t4xp8"]
+[ext_resource type="Texture2D" uid="uid://c7yrgyhmmpi7r" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="17_t4xp8"]
 [ext_resource type="FontFile" uid="uid://csst3yoqdnyvm" path="res://Assets/Fonts/ByteBounce.ttf" id="18_jwvxh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okt6h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x8ygp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksdtc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00svc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgxtj"]
+
+[sub_resource type="Theme" id="Theme_1htim"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_okt6h")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_x8ygp")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_ksdtc")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_00svc")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_rgxtj")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0lvg"]
 
@@ -157,6 +174,7 @@ offset_bottom = 223.4
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_1htim")
 theme_override_constants/line_separation = 15
 theme_override_fonts/normal_font = ExtResource("8_w25t7")
 theme_override_font_sizes/normal_font_size = 32
@@ -336,130 +354,466 @@ texture = ExtResource("16_ivvik")
 position = Vector2(987.273, 381.818)
 
 [node name="Marker2D" type="Marker2D" parent="Markers"]
-position = Vector2(-161.818, -203.636)
+position = Vector2(-161.818, -207.273)
 
 [node name="Marker2D2" type="Marker2D" parent="Markers"]
-position = Vector2(-99.0909, -203.636)
+position = Vector2(-99.0909, -207.273)
 
 [node name="Marker2D3" type="Marker2D" parent="Markers"]
-position = Vector2(-40, -203.636)
+position = Vector2(-40, -207.273)
 
 [node name="Marker2D4" type="Marker2D" parent="Markers"]
-position = Vector2(22.7273, -203.636)
+position = Vector2(22.7273, -207.273)
 
 [node name="Marker2D5" type="Marker2D" parent="Markers"]
-position = Vector2(-161.818, -147.273)
+position = Vector2(-161.818, -176.364)
 
 [node name="Marker2D6" type="Marker2D" parent="Markers"]
-position = Vector2(-100, -147.273)
+position = Vector2(-100, -176.364)
 
 [node name="Marker2D7" type="Marker2D" parent="Markers"]
-position = Vector2(-40, -147.273)
+position = Vector2(-40, -176.364)
 
 [node name="Marker2D8" type="Marker2D" parent="Markers"]
-position = Vector2(22.7273, -147.273)
+position = Vector2(22.7273, -176.364)
 
 [node name="Marker2D9" type="Marker2D" parent="Markers"]
-position = Vector2(22.7273, -88.1818)
+position = Vector2(22.7273, -86.3635)
 
 [node name="Marker2D10" type="Marker2D" parent="Markers"]
-position = Vector2(-39.0909, -88.1818)
+position = Vector2(-39.0909, -86.3635)
 
 [node name="Marker2D11" type="Marker2D" parent="Markers"]
-position = Vector2(-100, -88.1818)
+position = Vector2(-100, -86.3635)
 
 [node name="Marker2D12" type="Marker2D" parent="Markers"]
-position = Vector2(-162.727, -88.1818)
+position = Vector2(-162.727, -86.3635)
 
 [node name="Marker2D13" type="Marker2D" parent="Markers"]
-position = Vector2(22.7273, -27.2728)
+position = Vector2(22.7273, -30.9093)
 
 [node name="Marker2D14" type="Marker2D" parent="Markers"]
-position = Vector2(-39.0909, -27.2728)
+position = Vector2(-39.0909, -30.9093)
 
 [node name="Marker2D15" type="Marker2D" parent="Markers"]
-position = Vector2(-100, -27.2728)
+position = Vector2(-100, -30.9093)
 
 [node name="Marker2D16" type="Marker2D" parent="Markers"]
-position = Vector2(-162.727, -27.2728)
+position = Vector2(-162.727, -30.9093)
 
 [node name="Marker2D17" type="Marker2D" parent="Markers"]
-position = Vector2(22.7273, 38.1818)
+position = Vector2(22.7273, 23.6364)
 
 [node name="Marker2D21" type="Marker2D" parent="Markers"]
-position = Vector2(85.4545, -203.636)
+position = Vector2(85.4545, -207.273)
 
 [node name="Marker2D22" type="Marker2D" parent="Markers"]
-position = Vector2(85.4545, -147.273)
+position = Vector2(85.4545, -176.364)
 
 [node name="Marker2D26" type="Marker2D" parent="Markers"]
-position = Vector2(-161.818, 106.364)
+position = Vector2(-161.818, 109.091)
 
 [node name="Marker2D27" type="Marker2D" parent="Markers"]
-position = Vector2(-100, 106.364)
+position = Vector2(-100, 109.091)
 
 [node name="Marker2D28" type="Marker2D" parent="Markers"]
-position = Vector2(-40, 106.364)
+position = Vector2(-40, 109.091)
 
 [node name="Marker2D29" type="Marker2D" parent="Markers"]
-position = Vector2(22.7273, 106.364)
+position = Vector2(22.7273, 109.091)
 
 [node name="Marker2D30" type="Marker2D" parent="Markers"]
-position = Vector2(85.4545, 106.364)
+position = Vector2(85.4545, 109.091)
 
 [node name="Marker2D23" type="Marker2D" parent="Markers"]
-position = Vector2(85.4545, -88.1818)
+position = Vector2(85.4545, -86.3635)
 
 [node name="Marker2D24" type="Marker2D" parent="Markers"]
-position = Vector2(85.4545, -27.2728)
+position = Vector2(85.4545, -30.9093)
 
 [node name="Marker2D25" type="Marker2D" parent="Markers"]
-position = Vector2(85.4545, 38.1818)
+position = Vector2(85.4545, 23.6364)
 
 [node name="Marker2D31" type="Marker2D" parent="Markers"]
-position = Vector2(145.455, -203.636)
+position = Vector2(145.455, -207.273)
 
 [node name="Marker2D32" type="Marker2D" parent="Markers"]
-position = Vector2(145.455, -147.273)
+position = Vector2(145.455, -176.364)
+
+[node name="Marker2D43" type="Marker2D" parent="Markers"]
+position = Vector2(-161.818, -144.545)
+
+[node name="Marker2D44" type="Marker2D" parent="Markers"]
+position = Vector2(-100, -144.545)
+
+[node name="Marker2D45" type="Marker2D" parent="Markers"]
+position = Vector2(-40, -144.545)
+
+[node name="Marker2D46" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -144.545)
+
+[node name="Marker2D47" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -144.545)
+
+[node name="Marker2D48" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -144.545)
+
+[node name="Marker2D49" type="Marker2D" parent="Markers"]
+position = Vector2(-161.818, -114.545)
+
+[node name="Marker2D50" type="Marker2D" parent="Markers"]
+position = Vector2(-100, -114.545)
+
+[node name="Marker2D51" type="Marker2D" parent="Markers"]
+position = Vector2(-40, -114.545)
+
+[node name="Marker2D52" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -114.545)
+
+[node name="Marker2D53" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -114.545)
+
+[node name="Marker2D54" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -114.545)
 
 [node name="Marker2D33" type="Marker2D" parent="Markers"]
-position = Vector2(145.455, 106.364)
+position = Vector2(145.455, 109.091)
+
+[node name="Marker2D79" type="Marker2D" parent="Markers"]
+position = Vector2(-161.818, 136.364)
+
+[node name="Marker2D80" type="Marker2D" parent="Markers"]
+position = Vector2(-100, 136.364)
+
+[node name="Marker2D81" type="Marker2D" parent="Markers"]
+position = Vector2(-40, 136.364)
+
+[node name="Marker2D82" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, 136.364)
+
+[node name="Marker2D83" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, 136.364)
+
+[node name="Marker2D84" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, 136.364)
 
 [node name="Marker2D37" type="Marker2D" parent="Markers"]
-position = Vector2(-161.818, 175.455)
+position = Vector2(-161.818, 165.455)
 
 [node name="Marker2D38" type="Marker2D" parent="Markers"]
-position = Vector2(-100, 175.455)
+position = Vector2(-100, 165.455)
 
 [node name="Marker2D39" type="Marker2D" parent="Markers"]
-position = Vector2(-40, 175.455)
+position = Vector2(-40, 165.455)
 
 [node name="Marker2D40" type="Marker2D" parent="Markers"]
-position = Vector2(22.7273, 175.455)
+position = Vector2(22.7273, 165.455)
 
 [node name="Marker2D41" type="Marker2D" parent="Markers"]
-position = Vector2(85.4545, 175.455)
+position = Vector2(85.4545, 165.455)
 
 [node name="Marker2D42" type="Marker2D" parent="Markers"]
-position = Vector2(145.455, 175.455)
+position = Vector2(145.455, 165.455)
 
 [node name="Marker2D34" type="Marker2D" parent="Markers"]
-position = Vector2(145.455, -88.1818)
+position = Vector2(145.455, -86.3635)
+
+[node name="Marker2D55" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -59.0908)
+
+[node name="Marker2D56" type="Marker2D" parent="Markers"]
+position = Vector2(-39.0909, -59.0908)
+
+[node name="Marker2D57" type="Marker2D" parent="Markers"]
+position = Vector2(-100, -59.0908)
+
+[node name="Marker2D58" type="Marker2D" parent="Markers"]
+position = Vector2(-162.727, -59.0908)
+
+[node name="Marker2D59" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -59.0908)
+
+[node name="Marker2D60" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -59.0908)
+
+[node name="Marker2D61" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -4.54536)
+
+[node name="Marker2D62" type="Marker2D" parent="Markers"]
+position = Vector2(-39.0909, -4.54536)
+
+[node name="Marker2D63" type="Marker2D" parent="Markers"]
+position = Vector2(-100, -4.54536)
+
+[node name="Marker2D64" type="Marker2D" parent="Markers"]
+position = Vector2(-162.727, -4.54536)
+
+[node name="Marker2D65" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -4.54536)
+
+[node name="Marker2D66" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -4.54536)
 
 [node name="Marker2D35" type="Marker2D" parent="Markers"]
-position = Vector2(145.455, -27.2728)
+position = Vector2(145.455, -30.9093)
 
 [node name="Marker2D36" type="Marker2D" parent="Markers"]
-position = Vector2(145.455, 38.1818)
+position = Vector2(145.455, 23.6364)
 
 [node name="Marker2D18" type="Marker2D" parent="Markers"]
-position = Vector2(-39.0909, 38.1818)
+position = Vector2(-39.0909, 23.6364)
 
 [node name="Marker2D19" type="Marker2D" parent="Markers"]
-position = Vector2(-100, 38.1818)
+position = Vector2(-100, 23.6364)
 
 [node name="Marker2D20" type="Marker2D" parent="Markers"]
-position = Vector2(-162.727, 38.1818)
+position = Vector2(-162.727, 23.6364)
+
+[node name="Marker2D67" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, 51.8182)
+
+[node name="Marker2D68" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, 51.8182)
+
+[node name="Marker2D69" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, 51.8182)
+
+[node name="Marker2D70" type="Marker2D" parent="Markers"]
+position = Vector2(-39.0909, 51.8182)
+
+[node name="Marker2D71" type="Marker2D" parent="Markers"]
+position = Vector2(-100, 51.8182)
+
+[node name="Marker2D72" type="Marker2D" parent="Markers"]
+position = Vector2(-162.727, 51.8182)
+
+[node name="Marker2D73" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, 80.0001)
+
+[node name="Marker2D74" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, 80.0001)
+
+[node name="Marker2D75" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, 80.0001)
+
+[node name="Marker2D76" type="Marker2D" parent="Markers"]
+position = Vector2(-39.0909, 80.0001)
+
+[node name="Marker2D77" type="Marker2D" parent="Markers"]
+position = Vector2(-100, 80.0001)
+
+[node name="Marker2D78" type="Marker2D" parent="Markers"]
+position = Vector2(-162.727, 80.0001)
+
+[node name="Marker2D85" type="Marker2D" parent="Markers"]
+position = Vector2(-130, -207.273)
+
+[node name="Marker2D86" type="Marker2D" parent="Markers"]
+position = Vector2(-130, -176.364)
+
+[node name="Marker2D87" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, -86.3635)
+
+[node name="Marker2D88" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, -30.9093)
+
+[node name="Marker2D89" type="Marker2D" parent="Markers"]
+position = Vector2(-130, 109.091)
+
+[node name="Marker2D90" type="Marker2D" parent="Markers"]
+position = Vector2(-130, -144.545)
+
+[node name="Marker2D91" type="Marker2D" parent="Markers"]
+position = Vector2(-130, -114.545)
+
+[node name="Marker2D92" type="Marker2D" parent="Markers"]
+position = Vector2(-130, 136.364)
+
+[node name="Marker2D93" type="Marker2D" parent="Markers"]
+position = Vector2(-130, 165.455)
+
+[node name="Marker2D94" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, -59.0908)
+
+[node name="Marker2D95" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, -4.54536)
+
+[node name="Marker2D96" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, 23.6364)
+
+[node name="Marker2D97" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, 51.8182)
+
+[node name="Marker2D98" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, 80.0001)
+
+[node name="Marker2D99" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, -207.273)
+
+[node name="Marker2D100" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, -176.364)
+
+[node name="Marker2D101" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, -86.3635)
+
+[node name="Marker2D102" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, -30.9093)
+
+[node name="Marker2D103" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, 109.091)
+
+[node name="Marker2D104" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, -144.545)
+
+[node name="Marker2D105" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, -114.545)
+
+[node name="Marker2D106" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, 136.364)
+
+[node name="Marker2D107" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, 165.455)
+
+[node name="Marker2D108" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, -59.0908)
+
+[node name="Marker2D109" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, -4.54536)
+
+[node name="Marker2D110" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, 23.6364)
+
+[node name="Marker2D111" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, 51.8182)
+
+[node name="Marker2D112" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, 80.0001)
+
+[node name="Marker2D113" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, -207.273)
+
+[node name="Marker2D114" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, -176.364)
+
+[node name="Marker2D115" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, -86.3635)
+
+[node name="Marker2D116" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, -30.9093)
+
+[node name="Marker2D117" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, 109.091)
+
+[node name="Marker2D118" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, -144.545)
+
+[node name="Marker2D119" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, -114.545)
+
+[node name="Marker2D120" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, 136.364)
+
+[node name="Marker2D121" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, 165.455)
+
+[node name="Marker2D122" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, -59.0908)
+
+[node name="Marker2D123" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, -4.54536)
+
+[node name="Marker2D124" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, 23.6364)
+
+[node name="Marker2D125" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, 51.8182)
+
+[node name="Marker2D126" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, 80.0001)
+
+[node name="Marker2D127" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, -207.273)
+
+[node name="Marker2D128" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, -176.364)
+
+[node name="Marker2D129" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, -86.3635)
+
+[node name="Marker2D130" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, -30.9093)
+
+[node name="Marker2D131" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, 109.091)
+
+[node name="Marker2D132" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, -144.545)
+
+[node name="Marker2D133" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, -114.545)
+
+[node name="Marker2D134" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, 136.364)
+
+[node name="Marker2D135" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, 165.455)
+
+[node name="Marker2D136" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, -59.0908)
+
+[node name="Marker2D137" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, -4.54536)
+
+[node name="Marker2D138" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, 23.6364)
+
+[node name="Marker2D139" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, 51.8182)
+
+[node name="Marker2D140" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, 80.0001)
+
+[node name="Marker2D141" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, -207.273)
+
+[node name="Marker2D142" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, -176.364)
+
+[node name="Marker2D143" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, -86.3635)
+
+[node name="Marker2D144" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, -30.9093)
+
+[node name="Marker2D145" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, 109.091)
+
+[node name="Marker2D146" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, -144.545)
+
+[node name="Marker2D147" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, -114.545)
+
+[node name="Marker2D148" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, 136.364)
+
+[node name="Marker2D149" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, 165.455)
+
+[node name="Marker2D150" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, -59.0908)
+
+[node name="Marker2D151" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, -4.54536)
+
+[node name="Marker2D152" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, 23.6364)
+
+[node name="Marker2D153" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, 51.8182)
+
+[node name="Marker2D154" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, 80.0001)
 
 [node name="TicketMarker" type="Marker2D" parent="."]
 position = Vector2(1037.27, 502.727)
