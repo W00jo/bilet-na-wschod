@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var chairs = $YSort/Chairs
 
-var min_passengers:int = 4
-var max_passengers:int = 7
+var min_passengers:int = 8
+var max_passengers:int = 10
 
 signal player_entered
 
@@ -31,6 +31,22 @@ func spawn_passengers():
 		instance_count +=1
 		if instance_count == num_of_passengers:
 			break
+	
+	assign_problematic_levels(num_of_passengers)
+
+func assign_problematic_levels(num_of_pas):
+	var passenger_arr = $YSort/Passengers.get_children()
+	passenger_arr.shuffle()
+	var i = 0
+	var problem_num = randi_range(0, roundi(num_of_pas*0.5))
+	for pas in passenger_arr:
+		if i < problem_num:
+			pas.is_problematic = true
+			pas.get_node('DocumentManager').make_problematic()
+			i +=1
+		else:
+			break
+		
 
 func calculate_area_position(cell_pos, global_pos):
 	var passenger_position:Vector2

@@ -1,11 +1,12 @@
 extends Node
 
+
 var ticket
 var ticket_text
 var document
 
-func assign_ticket(age, age_range):
 
+func assign_ticket(age, age_range):
 	match age_range:
 		"youth":
 			ticket = "Ulgowy"
@@ -45,6 +46,20 @@ func assign_document(age):
 			document = load("res://Scenes/id_card.tscn")
 			ticket_text = "BILET ULGOWY"
 
-	
 	get_parent().ticket_type = ticket_text
 	get_parent().document = document
+	
+
+
+func make_problematic():
+	print("is_problematic")
+	if ticket_text == "BILET ULGOWY":
+		var problem = ["no_ticket", "no_document", "no_document", "no_document"].pick_random()
+		match problem:
+			"no_ticket":
+				get_parent().has_ticket = false
+			"no_document":
+				get_parent().has_document = false
+	else:
+		get_parent().has_ticket = false
+	print("ticket: ", get_parent().has_ticket, "  document: ", get_parent().has_document)

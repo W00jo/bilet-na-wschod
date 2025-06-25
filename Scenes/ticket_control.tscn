@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b80uyautrg11t"]
+[gd_scene load_steps=28 format=3 uid="uid://b80uyautrg11t"]
 
 [ext_resource type="Script" uid="uid://cyfqyufsg3au3" path="res://Scripts/ticket_control.gd" id="1_o2i80"]
 [ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_4tmf3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://mnpjkiv43ens" path="res://Assets/Sprites/UIElements/button_close_hover.png" id="5_xpyt6"]
 [ext_resource type="Texture2D" uid="uid://cond2jaipmxpy" path="res://Assets/Sprites/UIElements/button_close.png" id="6_wctca"]
 [ext_resource type="Texture2D" uid="uid://drnegoyywdsto" path="res://Assets/Sprites/UIElements/ui_inner_box_under_buttons.png" id="7_ivvik"]
+[ext_resource type="Script" uid="uid://bh21ypvmh88pj" path="res://Scripts/passenger_dialogue.gd" id="7_okt6h"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="7_w25t7"]
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="8_oyhfx"]
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="8_w25t7"]
@@ -147,20 +148,23 @@ patch_margin_bottom = 14
 [node name="Dialogue" type="RichTextLabel" parent="Box/HBox/Middle/DialogueBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0451389
-anchor_top = 0.0487013
-anchor_right = 0.947917
-anchor_bottom = 0.951299
+anchor_left = 0.043771
+anchor_top = 0.0483871
+anchor_right = 0.955
+anchor_bottom = 0.95
+offset_right = 270.365
+offset_bottom = 223.4
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 theme_override_constants/line_separation = 15
 theme_override_fonts/normal_font = ExtResource("8_w25t7")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[right]Dzień dobry!
 [left]Dzień dobry."
-scroll_active = false
 scroll_following = true
+script = ExtResource("7_okt6h")
 metadata/_edit_use_anchors_ = true
 
 [node name="OptionBox" type="NinePatchRect" parent="Box/HBox/Middle"]
@@ -569,5 +573,7 @@ stream = ExtResource("16_fa7hl")
 stream = ExtResource("17_ivvik")
 
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket" to="." method="_on_ask_ticket_pressed"]
+[connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket" to="Box/HBox/Middle/DialogueBox/Dialogue" method="_on_ask_ticket_pressed"]
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument" to="." method="_on_ask_document_pressed"]
+[connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument" to="Box/HBox/Middle/DialogueBox/Dialogue" method="_on_ask_document_pressed"]
 [connection signal="pressed" from="ButtonClose" to="." method="_on_button_close_pressed"]

@@ -35,8 +35,10 @@ func _ready():
 	id_button = $VBoxContainer/Id
 	var personalities = ["polite", "rude", "fraidy"]
 	personality = personalities.pick_random()
+	#dialogue_box.text = "[right]%s[/right]\n" % "Dzień dobry."
 	var greeting = dialogue[personality]["greetings"].pick_random()
-	dialogue_box.text = "[left]%s[/left]" % greeting
+	var player_greeting = "Dzień dobry."
+	dialogue_box.text = "[right]%s[/right]\n[left]%s[/left]" % [player_greeting, greeting]
 
 func _on_bilet_pressed():
 	var yes_or_no = ["ticket_yes", "ticket_no"].pick_random()

@@ -227,3 +227,5 @@ volume_db = -10.0
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_1phco")
 volume_db = -10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

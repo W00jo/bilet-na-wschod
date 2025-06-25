@@ -25,13 +25,17 @@ var birth_date
 var years_of_study
 var pesel
 
+var personality
+var is_problematic = false
+var has_ticket = true
+var has_document = true
+
 var body_tex:Texture
 var hair_tex:Texture
 var shirt_tex:Texture
 var pants_tex:Texture
 var shoes_tex:Texture
 var eyes_tex:Texture
-
 
 var avatar_textures = []
 var avatar_colors = []
@@ -55,14 +59,19 @@ func _ready() -> void:
 func age_range_assigner():
 	if age>=12 and age<=24:
 		age_range = "youth"
+		personality = ["polite", "overly_polite"].pick_random()
 	if age>=25 and age<=39:
 		age_range = "young_adult"
+		personality = ["polite", "overly_polite", "fraidy"].pick_random()
 	if age>=40 and age<=64:
 		age_range = "middle_age"
+		personality = ["polite", "fraidy", "rude"].pick_random()
 	if age>=65 and age<=79:
 		age_range = "senior"
+		personality = ["rude", "fraidy"].pick_random()
 	if age>=80 and age<=95:
 		age_range = "elderly"
+		personality = ["overly_polite", "polite"].pick_random()
 		
 	texture_assigner()
 	doc_manager.assign_ticket(age, age_range)

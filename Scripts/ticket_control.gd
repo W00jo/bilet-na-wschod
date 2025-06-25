@@ -5,6 +5,8 @@ extends Control
 @onready var button_sfx = $ButtonSFX
 @onready var ticket_validation_sfx = $TicketValidationSFX
 
+var passenger
+
 var ticket
 var mag_ticket
 var document
@@ -17,9 +19,11 @@ func _input(event: InputEvent) -> void:
 
 
 func start_control():
+	passenger = PassengerDataBus.currently_checked_passenger
 	is_ticket_checked = false
 	create_ticket()
 	create_document()
+	$Box/HBox/Middle/DialogueBox/Dialogue.greet()
 
 func create_ticket():
 	var ticket_instance = load("res://Scenes/ticket.tscn").instantiate()
@@ -39,11 +43,11 @@ func create_magnified_ticket():
 	set_ticket_data(mag_ticket)
 
 func set_ticket_data(t):
-	t.ticket_type = PassengerDataBus.currently_checked_passenger.ticket_type
+	t.ticket_type = passenger.ticket_type
 	t.assign_data()
 
 func create_document():
-	document = PassengerDataBus.currently_checked_passenger.document.instantiate()
+	document = passenger.document.instantiate()
 	add_child(document)
 	create_magnified_document()
 	document.visible = false
@@ -53,7 +57,7 @@ func create_document():
 	set_document_data(document)
 
 func create_magnified_document():
-	mag_document = PassengerDataBus.currently_checked_passenger.document.instantiate()
+	mag_document = passenger.document.instantiate()
 	mag_remove_previous_docs()
 	mag_doc_sub.add_child(mag_document)
 	mag_document.set_scale(Vector2(6, 6))
@@ -67,7 +71,7 @@ func mag_remove_previous_docs():
 			mag_doc_sub.remove_child(child)
 
 func set_document_data(doc):
-	doc.name_lastname = PassengerDataBus.currently_checked_passenger.full_name
+	doc.name_lastname = passenger.full_name
 	doc.assign_data()
 
 func create_document_avatar(doc):
@@ -85,12 +89,12 @@ func validate_ticket():
 		ticket.get_node("ValidationArea").queue_free()
 		is_ticket_checked = true
 		ticket_validation_sfx.play()
-		PassengerDataBus.currently_checked_passenger.is_skasowaned = true
-		PassengerDataBus.currently_checked_passenger.interactive_look_remover()
-		PassengerDataBus.currently_checked_passenger.hide_interaction_label()
+		passenger.is_skasowaned = true
+		passenger.interactive_look_remover()
+		passenger.hide_interaction_label()
 
 func _on_ask_ticket_pressed() -> void:
-	if is_ticket_checked == false:
+	if is_ticket_checked == false and passenger.has_ticket:
 		ticket.visible = true
 		#PassengerDataBus.game.get_node('ToolkitLayer/Toolkit').control_started()
 		#get_parent().get_node('Toolkit/NinePatchRect/HBoxContainer/HolePunch').disabled = false
@@ -98,16 +102,19 @@ func _on_ask_ticket_pressed() -> void:
 
 
 func _on_ask_document_pressed() -> void:
-	document.visible = true
-	button_sfx.play()
+	if passenger.has_document:
+		document.visible = true
+		button_sfx.play()
 
 func _on_button_close_pressed() -> void:
 	close()
 
 func close():
-	if PassengerDataBus.currently_checked_passenger.is_skasowaned == false:
-		PassengerDataBus.currently_checked_passenger.interaction_enabled = true
+	if passenger.is_skasowaned == false:
+		passenger.interaction_enabled = true
 	PassengerDataBus.game.end_ticket_control()
 	remove_child(document)
 	ticket.queue_free()
+	$Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket.disabled = false
+	$Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument.disabled = false
 	button_sfx.play()
