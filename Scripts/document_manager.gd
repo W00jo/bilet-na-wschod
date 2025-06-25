@@ -27,8 +27,9 @@ func assign_document(age):
 	match ticket:
 		"Ulgowy":
 			#document = preload(sciezka do legitki szkolnej).instantiate()
-			document = load("res://Scenes/student_id.tscn")
-			ticket_text = "BILET ULGOWY"
+			document = load("res://Scenes/id_card.tscn")
+			#ticket_text = "BILET ULGOWY"
+			ticket_text = "BILET NORMALNY"
 
 		"Studencki":
 			document = load("res://Scenes/student_id.tscn")

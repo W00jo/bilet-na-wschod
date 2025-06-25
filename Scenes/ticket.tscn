@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cj8m6m8ykovap" path="res://Scripts/ticket.gd" id="2_5yuud"]
 [ext_resource type="Shader" uid="uid://buw4fbxdvts4i" path="res://Shaders/cutout.gdshader" id="2_l3hpt"]
 [ext_resource type="Texture2D" uid="uid://dgceclpi5u5lf" path="res://Assets/Sprites/hole.png" id="3_ppn6r"]
-[ext_resource type="FontFile" uid="uid://cego08elbun1h" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="5_0xb0e"]
+[ext_resource type="FontFile" uid="uid://b7i0qbttnwogf" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="5_0xb0e"]
 [ext_resource type="Texture2D" uid="uid://b164d3d1cjr44" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="6_0xb0e"]
 [ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="6_ppn6r"]
 

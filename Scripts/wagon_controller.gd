@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var anim = $"../AnimationPlayer"
 
-var min_wagons = 2
+var min_wagons = 3
 var max_wagons = 3
 var wagon_scenes = ["res://Scenes/wagon_2.tscn"]
 var player_scene = load("res://Scenes/player.tscn")
@@ -92,6 +92,7 @@ func move_player_to_wagon(entrance_marker, camera_marker, old_wagon, new_wagon):
 	
 	var cam_pathfollow = new_wagon.get_node('CameraOnRail/PathFollow2D')
 	cam_pathfollow.position.x = new_wagon.get_node(camera_marker).position.x
+	#if new_wagon != all_wagons[0]:
 	cam_pathfollow.get_node('Camera2D').enabled = true
 	
 	anim.play("enter_wagon")

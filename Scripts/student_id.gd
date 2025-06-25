@@ -6,13 +6,45 @@ var magnified = false
 
 var current_passenger = PassengerDataBus.currently_checked_passenger
 var name_lastname
+var years_of_study
 
 func assign_data():
 	name_lastname = current_passenger.full_name
 	$AlbumNumber.text = str(current_passenger.album_number)
 	$Signature.text = name_lastname
 	$Name.text = name_lastname
+	assign_stamps()
+
+func assign_stamps():
+	years_of_study = current_passenger.years_of_study
+	for stamp in $Stamps.get_children(): ## hide all stamps
+		stamp.visible = false
+	var stamp_num = (years_of_study-1)*2 + 1
+	for stamp in $Stamps.get_children():
+		if stamp.get_index() <= stamp_num-1:
+			stamp.visible = true
+		else:
+			break
+	assign_years(stamp_num)
+
+func assign_years(stamp_num:int):
+	for yr in $Years.get_children():
+		yr.visible = false
+	var years = []
+	var cur_year = 99
+	var double_year_num = (stamp_num-1)/2
+	var first_year = cur_year - double_year_num
+	for i in double_year_num:
+		for j in 2:
+			years.append(first_year+i)
+	years.append(cur_year)
+	for i in years.size():
+		$Years.get_child(i).text = str(years[i])
+		$Years.get_child(i).visible = true
+		
+	$Date.text = "Lbn 01,10," + str(first_year-1) + "r,"
 	
+
 
 func _physics_process(delta: float) -> void:
 	if get_parent() is not SubViewport:

@@ -1,37 +1,82 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2mx6lnhhx1q8"]
+[gd_scene load_steps=10 format=3 uid="uid://c2mx6lnhhx1q8"]
 
-[ext_resource type="PackedScene" uid="uid://bekremb8qkq02" path="res://Scenes/parallax_bg.tscn" id="1_t7xkq"]
+[ext_resource type="Script" uid="uid://bq1lod7v37vyu" path="res://Scripts/test_shaders.gd" id="1_7ub86"]
+[ext_resource type="PackedScene" uid="uid://bekremb8qkq02" path="res://Scenes/parallax_morning.tscn" id="1_t7xkq"]
+[ext_resource type="PackedScene" uid="uid://cvu6dk0jtgu8i" path="res://Scenes/parallax_evening.tscn" id="2_3fhfs"]
 [ext_resource type="Shader" uid="uid://c2r3d1yttau1x" path="res://Shaders/single_wipe.gdshader" id="2_7ub86"]
-[ext_resource type="Texture2D" uid="uid://dgy2tokrhsr4c" path="res://Assets/Sprites/parallax_sky.png" id="3_3fhfs"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mpqh8"]
-viewport_path = NodePath("SubViewportContainer/SubViewport")
+viewport_path = NodePath("Morning/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ct46q"]
 resource_local_to_scene = true
 shader = ExtResource("2_7ub86")
 shader_parameter/under_texture = SubResource("ViewportTexture_mpqh8")
 shader_parameter/wipe_progress = -1.0
-shader_parameter/size = 0.637
-shader_parameter/block_size = 2.0
+shader_parameter/size = 1.0
+shader_parameter/block_size = 4.0
 
-[sub_resource type="Shader" id="Shader_5rm5r"]
-code = "shader_type canvas_item;
-uniform float amount: hint_range(1.0, 20.0, 1.0);
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+[sub_resource type="Animation" id="Animation_ct46q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Morning:material")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_ct46q")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Morning:material:shader_parameter/wipe_progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.0]
+}
 
-void fragment() 
-{
-	vec2 amt = 1.0 / amount / SCREEN_PIXEL_SIZE;
-	vec2 uv = round(SCREEN_UV * amt) / amt;
-	vec4 c = textureLod(SCREEN_TEXTURE, uv, 0);
-	
-	COLOR = c;
-}"
+[sub_resource type="Animation" id="Animation_mpqh8"]
+resource_name = "wipe"
+length = 1.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Morning:material")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Morning:material:shader_parameter/wipe_progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.0, 1.0]
+}
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2bmni"]
-shader = SubResource("Shader_5rm5r")
-shader_parameter/amount = 4.0
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rm5r"]
+_data = {
+&"RESET": SubResource("Animation_ct46q"),
+&"wipe": SubResource("Animation_mpqh8")
+}
 
 [node name="test_shaders" type="Control"]
 layout_mode = 3
@@ -40,32 +85,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7ub86")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="Evening" type="SubViewportContainer" parent="."]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Evening"]
 transparent_bg = true
+handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(1920, 1080)
+render_target_update_mode = 4
 
-[node name="ParallaxBg" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_t7xkq")]
+[node name="ParallaxEvening" parent="Evening/SubViewport" instance=ExtResource("2_3fhfs")]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Morning" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_ct46q")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("3_3fhfs")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_2bmni")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="SubViewport" type="SubViewport" parent="Morning"]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="ParallaxMorning" parent="Morning/SubViewport" instance=ExtResource("1_t7xkq")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5rm5r")
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

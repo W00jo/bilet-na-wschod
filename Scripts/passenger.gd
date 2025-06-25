@@ -22,6 +22,7 @@ var album_number = randi_range(21370, 99769)
 var adress
 var height = ["niski", "średni", "wysoki"].pick_random()
 var birth_date
+var years_of_study
 var pesel
 
 var body_tex:Texture

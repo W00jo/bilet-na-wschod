@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://egsp032xt05"
-path="res://.godot/imported/Choochoo_spedup.mp3-84fddede8bb25ea98dec6e590332320e.mp3str"
+path="res://.godot/imported/choochoo_spedup.mp3-d7a64da5619c13a49264dce82b4e18fd.mp3str"
 
 [deps]
 
-source_file="res://Assets/SFX/Choochoo_spedup.mp3"
-dest_files=["res://.godot/imported/Choochoo_spedup.mp3-84fddede8bb25ea98dec6e590332320e.mp3str"]
+source_file="res://Assets/SFX/choochoo_spedup.mp3"
+dest_files=["res://.godot/imported/choochoo_spedup.mp3-d7a64da5619c13a49264dce82b4e18fd.mp3str"]
 
 [params]
 

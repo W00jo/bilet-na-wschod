@@ -1,17 +1,17 @@
 extends Node2D
 
-@onready var ticket_control = get_parent().get_parent().get_node('TicketControl')
+@onready var ticket_control = get_parent().get_parent().get_parent().get_node('TicketControl')
 
-var normal_scale = Vector2(2, 2)
-var selected_scale = Vector2(4, 4)
+var normal_scale = Vector2(0.85, 0.85)
+var selected_scale = Vector2(1.5, 1.5)
 
 var selected = false
 
 func _physics_process(delta: float) -> void:
 	if selected:
-		global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
+		global_position = lerp(global_position, get_global_mouse_position(), 20*delta)
 	else:
-		global_position = lerp(global_position, get_parent().get_node('HolepunchMarker').global_position, 10*delta)
+		global_position = lerp(global_position, get_parent().get_node('HolepunchMarker').global_position, 15*delta)
 		look_for_ticket_areas()
 
 

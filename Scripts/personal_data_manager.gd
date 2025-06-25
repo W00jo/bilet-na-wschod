@@ -27,6 +27,7 @@ func _ready() -> void:
 	read_names()
 	read_adresses()
 	passenger.birth_date = generate_birth_date()
+	passenger.years_of_study = generate_years_of_study()
 	passenger.pesel = generate_pesel()
 
 func read_names():
@@ -47,6 +48,14 @@ func generate_birth_date():
 	b_day = randi_range(1,28)
 	birth_date = str(b_day) + " " + b_month + " " + str(b_year) + "r."
 	return birth_date
+
+func generate_years_of_study():
+	var years_of_study
+	if passenger.age >=19 and passenger.age <=22:
+		years_of_study = randi_range(1,4)
+	elif passenger.age >=23 and passenger.age <=26:
+		years_of_study = randi_range(1,5)
+	return years_of_study
 
 func generate_pesel():
 	var birth_year = str(b_year - 1900)

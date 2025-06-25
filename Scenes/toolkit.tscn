@@ -1,12 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dig63qkl2leqy"]
+[gd_scene load_steps=3 format=3 uid="uid://dig63qkl2leqy"]
 
-[ext_resource type="Texture2D" uid="uid://cxosu70wp28v" path="res://Assets/Sprites/UIElements/ui_toolkit_box.png" id="1_l1e7m"]
 [ext_resource type="Script" uid="uid://btm12wlm5yhja" path="res://Scripts/toolkit.gd" id="1_tufta"]
-[ext_resource type="Texture2D" uid="uid://eyq02llj6a26" path="res://Assets/Sprites/watch_tool.png" id="5_errsu"]
-[ext_resource type="Texture2D" uid="uid://byp8b1c0mkd0q" path="res://Assets/Sprites/whistle_tool.png" id="6_gu6cm"]
-[ext_resource type="Texture2D" uid="uid://bialcnx8q332y" path="res://Assets/Sprites/journal_tool.png" id="8_ocakr"]
-[ext_resource type="Texture2D" uid="uid://dy2fraxsxmuuu" path="res://Assets/Sprites/tickets_tool.png" id="9_3m3gv"]
-[ext_resource type="PackedScene" uid="uid://ormlp34rtbdb" path="res://Scenes/holepunch_dragndrop.tscn" id="9_l1e7m"]
+[ext_resource type="PackedScene" uid="uid://dby7jna7jxxyw" path="res://Scenes/tool_bag.tscn" id="8_3537i"]
 
 [node name="Toolkit" type="Control"]
 process_mode = 3
@@ -14,68 +9,21 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 961.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_tufta")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("1_l1e7m")
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
+[node name="ToolBag" parent="." instance=ExtResource("8_3537i")]
+position = Vector2(189, 1040)
+scale = Vector2(3.25, 3.25)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 321.0
-offset_top = 8.0
-offset_right = 1584.0
-offset_bottom = 110.0
+[node name="BagInteraction" type="Control" parent="ToolBag"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -23.0
+offset_top = -52.0
+offset_right = 27.0
+offset_bottom = -25.0
 
-[node name="Watch" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-disabled = true
-texture_normal = ExtResource("5_errsu")
-stretch_mode = 5
-
-[node name="Whistle" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-disabled = true
-texture_normal = ExtResource("6_gu6cm")
-stretch_mode = 5
-
-[node name="Empty" type="TextureRect" parent="NinePatchRect/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Journal" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-disabled = true
-texture_normal = ExtResource("8_ocakr")
-stretch_mode = 5
-
-[node name="Tickets" type="TextureButton" parent="NinePatchRect/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-disabled = true
-texture_normal = ExtResource("9_3m3gv")
-stretch_mode = 5
-
-[node name="HolepunchDragndrop" parent="." instance=ExtResource("9_l1e7m")]
-position = Vector2(948, 59)
-scale = Vector2(2, 2)
-
-[node name="HolepunchMarker" type="Marker2D" parent="."]
-position = Vector2(948, 59)
+[connection signal="gui_input" from="ToolBag/BagInteraction" to="." method="_on_bag_interaction_gui_input"]

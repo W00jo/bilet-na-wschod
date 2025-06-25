@@ -42,10 +42,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 238.0
-offset_top = 152.0
-offset_right = -345.0
-offset_bottom = -237.0
+offset_left = 227.0
+offset_top = 128.0
+offset_right = -356.0
+offset_bottom = -261.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
@@ -306,19 +306,20 @@ text = "[table=7] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell] [/cell] [c
 [node name="ButtonClose" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.91793
-anchor_top = 0.0315748
-anchor_right = 0.991976
-anchor_bottom = 0.166886
+anchor_left = 0.91521
+anchor_top = 0.0223655
+anchor_right = 0.999728
+anchor_bottom = 0.179384
 offset_right = -81.0
 offset_bottom = -76.5
-scale = Vector2(5.5, 5.5)
+scale = Vector2(3, 3)
 texture_normal = ExtResource("6_wctca")
 texture_pressed = ExtResource("4_d7iwj")
 texture_hover = ExtResource("5_xpyt6")
 metadata/_edit_use_anchors_ = true
 
 [node name="CloseInstruction" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1188.18
 offset_top = 12.7273
