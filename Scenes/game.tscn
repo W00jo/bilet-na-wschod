@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bp46xr7w38ybf" path="res://Assets/Sprites/UIElements/stress_bar_over.png" id="7_rfjv2"]
 [ext_resource type="Texture2D" uid="uid://di7qdb2j2bdsg" path="res://Assets/Sprites/UIElements/stress_bar_progress.png" id="8_1phco"]
 [ext_resource type="Texture2D" uid="uid://b5uk131mh71kd" path="res://Assets/Sprites/UIElements/splash_screen.png" id="8_ldgsr"]
-[ext_resource type="AudioStream" uid="uid://egsp032xt05" path="res://Assets/SFX/Choochoo_spedup.mp3" id="9_o5yvi"]
-[ext_resource type="AudioStream" uid="uid://cr6t3ltdavpl4" path="res://Assets/Music/gameplay_theme_loop.mp3" id="13_1phco"]
+[ext_resource type="AudioStream" uid="uid://egsp032xt05" path="res://Assets/SFX/choochoo_spedup.mp3" id="9_o5yvi"]
+[ext_resource type="AudioStream" uid="uid://bqu26xf2shj07" path="res://Assets/Music/gameplay_theme_loop.mp3" id="13_1phco"]
 [ext_resource type="AudioStream" uid="uid://dcifhel6t56du" path="res://Assets/Music/main_menu_disco_polo_loop.mp3" id="13_rfjv2"]
 
 [sub_resource type="Animation" id="Animation_wowpa"]
