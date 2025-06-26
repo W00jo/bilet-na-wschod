@@ -12,6 +12,7 @@ var mag_ticket
 var document
 var mag_document
 var is_ticket_checked
+var invalid_doc_mistake_rate = [1, 1, 2, 2, 3].pick_random()
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Interact") and visible and $MagnifiedDocument.visible == false and $MagnifiedTicket.visible == false:
@@ -21,6 +22,7 @@ func _input(event: InputEvent) -> void:
 func start_control():
 	passenger = PassengerDataBus.currently_checked_passenger
 	is_ticket_checked = false
+	
 	create_ticket()
 	create_document()
 	$Box/HBox/Middle/DialogueBox/Dialogue.greet()
@@ -72,7 +74,10 @@ func mag_remove_previous_docs():
 
 func set_document_data(doc):
 	doc.name_lastname = passenger.full_name
-	doc.assign_data()
+	if passenger.is_document_valid:
+		doc.assign_data("valid", 0)
+	else:
+		doc.assign_data("invalid", invalid_doc_mistake_rate)
 
 func create_document_avatar(doc):
 	var avatar_sprites = $Box/HBox/Left/NinePatchRect/PassengerAvatar.get_children()
@@ -82,7 +87,7 @@ func create_document_avatar(doc):
 			doc.get_node('PhotoCont/Photo').add_child(duplicate)
 
 func validate_ticket():
-	if is_ticket_checked == false:
+	if is_ticket_checked == false and passenger.is_fined == false:
 		ticket.get_node("TextureAndLabels").material.set_shader_parameter("mask_size", Vector2(0.25, 0.25))
 		ticket.get_node("TextureAndLabels/SubViewport/HoleOutline").visible = true
 		mag_ticket.get_node("TextureAndLabels/SubViewport/HoleOutline").visible = true
@@ -100,7 +105,6 @@ func _on_ask_ticket_pressed() -> void:
 		#get_parent().get_node('Toolkit/NinePatchRect/HBoxContainer/HolePunch').disabled = false
 		button_sfx.play()
 
-
 func _on_ask_document_pressed() -> void:
 	if passenger.has_document:
 		document.visible = true
@@ -110,7 +114,7 @@ func _on_button_close_pressed() -> void:
 	close()
 
 func close():
-	if passenger.is_skasowaned == false:
+	if passenger.is_skasowaned == false and passenger.is_fined == false:
 		passenger.interaction_enabled = true
 	PassengerDataBus.currently_checked_passenger = null
 	PassengerDataBus.game.end_ticket_control()

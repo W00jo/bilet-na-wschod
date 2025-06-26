@@ -39,6 +39,7 @@ func assign_problematic_levels(num_of_pas):
 	passenger_arr.shuffle()
 	var i = 0
 	var problem_num = randi_range(0, roundi(num_of_pas*0.5))
+	#var problem_num = passenger_arr.size()    ####  FOR_TEST
 	for pas in passenger_arr:
 		if i < problem_num:
 			pas.is_problematic = true

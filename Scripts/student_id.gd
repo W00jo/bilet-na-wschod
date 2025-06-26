@@ -8,7 +8,16 @@ var current_passenger = PassengerDataBus.currently_checked_passenger
 var name_lastname
 var years_of_study
 
-func assign_data():
+var is_valid
+var missing_stamps
+
+func assign_data(is_document_valid, missing_st):
+	missing_stamps = missing_st
+	match is_document_valid:
+		"valid":
+			is_valid = true
+		"invalid":
+			is_valid = false
 	name_lastname = current_passenger.full_name
 	$AlbumNumber.text = str(current_passenger.album_number)
 	$Signature.text = name_lastname
@@ -44,7 +53,25 @@ func assign_years(stamp_num:int):
 		
 	$Date.text = "Lbn 01,10," + str(first_year-1) + "r,"
 	
+	check_if_invalid()
 
+func check_if_invalid():
+	if is_valid == false:
+		make_invalid()
+
+
+func make_invalid():
+	var visible_stamps = []
+	var visible_years = []
+	for stamp in $Stamps.get_children():
+		if stamp.visible:
+			visible_stamps.append(stamp)
+	for year in $Years.get_children():
+		if year.visible:
+			visible_years.append(year)
+	for i in missing_stamps:
+		visible_stamps[visible_stamps.size()-(i+1)].visible = false
+		visible_years[visible_years.size()-(i+1)].visible = false
 
 func _physics_process(delta: float) -> void:
 	if get_parent() is not SubViewport:

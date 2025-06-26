@@ -54,12 +54,15 @@ func assign_document(age):
 func make_problematic():
 	print("is_problematic")
 	if ticket_text == "BILET ULGOWY":
-		var problem = ["no_ticket", "no_document", "no_document", "no_document"].pick_random()
+		var problem = ["no_ticket", "no_document", "no_document", "invalid_document", "invalid_document"].pick_random()
+		#var problem = "invalid_document" ### FOR_TEST
 		match problem:
 			"no_ticket":
 				get_parent().has_ticket = false
 			"no_document":
 				get_parent().has_document = false
+			"invalid_document":
+				get_parent().is_document_valid = false
 	else:
 		get_parent().has_ticket = false
 	print("ticket: ", get_parent().has_ticket, "  document: ", get_parent().has_document)

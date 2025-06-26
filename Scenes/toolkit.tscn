@@ -21,9 +21,9 @@ scale = Vector2(3.25, 3.25)
 [node name="BagInteraction" type="Control" parent="ToolBag"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -23.0
-offset_top = -52.0
+offset_left = -18.0
+offset_top = -56.0
 offset_right = 27.0
-offset_bottom = -25.0
+offset_bottom = -30.0
 
 [connection signal="gui_input" from="ToolBag/BagInteraction" to="." method="_on_bag_interaction_gui_input"]

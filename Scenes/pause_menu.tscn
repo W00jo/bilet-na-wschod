@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://cxnskg0bi7o7w" path="res://Shaders/blur.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://fr68yidptdhf" path="res://Scripts/pause.gd" id="1_sjs17"]
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_myy0f"]
-[ext_resource type="Texture2D" uid="uid://dvqlfbbfqlj13" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="3_sjs17"]
+[ext_resource type="Texture2D" uid="uid://bp4cjngglpiyf" path="res://Assets/Sprites/UIElements/button_dialogue_option_not_working.png" id="4_stj27"]
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="4_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="5_stj27"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="6_ix48p"]
@@ -16,7 +16,7 @@ shader_parameter/lod = 3.154
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_524vl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0fi7f"]
-texture = ExtResource("3_sjs17")
+texture = ExtResource("4_stj27")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uscpe"]
 texture = ExtResource("4_u8tnp")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://b8isqvx2friyc"]
+[gd_scene load_steps=65 format=4 uid="uid://b8isqvx2friyc"]
 
 [ext_resource type="Texture2D" uid="uid://diyn558wypc5q" path="res://Assets/Sprites/fine.png" id="1_gslbi"]
 [ext_resource type="Script" uid="uid://bks6drilcl16n" path="res://Scripts/fine.gd" id="1_y8f02"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dl8gl00yaoumt" path="res://Assets/Sprites/UIElements/arrow_dropdown.png" id="3_vlsl1"]
 [ext_resource type="FontFile" uid="uid://dy54cuo4rbn8a" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_c47hs"]
 [ext_resource type="Texture2D" uid="uid://bn2xdhg56udbn" path="res://Assets/Sprites/UIElements/fine_signature_indicators.png" id="6_drwaf"]
+[ext_resource type="Texture2D" uid="uid://c7yrgyhmmpi7r" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="7_fenrm"]
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="7_r7nce"]
 [ext_resource type="Texture2D" uid="uid://dvqlfbbfqlj13" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="8_fenrm"]
+[ext_resource type="FontFile" uid="uid://csst3yoqdnyvm" path="res://Assets/Fonts/ByteBounce.ttf" id="8_hwa0g"]
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_hwa0g"]
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="10_lpeer"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="11_l5fba"]
@@ -1378,7 +1380,7 @@ cache/0/16/4/glyphs/134217750/size = Vector2(13, 16)
 cache/0/16/4/glyphs/134217750/uv_rect = Rect2(44, 19, 13, 16)
 cache/0/16/4/glyphs/134217750/texture_idx = 0
 
-[sub_resource type="Image" id="Image_xuvq5"]
+[sub_resource type="Image" id="Image_y8f02"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8j////mf///77///+/////v////7////+/////v////7////+/////v////77///+Y////IQAAAAAAAAAA////mf///7////+/////v////7////+/////v////7////+/////v////7////+/////v////5cAAAAAAAAAAP///77///+/////v////7////+/////v////7////+/////v////7/s7OzD////v////7////++AAAAAAAAAAD///+/////v////7////+/////v////7////+/////v////7+wsLDRIyMj+7GxsdH///+/////vwAAAAAAAAAA////v////7////+/////v////7////+/////v////7+vr6/RHh4e/RoaGv9TU1Pr////v////78AAAAAAAAAAP///7////+/////v////7////+/////v////7+vr6/RHh4e/RoaGv9NTU3t9vb2wP///7////+/AAAAAAAAAAD///+/////v/v7+7/e3t7G////v////7+tra3RHh4e/RoaGv9OTk7t9vb2wP///7////+/////vwAAAAAAAAAA////v/v7+79YWFjpLCws+dPT08itra3SHh4e/RoaGv9OTk7t9vb2wP///7////+/////v////78AAAAAAAAAAP///7/n5+fENTU19hoaGv8pKSn5Hh4e/RoaGv9PT0/s9vb2wP///7////+/////v////7////+/AAAAAAAAAAD///+/////v+Dg4MU1NTX2Ghoa/xoaGv9PT0/s9vb2wP///7////+/////v////7////+/////vwAAAAAAAAAA////v////7////+/4ODgxTU1NfZQUFDs9vb2wP///7////+/////v////7////+/////v////78AAAAAAAAAAP///77///+/////v////7/k5OTE9vb2wP///7////+/////v////7////+/////v////7////+9AAAAAAAAAAD///+Y////v////7////+/////v////7////+/////v////7////+/////v////7////+/////lQAAAAAAAAAA////If///5f///++////v////7////+/////v////7////+/////v////7////+9////lf///yAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1388,9 +1390,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_g572w"]
-image = SubResource("Image_xuvq5")
+image = SubResource("Image_y8f02")
 
-[sub_resource type="Image" id="Image_mw246"]
+[sub_resource type="Image" id="Image_drwaf"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8R////S////13///9e////Xv///17///9e////Xv///17///9e////Xv///13///9K////EAAAAAAAAAAA////S////17///9e////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///0oAAAAAAAAAAP///13///9e////Xv///17///9e////Xv///17///9e////Xv///17r6+tj////Xv///17///9dAAAAAAAAAAD///9e////Xv///17///9e////Xv///17///9e////Xv///163t7d0XFxcqbe3t3T///9e////XgAAAAAAAAAA////Xv///17///9e////Xv///17///9e////Xv///161tbV1WVlZrFdXV692dnaV////Xv///14AAAAAAAAAAP///17///9e////Xv///17///9e////Xv///161tbV1WVlZrFdXV690dHSY9fX1YP///17///9eAAAAAAAAAAD///9e////Xvr6+l/d3d1n////Xv///161tbV1WVlZrFdXV690dHSX9fX1YP///17///9e////XgAAAAAAAAAA////Xvr6+l95eXmTX19fptTU1Gq0tLR2WVlZrFdXV690dHSX9fX1YP///17///9e////Xv///14AAAAAAAAAAP///17m5uZkZWVloldXV69fX1+nWVlZrFdXV690dHSX9fX1YP///17///9e////Xv///17///9eAAAAAAAAAAD///9e////XuHh4WZlZWWiV1dXr1dXV690dHSX9fX1YP///17///9e////Xv///17///9e////XgAAAAAAAAAA////Xv///17///9e4eHhZmVlZaJ1dXWW9fX1YP///17///9e////Xv///17///9e////Xv///14AAAAAAAAAAP///13///9e////Xv///17k5ORl9fX1YP///17///9e////Xv///17///9e////Xv///17///9dAAAAAAAAAAD///9K////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///17///9e////SQAAAAAAAAAA////EP///0r///9d////Xv///17///9e////Xv///17///9e////Xv///17///9d////Sf///w8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1400,7 +1402,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_p4uih"]
-image = SubResource("Image_mw246")
+image = SubResource("Image_drwaf")
 
 [sub_resource type="ImageTexture" id="ImageTexture_4b8ke"]
 
@@ -1410,7 +1412,7 @@ image = SubResource("Image_mw246")
 
 [sub_resource type="ImageTexture" id="ImageTexture_xuvq5"]
 
-[sub_resource type="Image" id="Image_01a7e"]
+[sub_resource type="Image" id="Image_r7nce"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwHbKysmawsLAtAAAAAAAAAAAAAAAAAAAAAAAAAACzs7MesbGxcrGxsXKzs7MvAAAAAAAAAAAAAAAAAAAAAAAAAACzs7MvsbGxcrGxsXKzs7MvAAAAAAAAAAAAAAAAAAAAAAAAAACzs7MvsrKyc7GxsXKzs7MeAAAAAAAAAAAAAAAAAAAAALCwsDCysrJzsbGxcrOzsx4AAAAAAAAAAAAAAACwsLAwsbGxcrGxsXKurq4vAAAAAAAAAAAAAAAAs7OzHrGxsXKxsbFyrq6uLwAAAAAAAAAAAAAAAAAAAACwsLAdsrKyZrCwsC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "format": "RGBA8",
@@ -1420,9 +1422,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_1knei"]
-image = SubResource("Image_01a7e")
+image = SubResource("Image_r7nce")
 
-[sub_resource type="Image" id="Image_ihiie"]
+[sub_resource type="Image" id="Image_fenrm"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsrKyLrKysmawsLAdAAAAAAAAAAAAAAAAAAAAALCwsDCxsbFysbGxcrOzsx4AAAAAAAAAAAAAAACwsLAwsbGxcrGxsXKurq4vAAAAAAAAAAAAAAAAs7OzHrGxsXKysrJzrq6uLwAAAAAAAAAAAAAAAAAAAACzs7MesbGxcrKysnOzs7MvAAAAAAAAAAAAAAAAAAAAAAAAAACzs7MvsbGxcrGxsXKzs7MvAAAAAAAAAAAAAAAAAAAAAAAAAACzs7MvsbGxcrGxsXKzs7MeAAAAAAAAAAAAAAAAAAAAAAAAAACysrIusrKyZrCwsB0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "format": "RGBA8",
@@ -1432,9 +1434,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_wwhm7"]
-image = SubResource("Image_ihiie")
+image = SubResource("Image_fenrm")
 
-[sub_resource type="Image" id="Image_d7af3"]
+[sub_resource type="Image" id="Image_hwa0g"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWFhYXGBgYZxgYGH8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBgYGH8ZGRlmFxcXFgAAAAAAAAAAGBgYZxoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBkZGWUAAAAAAAAAABgYGH8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAYGBh/AAAAAAAAAAAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagAAAAAAAAAAAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAAAAAAAAAAABoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAAAAAAAAAAAAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagAAAAAAAAAAAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAAAAAAAAAAABoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAAAAAAAAAAAAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagAAAAAAAAAAAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAAAAAAAAAAABgYGH8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAYGBh/AAAAAAAAAAAZGRlmGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGRkZZAAAAAAAAAAAFxcXFhkZGWUYGBh/GhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAYGBh/GRkZZBgYGBUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1444,9 +1446,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_0p0j2"]
-image = SubResource("Image_d7af3")
+image = SubResource("Image_hwa0g")
 
-[sub_resource type="Image" id="Image_d1i4m"]
+[sub_resource type="Image" id="Image_lpeer"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXFxcLGRkZMxgYGD8cHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBgYGD8ZGRkzFxcXCwAAAAAAAAAAGRkZMxwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBkZGTIAAAAAAAAAABgYGD8cHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAYGBg/AAAAAAAAAAAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQAAAAAAAAAAAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAAAAAAAAAAABwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAAAAAAAAAAAAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQAAAAAAAAAAAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAAAAAAAAAAABwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAAAAAAAAAAAAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQAAAAAAAAAAAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAAAAAAAAAAABgYGD8cHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAYGBg/AAAAAAAAAAAZGRkzHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAGRkZMgAAAAAAAAAAFxcXCxkZGTIYGBg/HBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAYGBg/GRkZMhkZGQoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1456,7 +1458,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_aflyw"]
-image = SubResource("Image_d1i4m")
+image = SubResource("Image_lpeer")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1knei"]
 
@@ -1548,6 +1550,20 @@ PopupMenu/styles/separator = SubResource("StyleBoxLine_4b8ke")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pciqn"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8f02"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_drwaf"]
+texture = ExtResource("8_fenrm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r7nce"]
+texture = ExtResource("9_hwa0g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fenrm"]
+texture = ExtResource("10_lpeer")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hwa0g"]
+texture = ExtResource("11_l5fba")
+
 [sub_resource type="Animation" id="Animation_1damr"]
 length = 0.001
 tracks/0/type = "value"
@@ -1587,20 +1603,6 @@ _data = {
 &"indicator": SubResource("Animation_8og2g")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1mxyb"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sjgpo"]
-texture = ExtResource("8_fenrm")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ojqb6"]
-texture = ExtResource("9_hwa0g")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kf0ac"]
-texture = ExtResource("10_lpeer")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2arqx"]
-texture = ExtResource("11_l5fba")
-
 [node name="Fine" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -1609,6 +1611,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y8f02")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.533333)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -1752,6 +1763,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ConductorSignature" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 1100.0
 offset_top = 752.0
 offset_right = 2923.0
@@ -1764,6 +1776,7 @@ text = "Efinowicz Janusz"
 
 [node name="PassengerSignature" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 444.0
 offset_top = 752.0
 offset_right = 2267.0
@@ -1791,37 +1804,54 @@ scale = Vector2(2.45, 1.95)
 position = Vector2(1285, 767)
 scale = Vector2(2.45, 1.95)
 
+[node name="CloseInstruction" type="TextureRect" parent="."]
+offset_left = 846.0
+offset_top = 64.0
+offset_right = 1119.0
+offset_bottom = 162.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_fenrm")
+
+[node name="CloseLabel" type="Label" parent="."]
+offset_left = 867.0
+offset_top = 92.0
+offset_right = 1026.0
+offset_bottom = 136.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("8_hwa0g")
+theme_override_font_sizes/font_size = 52
+text = "ZAMKNIJ"
+
+[node name="Ready" type="Button" parent="."]
+offset_left = 775.0
+offset_top = 914.0
+offset_right = 1108.0
+offset_bottom = 1019.0
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0.67, 0.424333, 0.3015, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
+theme_override_fonts/font = ExtResource("7_r7nce")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y8f02")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_drwaf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r7nce")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fenrm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hwa0g")
+disabled = true
+text = "GOTOWE"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_oxmhr")
 }
-
-[node name="Ready" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.403646
-anchor_top = 0.846296
-anchor_right = 0.620833
-anchor_bottom = 0.965741
-size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("7_r7nce")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxEmpty_1mxyb")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_sjgpo")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ojqb6")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kf0ac")
-theme_override_styles/normal = SubResource("StyleBoxTexture_2arqx")
-disabled = true
-text = "Gotowe"
-metadata/_edit_use_anchors_ = true
 
 [connection signal="item_selected" from="ReasonOptions" to="." method="_on_reason_options_item_selected"]
 [connection signal="item_selected" from="SumOptions" to="." method="_on_sum_options_item_selected"]

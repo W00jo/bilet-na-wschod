@@ -7,7 +7,7 @@ var magnified = false
 var current_passenger = PassengerDataBus.currently_checked_passenger
 var name_lastname
 
-func assign_data():
+func assign_data(is_doc_valid, years_below_reduced):
 	name_lastname = current_passenger.full_name
 	$LastName.text = current_passenger.last_name
 	$FirstName.text = current_passenger.first_name

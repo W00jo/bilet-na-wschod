@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8hjil3ghytl"]
+[gd_scene load_steps=11 format=3 uid="uid://c8hjil3ghytl"]
 
 [ext_resource type="Texture2D" uid="uid://4kygu28nt7lk" path="res://Assets/Sprites/ticket.png" id="1_41og6"]
 [ext_resource type="Script" uid="uid://cj8m6m8ykovap" path="res://Scripts/ticket.gd" id="2_5yuud"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dsiennjqxr1pc" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="5_0xb0e"]
 [ext_resource type="Texture2D" uid="uid://b164d3d1cjr44" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="6_0xb0e"]
 [ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="6_ppn6r"]
+[ext_resource type="FontFile" uid="uid://csst3yoqdnyvm" path="res://Assets/Fonts/ByteBounce.ttf" id="7_juejw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l3hpt"]
 shader = ExtResource("2_l3hpt")
@@ -21,7 +22,7 @@ shader_parameter/use_different_texture = true
 shader_parameter/mask_texture = ExtResource("3_ppn6r")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iydsi"]
-size = Vector2(163, 135)
+size = Vector2(198.667, 248)
 
 [node name="Ticket" type="Control"]
 layout_mode = 3
@@ -138,7 +139,7 @@ texture = ExtResource("3_ppn6r")
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ValidationArea"]
-position = Vector2(-3.5, 34.5)
+position = Vector2(-3.33334, 10.6667)
 shape = SubResource("RectangleShape2D_iydsi")
 
 [node name="Control" type="Control" parent="."]
@@ -159,6 +160,23 @@ offset_right = 35.0
 offset_bottom = -136.0
 scale = Vector2(1.2, 1)
 texture = ExtResource("6_0xb0e")
+
+[node name="ForbiddenLabel" type="Label" parent="."]
+visible = false
+offset_left = -92.0
+offset_top = -113.333
+offset_right = 142.0
+offset_bottom = 0.666664
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.712332, 0, 0.252649, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("7_juejw")
+theme_override_font_sizes/font_size = 52
+text = "WYSTAWIONO
+WEZWANIE
+DO ZAPŁATY"
+horizontal_alignment = 1
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ppn6r")

@@ -6,6 +6,7 @@ class_name Passenger
 @onready var doc_manager = $DocumentManager
 
 var is_skasowaned = false
+var is_fined = false
 
 var gender = ["m","f"].pick_random()
 var age = randi_range(12, 95)
@@ -29,6 +30,7 @@ var personality
 var is_problematic = false
 var has_ticket = true
 var has_document = true
+var is_document_valid = true
 
 var body_tex:Texture
 var hair_tex:Texture
@@ -192,14 +194,14 @@ func _on_area_exited(area: Area2D) -> void:
 		interaction_enabled = false
 
 func display_interaction_label():
-	if interaction_enabled and is_skasowaned == false:
+	if interaction_enabled and is_skasowaned == false and is_fined == false:
 		$InteractLabel.visible = true
 		
 func hide_interaction_label():
 	$InteractLabel.visible = false
 	
 func _input(event: InputEvent) -> void:
-	if interaction_enabled and $InteractLabel.visible and Input.is_action_just_pressed("Interact") and is_skasowaned == false:
+	if interaction_enabled and $InteractLabel.visible and Input.is_action_just_pressed("Interact") and is_skasowaned == false and is_fined == false:
 		PassengerDataBus.currently_checked_passenger = self
 		interaction_enabled = false
 		PassengerDataBus.transfer_passenger_data(avatar_textures, avatar_colors, eye_color)

@@ -421,7 +421,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TicketsTool:position")
+tracks/4/path = NodePath("FinesTool:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -498,7 +498,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TicketsTool:position")
+tracks/4/path = NodePath("FinesTool:position")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -533,16 +533,32 @@ script = ExtResource("1_sqjx1")
 sprite_frames = SubResource("SpriteFrames_l4h8m")
 animation = &"back"
 
-[node name="TicketsTool" type="Sprite2D" parent="."]
+[node name="FinesTool" type="Sprite2D" parent="."]
 position = Vector2(-17, 36)
 rotation = 1.5708
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_iggxa")
 
+[node name="Fines" type="Control" parent="FinesTool"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -31.0
+offset_top = -16.0
+offset_right = -4.0
+offset_bottom = 29.0
+
 [node name="JournalTool" type="Sprite2D" parent="."]
 position = Vector2(25, 42)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_4g5q5")
+
+[node name="Journal" type="Control" parent="JournalTool"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -23.0
+offset_top = -31.0
+offset_right = 25.0
+offset_bottom = -5.0
 
 [node name="Middle" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7pfk1")
@@ -562,3 +578,10 @@ animation = &"front"
 libraries = {
 &"": SubResource("AnimationLibrary_yr6q6")
 }
+
+[connection signal="gui_input" from="FinesTool/Fines" to="." method="_on_fines_gui_input"]
+[connection signal="mouse_entered" from="FinesTool/Fines" to="." method="_on_fines_mouse_entered"]
+[connection signal="mouse_exited" from="FinesTool/Fines" to="." method="_on_fines_mouse_exited"]
+[connection signal="gui_input" from="JournalTool/Journal" to="." method="_on_journal_gui_input"]
+[connection signal="mouse_entered" from="JournalTool/Journal" to="." method="_on_journal_mouse_entered"]
+[connection signal="mouse_exited" from="JournalTool/Journal" to="." method="_on_journal_mouse_exited"]

@@ -52,7 +52,7 @@ var dialogue = {
 func greet():
 	personality = PassengerDataBus.currently_checked_passenger.personality
 	var greeting = dialogue[personality]["greetings"].pick_random()
-	text = "[right]%s[/right]\n[left]%s[/left]" % [player_greeting, greeting]
+	text = "[right][color=STEEL_BLUE]%s[/color][/right]\n[left]%s[/left]" % [player_greeting, greeting]
 
 
 func _on_ask_ticket_pressed() -> void:
@@ -64,9 +64,8 @@ func _on_ask_ticket_pressed() -> void:
 			ticket_yes_or_no = "ticket_no"
 	var npc_text = dialogue[personality][ticket_yes_or_no].pick_random()
 	var player_text = dialogue[personality]["player_ask_ticket"].pick_random()
-	text += "\n[right]%s[/right]\n[left]%s[/left]" % [player_text, npc_text]
+	text += "\n[right][color=STEEL_BLUE]%s[/color][/right]\n[left]%s[/left]" % [player_text, npc_text]
 	ticket_button.disabled = true
-	print("Bilet pressed, personality:", personality, "key:", ticket_yes_or_no, "npc:", npc_text)
 
 
 func _on_ask_document_pressed() -> void:
@@ -78,6 +77,5 @@ func _on_ask_document_pressed() -> void:
 			id_yes_or_no = "id_no"
 	var npc_text = dialogue[personality][id_yes_or_no].pick_random()
 	var player_text = dialogue[personality]["player_ask_id"].pick_random()
-	text += "\n[right]%s[/right]\n[left]%s[/left]" % [player_text, npc_text]
+	text += "\n[right][color=STEEL_BLUE]%s[/color][/right]\n[left]%s[/left]" % [player_text, npc_text]
 	document_button.disabled = true
-	print("ID pressed, personality:", personality, "key:", id_yes_or_no, "npc:", npc_text)
