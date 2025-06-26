@@ -65,13 +65,13 @@ func age_range_assigner():
 	if age>=25 and age<=39:
 		age_range = "young_adult"
 		personality = ["polite", "overly_polite", "fraidy"].pick_random()
-	if age>=40 and age<=64:
+	if age>=40 and age<=54:
 		age_range = "middle_age"
 		personality = ["polite", "fraidy", "rude"].pick_random()
-	if age>=65 and age<=79:
+	if age>=55 and age<=74:
 		age_range = "senior"
 		personality = ["rude", "fraidy"].pick_random()
-	if age>=80 and age<=95:
+	if age>=75 and age<=95:
 		age_range = "elderly"
 		personality = ["overly_polite", "polite"].pick_random()
 		

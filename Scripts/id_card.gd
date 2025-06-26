@@ -7,7 +7,13 @@ var magnified = false
 var current_passenger = PassengerDataBus.currently_checked_passenger
 var name_lastname
 
+var is_valid = true
+var invalid_doc_years_below_reduced
+
 func assign_data(is_doc_valid, years_below_reduced):
+	invalid_doc_years_below_reduced = years_below_reduced
+	if is_doc_valid == "invalid":
+		is_valid = false 
 	name_lastname = current_passenger.full_name
 	$LastName.text = current_passenger.last_name
 	$FirstName.text = current_passenger.first_name
@@ -22,7 +28,11 @@ func assign_data(is_doc_valid, years_below_reduced):
 	$SpecialMarks.text = "nie ma"
 	$Pesel.text = current_passenger.pesel
 	$Signature.text = name_lastname
-	$BirthDate.text = current_passenger.birth_date
+	if is_valid:
+		$BirthDate.text = current_passenger.birth_date
+	else:
+		$BirthDate.text = current_passenger.birth_date ### kasujemy 4 ostatnie znaki i dodajemy nowy rok i "r."
+		
 
 func _physics_process(delta: float) -> void:
 	if get_parent() is not SubViewport:
