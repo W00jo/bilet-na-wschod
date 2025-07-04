@@ -1,23 +1,31 @@
 extends Control
 
-@onready var anim = $AnimationPlayer
+@onready var toolbag = $ToolBag
 
-func start_dialogue():
-	anim.speed_scale = 4
-	anim.play("dialogue")
-	await anim.animation_finished
-	anim.speed_scale = 1
+var is_open = false
 
-
-func undialogue():
-	anim.play_backwards("dialogue")
-
-func control_started():
-	$NinePatchRect/HBoxContainer/HolePunch.texture_normal = load("res://Assets/Sprites/hole_punch_tool_hint.png")
-	$NinePatchRect/HBoxContainer/HolePunch.disabled = false
+var position_hidden = Vector2(200,1050)
+var position_shown = Vector2(200,940)
 
 
-func _on_hole_punch_pressed() -> void:
-	print("Hole punched")
-	$NinePatchRect/HBoxContainer/HolePunch.texture_normal = load("res://Assets/Sprites/hole_punch_tool.png")
-	get_parent().get_node('TicketControl').ticket_checked()
+
+func _ready() -> void:
+	toolbag.position = position_hidden
+
+
+func _on_bag_interaction_gui_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("LMB"):
+		if is_open:
+			hide_bag()
+		elif is_open == false:
+			show_bag()
+
+func show_bag():
+	get_tree().create_tween().tween_property(toolbag, "position", position_shown, 0.25)
+	toolbag.open()
+	is_open = true
+
+func hide_bag():
+	get_tree().create_tween().tween_property(toolbag, "position", position_hidden, 0.25)
+	toolbag.close()
+	is_open =  false

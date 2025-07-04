@@ -1,21 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://db0se2prb2bru"]
+[gd_scene load_steps=15 format=3 uid="uid://db0se2prb2bru"]
 
 [ext_resource type="Shader" uid="uid://cxnskg0bi7o7w" path="res://Shaders/blur.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://fr68yidptdhf" path="res://Scripts/pause.gd" id="1_sjs17"]
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_myy0f"]
-[ext_resource type="Texture2D" uid="uid://dvqlfbbfqlj13" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="3_sjs17"]
+[ext_resource type="Texture2D" uid="uid://bp4cjngglpiyf" path="res://Assets/Sprites/UIElements/button_dialogue_option_not_working.png" id="4_stj27"]
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="4_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="5_stj27"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="6_ix48p"]
+[ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="8_u8tnp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0w1u"]
 shader = ExtResource("1_emv3i")
-shader_parameter/lod = 1.75
+shader_parameter/lod = 3.154
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_524vl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0fi7f"]
-texture = ExtResource("3_sjs17")
+texture = ExtResource("4_stj27")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uscpe"]
 texture = ExtResource("4_u8tnp")
@@ -43,14 +44,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.294118)
+color = Color(0, 0, 0, 0.498039)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = -1
 anchor_left = 0.353646
 anchor_top = 0.211111
-anchor_right = 0.630208
-anchor_bottom = 0.817593
+anchor_right = 0.630209
+anchor_bottom = 0.596296
+offset_top = 133.0
+offset_bottom = 133.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -60,9 +63,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.0705882, 0.258824, 0.309804, 1)
-theme_override_colors/font_outline_color = Color(0.0714149, 0.260118, 0.311629, 1)
-theme_override_colors/font_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
@@ -101,10 +104,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.0705882, 0.258824, 0.309804, 1)
-theme_override_colors/font_outline_color = Color(0.0714149, 0.260118, 0.311629, 1)
-theme_override_colors/font_color = Color(0.0705882, 0.258824, 0.309804, 1)
-theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_myy0f")
@@ -115,6 +118,9 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_uscpe")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_taale")
 theme_override_styles/normal = SubResource("StyleBoxTexture_q7fiq")
 text = "Wyjdź do menu"
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_u8tnp")
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

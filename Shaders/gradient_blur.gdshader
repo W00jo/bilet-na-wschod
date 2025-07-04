@@ -13,7 +13,7 @@ void fragment() {
 	vec4 second_color = vec4(0.0, 0.0, 0.0, 0.0);
 	float pivot = position + 0.5;
 	vec2 uv = UV - pivot;
-	float rotated = uv.x * cos(radians(angle)) - uv.y * sin(radians(angle)); 
+	float rotated = uv.x * cos(radians(angle)) - uv.y * sin(radians(angle));
 	float pos = smoothstep((1.0 - size) + position, size + 0.0001 + position, rotated + pivot);
-	COLOR = mix(first_color, second_color, pos); 
+	COLOR = mix(first_color, second_color, pos);
 }

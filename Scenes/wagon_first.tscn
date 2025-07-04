@@ -1,32 +1,25 @@
-[gd_scene load_steps=9 format=4 uid="uid://colmr5d1cvaxu"]
+[gd_scene load_steps=8 format=3 uid="uid://colmr5d1cvaxu"]
 
-[ext_resource type="Script" uid="uid://bpt4s0ma6hsjy" path="res://Scripts/wagon.gd" id="1_xcg6c"]
-[ext_resource type="TileSet" uid="uid://buvia4xnoyvec" path="res://Resources/wagon_tileset.tres" id="2_ed3vb"]
+[ext_resource type="Script" uid="uid://4s721feerner" path="res://Scripts/conductor_wagon.gd" id="1_omwpj"]
+[ext_resource type="Texture2D" uid="uid://bu5noj1e8frdf" path="res://Assets/Sprites/wagon_condutor.png" id="1_vkuc8"]
 [ext_resource type="Texture2D" uid="uid://dbgqnimhon67a" path="res://Assets/Sprites/suitcase_shelves.png" id="3_5p62l"]
 [ext_resource type="Texture2D" uid="uid://cc0i252pgylxq" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_omwpj"]
 [ext_resource type="TileSet" uid="uid://c7pvh4kvbyymp" path="res://Resources/chairs_tileset.tres" id="4_5p62l"]
 [ext_resource type="PackedScene" uid="uid://4e61xs8kmtjg" path="res://Scenes/camera_on_rail.tscn" id="6_jwpte"]
 
-[sub_resource type="Curve2D" id="Curve2D_5p62l"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 480, 222.353, 0, 0, 0, 0, 1677, 222.353)
-}
-point_count = 2
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcg6c"]
 size = Vector2(20, 275)
 
-[node name="WagonFirst" type="Node2D"]
-script = ExtResource("1_xcg6c")
+[node name="ConductorWagon" type="Node2D"]
+script = ExtResource("1_omwpj")
 
-[node name="Wagon" type="TileMapLayer" parent="."]
-position = Vector2(-50, 167)
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAACAAAAAAAFAAAAAAADAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAADAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAADAAAAAAAIAAAAAAAEAAAAAAABAAAAAAACAAAAAAAJAAAAAAAGAAAAAAAKAAAAAAAIAAAAAAALAAAAAAAAAAAAAAA=")
-tile_set = ExtResource("2_ed3vb")
+[node name="Train" type="Sprite2D" parent="."]
+position = Vector2(1282, 481)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("1_vkuc8")
 
 [node name="RightExitArrow" type="Sprite2D" parent="."]
-position = Vector2(2698, 404)
+position = Vector2(1606, 399)
 scale = Vector2(3, 2.8)
 texture = ExtResource("3_omwpj")
 region_enabled = true
@@ -34,16 +27,19 @@ region_rect = Rect2(32, 0, 32, 32)
 
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
+position = Vector2(0, -54)
 
 [node name="SuitcaseShelf" type="Sprite2D" parent="YSort"]
-position = Vector2(453, 420)
+visible = false
+position = Vector2(398, 507)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("3_5p62l")
 region_enabled = true
 region_rect = Rect2(0, 0, 66, 125)
 
 [node name="SuitcaseShelf2" type="Sprite2D" parent="YSort"]
-position = Vector2(2487, 420)
+visible = false
+position = Vector2(2072, 515)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("3_5p62l")
 region_enabled = true
@@ -51,27 +47,17 @@ region_rect = Rect2(0, 0, 66, 125)
 
 [node name="Chairs" type="TileMapLayer" parent="YSort"]
 y_sort_enabled = true
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAKAAkAAQAAAAAAAgAMAAkAAQAAAAAAAgASAAkAAQAAAAAAAgAUAAkAAQAAAAAAAgAMAAoAAQAAAAAAAQASAAoAAQAAAAAAAQAUAAoAAQAAAAAAAQAWAAkAAQAAAAAAAgAWAAoAAQAAAAAAAQAIAAkAAQAAAAAAAgAKAAoAAQAAAAAAAQAIABIAAQAAAAAAAQAKABIAAQAAAAAAAQAMABIAAQAAAAAAAQAOABIAAQAAAAAAAQAQABIAAQAAAAAAAQASABIAAQAAAAAAAQAUABIAAQAAAAAAAQAWABIAAQAAAAAAAQAIABEAAQAAAAAAAgAKABEAAQAAAAAAAgAMABEAAQAAAAAAAgAOABEAAQAAAAAAAgAQABEAAQAAAAAAAgASABEAAQAAAAAAAgAUABEAAQAAAAAAAgAWABEAAQAAAAAAAgAOAAkAAQAAAAAAAgAQAAkAAQAAAAAAAgAQAAoAAQAAAAAAAQAOAAoAAQAAAAAAAQAIAAoAAQAAAAAAAQA=")
+scale = Vector2(2.75, 2.75)
 tile_set = ExtResource("4_5p62l")
 
-[node name="Passengers" type="Node2D" parent="YSort"]
-y_sort_enabled = true
-
 [node name="CameraOnRail" parent="." instance=ExtResource("6_jwpte")]
-position = Vector2(480, 317.647)
-curve = SubResource("Curve2D_5p62l")
+position = Vector2(0, 487)
 
-[node name="LeftExitArea" type="Area2D" parent="."]
-position = Vector2(234, 586)
-scale = Vector2(1.75, 1.75)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftExitArea"]
-position = Vector2(0, 41.5)
-shape = SubResource("RectangleShape2D_xcg6c")
+[node name="PathFollow2D" parent="CameraOnRail" index="0"]
+position = Vector2(960, 3)
 
 [node name="RightExitArea" type="Area2D" parent="."]
-position = Vector2(2733, 584)
+position = Vector2(2003, 593)
 scale = Vector2(1.75, 1.75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightExitArea"]
@@ -79,23 +65,25 @@ position = Vector2(0, 41.5)
 shape = SubResource("RectangleShape2D_xcg6c")
 
 [node name="LeftEntranceMarker" type="Marker2D" parent="."]
-position = Vector2(474, 693)
+position = Vector2(808, 677)
 
 [node name="LeftCameraMarker" type="Marker2D" parent="."]
 position = Vector2(960, 540)
 
 [node name="RightEntranceMarker" type="Marker2D" parent="."]
-position = Vector2(2540, 693)
+position = Vector2(1861, 679)
 
 [node name="RightCameraMarker" type="Marker2D" parent="."]
-position = Vector2(2157, 540)
+position = Vector2(960, 540)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(215, 538, 227, 495, 256, 466, 328, 458, 379, 466, 378, 512, 527, 510, 527, 465, 716, 463, 734, 549, 2107, 553, 2164, 450, 2412, 450, 2413, 515, 2562, 516, 2562, 456, 2659, 463, 2719, 486, 2754, 537, 2753, 855, 2682, 901, 2593, 932, 2103, 935, 2125, 886, 2135, 857, 722, 860, 719, 937, 349, 934, 287, 895, 251, 865, 217, 839, 220, 977, 3117, 977, 3120, 166, 212, 168, 212, 846, 217, 838)
+visible = false
+polygon = PackedVector2Array(256, 505, 256, 908, 1813, 908, 1813, 880, 1993, 880, 2003, 865, 2007, 847, 2007, 547, 1829, 549, 1828, 578, 1663, 563, 1661, 510, 1632, 492, 1567, 479, 335, 479, 294, 486, 253, 502, 245, 505, 234, 86, 2319, 97, 2319, 927, 238, 924, 245, 508)
 
 [connection signal="child_entered_tree" from="YSort" to="." method="_on_y_sort_child_entered_tree"]
-[connection signal="body_entered" from="LeftExitArea" to="." method="_on_left_exit_area_body_entered"]
+[connection signal="area_entered" from="RightExitArea" to="." method="_on_right_exit_area_area_entered"]
 [connection signal="body_entered" from="RightExitArea" to="." method="_on_right_exit_area_body_entered"]
+
+[editable path="CameraOnRail"]

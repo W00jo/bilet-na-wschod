@@ -30,6 +30,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Bilet na wschod"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MyPlugin/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
@@ -45,6 +49,8 @@ folder_colors={
 Passenger=""
 Player=""
 Camera=""
+TicketArea=""
+VisibilityArea=""
 
 [input]
 

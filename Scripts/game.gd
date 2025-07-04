@@ -10,14 +10,16 @@ extends Node2D
 	#get_tree().paused = true
 	#$StartMenu.visible = true
 	#### set ChooChoo to Autoplay
+	##await get_tree().create_timer(2).timeout
+	#$MenuMusic.play()
 	
-#### UNCOMMENT FOR THE DIALOGUE TUTORIAL
-	#$ToolkitLayer/Toolkit.start_dialogue()
-	#$TutorialLayer.add_child(tutorial_dialogue)
+#func start_dialogue():
+	#get_tree().paused = false
+	#$ToolkitLayer/TutorialDialogue.start_tutorial_dialogue()
 
 func start_ticket_control():
 	ticket_control.visible = true
-	$ToolkitLayer/TicketControl.start_control()
+	ticket_control.start_control()
 	get_tree().get_first_node_in_group("Player").can_move = false
 
 func end_ticket_control():

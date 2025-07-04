@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b80uyautrg11t"]
+[gd_scene load_steps=33 format=3 uid="uid://b80uyautrg11t"]
 
 [ext_resource type="Script" uid="uid://cyfqyufsg3au3" path="res://Scripts/ticket_control.gd" id="1_o2i80"]
 [ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_4tmf3"]
@@ -9,14 +9,35 @@
 [ext_resource type="Texture2D" uid="uid://cxiqi60hmpdii" path="res://Assets/Sprites/UIElements/ui_document_box.png" id="5_7fm02"]
 [ext_resource type="Texture2D" uid="uid://mnpjkiv43ens" path="res://Assets/Sprites/UIElements/button_close_hover.png" id="5_xpyt6"]
 [ext_resource type="Texture2D" uid="uid://cond2jaipmxpy" path="res://Assets/Sprites/UIElements/button_close.png" id="6_wctca"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/UIElements/ui_inner_box_under_buttons.png" id="7_ivvik"]
+[ext_resource type="Texture2D" uid="uid://drnegoyywdsto" path="res://Assets/Sprites/UIElements/ui_inner_box_under_buttons.png" id="7_ivvik"]
+[ext_resource type="Script" uid="uid://bh21ypvmh88pj" path="res://Scripts/passenger_dialogue.gd" id="7_okt6h"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="7_w25t7"]
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="8_oyhfx"]
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="8_w25t7"]
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_fa7hl"]
 [ext_resource type="Texture2D" uid="uid://dvqlfbbfqlj13" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="10_fa7hl"]
+[ext_resource type="Texture2D" uid="uid://cc0yevf72i7va" path="res://Assets/Sprites/UIElements/calendar.png" id="13_jwvxh"]
 [ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="16_fa7hl"]
 [ext_resource type="AudioStream" uid="uid://dkuchwlj8aal" path="res://Assets/SFX/ticket_validation.wav" id="17_ivvik"]
+[ext_resource type="Texture2D" uid="uid://k7jyv5v2nmrg" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="17_t4xp8"]
+[ext_resource type="FontFile" uid="uid://csst3yoqdnyvm" path="res://Assets/Fonts/ByteBounce.ttf" id="18_jwvxh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okt6h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x8ygp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksdtc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00svc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgxtj"]
+
+[sub_resource type="Theme" id="Theme_1htim"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_okt6h")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_x8ygp")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_ksdtc")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_00svc")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_rgxtj")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0lvg"]
 
@@ -38,10 +59,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 238.0
-offset_top = 152.0
-offset_right = -345.0
-offset_bottom = -237.0
+offset_left = 227.0
+offset_top = 128.0
+offset_right = -356.0
+offset_bottom = -261.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
@@ -103,16 +124,17 @@ patch_margin_bottom = 19
 [node name="PassengerAvatar" parent="Box/HBox/Left/NinePatchRect" instance=ExtResource("5_4tmf3")]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.039
 anchor_top = 0.17
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -6.14546
-offset_top = -11.0936
-offset_right = -6.14546
-offset_bottom = -11.0936
+anchor_right = 0.964
+anchor_bottom = 0.959
+offset_left = -6.06246
+offset_top = -0.741837
+offset_right = 9.16252
+offset_bottom = 9.42615
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(4.75, 4.75)
+scale = Vector2(4.4, 4.5)
 
 [node name="Container" type="Container" parent="Box/HBox/Left"]
 layout_mode = 2
@@ -142,20 +164,24 @@ patch_margin_bottom = 14
 [node name="Dialogue" type="RichTextLabel" parent="Box/HBox/Middle/DialogueBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0451389
-anchor_top = 0.0487013
-anchor_right = 0.947917
-anchor_bottom = 0.951299
+anchor_left = 0.043771
+anchor_top = 0.0483871
+anchor_right = 0.955
+anchor_bottom = 0.95
+offset_right = 270.365
+offset_bottom = 223.4
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_1htim")
 theme_override_constants/line_separation = 15
 theme_override_fonts/normal_font = ExtResource("8_w25t7")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[right]Dzień dobry!
 [left]Dzień dobry."
-scroll_active = false
 scroll_following = true
+script = ExtResource("7_okt6h")
 metadata/_edit_use_anchors_ = true
 
 [node name="OptionBox" type="NinePatchRect" parent="Box/HBox/Middle"]
@@ -183,13 +209,13 @@ metadata/_edit_use_anchors_ = true
 [node name="AskTicket" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.67, 0.424333, 0.3015, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
 theme_override_fonts/font = ExtResource("8_w25t7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_s0lvg")
@@ -202,13 +228,13 @@ text = "Poproś o  bilet"
 [node name="AskDocument" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.67, 0.424333, 0.3015, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
 theme_override_fonts/font = ExtResource("8_w25t7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_s0lvg")
@@ -222,13 +248,13 @@ text = "Zapytaj  o  dokument"
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_disabled_color = Color(0.67, 0.424333, 0.3015, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.0714149, 0.260118, 0.311629, 1)
 theme_override_colors/font_color = Color(0.0705882, 0.258824, 0.309804, 1)
 theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
 theme_override_fonts/font = ExtResource("8_w25t7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_s0lvg")
@@ -250,48 +276,638 @@ patch_margin_top = 58
 patch_margin_right = 61
 patch_margin_bottom = 30
 
+[node name="Calendar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 0.909093
+offset_top = 363.636
+offset_right = 139.909
+offset_bottom = 506.636
+scale = Vector2(2.15, 2.15)
+texture = ExtResource("13_jwvxh")
+
+[node name="Year" type="Label" parent="."]
+layout_mode = 2
+offset_left = 122.727
+offset_top = 426.364
+offset_right = 190.727
+offset_bottom = 455.364
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_fonts/font = ExtResource("18_jwvxh")
+theme_override_font_sizes/font_size = 42
+text = "1995"
+
+[node name="Month" type="Label" parent="."]
+layout_mode = 2
+offset_left = 64.5454
+offset_top = 453.636
+offset_right = 246.545
+offset_bottom = 491.636
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_fonts/font = ExtResource("18_jwvxh")
+theme_override_font_sizes/font_size = 54
+text = "KWIECIEŃ"
+
+[node name="Days" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 44.5454
+offset_top = 497.273
+offset_right = 268.546
+offset_bottom = 674.273
+theme_override_colors/default_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_colors/font_outline_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[table=7] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell]    1[/cell] [cell][color=#87202b][outline_color=#87202b]    2[/outline_color][/color][/cell] [cell]    3[/cell] [cell]    4[/cell] [cell]    5[/cell] [cell]    6[/cell] [cell]    7[/cell] [cell]    8[/cell] [cell][color=#87202b][outline_color=#87202b]    9[/outline_color][/color][/cell] [cell]  10[/cell] [cell]  11[/cell] [cell]  12[/cell] [cell]  13[/cell] [cell]  14[/cell] [cell]  15[/cell] [cell][color=#87202b][outline_color=#87202b]  16[/outline_color][/color][/cell] [cell]  17[/cell] [cell]  18[/cell] [cell]  19[/cell] [cell]  20[/cell] [cell]  21[/cell] [cell]  22[/cell] [cell][color=#87202b][outline_color=#87202b]  23[/outline_color][/color][/cell] [cell]  24[/cell] [cell]  25[/cell] [cell]  26[/cell] [cell]  27[/cell] [cell]  28[/cell] [cell]  29[/cell] [cell][color=#87202b][outline_color=#87202b]  30[/outline_color][/color][/cell]  [/table]"
+
 [node name="ButtonClose" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.91793
-anchor_top = 0.0315748
-anchor_right = 0.991976
-anchor_bottom = 0.166886
+anchor_left = 0.91521
+anchor_top = 0.0223655
+anchor_right = 0.999728
+anchor_bottom = 0.179384
 offset_right = -81.0
 offset_bottom = -76.5
-scale = Vector2(5.5, 5.5)
+scale = Vector2(3, 3)
 texture_normal = ExtResource("6_wctca")
 texture_pressed = ExtResource("4_d7iwj")
 texture_hover = ExtResource("5_xpyt6")
 metadata/_edit_use_anchors_ = true
 
+[node name="Markers" type="Node2D" parent="."]
+position = Vector2(987.273, 381.818)
+
+[node name="Marker2D" type="Marker2D" parent="Markers"]
+position = Vector2(-161.818, -207.273)
+
+[node name="Marker2D2" type="Marker2D" parent="Markers"]
+position = Vector2(-99.0909, -207.273)
+
+[node name="Marker2D3" type="Marker2D" parent="Markers"]
+position = Vector2(-40, -207.273)
+
+[node name="Marker2D4" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -207.273)
+
+[node name="Marker2D5" type="Marker2D" parent="Markers"]
+position = Vector2(-161.818, -176.364)
+
+[node name="Marker2D6" type="Marker2D" parent="Markers"]
+position = Vector2(-100, -176.364)
+
+[node name="Marker2D7" type="Marker2D" parent="Markers"]
+position = Vector2(-40, -176.364)
+
+[node name="Marker2D8" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -176.364)
+
+[node name="Marker2D9" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -86.3635)
+
+[node name="Marker2D10" type="Marker2D" parent="Markers"]
+position = Vector2(-39.0909, -86.3635)
+
+[node name="Marker2D11" type="Marker2D" parent="Markers"]
+position = Vector2(-100, -86.3635)
+
+[node name="Marker2D12" type="Marker2D" parent="Markers"]
+position = Vector2(-162.727, -86.3635)
+
+[node name="Marker2D13" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -30.9093)
+
+[node name="Marker2D14" type="Marker2D" parent="Markers"]
+position = Vector2(-39.0909, -30.9093)
+
+[node name="Marker2D15" type="Marker2D" parent="Markers"]
+position = Vector2(-100, -30.9093)
+
+[node name="Marker2D16" type="Marker2D" parent="Markers"]
+position = Vector2(-162.727, -30.9093)
+
+[node name="Marker2D17" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, 23.6364)
+
+[node name="Marker2D21" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -207.273)
+
+[node name="Marker2D22" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -176.364)
+
+[node name="Marker2D26" type="Marker2D" parent="Markers"]
+position = Vector2(-161.818, 109.091)
+
+[node name="Marker2D27" type="Marker2D" parent="Markers"]
+position = Vector2(-100, 109.091)
+
+[node name="Marker2D28" type="Marker2D" parent="Markers"]
+position = Vector2(-40, 109.091)
+
+[node name="Marker2D29" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, 109.091)
+
+[node name="Marker2D30" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, 109.091)
+
+[node name="Marker2D23" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -86.3635)
+
+[node name="Marker2D24" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -30.9093)
+
+[node name="Marker2D25" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, 23.6364)
+
+[node name="Marker2D31" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -207.273)
+
+[node name="Marker2D32" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -176.364)
+
+[node name="Marker2D43" type="Marker2D" parent="Markers"]
+position = Vector2(-161.818, -144.545)
+
+[node name="Marker2D44" type="Marker2D" parent="Markers"]
+position = Vector2(-100, -144.545)
+
+[node name="Marker2D45" type="Marker2D" parent="Markers"]
+position = Vector2(-40, -144.545)
+
+[node name="Marker2D46" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -144.545)
+
+[node name="Marker2D47" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -144.545)
+
+[node name="Marker2D48" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -144.545)
+
+[node name="Marker2D49" type="Marker2D" parent="Markers"]
+position = Vector2(-161.818, -114.545)
+
+[node name="Marker2D50" type="Marker2D" parent="Markers"]
+position = Vector2(-100, -114.545)
+
+[node name="Marker2D51" type="Marker2D" parent="Markers"]
+position = Vector2(-40, -114.545)
+
+[node name="Marker2D52" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -114.545)
+
+[node name="Marker2D53" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -114.545)
+
+[node name="Marker2D54" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -114.545)
+
+[node name="Marker2D33" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, 109.091)
+
+[node name="Marker2D79" type="Marker2D" parent="Markers"]
+position = Vector2(-161.818, 136.364)
+
+[node name="Marker2D80" type="Marker2D" parent="Markers"]
+position = Vector2(-100, 136.364)
+
+[node name="Marker2D81" type="Marker2D" parent="Markers"]
+position = Vector2(-40, 136.364)
+
+[node name="Marker2D82" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, 136.364)
+
+[node name="Marker2D83" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, 136.364)
+
+[node name="Marker2D84" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, 136.364)
+
+[node name="Marker2D37" type="Marker2D" parent="Markers"]
+position = Vector2(-161.818, 165.455)
+
+[node name="Marker2D38" type="Marker2D" parent="Markers"]
+position = Vector2(-100, 165.455)
+
+[node name="Marker2D39" type="Marker2D" parent="Markers"]
+position = Vector2(-40, 165.455)
+
+[node name="Marker2D40" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, 165.455)
+
+[node name="Marker2D41" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, 165.455)
+
+[node name="Marker2D42" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, 165.455)
+
+[node name="Marker2D34" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -86.3635)
+
+[node name="Marker2D55" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -59.0908)
+
+[node name="Marker2D56" type="Marker2D" parent="Markers"]
+position = Vector2(-39.0909, -59.0908)
+
+[node name="Marker2D57" type="Marker2D" parent="Markers"]
+position = Vector2(-100, -59.0908)
+
+[node name="Marker2D58" type="Marker2D" parent="Markers"]
+position = Vector2(-162.727, -59.0908)
+
+[node name="Marker2D59" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -59.0908)
+
+[node name="Marker2D60" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -59.0908)
+
+[node name="Marker2D61" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, -4.54536)
+
+[node name="Marker2D62" type="Marker2D" parent="Markers"]
+position = Vector2(-39.0909, -4.54536)
+
+[node name="Marker2D63" type="Marker2D" parent="Markers"]
+position = Vector2(-100, -4.54536)
+
+[node name="Marker2D64" type="Marker2D" parent="Markers"]
+position = Vector2(-162.727, -4.54536)
+
+[node name="Marker2D65" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, -4.54536)
+
+[node name="Marker2D66" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -4.54536)
+
+[node name="Marker2D35" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, -30.9093)
+
+[node name="Marker2D36" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, 23.6364)
+
+[node name="Marker2D18" type="Marker2D" parent="Markers"]
+position = Vector2(-39.0909, 23.6364)
+
+[node name="Marker2D19" type="Marker2D" parent="Markers"]
+position = Vector2(-100, 23.6364)
+
+[node name="Marker2D20" type="Marker2D" parent="Markers"]
+position = Vector2(-162.727, 23.6364)
+
+[node name="Marker2D67" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, 51.8182)
+
+[node name="Marker2D68" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, 51.8182)
+
+[node name="Marker2D69" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, 51.8182)
+
+[node name="Marker2D70" type="Marker2D" parent="Markers"]
+position = Vector2(-39.0909, 51.8182)
+
+[node name="Marker2D71" type="Marker2D" parent="Markers"]
+position = Vector2(-100, 51.8182)
+
+[node name="Marker2D72" type="Marker2D" parent="Markers"]
+position = Vector2(-162.727, 51.8182)
+
+[node name="Marker2D73" type="Marker2D" parent="Markers"]
+position = Vector2(22.7273, 80.0001)
+
+[node name="Marker2D74" type="Marker2D" parent="Markers"]
+position = Vector2(85.4545, 80.0001)
+
+[node name="Marker2D75" type="Marker2D" parent="Markers"]
+position = Vector2(145.455, 80.0001)
+
+[node name="Marker2D76" type="Marker2D" parent="Markers"]
+position = Vector2(-39.0909, 80.0001)
+
+[node name="Marker2D77" type="Marker2D" parent="Markers"]
+position = Vector2(-100, 80.0001)
+
+[node name="Marker2D78" type="Marker2D" parent="Markers"]
+position = Vector2(-162.727, 80.0001)
+
+[node name="Marker2D85" type="Marker2D" parent="Markers"]
+position = Vector2(-130, -207.273)
+
+[node name="Marker2D86" type="Marker2D" parent="Markers"]
+position = Vector2(-130, -176.364)
+
+[node name="Marker2D87" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, -86.3635)
+
+[node name="Marker2D88" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, -30.9093)
+
+[node name="Marker2D89" type="Marker2D" parent="Markers"]
+position = Vector2(-130, 109.091)
+
+[node name="Marker2D90" type="Marker2D" parent="Markers"]
+position = Vector2(-130, -144.545)
+
+[node name="Marker2D91" type="Marker2D" parent="Markers"]
+position = Vector2(-130, -114.545)
+
+[node name="Marker2D92" type="Marker2D" parent="Markers"]
+position = Vector2(-130, 136.364)
+
+[node name="Marker2D93" type="Marker2D" parent="Markers"]
+position = Vector2(-130, 165.455)
+
+[node name="Marker2D94" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, -59.0908)
+
+[node name="Marker2D95" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, -4.54536)
+
+[node name="Marker2D96" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, 23.6364)
+
+[node name="Marker2D97" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, 51.8182)
+
+[node name="Marker2D98" type="Marker2D" parent="Markers"]
+position = Vector2(-130.909, 80.0001)
+
+[node name="Marker2D99" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, -207.273)
+
+[node name="Marker2D100" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, -176.364)
+
+[node name="Marker2D101" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, -86.3635)
+
+[node name="Marker2D102" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, -30.9093)
+
+[node name="Marker2D103" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, 109.091)
+
+[node name="Marker2D104" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, -144.545)
+
+[node name="Marker2D105" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, -114.545)
+
+[node name="Marker2D106" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, 136.364)
+
+[node name="Marker2D107" type="Marker2D" parent="Markers"]
+position = Vector2(-69.0913, 165.455)
+
+[node name="Marker2D108" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, -59.0908)
+
+[node name="Marker2D109" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, -4.54536)
+
+[node name="Marker2D110" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, 23.6364)
+
+[node name="Marker2D111" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, 51.8182)
+
+[node name="Marker2D112" type="Marker2D" parent="Markers"]
+position = Vector2(-70.0003, 80.0001)
+
+[node name="Marker2D113" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, -207.273)
+
+[node name="Marker2D114" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, -176.364)
+
+[node name="Marker2D115" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, -86.3635)
+
+[node name="Marker2D116" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, -30.9093)
+
+[node name="Marker2D117" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, 109.091)
+
+[node name="Marker2D118" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, -144.545)
+
+[node name="Marker2D119" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, -114.545)
+
+[node name="Marker2D120" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, 136.364)
+
+[node name="Marker2D121" type="Marker2D" parent="Markers"]
+position = Vector2(-9.09128, 165.455)
+
+[node name="Marker2D122" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, -59.0908)
+
+[node name="Marker2D123" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, -4.54536)
+
+[node name="Marker2D124" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, 23.6364)
+
+[node name="Marker2D125" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, 51.8182)
+
+[node name="Marker2D126" type="Marker2D" parent="Markers"]
+position = Vector2(-10.0003, 80.0001)
+
+[node name="Marker2D127" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, -207.273)
+
+[node name="Marker2D128" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, -176.364)
+
+[node name="Marker2D129" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, -86.3635)
+
+[node name="Marker2D130" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, -30.9093)
+
+[node name="Marker2D131" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, 109.091)
+
+[node name="Marker2D132" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, -144.545)
+
+[node name="Marker2D133" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, -114.545)
+
+[node name="Marker2D134" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, 136.364)
+
+[node name="Marker2D135" type="Marker2D" parent="Markers"]
+position = Vector2(53.636, 165.455)
+
+[node name="Marker2D136" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, -59.0908)
+
+[node name="Marker2D137" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, -4.54536)
+
+[node name="Marker2D138" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, 23.6364)
+
+[node name="Marker2D139" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, 51.8182)
+
+[node name="Marker2D140" type="Marker2D" parent="Markers"]
+position = Vector2(52.727, 80.0001)
+
+[node name="Marker2D141" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, -207.273)
+
+[node name="Marker2D142" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, -176.364)
+
+[node name="Marker2D143" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, -86.3635)
+
+[node name="Marker2D144" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, -30.9093)
+
+[node name="Marker2D145" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, 109.091)
+
+[node name="Marker2D146" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, -144.545)
+
+[node name="Marker2D147" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, -114.545)
+
+[node name="Marker2D148" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, 136.364)
+
+[node name="Marker2D149" type="Marker2D" parent="Markers"]
+position = Vector2(116.363, 165.455)
+
+[node name="Marker2D150" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, -59.0908)
+
+[node name="Marker2D151" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, -4.54536)
+
+[node name="Marker2D152" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, 23.6364)
+
+[node name="Marker2D153" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, 51.8182)
+
+[node name="Marker2D154" type="Marker2D" parent="Markers"]
+position = Vector2(115.454, 80.0001)
+
 [node name="TicketMarker" type="Marker2D" parent="."]
-position = Vector2(934.545, 504.545)
+position = Vector2(1037.27, 502.727)
 
 [node name="DocumentMarker" type="Marker2D" parent="."]
-position = Vector2(922.727, 206.364)
+position = Vector2(914.545, 249.091)
 
-[node name="MagnifiedView" type="CanvasLayer" parent="."]
+[node name="MagnifiedTicket" type="CanvasLayer" parent="."]
 layer = 3
 visible = false
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MagnifiedView"]
-offset_left = 268.0
-offset_top = 166.0
-offset_right = 1668.0
-offset_bottom = 966.0
+[node name="ColorRect" type="ColorRect" parent="MagnifiedTicket"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.694118)
 
-[node name="SubViewport" type="SubViewport" parent="MagnifiedView/SubViewportContainer"]
+[node name="SVCont" type="SubViewportContainer" parent="MagnifiedTicket"]
+anchors_preset = -1
+anchor_left = 0.139583
+anchor_top = 0.153704
+anchor_right = 0.86875
+anchor_bottom = 0.894444
+metadata/_edit_use_anchors_ = true
+
+[node name="SV" type="SubViewport" parent="MagnifiedTicket/SVCont"]
 transparent_bg = true
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
+gui_disable_input = true
 size = Vector2i(1400, 750)
 render_target_update_mode = 0
 
-[node name="MagnDocMarker" type="Marker2D" parent="MagnifiedView/SubViewportContainer/SubViewport"]
-position = Vector2(680, 371)
+[node name="CloseInstruction" type="TextureRect" parent="MagnifiedTicket"]
+offset_left = 838.0
+offset_top = 164.0
+offset_right = 1111.0
+offset_bottom = 262.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("17_t4xp8")
 
-[node name="MagnTicketMarker" type="Marker2D" parent="MagnifiedView/SubViewportContainer/SubViewport"]
-position = Vector2(472, 246)
+[node name="CloseLabel" type="Label" parent="MagnifiedTicket"]
+offset_left = 854.8
+offset_top = 186.4
+offset_right = 1013.8
+offset_bottom = 230.4
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("18_jwvxh")
+theme_override_font_sizes/font_size = 52
+text = "ZAMKNIJ"
+
+[node name="MagnifiedDocument" type="CanvasLayer" parent="."]
+layer = 3
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="MagnifiedDocument"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.694118)
+
+[node name="SVCont" type="SubViewportContainer" parent="MagnifiedDocument"]
+anchors_preset = -1
+anchor_left = 0.139583
+anchor_top = 0.153704
+anchor_right = 0.86875
+anchor_bottom = 0.894444
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SV" type="SubViewport" parent="MagnifiedDocument/SVCont"]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+gui_disable_input = true
+size = Vector2i(1400, 750)
+render_target_update_mode = 0
+
+[node name="CloseInstruction" type="TextureRect" parent="MagnifiedDocument"]
+offset_left = 846.0
+offset_top = 64.0
+offset_right = 1119.0
+offset_bottom = 162.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("17_t4xp8")
+
+[node name="CloseLabel" type="Label" parent="MagnifiedDocument"]
+offset_left = 867.0
+offset_top = 92.0
+offset_right = 1026.0
+offset_bottom = 136.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("18_jwvxh")
+theme_override_font_sizes/font_size = 52
+text = "ZAMKNIJ"
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_fa7hl")
@@ -300,5 +916,7 @@ stream = ExtResource("16_fa7hl")
 stream = ExtResource("17_ivvik")
 
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket" to="." method="_on_ask_ticket_pressed"]
+[connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket" to="Box/HBox/Middle/DialogueBox/Dialogue" method="_on_ask_ticket_pressed"]
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument" to="." method="_on_ask_document_pressed"]
+[connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument" to="Box/HBox/Middle/DialogueBox/Dialogue" method="_on_ask_document_pressed"]
 [connection signal="pressed" from="ButtonClose" to="." method="_on_button_close_pressed"]

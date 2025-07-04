@@ -13,6 +13,6 @@ scenes/4/scene = ExtResource("4_oi7uh")
 
 [resource]
 tile_shape = 2
-tile_size = Vector2i(30, 15)
+tile_size = Vector2i(10, 5)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetScenesCollectionSource_3qui0")

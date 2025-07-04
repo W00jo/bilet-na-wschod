@@ -1,17 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8hjil3ghytl"]
+[gd_scene load_steps=12 format=3 uid="uid://c8hjil3ghytl"]
 
 [ext_resource type="Texture2D" uid="uid://4kygu28nt7lk" path="res://Assets/Sprites/ticket.png" id="1_41og6"]
 [ext_resource type="Script" uid="uid://cj8m6m8ykovap" path="res://Scripts/ticket.gd" id="2_5yuud"]
-[ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_iydsi"]
 [ext_resource type="Shader" uid="uid://buw4fbxdvts4i" path="res://Shaders/cutout.gdshader" id="2_l3hpt"]
 [ext_resource type="Texture2D" uid="uid://dgceclpi5u5lf" path="res://Assets/Sprites/hole.png" id="3_ppn6r"]
+[ext_resource type="FontFile" uid="uid://dsiennjqxr1pc" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="5_0xb0e"]
+[ext_resource type="Texture2D" uid="uid://b164d3d1cjr44" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="6_0xb0e"]
+[ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="6_ppn6r"]
+[ext_resource type="FontFile" uid="uid://csst3yoqdnyvm" path="res://Assets/Fonts/ByteBounce.ttf" id="7_juejw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l3hpt"]
 shader = ExtResource("2_l3hpt")
 shader_parameter/fill_amount = 0.5
 shader_parameter/mask_rotation = 0.0
-shader_parameter/mask_offset = Vector2(-3.395, 0.935)
-shader_parameter/mask_size = Vector2(0, 0)
+shader_parameter/mask_offset = Vector2(-0.875, -1.21)
+shader_parameter/mask_size = Vector2(0.25, 0.25)
 shader_parameter/mask_rotation_pivot = Vector2(0.5, 0.5)
 shader_parameter/mask_scale_pivot = Vector2(0.5, 0.5)
 shader_parameter/invert_mask = false
@@ -19,118 +22,177 @@ shader_parameter/use_different_texture = true
 shader_parameter/mask_texture = ExtResource("3_ppn6r")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iydsi"]
-size = Vector2(38, 82)
+size = Vector2(198.667, 248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juejw"]
+size = Vector2(125.333, 221.333)
 
 [node name="Ticket" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.75, 0.75)
 script = ExtResource("2_5yuud")
 
 [node name="TextureAndLabels" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_l3hpt")
 layout_mode = 0
-offset_left = -80.0
-offset_top = -52.0
-offset_right = 220.0
-offset_bottom = 204.0
+offset_left = -154.0
+offset_top = -153.0
+offset_right = 146.0
+offset_bottom = 147.0
 
 [node name="SubViewport" type="SubViewport" parent="TextureAndLabels"]
 transparent_bg = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(300, 256)
+size = Vector2i(250, 300)
 render_target_update_mode = 4
 
 [node name="TicketTexture" type="TextureRect" parent="TextureAndLabels/SubViewport"]
-offset_left = -2.0
+offset_left = 266.0
 offset_top = -4.0
-offset_right = 148.0
+offset_right = 416.0
 offset_bottom = 96.0
+rotation = 1.5708
 scale = Vector2(2, 2)
 texture = ExtResource("1_41og6")
 
 [node name="RouteNumber" type="Label" parent="TextureAndLabels/SubViewport"]
-offset_left = 90.0
-offset_top = 28.0
-offset_right = 190.0
-offset_bottom = 56.0
-theme_override_colors/font_color = Color(0.627451, 0.592157, 0.501961, 1)
-theme_override_fonts/font = ExtResource("2_iydsi")
-theme_override_font_sizes/font_size = 0
+offset_left = 91.0
+offset_top = 34.0
+offset_right = 209.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.210729, 0.193364, 0.149004, 1)
+theme_override_fonts/font = ExtResource("5_0xb0e")
+theme_override_font_sizes/font_size = 24
 text = "31102 SAN"
 
 [node name="TrainClass" type="Label" parent="TextureAndLabels/SubViewport"]
-offset_left = 74.0
-offset_top = 48.0
-offset_right = 246.0
-offset_bottom = 76.0
+offset_left = 85.0
+offset_top = 59.0
+offset_right = 257.0
+offset_bottom = 87.0
 scale = Vector2(0.8, 0.8)
-theme_override_colors/font_color = Color(0.627451, 0.592157, 0.501961, 1)
-theme_override_fonts/font = ExtResource("2_iydsi")
-theme_override_font_sizes/font_size = 0
+theme_override_colors/font_color = Color(0.210729, 0.193364, 0.149004, 1)
+theme_override_fonts/font = ExtResource("5_0xb0e")
+theme_override_font_sizes/font_size = 18
 text = "2KL. POC. OSOBOWY"
 
 [node name="Expiration" type="Label" parent="TextureAndLabels/SubViewport"]
-offset_left = 58.0
-offset_top = 160.0
-offset_right = 258.0
-offset_bottom = 188.0
+offset_left = 70.0
+offset_top = 238.0
+offset_right = 270.0
+offset_bottom = 297.0
 scale = Vector2(0.8, 0.8)
-theme_override_colors/font_color = Color(0.627451, 0.592157, 0.501961, 1)
-theme_override_fonts/font = ExtResource("2_iydsi")
-theme_override_font_sizes/font_size = 0
-text = "85KM    WAŻNY 1 DZIEŃ"
+theme_override_colors/font_color = Color(0.210729, 0.193364, 0.149004, 1)
+theme_override_fonts/font = ExtResource("5_0xb0e")
+theme_override_font_sizes/font_size = 20
+text = "85KM
+WAŻNY 1 DZIEŃ"
+horizontal_alignment = 1
 
 [node name="BuyDate" type="Label" parent="TextureAndLabels/SubViewport"]
-offset_left = 56.0
-offset_top = 100.585
-offset_right = 218.0
-offset_bottom = 159.585
-rotation = -0.270526
-theme_override_colors/font_color = Color(0.528195, 0.602081, 0.692169, 1)
-theme_override_colors/font_outline_color = Color(0.441, 0.5292, 0.63, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_iydsi")
-theme_override_font_sizes/font_size = 0
-text = "       07.04.1999"
+offset_left = 66.0
+offset_top = 85.0
+offset_right = 228.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0.210729, 0.193364, 0.149004, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.192157, 0.14902, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xb0e")
+theme_override_font_sizes/font_size = 18
+text = "       07.04.1995"
 
 [node name="TicketType" type="Label" parent="TextureAndLabels/SubViewport"]
-offset_left = 64.0
-offset_top = 124.0
-offset_right = 226.0
-offset_bottom = 183.0
-rotation = -0.270526
-theme_override_colors/font_color = Color(0.528195, 0.602081, 0.692169, 1)
-theme_override_colors/font_outline_color = Color(0.441, 0.5292, 0.63, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_iydsi")
-theme_override_font_sizes/font_size = 0
-text = "BILET NORMALNY"
+offset_left = 71.0
+offset_top = 111.0
+offset_right = 233.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(0.210729, 0.193364, 0.149004, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.192157, 0.14902, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xb0e")
+theme_override_font_sizes/font_size = 18
+text = "BILET
+NORMALNY"
+horizontal_alignment = 1
 
 [node name="ValidationPlace" type="Label" parent="TextureAndLabels/SubViewport"]
-offset_left = 240.0
-offset_top = 158.0
-offset_right = 360.0
-offset_bottom = 186.0
-rotation = -1.5708
-theme_override_colors/font_color = Color(0.46, 0.37168, 0.3496, 1)
-theme_override_fonts/font = ExtResource("2_iydsi")
-theme_override_font_sizes/font_size = 0
+visible = false
+offset_left = 81.0
+offset_top = 180.0
+offset_right = 278.0
+offset_bottom = 213.0
+theme_override_colors/font_color = Color(0.605168, 0.514992, 0.371707, 1)
+theme_override_fonts/font = ExtResource("5_0xb0e")
+theme_override_font_sizes/font_size = 22
 text = "TU   KASOWAĆ"
 
-[node name="ValidationArea" type="Area2D" parent="."]
+[node name="HoleOutline" type="TextureRect" parent="TextureAndLabels/SubViewport"]
+visible = false
+modulate = Color(0.564706, 0.423529, 0.188235, 1)
+offset_left = 134.0
+offset_top = 173.0
+offset_right = 174.0
+offset_bottom = 213.0
+scale = Vector2(0.925, 1.125)
+texture = ExtResource("3_ppn6r")
+
+[node name="ValidationArea" type="Area2D" parent="." groups=["TicketArea"]]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ValidationArea"]
-position = Vector2(53, 3)
+position = Vector2(-3.33334, 10.6667)
 shape = SubResource("RectangleShape2D_iydsi")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-visible = false
-position = Vector2(5.5, 3.5)
-scale = Vector2(6.85, 4.15)
+[node name="VisibilityArea" type="Area2D" parent="." groups=["VisibilityArea"]]
 
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisibilityArea"]
+position = Vector2(-1.33333, 4)
+shape = SubResource("RectangleShape2D_juejw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -86.0
+offset_top = -132.0
+offset_right = 79.0
+offset_bottom = 133.0
+
+[node name="MagnifyInstruction" type="TextureRect" parent="."]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = -56.0
+offset_top = -194.0
+offset_right = 35.0
+offset_bottom = -136.0
+scale = Vector2(1.2, 1)
+texture = ExtResource("6_0xb0e")
+
+[node name="ForbiddenLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -92.0
+offset_top = -113.333
+offset_right = 142.0
+offset_bottom = 0.666664
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.712332, 0, 0.252649, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("7_juejw")
+theme_override_font_sizes/font_size = 52
+text = "WYSTAWIONO
+WEZWANIE
+DO ZAPŁATY"
+horizontal_alignment = 1
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ppn6r")
+
+[connection signal="area_entered" from="VisibilityArea" to="." method="_on_visibility_area_area_entered"]
+[connection signal="area_exited" from="VisibilityArea" to="." method="_on_visibility_area_area_exited"]
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]

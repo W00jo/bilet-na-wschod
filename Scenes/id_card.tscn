@@ -1,0 +1,359 @@
+[gd_scene load_steps=13 format=3 uid="uid://b6v7fjm0tmr2x"]
+
+[ext_resource type="Script" uid="uid://csyndhjjmsd2a" path="res://Scripts/id_card.gd" id="1_eb8q5"]
+[ext_resource type="Texture2D" uid="uid://cou8yaiuxwc02" path="res://Assets/Sprites/id_card.png" id="1_nd1qd"]
+[ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_eb8q5"]
+[ext_resource type="FontFile" uid="uid://cwy1ws1immec6" path="res://Assets/Fonts/CoveredByYourGrace-Regular.ttf" id="3_8t6xa"]
+[ext_resource type="FontFile" uid="uid://dsiennjqxr1pc" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="4_d12lp"]
+[ext_resource type="FontFile" uid="uid://dy54cuo4rbn8a" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_rfsya"]
+[ext_resource type="Shader" uid="uid://mvcthl1i5nuk" path="res://Shaders/sepia.gdshader" id="5_d12lp"]
+[ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="7_8t6xa"]
+[ext_resource type="Texture2D" uid="uid://bhjgpugjg5rls" path="res://Assets/Sprites/student_id_round_stamp.png" id="9_0qw8e"]
+[ext_resource type="Texture2D" uid="uid://b164d3d1cjr44" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="9_u1vt4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y0fc1"]
+shader = ExtResource("5_d12lp")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qw8e"]
+size = Vector2(77, 97)
+
+[node name="IDCard" type="Node2D"]
+script = ExtResource("1_eb8q5")
+
+[node name="StudentIDTexture" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = -0.109375
+anchor_top = -0.124074
+anchor_right = 0.109375
+anchor_bottom = 0.125926
+offset_left = -60.0
+offset_top = -67.0
+offset_right = 46.0
+offset_bottom = 68.0
+texture = ExtResource("1_nd1qd")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="PhotoBase" type="Polygon2D" parent="."]
+position = Vector2(70, 52)
+scale = Vector2(1.21622, 1.16667)
+color = Color(0.847167, 0.85, 0.816, 1)
+polygon = PackedVector2Array(-95.3775, -54.857, -95.3775, -26.5714, -75.6442, -26.5714, -75.6442, -54.857)
+
+[node name="DowodOsobisty" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.05
+anchor_top = -0.0888889
+anchor_right = -0.0102446
+anchor_bottom = -0.0559937
+offset_left = -43.0
+offset_top = -56.0
+offset_right = 437.0
+offset_bottom = 59.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_eb8q5")
+theme_override_font_sizes/font_size = 48
+text = "DOWÓD  OSOBISTY"
+
+[node name="Nazwisko" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0625
+anchor_top = 0.0314815
+anchor_right = -0.0267187
+anchor_bottom = 0.0373148
+offset_left = -45.0
+offset_top = -35.0
+offset_right = 149.65
+offset_bottom = -7.00001
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.15, 0.10375, 0.039, 0.811765)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("4_d12lp")
+theme_override_font_sizes/font_size = 20
+text = "Nazwisko"
+
+[node name="Imiona" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0625
+anchor_top = 0.0314815
+anchor_right = -0.0267187
+anchor_bottom = 0.0373148
+offset_left = -45.0
+offset_top = -24.0
+offset_right = 149.65
+offset_bottom = 4.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.14902, 0.101961, 0.0392157, 0.811765)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("4_d12lp")
+theme_override_font_sizes/font_size = 20
+text = "Imiona"
+
+[node name="Rysopis" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0625
+anchor_top = 0.0314815
+anchor_right = -0.0267187
+anchor_bottom = 0.0373148
+offset_left = 1.0
+offset_top = -19.0
+offset_right = 195.65
+offset_bottom = 23.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.14902, 0.101961, 0.0392157, 0.811765)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("4_d12lp")
+theme_override_font_sizes/font_size = 28
+text = "RYSOPIS"
+
+[node name="Wzrost" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0625
+anchor_top = 0.0314815
+anchor_right = -0.0267187
+anchor_bottom = 0.0373148
+offset_left = -4.0
+offset_top = -7.0
+offset_right = 190.65
+offset_bottom = 21.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.15, 0.1019, 0.039, 0.905882)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("4_d12lp")
+theme_override_font_sizes/font_size = 18
+text = "Wzrost"
+
+[node name="Oczy" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0625
+anchor_top = 0.0314815
+anchor_right = -0.0267187
+anchor_bottom = 0.0373148
+offset_left = -4.0
+offset_top = 3.0
+offset_right = 190.65
+offset_bottom = 31.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.15, 0.1019, 0.039, 0.905882)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("4_d12lp")
+theme_override_font_sizes/font_size = 18
+text = "Oczy"
+
+[node name="ZnakiSzczegolne" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0625
+anchor_top = 0.0314815
+anchor_right = -0.0267187
+anchor_bottom = 0.0373148
+offset_left = -4.0
+offset_top = 13.0
+offset_right = 190.65
+offset_bottom = 41.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.15, 0.1019, 0.039, 0.905882)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("4_d12lp")
+theme_override_font_sizes/font_size = 18
+text = "Znaki  szczególne"
+
+[node name="DataUrodzenia" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0625
+anchor_top = 0.0314815
+anchor_right = -0.0267187
+anchor_bottom = 0.0373148
+offset_left = -4.0
+offset_top = 22.0
+offset_right = 190.65
+offset_bottom = 50.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.15, 0.1019, 0.039, 0.905882)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("4_d12lp")
+theme_override_font_sizes/font_size = 18
+text = "Data  urodzenia"
+
+[node name="NrEwidencyjny" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0625
+anchor_top = 0.0314815
+anchor_right = -0.0267187
+anchor_bottom = 0.0373148
+offset_left = -48.0
+offset_top = 33.0
+offset_right = 146.65
+offset_bottom = 61.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.14902, 0.101961, 0.0392157, 0.811765)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("4_d12lp")
+theme_override_font_sizes/font_size = 20
+text = "Nr ewid."
+
+[node name="WlasnorecznyPodpis" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0625
+anchor_top = 0.0314815
+anchor_right = -0.0267187
+anchor_bottom = 0.0373148
+offset_left = -26.0
+offset_top = 51.0
+offset_right = 193.0
+offset_bottom = 79.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0.14902, 0.101961, 0.0392157, 0.811765)
+theme_override_colors/font_outline_color = Color(0.152941, 0.105882, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("4_d12lp")
+theme_override_font_sizes/font_size = 20
+text = "Własnoręczny  podpis"
+
+[node name="LastName" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -43.0
+offset_right = 225.0
+offset_bottom = 3.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.0526434, 1.60516e-05, 0.237798, 1)
+theme_override_fonts/font = ExtResource("3_8t6xa")
+theme_override_font_sizes/font_size = 32
+text = "Kowalski"
+
+[node name="FirstName" type="Label" parent="."]
+offset_left = -13.0
+offset_top = -32.0
+offset_right = 231.0
+offset_bottom = 14.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.0526434, 1.60516e-05, 0.237798, 1)
+theme_override_fonts/font = ExtResource("3_8t6xa")
+theme_override_font_sizes/font_size = 32
+text = "Jan"
+
+[node name="Height" type="Label" parent="."]
+offset_left = 3.0
+offset_top = -15.0
+offset_right = 247.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.0526434, 1.60516e-05, 0.237798, 1)
+theme_override_fonts/font = ExtResource("3_8t6xa")
+theme_override_font_sizes/font_size = 32
+text = "średni"
+
+[node name="Eyes" type="Label" parent="."]
+offset_left = 4.0
+offset_top = -5.0
+offset_right = 248.0
+offset_bottom = 41.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.0526434, 1.60516e-05, 0.237798, 1)
+theme_override_fonts/font = ExtResource("3_8t6xa")
+theme_override_font_sizes/font_size = 32
+text = "piwne"
+
+[node name="SpecialMarks" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 247.0
+offset_bottom = 51.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.0526434, 1.60516e-05, 0.237798, 1)
+theme_override_fonts/font = ExtResource("3_8t6xa")
+theme_override_font_sizes/font_size = 32
+text = "nie ma"
+
+[node name="BirthDate" type="Label" parent="."]
+offset_left = -3.0
+offset_top = 14.0
+offset_right = 241.0
+offset_bottom = 60.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.0526434, 1.60516e-05, 0.237798, 1)
+theme_override_fonts/font = ExtResource("3_8t6xa")
+theme_override_font_sizes/font_size = 32
+text = "15 lipca 1969r."
+
+[node name="Pesel" type="Label" parent="."]
+offset_left = -33.0
+offset_top = 32.0
+offset_right = 272.0
+offset_bottom = 78.0
+scale = Vector2(0.28, 0.2)
+theme_override_colors/font_color = Color(0.14, 0.121333, 0.112, 0.886275)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("4_d12lp")
+theme_override_font_sizes/font_size = 24
+text = "0 1 1 0 1 0 1 1 0 1 0"
+
+[node name="Signature" type="Label" parent="."]
+offset_left = -26.0
+offset_top = 44.0
+offset_right = 218.0
+offset_bottom = 90.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.0526434, 1.60516e-05, 0.237798, 1)
+theme_override_fonts/font = ExtResource("4_rfsya")
+theme_override_font_sizes/font_size = 24
+text = "Jan Kowalski"
+
+[node name="PhotoCont" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_y0fc1")
+offset_left = -47.0
+offset_top = -5.0
+offset_right = 81.0
+offset_bottom = 123.0
+scale = Vector2(0.6, 0.62)
+
+[node name="Photo" type="SubViewport" parent="PhotoCont"]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(40, 42)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -56.0
+offset_top = -60.0
+offset_right = 43.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Orzelek" type="Sprite2D" parent="."]
+modulate = Color(1, 0.54, 0.54, 0.47451)
+position = Vector2(-18, 18)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("9_0qw8e")
+
+[node name="MagnifyInstruction" type="TextureRect" parent="."]
+visible = false
+offset_left = -31.0
+offset_top = -90.0
+offset_right = 38.0
+offset_bottom = -44.0
+scale = Vector2(0.75, 0.6)
+texture = ExtResource("9_u1vt4")
+
+[node name="VisibilityArea" type="Area2D" parent="." groups=["VisibilityArea"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisibilityArea"]
+position = Vector2(-5.5, -1.5)
+shape = SubResource("RectangleShape2D_0qw8e")
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8t6xa")
+
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]
+[connection signal="area_entered" from="VisibilityArea" to="." method="_on_visibility_area_area_entered"]
+[connection signal="area_exited" from="VisibilityArea" to="." method="_on_visibility_area_area_exited"]

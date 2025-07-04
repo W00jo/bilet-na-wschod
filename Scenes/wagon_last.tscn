@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://cnplngqu0tn0f"]
+[gd_scene load_steps=9 format=4 uid="uid://dt4q0p0pagn8w"]
 
 [ext_resource type="Script" uid="uid://bpt4s0ma6hsjy" path="res://Scripts/wagon.gd" id="1_ptmul"]
-[ext_resource type="TileSet" uid="uid://buvia4xnoyvec" path="res://Resources/wagon_tileset.tres" id="2_75i4c"]
+[ext_resource type="Texture2D" uid="uid://c35m5r34sl301" path="res://Assets/Sprites/wagon_end.png" id="2_75i4c"]
 [ext_resource type="Texture2D" uid="uid://cc0i252pgylxq" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_75i4c"]
 [ext_resource type="Texture2D" uid="uid://dbgqnimhon67a" path="res://Assets/Sprites/suitcase_shelves.png" id="3_ywjie"]
 [ext_resource type="TileSet" uid="uid://c7pvh4kvbyymp" path="res://Resources/chairs_tileset.tres" id="4_xn7w3"]
@@ -9,7 +9,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_5p62l"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 480, 222.353, 0, 0, 0, 0, 1677, 222.353)
+"points": PackedVector2Array(0, 0, 0, 0, 480, 222.353, 0, 0, 0, 0, 1362, 222.353)
 }
 point_count = 2
 
@@ -19,31 +19,40 @@ size = Vector2(20, 275)
 [node name="WagonLast" type="Node2D"]
 script = ExtResource("1_ptmul")
 
-[node name="Wagon" type="TileMapLayer" parent="."]
-position = Vector2(-50, 167)
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAACAAAAAAAFAAAAAAADAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAADAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAADAAAAAAAIAAAAAAAEAAAAAAABAAAAAAACAAAAAAAJAAAAAAAGAAAAAAAKAAAAAAAJAAAAAAALAAAAAAAKAAAAAAAAAAAAAAABAAAAAAA=")
-tile_set = ExtResource("2_75i4c")
+[node name="Train" type="Sprite2D" parent="."]
+position = Vector2(1403, 481)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_75i4c")
 
 [node name="LeftExitArrow" type="Sprite2D" parent="."]
-position = Vector2(268, 404)
+position = Vector2(355, 399)
 scale = Vector2(3, 2.8)
 texture = ExtResource("3_75i4c")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
+[node name="RightExitArrow" type="Sprite2D" parent="."]
+position = Vector2(2099, 399)
+scale = Vector2(3, 2.8)
+texture = ExtResource("3_75i4c")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
+
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
+position = Vector2(0, -54)
 
 [node name="SuitcaseShelf" type="Sprite2D" parent="YSort"]
-position = Vector2(453, 420)
+visible = false
+position = Vector2(398, 507)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("3_ywjie")
 region_enabled = true
 region_rect = Rect2(0, 0, 66, 125)
 
 [node name="SuitcaseShelf2" type="Sprite2D" parent="YSort"]
-position = Vector2(2487, 420)
+visible = false
+position = Vector2(2072, 515)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("3_ywjie")
 region_enabled = true
@@ -51,19 +60,19 @@ region_rect = Rect2(0, 0, 66, 125)
 
 [node name="Chairs" type="TileMapLayer" parent="YSort"]
 y_sort_enabled = true
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAKAAkAAQAAAAAAAgAMAAkAAQAAAAAAAgASAAkAAQAAAAAAAgAUAAkAAQAAAAAAAgAMAAoAAQAAAAAAAQASAAoAAQAAAAAAAQAUAAoAAQAAAAAAAQAWAAkAAQAAAAAAAgAWAAoAAQAAAAAAAQAIAAkAAQAAAAAAAgAKAAoAAQAAAAAAAQAIABIAAQAAAAAAAQAKABIAAQAAAAAAAQAMABIAAQAAAAAAAQAOABIAAQAAAAAAAQAQABIAAQAAAAAAAQASABIAAQAAAAAAAQAUABIAAQAAAAAAAQAWABIAAQAAAAAAAQAIABEAAQAAAAAAAgAKABEAAQAAAAAAAgAMABEAAQAAAAAAAgAOABEAAQAAAAAAAgAQABEAAQAAAAAAAgASABEAAQAAAAAAAgAUABEAAQAAAAAAAgAWABEAAQAAAAAAAgAOAAkAAQAAAAAAAgAQAAkAAQAAAAAAAgAQAAoAAQAAAAAAAQAOAAoAAQAAAAAAAQAIAAoAAQAAAAAAAQA=")
+scale = Vector2(2.75, 2.75)
+tile_map_data = PackedByteArray("AAAVACUAAQAAAAAAAgAdACUAAQAAAAAAAgAlACUAAQAAAAAAAgAtACUAAQAAAAAAAgA1ACUAAQAAAAAAAgA9ACUAAQAAAAAAAgAUAD4AAQAAAAAAAQAcAD4AAQAAAAAAAQAkAD4AAQAAAAAAAQAsAD4AAQAAAAAAAQA0AD4AAQAAAAAAAQA8AD4AAQAAAAAAAQAVADoAAQAAAAAAAgAdADoAAQAAAAAAAgAlADoAAQAAAAAAAgAtADoAAQAAAAAAAgA1ADoAAQAAAAAAAgA9ADoAAQAAAAAAAgAUACkAAQAAAAAAAQAcACkAAQAAAAAAAQAkACkAAQAAAAAAAQAsACkAAQAAAAAAAQA0ACkAAQAAAAAAAQA8ACkAAQAAAAAAAQA=")
 tile_set = ExtResource("4_xn7w3")
 
 [node name="Passengers" type="Node2D" parent="YSort"]
 y_sort_enabled = true
 
 [node name="CameraOnRail" parent="." instance=ExtResource("5_fpeb2")]
-position = Vector2(480, 317.647)
+position = Vector2(480, 263.647)
 curve = SubResource("Curve2D_5p62l")
 
 [node name="LeftExitArea" type="Area2D" parent="."]
-position = Vector2(234, 586)
+position = Vector2(310, 593)
 scale = Vector2(1.75, 1.75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftExitArea"]
@@ -71,7 +80,7 @@ position = Vector2(0, 41.5)
 shape = SubResource("RectangleShape2D_xcg6c")
 
 [node name="RightExitArea" type="Area2D" parent="."]
-position = Vector2(2733, 584)
+position = Vector2(2497, 593)
 scale = Vector2(1.75, 1.75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightExitArea"]
@@ -79,22 +88,22 @@ position = Vector2(0, 41.5)
 shape = SubResource("RectangleShape2D_xcg6c")
 
 [node name="LeftEntranceMarker" type="Marker2D" parent="."]
-position = Vector2(474, 693)
+position = Vector2(436, 658)
 
 [node name="LeftCameraMarker" type="Marker2D" parent="."]
-position = Vector2(960, 540)
+position = Vector2(960, 486)
 
 [node name="RightEntranceMarker" type="Marker2D" parent="."]
-position = Vector2(2540, 693)
+position = Vector2(2332, 658)
 
 [node name="RightCameraMarker" type="Marker2D" parent="."]
-position = Vector2(2157, 540)
+position = Vector2(1504, 486)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(215, 538, 227, 495, 256, 466, 328, 458, 379, 466, 378, 512, 527, 510, 527, 465, 716, 463, 734, 549, 2107, 553, 2164, 450, 2412, 450, 2413, 515, 2562, 516, 2562, 456, 2659, 463, 2719, 486, 2754, 537, 2753, 855, 2682, 901, 2593, 932, 2103, 935, 2125, 886, 2135, 857, 722, 860, 719, 937, 349, 934, 287, 895, 251, 865, 217, 839, 220, 977, 3117, 977, 3120, 166, 212, 168, 212, 846, 217, 838)
+visible = false
+polygon = PackedVector2Array(312, 909, 313, 495, 356, 480, 519, 480, 521, 527, 537, 556, 635, 559, 654, 528, 746, 529, 757, 555, 854, 559, 878, 530, 965, 530, 976, 557, 1076, 559, 1097, 528, 1183, 526, 1197, 560, 1309, 562, 1316, 527, 1405, 531, 1418, 561, 1518, 563, 1536, 529, 1624, 528, 1637, 561, 1736, 561, 1769, 515, 1813, 478, 2105, 482, 2150, 504, 2157, 566, 2320, 564, 2498, 562, 2500, 857, 2493, 881, 2309, 880, 2308, 903, 1739, 903, 1746, 791, 1610, 780, 1615, 831, 1516, 831, 1526, 780, 1392, 782, 1393, 828, 1298, 832, 1304, 787, 1165, 783, 1170, 830, 1081, 829, 1085, 785, 944, 787, 949, 826, 864, 827, 866, 785, 724, 785, 737, 834, 641, 833, 645, 785, 504, 785, 535, 902, 324, 902, 324, 917, 2820, 923, 2816, 66, 298, 93, 298, 917)
 
 [connection signal="child_entered_tree" from="YSort" to="." method="_on_y_sort_child_entered_tree"]
 [connection signal="body_entered" from="LeftExitArea" to="." method="_on_left_exit_area_body_entered"]
