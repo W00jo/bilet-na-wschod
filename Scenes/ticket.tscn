@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8hjil3ghytl"]
+[gd_scene load_steps=12 format=3 uid="uid://c8hjil3ghytl"]
 
 [ext_resource type="Texture2D" uid="uid://4kygu28nt7lk" path="res://Assets/Sprites/ticket.png" id="1_41og6"]
 [ext_resource type="Script" uid="uid://cj8m6m8ykovap" path="res://Scripts/ticket.gd" id="2_5yuud"]
@@ -23,6 +23,9 @@ shader_parameter/mask_texture = ExtResource("3_ppn6r")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iydsi"]
 size = Vector2(198.667, 248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juejw"]
+size = Vector2(125.333, 221.333)
 
 [node name="Ticket" type="Control"]
 layout_mode = 3
@@ -142,6 +145,12 @@ visible = false
 position = Vector2(-3.33334, 10.6667)
 shape = SubResource("RectangleShape2D_iydsi")
 
+[node name="VisibilityArea" type="Area2D" parent="." groups=["VisibilityArea"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisibilityArea"]
+position = Vector2(-1.33333, 4)
+shape = SubResource("RectangleShape2D_juejw")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -163,6 +172,7 @@ texture = ExtResource("6_0xb0e")
 
 [node name="ForbiddenLabel" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -92.0
 offset_top = -113.333
 offset_right = 142.0
@@ -181,6 +191,8 @@ horizontal_alignment = 1
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ppn6r")
 
+[connection signal="area_entered" from="VisibilityArea" to="." method="_on_visibility_area_area_entered"]
+[connection signal="area_exited" from="VisibilityArea" to="." method="_on_visibility_area_area_exited"]
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]

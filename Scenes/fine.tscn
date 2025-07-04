@@ -1380,7 +1380,7 @@ cache/0/16/4/glyphs/134217750/size = Vector2(13, 16)
 cache/0/16/4/glyphs/134217750/uv_rect = Rect2(44, 19, 13, 16)
 cache/0/16/4/glyphs/134217750/texture_idx = 0
 
-[sub_resource type="Image" id="Image_y8f02"]
+[sub_resource type="Image" id="Image_r7nce"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8j////mf///77///+/////v////7////+/////v////7////+/////v////77///+Y////IQAAAAAAAAAA////mf///7////+/////v////7////+/////v////7////+/////v////7////+/////v////5cAAAAAAAAAAP///77///+/////v////7////+/////v////7////+/////v////7/s7OzD////v////7////++AAAAAAAAAAD///+/////v////7////+/////v////7////+/////v////7+wsLDRIyMj+7GxsdH///+/////vwAAAAAAAAAA////v////7////+/////v////7////+/////v////7+vr6/RHh4e/RoaGv9TU1Pr////v////78AAAAAAAAAAP///7////+/////v////7////+/////v////7+vr6/RHh4e/RoaGv9NTU3t9vb2wP///7////+/AAAAAAAAAAD///+/////v/v7+7/e3t7G////v////7+tra3RHh4e/RoaGv9OTk7t9vb2wP///7////+/////vwAAAAAAAAAA////v/v7+79YWFjpLCws+dPT08itra3SHh4e/RoaGv9OTk7t9vb2wP///7////+/////v////78AAAAAAAAAAP///7/n5+fENTU19hoaGv8pKSn5Hh4e/RoaGv9PT0/s9vb2wP///7////+/////v////7////+/AAAAAAAAAAD///+/////v+Dg4MU1NTX2Ghoa/xoaGv9PT0/s9vb2wP///7////+/////v////7////+/////vwAAAAAAAAAA////v////7////+/4ODgxTU1NfZQUFDs9vb2wP///7////+/////v////7////+/////v////78AAAAAAAAAAP///77///+/////v////7/k5OTE9vb2wP///7////+/////v////7////+/////v////7////+9AAAAAAAAAAD///+Y////v////7////+/////v////7////+/////v////7////+/////v////7////+/////lQAAAAAAAAAA////If///5f///++////v////7////+/////v////7////+/////v////7////+9////lf///yAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1390,9 +1390,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_g572w"]
-image = SubResource("Image_y8f02")
+image = SubResource("Image_r7nce")
 
-[sub_resource type="Image" id="Image_drwaf"]
+[sub_resource type="Image" id="Image_fenrm"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8R////S////13///9e////Xv///17///9e////Xv///17///9e////Xv///13///9K////EAAAAAAAAAAA////S////17///9e////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///0oAAAAAAAAAAP///13///9e////Xv///17///9e////Xv///17///9e////Xv///17r6+tj////Xv///17///9dAAAAAAAAAAD///9e////Xv///17///9e////Xv///17///9e////Xv///163t7d0XFxcqbe3t3T///9e////XgAAAAAAAAAA////Xv///17///9e////Xv///17///9e////Xv///161tbV1WVlZrFdXV692dnaV////Xv///14AAAAAAAAAAP///17///9e////Xv///17///9e////Xv///161tbV1WVlZrFdXV690dHSY9fX1YP///17///9eAAAAAAAAAAD///9e////Xvr6+l/d3d1n////Xv///161tbV1WVlZrFdXV690dHSX9fX1YP///17///9e////XgAAAAAAAAAA////Xvr6+l95eXmTX19fptTU1Gq0tLR2WVlZrFdXV690dHSX9fX1YP///17///9e////Xv///14AAAAAAAAAAP///17m5uZkZWVloldXV69fX1+nWVlZrFdXV690dHSX9fX1YP///17///9e////Xv///17///9eAAAAAAAAAAD///9e////XuHh4WZlZWWiV1dXr1dXV690dHSX9fX1YP///17///9e////Xv///17///9e////XgAAAAAAAAAA////Xv///17///9e4eHhZmVlZaJ1dXWW9fX1YP///17///9e////Xv///17///9e////Xv///14AAAAAAAAAAP///13///9e////Xv///17k5ORl9fX1YP///17///9e////Xv///17///9e////Xv///17///9dAAAAAAAAAAD///9K////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///17///9e////SQAAAAAAAAAA////EP///0r///9d////Xv///17///9e////Xv///17///9e////Xv///17///9d////Sf///w8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1402,7 +1402,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_p4uih"]
-image = SubResource("Image_drwaf")
+image = SubResource("Image_fenrm")
 
 [sub_resource type="ImageTexture" id="ImageTexture_4b8ke"]
 
@@ -1412,7 +1412,7 @@ image = SubResource("Image_drwaf")
 
 [sub_resource type="ImageTexture" id="ImageTexture_xuvq5"]
 
-[sub_resource type="Image" id="Image_r7nce"]
+[sub_resource type="Image" id="Image_hwa0g"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwHbKysmawsLAtAAAAAAAAAAAAAAAAAAAAAAAAAACzs7MesbGxcrGxsXKzs7MvAAAAAAAAAAAAAAAAAAAAAAAAAACzs7MvsbGxcrGxsXKzs7MvAAAAAAAAAAAAAAAAAAAAAAAAAACzs7MvsrKyc7GxsXKzs7MeAAAAAAAAAAAAAAAAAAAAALCwsDCysrJzsbGxcrOzsx4AAAAAAAAAAAAAAACwsLAwsbGxcrGxsXKurq4vAAAAAAAAAAAAAAAAs7OzHrGxsXKxsbFyrq6uLwAAAAAAAAAAAAAAAAAAAACwsLAdsrKyZrCwsC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "format": "RGBA8",
@@ -1422,9 +1422,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_1knei"]
-image = SubResource("Image_r7nce")
+image = SubResource("Image_hwa0g")
 
-[sub_resource type="Image" id="Image_fenrm"]
+[sub_resource type="Image" id="Image_lpeer"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsrKyLrKysmawsLAdAAAAAAAAAAAAAAAAAAAAALCwsDCxsbFysbGxcrOzsx4AAAAAAAAAAAAAAACwsLAwsbGxcrGxsXKurq4vAAAAAAAAAAAAAAAAs7OzHrGxsXKysrJzrq6uLwAAAAAAAAAAAAAAAAAAAACzs7MesbGxcrKysnOzs7MvAAAAAAAAAAAAAAAAAAAAAAAAAACzs7MvsbGxcrGxsXKzs7MvAAAAAAAAAAAAAAAAAAAAAAAAAACzs7MvsbGxcrGxsXKzs7MeAAAAAAAAAAAAAAAAAAAAAAAAAACysrIusrKyZrCwsB0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "format": "RGBA8",
@@ -1434,9 +1434,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_wwhm7"]
-image = SubResource("Image_fenrm")
+image = SubResource("Image_lpeer")
 
-[sub_resource type="Image" id="Image_hwa0g"]
+[sub_resource type="Image" id="Image_l5fba"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWFhYXGBgYZxgYGH8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBgYGH8ZGRlmFxcXFgAAAAAAAAAAGBgYZxoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBkZGWUAAAAAAAAAABgYGH8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAYGBh/AAAAAAAAAAAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagAAAAAAAAAAAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAAAAAAAAAAABoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAAAAAAAAAAAAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagAAAAAAAAAAAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAAAAAAAAAAABoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAAAAAAAAAAAAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagAAAAAAAAAAAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAAAAAAAAAAABgYGH8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAYGBh/AAAAAAAAAAAZGRlmGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGRkZZAAAAAAAAAAAFxcXFhkZGWUYGBh/GhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAYGBh/GRkZZBgYGBUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1446,9 +1446,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_0p0j2"]
-image = SubResource("Image_hwa0g")
+image = SubResource("Image_l5fba")
 
-[sub_resource type="Image" id="Image_lpeer"]
+[sub_resource type="Image" id="Image_pciqn"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXFxcLGRkZMxgYGD8cHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBgYGD8ZGRkzFxcXCwAAAAAAAAAAGRkZMxwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBkZGTIAAAAAAAAAABgYGD8cHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAYGBg/AAAAAAAAAAAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQAAAAAAAAAAAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAAAAAAAAAAABwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAAAAAAAAAAAAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQAAAAAAAAAAAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAAAAAAAAAAABwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAAAAAAAAAAAAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQAAAAAAAAAAAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAAAAAAAAAAABgYGD8cHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAYGBg/AAAAAAAAAAAZGRkzHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAGRkZMgAAAAAAAAAAFxcXCxkZGTIYGBg/HBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAYGBg/GRkZMhkZGQoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1458,7 +1458,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_aflyw"]
-image = SubResource("Image_lpeer")
+image = SubResource("Image_pciqn")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1knei"]
 
@@ -1805,6 +1805,7 @@ position = Vector2(1285, 767)
 scale = Vector2(2.45, 1.95)
 
 [node name="CloseInstruction" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 846.0
 offset_top = 64.0
 offset_right = 1119.0
@@ -1813,6 +1814,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_fenrm")
 
 [node name="CloseLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 867.0
 offset_top = 92.0
 offset_right = 1026.0
@@ -1826,6 +1828,7 @@ theme_override_font_sizes/font_size = 52
 text = "ZAMKNIJ"
 
 [node name="Ready" type="Button" parent="."]
+layout_mode = 0
 offset_left = 775.0
 offset_top = 914.0
 offset_right = 1108.0

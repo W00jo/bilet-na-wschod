@@ -10,6 +10,8 @@ var name_lastname
 var is_valid = true
 var invalid_doc_years_below_reduced
 
+var tic_visibility_area
+
 func assign_data(is_doc_valid, years_below_reduced):
 	invalid_doc_years_below_reduced = years_below_reduced
 	if is_doc_valid == "invalid":
@@ -31,7 +33,15 @@ func assign_data(is_doc_valid, years_below_reduced):
 	if is_valid:
 		$BirthDate.text = current_passenger.birth_date
 	else:
-		$BirthDate.text = current_passenger.birth_date ### kasujemy 4 ostatnie znaki i dodajemy nowy rok i "r."
+		var og_birth_date = current_passenger.birth_date
+		var short_date = og_birth_date.erase(og_birth_date.length()-4, 4)
+		var new_birth_year
+		if short_date.ends_with("sty ") or short_date.ends_with("lut ") or short_date.ends_with("mar "):
+			new_birth_year = 35 + invalid_doc_years_below_reduced +1
+		else:
+			new_birth_year = 34 + invalid_doc_years_below_reduced + 1
+		var new_date = short_date + str(new_birth_year) + "r."
+		$BirthDate.text = new_date
 		
 
 func _physics_process(delta: float) -> void:
@@ -40,7 +50,10 @@ func _physics_process(delta: float) -> void:
 			global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 			disable_zoom()
 		else:
-			global_position = lerp(global_position, find_closest().global_position, 10*delta)
+			global_position = lerp(global_position, find_closest().global_position, 25*delta)
+		
+		if tic_visibility_area != null:
+			tic_visibility_area.get_parent().disable_zoom()
 
 func _input(event: InputEvent) -> void:
 	#if event is InputEventMouseButton:
@@ -103,3 +116,12 @@ func find_closest():
 			lowest_distance = distance
 	if markers.size() > 0:
 		return closest_marker
+
+
+func _on_visibility_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("VisibilityArea"):
+		tic_visibility_area = area
+
+func _on_visibility_area_area_exited(area: Area2D) -> void:
+	if area.is_in_group("VisibilityArea"):
+		tic_visibility_area = null

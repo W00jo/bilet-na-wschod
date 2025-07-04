@@ -29,8 +29,8 @@ func check_forbidden():
 	var collider = $RayCast2D.get_collider()
 	if collider != null and collider.is_in_group("TicketArea") and PassengerDataBus.currently_checked_passenger.is_fined:
 		collider.get_parent().get_node('ForbiddenLabel').visible = true
-	else:
-		get_parent().get_parent().get_parent().get_node('TicketControl/Ticket/ForbiddenLabel').visible = false
+	elif get_parent().get_parent().get_parent().get_node('TicketControl').has_node('Ticket') == true:
+			get_parent().get_parent().get_parent().get_node('TicketControl/Ticket/ForbiddenLabel').visible = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

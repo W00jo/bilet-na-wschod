@@ -54,7 +54,7 @@ func create_document():
 	create_magnified_document()
 	document.visible = false
 	document.global_position = $DocumentMarker.global_position
-	document.set_scale(Vector2(2, 2))
+	document.set_scale(Vector2(1.5, 1.5))
 	create_document_avatar(document)
 	set_document_data(document)
 
@@ -109,6 +109,10 @@ func _on_ask_document_pressed() -> void:
 	if passenger.has_document:
 		document.visible = true
 		button_sfx.play()
+
+func disable_markers():
+	pass
+
 
 func _on_button_close_pressed() -> void:
 	close()

@@ -11,6 +11,8 @@ var years_of_study
 var is_valid
 var missing_stamps
 
+var tic_visibility_area
+
 func assign_data(is_document_valid, missing_st):
 	missing_stamps = missing_st
 	match is_document_valid:
@@ -80,6 +82,9 @@ func _physics_process(delta: float) -> void:
 			disable_zoom()
 		else:
 			global_position = lerp(global_position, find_closest().global_position, 25*delta)
+		
+		if tic_visibility_area != null:
+			tic_visibility_area.get_parent().disable_zoom()
 
 func _input(event: InputEvent) -> void:
 	#if event is InputEventMouseButton:
@@ -104,6 +109,7 @@ func _on_control_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_released("LMB"):
 		scale = Vector2(2, 2)
 		selected = false
+		#on_disselected()
 		enable_zoom()
 		$ButtonSFX.play()
 		z_index = 0
@@ -130,14 +136,30 @@ func magnify():
 	mag_layer.visible = true
 	magnified = true
 
+#func on_disselected():
+	#if get_parent() != SubViewport:
+		#global_position = lerp(global_position, find_closest().global_position, 1)
+
+
 func find_closest():
 	var markers = get_parent().get_node('Markers').get_children()
 	var closest_marker
 	var lowest_distance = INF
+	
 	for marker in markers:
 		var distance = marker.global_position.distance_to(global_position)
 		if distance < lowest_distance:
 			closest_marker = marker
 			lowest_distance = distance
 	if markers.size() > 0:
+
 		return closest_marker
+
+func _on_visibility_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("VisibilityArea"):
+		tic_visibility_area = area
+	
+
+func _on_visibility_area_area_exited(area: Area2D) -> void:
+	if area.is_in_group("VisibilityArea"):
+		tic_visibility_area = null

@@ -10,6 +10,8 @@ var magnified = false
 var buy_date = "      07.04.1995"
 var ticket_type
 
+var doc_visibility_area
+
 func _ready() -> void:
 	$TextureAndLabels.material.set_shader_parameter("mask_size", Vector2(0, 0))
 	$TextureAndLabels/SubViewport/HoleOutline.visible = false
@@ -21,6 +23,9 @@ func _physics_process(delta: float) -> void:
 			disable_zoom()
 		else:
 			global_position = lerp(global_position, find_closest().global_position, 20*delta)
+		
+		if doc_visibility_area != null:
+				doc_visibility_area.get_parent().disable_zoom()
 
 func _input(event: InputEvent) -> void:
 	#if Input.is_action_just_released("LMB"):
@@ -90,3 +95,13 @@ func find_closest():
 			lowest_distance = distance
 	if markers.size() > 0:
 		return closest_marker
+
+
+func _on_visibility_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("VisibilityArea"):
+		doc_visibility_area = area
+
+func _on_visibility_area_area_exited(area: Area2D) -> void:
+	if area.is_in_group("VisibilityArea"):
+		doc_visibility_area = null
+		

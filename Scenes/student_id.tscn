@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2r23wbfg0p8k"]
+[gd_scene load_steps=13 format=3 uid="uid://d2r23wbfg0p8k"]
 
 [ext_resource type="Texture2D" uid="uid://d0xpxrtvmeqne" path="res://Assets/Sprites/student_id.png" id="1_1leoy"]
 [ext_resource type="Script" uid="uid://716lyreksvpy" path="res://Scripts/student_id.gd" id="1_sgl21"]
@@ -13,6 +13,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y0fc1"]
 shader = ExtResource("8_y0fc1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojrje"]
+size = Vector2(172, 100)
 
 [node name="StudentID" type="Node2D"]
 script = ExtResource("1_sgl21")
@@ -647,6 +650,12 @@ position = Vector2(-57, -12)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
+[node name="VisibilityArea" type="Area2D" parent="." groups=["VisibilityArea"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisibilityArea"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_ojrje")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -667,6 +676,8 @@ texture = ExtResource("9_kxmqv")
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ojrje")
 
+[connection signal="area_entered" from="VisibilityArea" to="." method="_on_visibility_area_area_entered"]
+[connection signal="area_exited" from="VisibilityArea" to="." method="_on_visibility_area_area_exited"]
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]
