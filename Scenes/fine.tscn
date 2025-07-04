@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://b8isqvx2friyc"]
+[gd_scene load_steps=66 format=4 uid="uid://b8isqvx2friyc"]
 
 [ext_resource type="Texture2D" uid="uid://diyn558wypc5q" path="res://Assets/Sprites/fine.png" id="1_gslbi"]
 [ext_resource type="Script" uid="uid://bks6drilcl16n" path="res://Scripts/fine.gd" id="1_y8f02"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_hwa0g"]
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="10_lpeer"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="11_l5fba"]
+[ext_resource type="AudioStream" uid="uid://u53hwgsjmyo4" path="res://Assets/SFX/signature.wav" id="14_fenrm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgu7j"]
 
@@ -1855,6 +1856,10 @@ text = "GOTOWE"
 libraries = {
 &"": SubResource("AnimationLibrary_oxmhr")
 }
+
+[node name="SignatureSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_fenrm")
+bus = &"SFX"
 
 [connection signal="item_selected" from="ReasonOptions" to="." method="_on_reason_options_item_selected"]
 [connection signal="item_selected" from="SumOptions" to="." method="_on_sum_options_item_selected"]

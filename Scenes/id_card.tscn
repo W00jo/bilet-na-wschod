@@ -351,6 +351,8 @@ shape = SubResource("RectangleShape2D_0qw8e")
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_8t6xa")
+volume_db = -5.0
+bus = &"SFX"
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://dby7jna7jxxyw"]
+[gd_scene load_steps=63 format=3 uid="uid://dby7jna7jxxyw"]
 
 [ext_resource type="Texture2D" uid="uid://bd1hw7msbsn0" path="res://Assets/Sprites/bag_back.png" id="1_sqglg"]
 [ext_resource type="Script" uid="uid://ccd0per04iesv" path="res://Scripts/tool_bag.gd" id="1_sqjx1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ormlp34rtbdb" path="res://Scenes/holepunch_dragndrop.tscn" id="3_taguw"]
 [ext_resource type="Texture2D" uid="uid://bialcnx8q332y" path="res://Assets/Sprites/journal_tool.png" id="4_4g5q5"]
 [ext_resource type="Texture2D" uid="uid://bvqs2c67v8m8t" path="res://Assets/Sprites/bag_front.png" id="4_iggxa"]
+[ext_resource type="AudioStream" uid="uid://dxfe3m17a7b3i" path="res://Assets/SFX/tool_disabled.mp3" id="8_4g5q5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4g5q5"]
 atlas = ExtResource("1_sqglg")
@@ -578,6 +579,10 @@ animation = &"front"
 libraries = {
 &"": SubResource("AnimationLibrary_yr6q6")
 }
+
+[node name="DisabledSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_4g5q5")
+volume_db = 2.0
 
 [connection signal="gui_input" from="FinesTool/Fines" to="." method="_on_fines_gui_input"]
 [connection signal="mouse_entered" from="FinesTool/Fines" to="." method="_on_fines_mouse_entered"]

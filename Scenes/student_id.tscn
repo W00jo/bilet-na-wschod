@@ -675,6 +675,8 @@ texture = ExtResource("9_kxmqv")
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ojrje")
+volume_db = -5.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="VisibilityArea" to="." method="_on_visibility_area_area_entered"]
 [connection signal="area_exited" from="VisibilityArea" to="." method="_on_visibility_area_area_exited"]

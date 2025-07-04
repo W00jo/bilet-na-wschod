@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://biklendtsf7dq"]
+[gd_scene load_steps=28 format=3 uid="uid://biklendtsf7dq"]
 
 [ext_resource type="Script" uid="uid://dvwkktrn6dvo0" path="res://Scripts/game.gd" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bekremb8qkq02" path="res://Scenes/parallax_morning.tscn" id="1_wrm1d"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://bp46xr7w38ybf" path="res://Assets/Sprites/UIElements/stress_bar_over.png" id="7_rfjv2"]
 [ext_resource type="Texture2D" uid="uid://di7qdb2j2bdsg" path="res://Assets/Sprites/UIElements/stress_bar_progress.png" id="8_1phco"]
 [ext_resource type="Texture2D" uid="uid://b5uk131mh71kd" path="res://Assets/Sprites/UIElements/splash_screen.png" id="8_ldgsr"]
-[ext_resource type="AudioStream" uid="uid://egsp032xt05" path="res://Assets/SFX/Choochoo_spedup.mp3" id="9_o5yvi"]
+[ext_resource type="AudioStream" uid="uid://egsp032xt05" path="res://Assets/SFX/choochoo_spedup.mp3" id="9_o5yvi"]
+[ext_resource type="AudioStream" uid="uid://q53cxi3pdadb" path="res://Assets/SFX/train_rails.wav" id="12_1phco"]
+[ext_resource type="AudioStream" uid="uid://daidu4i5mifs4" path="res://Assets/Music/gameplay_theme_loop.mp3" id="13_1phco"]
 [ext_resource type="AudioStream" uid="uid://dcifhel6t56du" path="res://Assets/Music/main_menu_disco_polo_loop.mp3" id="13_rfjv2"]
 
 [sub_resource type="Animation" id="Animation_wowpa"]
@@ -204,11 +206,9 @@ visible = false
 
 [node name="StartMenu" parent="." instance=ExtResource("7_h4fw4")]
 layer = 4
-visible = false
 
 [node name="KonduktorzySplashScreen" type="CanvasLayer" parent="."]
 layer = 5
-visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="KonduktorzySplashScreen"]
 position = Vector2(960, 540)
@@ -216,14 +216,21 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_iivbl")
 autoplay = "default"
 
+[node name="TrainSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_1phco")
+volume_db = -5.0
+bus = &"SFX"
+
 [node name="ChooChoo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_o5yvi")
+autoplay = true
+bus = &"SFX"
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_rfjv2")
 volume_db = -10.0
+bus = &"Music"
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
-volume_db = -10.0
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_1phco")
+bus = &"Music"

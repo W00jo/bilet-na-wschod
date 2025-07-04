@@ -19,6 +19,7 @@ func _on_bag_interaction_gui_input(event: InputEvent) -> void:
 			hide_bag()
 		elif is_open == false:
 			show_bag()
+		$OpenCloseSFX.play()
 
 func show_bag():
 	get_tree().create_tween().tween_property(toolbag, "position", position_shown, 0.25)

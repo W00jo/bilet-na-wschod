@@ -17,11 +17,14 @@ func _physics_process(delta: float) -> void:
 		if directon == Vector2.ZERO:
 			anim_tree.set("parameters/conditions/idle", true)
 			anim_tree.set("parameters/conditions/is_walking", false)
+			$WalkSFX.stop()
 		else:
 			anim_tree.set("parameters/conditions/idle", false)
 			anim_tree.set("parameters/conditions/is_walking", true)
 			anim_tree.set("parameters/Walking/blend_position", directon)
 			anim_tree.set("parameters/Idle/blend_position", directon)
+			if $WalkSFX.playing == false:
+				$WalkSFX.play()
 	else:
 		velocity = Vector2(0,0)
 		
