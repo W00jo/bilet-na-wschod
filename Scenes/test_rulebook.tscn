@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://brthvps20ines"]
+[gd_scene load_steps=3 format=3 uid="uid://brthvps20ines"]
 
-[ext_resource type="Texture2D" uid="uid://du37c28d8605m" path="res://Assets/Sprites/rulebook.png" id="1_8sqce"]
 [ext_resource type="Script" uid="uid://dujerb8ojjwud" path="res://Scripts/test_rulebook.gd" id="1_onuke"]
 [ext_resource type="Texture2D" uid="uid://4astocb3u2sn" path="res://icon.svg" id="3_2grib"]
 
 [node name="Rulebook" type="Sprite2D"]
-position = Vector2(60, 41.25)
+position = Vector2(385, 147)
 scale = Vector2(1.00287, 1.00182)
-texture = ExtResource("1_8sqce")
 script = ExtResource("1_onuke")
 
 [node name="Control" type="Control" parent="."]
@@ -18,24 +16,35 @@ offset_bottom = 40.0
 
 [node name="NextPageButton" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = -26.0
-offset_top = -42.0
-offset_right = 1.0
-offset_bottom = -1.0
+offset_left = 77.7768
+offset_top = 89.8365
+offset_right = 205.777
+offset_bottom = 217.837
+texture_normal = ExtResource("3_2grib")
 
 [node name="PreviousPageButton" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = -60.0
-offset_top = -40.0
-offset_right = -30.0
+offset_left = -231.336
+offset_top = 92.8311
+offset_right = -103.336
+offset_bottom = 220.831
+texture_normal = ExtResource("3_2grib")
 
 [node name="ExitButton" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = -88.745
-offset_top = 12.7269
-offset_right = 39.255
-offset_bottom = 140.727
+offset_left = -73.7882
+offset_top = 238.566
+offset_right = 54.2118
+offset_bottom = 366.566
 texture_normal = ExtResource("3_2grib")
+
+[node name="LeftPageLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RightPageLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="Control/NextPageButton" to="." method="_on_next_page_button_pressed"]
 [connection signal="pressed" from="Control/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
