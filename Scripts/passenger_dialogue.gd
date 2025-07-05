@@ -5,6 +5,10 @@ extends RichTextLabel
 
 var personality: String
 
+var typing_speed := 0.02 # seconds per character
+var is_typing := false
+var displayed_bbcode := ""
+
 var player_greeting = "Dzień dobry."
 
 var dialogue = {
@@ -73,13 +77,27 @@ var dialogue = {
 }
 
 
+#func greet():
+	#personality = PassengerDataBus.currently_checked_passenger.personality
+	#var greeting = dialogue[personality]["greetings"].pick_random()
+	#text = "[right][color=STEEL_BLUE]%s[/color][/right]\n[left]%s[/left]" % [player_greeting, greeting]
+
 func greet():
+	displayed_bbcode = ""
 	personality = PassengerDataBus.currently_checked_passenger.personality
-	var greeting = dialogue[personality]["greetings"].pick_random()
-	text = "[right][color=STEEL_BLUE]%s[/color][/right]\n[left]%s[/left]" % [player_greeting, greeting]
+	var npc_text = dialogue[personality]["greetings"].pick_random()
+	var new_lines = [
+		{"align": "right", "text": player_greeting},
+		{"align": "left", "text": npc_text}
+	]
+	var blocks = build_bbcode_blocks(new_lines)
+	await show_text_typewriter(blocks, displayed_bbcode)
+	displayed_bbcode += build_bbcode_from_blocks(blocks)
 
 
 func _on_ask_ticket_pressed() -> void:
+	if is_typing:
+		return
 	var ticket_yes_or_no
 	match PassengerDataBus.currently_checked_passenger.has_ticket:
 		true:
@@ -88,11 +106,19 @@ func _on_ask_ticket_pressed() -> void:
 			ticket_yes_or_no = "ticket_no"
 	var npc_text = dialogue[personality][ticket_yes_or_no].pick_random()
 	var player_text = dialogue[personality]["player_ask_ticket"].pick_random()
-	text += "\n[right][color=STEEL_BLUE]%s[/color][/right]\n[left]%s[/left]" % [player_text, npc_text]
+	var new_lines = [
+		{"align": "right", "text": player_text},
+		{"align": "left", "text": npc_text}
+	]
+	var blocks = build_bbcode_blocks(new_lines)
+	await show_text_typewriter(blocks, displayed_bbcode)
+	displayed_bbcode += build_bbcode_from_blocks(blocks)
 	ticket_button.disabled = true
 
 
 func _on_ask_document_pressed() -> void:
+	if is_typing:
+		return
 	var id_yes_or_no
 	match PassengerDataBus.currently_checked_passenger.has_document:
 		true:
@@ -101,10 +127,18 @@ func _on_ask_document_pressed() -> void:
 			id_yes_or_no = "id_no"
 	var npc_text = dialogue[personality][id_yes_or_no].pick_random()
 	var player_text = dialogue[personality]["player_ask_id"].pick_random()
-	text += "\n[right][color=STEEL_BLUE]%s[/color][/right]\n[left]%s[/left]" % [player_text, npc_text]
+	var new_lines = [
+		{"align": "right", "text": player_text},
+		{"align": "left", "text": npc_text}
+	]
+	var blocks = build_bbcode_blocks(new_lines)
+	await show_text_typewriter(blocks, displayed_bbcode)
+	displayed_bbcode += build_bbcode_from_blocks(blocks)
 	document_button.disabled = true
 
 func on_investigate(doc_type, is_valid):
+	if is_typing:
+		return
 	var player_text = dialogue[personality]["player_investigate"].pick_random()
 	var npc_text
 	match doc_type:
@@ -122,10 +156,42 @@ func on_investigate(doc_type, is_valid):
 			else:
 				npc_text = dialogue[personality]["adult_defense"].pick_random()
 	
-	text += "\n[right][color=STEEL_BLUE]%s[/color][/right]\n[left]%s[/left]" % [player_text, npc_text]
+	var new_lines = [
+		{"align": "right", "text": player_text},
+		{"align": "left", "text": npc_text}
+	]
+	var blocks = build_bbcode_blocks(new_lines)
+	await show_text_typewriter(blocks, displayed_bbcode)
+	displayed_bbcode += build_bbcode_from_blocks(blocks)
 	
 	
+func show_text_typewriter(bbcode_blocks: Array, prefix: String = "") -> void:
+	is_typing = true
+	text = prefix
+	var result := prefix
+	for block in bbcode_blocks:
+		result += block["prefix"]
+		for i in block["text"].length():
+			text = result + block["text"].left(i + 1) + block["suffix"]
+			await get_tree().create_timer(typing_speed).timeout
+		result += block["text"] + block["suffix"]
+	text = result # Ensure full text at the end
+	is_typing = false
 	
+# Helper to build BBCode blocks for typewriter effect
+func build_bbcode_blocks(dialogue_lines: Array) -> Array:
+	var blocks := []
+	for line in dialogue_lines:
+		var prefix = "[%s]" % line.align
+		var suffix = "[/%s]\n" % line.align
+		blocks.append({"prefix": prefix, "text": line.text, "suffix": suffix})
+	return blocks
+
+func build_bbcode_from_blocks(blocks: Array) -> String:
+	var bbcode := ""
+	for block in blocks:
+		bbcode += block["prefix"] + block["text"] + block["suffix"]
+	return bbcode
 	
 	
 	

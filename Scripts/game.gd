@@ -24,6 +24,7 @@ func start_ticket_control():
 	ticket_control.visible = true
 	ticket_control.start_control()
 	get_tree().get_first_node_in_group("Player").can_move = false
+	get_tree().get_first_node_in_group("Player").get_node('WalkSFX').stop()
 
 func end_ticket_control():
 	get_tree().get_first_node_in_group("Player").can_move = true
