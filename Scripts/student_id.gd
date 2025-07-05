@@ -106,9 +106,10 @@ func _input(event: InputEvent) -> void:
 			magnified = false
 	
 	if Input.is_action_just_pressed("Investigate") and investigation_enabled and was_investigated == false:
-		get_parent().dialogue.on_investigate("student_id", is_valid)
 		was_investigated = true
 		$InvestigateInstruction.texture = load("res://Assets/Sprites/UIElements/investigate_instruction_disabled.png")
+		get_parent().dialogue.on_investigate("student_id", is_valid)
+		
 
 func _on_control_gui_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("LMB"):

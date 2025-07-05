@@ -98,6 +98,7 @@ func greet():
 func _on_ask_ticket_pressed() -> void:
 	if is_typing:
 		return
+	ticket_button.disabled = true
 	var ticket_yes_or_no
 	match PassengerDataBus.currently_checked_passenger.has_ticket:
 		true:
@@ -113,12 +114,13 @@ func _on_ask_ticket_pressed() -> void:
 	var blocks = build_bbcode_blocks(new_lines)
 	await show_text_typewriter(blocks, displayed_bbcode)
 	displayed_bbcode += build_bbcode_from_blocks(blocks)
-	ticket_button.disabled = true
+	
 
 
 func _on_ask_document_pressed() -> void:
 	if is_typing:
 		return
+	document_button.disabled = true
 	var id_yes_or_no
 	match PassengerDataBus.currently_checked_passenger.has_document:
 		true:
@@ -134,7 +136,7 @@ func _on_ask_document_pressed() -> void:
 	var blocks = build_bbcode_blocks(new_lines)
 	await show_text_typewriter(blocks, displayed_bbcode)
 	displayed_bbcode += build_bbcode_from_blocks(blocks)
-	document_button.disabled = true
+	
 
 func on_investigate(doc_type, is_valid):
 	if is_typing:
