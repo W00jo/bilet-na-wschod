@@ -206,7 +206,6 @@ visible = false
 
 [node name="StartMenu" parent="." instance=ExtResource("7_h4fw4")]
 layer = 4
-visible = false
 
 [node name="KonduktorzySplashScreen" type="CanvasLayer" parent="."]
 layer = 5

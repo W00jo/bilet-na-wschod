@@ -14,14 +14,9 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_credits_button_pressed() -> void:
-	$Darken.visible = true
-	$Credits.visible = true
 	$ButtonSFX.play()
-	
-func _on_credits_pressed() -> void:
-	$Darken.visible = false
-	$Credits.visible = false
-	$ButtonSFX.play()
+	var credits = load("res://Scenes/journal.tscn").instantiate()
+	add_child(credits)
 
 
 func _on_quit_button_pressed() -> void:

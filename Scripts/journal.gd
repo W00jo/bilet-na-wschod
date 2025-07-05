@@ -1,34 +1,63 @@
 extends Control
 
-@onready var all_pages = $Pages
-@onready var cover = $Pages/Cover
-@onready var pages_1_2 = $Pages/Pages_1_2
-@onready var pages_3_4 = $Pages/Pages_3_4
 
 
 func _ready() -> void:
-	hide_all_pages()
-	$Pages/Cover.visible = true
+	if get_parent() == get_tree().root.get_node('Game/ToolkitLayer/Toolkit'):
+		$CreditsPages.visible = false
+		hide_all_journal_pages()
+		$JournalPages/Cover.visible = true
+	elif get_parent() == get_tree().root.get_node('Game/StartMenu'):
+		$JournalPages.visible = false
+		hide_all_credits_pages()
+		$CreditsPages/Cover.visible = true
 
-func hide_all_pages():
-	for page in $Pages.get_children():
+
+func hide_all_journal_pages():
+	for page in $JournalPages.get_children():
 		page.visible = false
 
+func hide_all_credits_pages():
+	for page in $CreditsPages.get_children():
+		page.visible = false
+
+##############################################
+
 func _on_button_cover_pressed() -> void:
-	hide_all_pages()
-	$Pages/Pages_1_2.visible = true
+	hide_all_journal_pages()
+	$JournalPages/Pages_1_2.visible = true
 
 func _on_button_page_1_pressed() -> void:
-	hide_all_pages()
-	$Pages/Cover. visible = true
+	hide_all_journal_pages()
+	$JournalPages/Cover. visible = true
 
 func _on_button_page_2_pressed() -> void:
-	hide_all_pages()
-	$Pages/Pages_3_4.visible = true
+	hide_all_journal_pages()
+	$JournalPages/Pages_3_4.visible = true
 
 func _on_button_page_3_pressed() -> void:
-	hide_all_pages()
-	$Pages/Pages_1_2.visible = true
+	hide_all_journal_pages()
+	$JournalPages/Pages_1_2.visible = true
+
+###############################################
+
+func _on_credits_cover_pressed() -> void:
+	hide_all_credits_pages()
+	$CreditsPages/Pages_1_2.visible = true
+
+func _on_credits_page_1_pressed() -> void:
+	hide_all_credits_pages()
+	$CreditsPages/Cover.visible = true
+
+func _on_credits_page_2_pressed() -> void:
+	hide_all_credits_pages()
+	$CreditsPages/Pages_3_4.visible = true
+
+func _on_credits_page_3_pressed() -> void:
+	hide_all_credits_pages()
+	$CreditsPages/Pages_1_2.visible = true
+
+###############################################
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Magnify"):
