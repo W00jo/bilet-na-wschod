@@ -43,7 +43,9 @@ func _on_fines_mouse_exited() -> void:
 
 
 func _on_journal_gui_input(event: InputEvent) -> void:
-	pass # Replace with function body.
+	if Input.is_action_just_pressed("LMB"):
+		var journal = load("res://Scenes/journal.tscn").instantiate()
+		toolkit.add_child(journal)
 
 func _on_journal_mouse_entered() -> void:
 	$JournalTool.scale = journal_hover_scale

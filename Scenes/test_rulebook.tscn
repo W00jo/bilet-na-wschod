@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://brthvps20ines"]
+[gd_scene load_steps=4 format=3 uid="uid://brthvps20ines"]
 
+[ext_resource type="Texture2D" uid="uid://begp5m85k4fku" path="res://Assets/Sprites/rulebook_closed.png" id="1_8sqce"]
 [ext_resource type="Script" uid="uid://dujerb8ojjwud" path="res://Scripts/test_rulebook.gd" id="1_onuke"]
-[ext_resource type="Texture2D" uid="uid://4astocb3u2sn" path="res://icon.svg" id="3_2grib"]
+[ext_resource type="Texture2D" uid="uid://c7emoipbw2raa" path="res://icon.svg" id="3_2grib"]
 
 [node name="Rulebook" type="Sprite2D"]
 position = Vector2(385, 147)
 scale = Vector2(1.00287, 1.00182)
+texture = ExtResource("1_8sqce")
 script = ExtResource("1_onuke")
 
 [node name="Control" type="Control" parent="."]
@@ -39,12 +41,18 @@ offset_bottom = 366.566
 texture_normal = ExtResource("3_2grib")
 
 [node name="LeftPageLabel" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
+text = "lalalala"
 
 [node name="RightPageLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+visible = false
+offset_left = -88.7453
+offset_top = 1.99637
+offset_right = -33.7453
+offset_bottom = 24.9964
+text = "lalalala"
 
 [connection signal="pressed" from="Control/NextPageButton" to="." method="_on_next_page_button_pressed"]
 [connection signal="pressed" from="Control/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
