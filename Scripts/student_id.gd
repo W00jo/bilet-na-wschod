@@ -3,6 +3,8 @@ extends Node2D
 var selected = false
 var zoom_enabled = false
 var magnified = false
+var investigation_enabled = false
+var was_investigated = false
 
 var current_passenger = PassengerDataBus.currently_checked_passenger
 var name_lastname
@@ -42,7 +44,7 @@ func assign_years(stamp_num:int):
 	for yr in $Years.get_children():
 		yr.visible = false
 	var years = []
-	var cur_year = 99
+	var cur_year = 95
 	var double_year_num = (stamp_num-1)/2
 	var first_year = cur_year - double_year_num
 	for i in double_year_num:
@@ -80,6 +82,7 @@ func _physics_process(delta: float) -> void:
 		if selected:
 			global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 			disable_zoom()
+			disable_investigation()
 		else:
 			global_position = lerp(global_position, find_closest().global_position, 25*delta)
 		
@@ -100,6 +103,11 @@ func _input(event: InputEvent) -> void:
 		if get_parent().get_node('MagnifiedDocument').visible:
 			get_parent().get_node('MagnifiedDocument').visible = false
 			magnified = false
+	
+	if Input.is_action_just_pressed("Investigate") and investigation_enabled and was_investigated == false:
+		get_parent().dialogue.on_investigate("student_id", is_valid)
+		was_investigated = true
+		$InvestigateInstruction.texture = load("res://Assets/Sprites/UIElements/investigate_instruction_disabled.png")
 
 func _on_control_gui_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("LMB"):
@@ -111,6 +119,7 @@ func _on_control_gui_input(event: InputEvent) -> void:
 		selected = false
 		#on_disselected()
 		enable_zoom()
+		enable_investigation()
 		$ButtonSFX.play()
 		z_index = 0
 	
@@ -119,9 +128,11 @@ func _on_control_gui_input(event: InputEvent) -> void:
 
 func _on_control_mouse_entered() -> void:
 	enable_zoom()
+	enable_investigation()
 
 func _on_control_mouse_exited() -> void:
 	disable_zoom()
+	disable_investigation()
 
 func enable_zoom():
 	$MagnifyInstruction.visible = true
@@ -136,10 +147,13 @@ func magnify():
 	mag_layer.visible = true
 	magnified = true
 
-#func on_disselected():
-	#if get_parent() != SubViewport:
-		#global_position = lerp(global_position, find_closest().global_position, 1)
+func enable_investigation():
+	$InvestigateInstruction.visible = true
+	investigation_enabled = true
 
+func disable_investigation():
+	$InvestigateInstruction.visible = false
+	investigation_enabled = false
 
 func find_closest():
 	var markers = get_parent().get_node('Markers').get_children()

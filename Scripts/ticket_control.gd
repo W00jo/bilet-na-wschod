@@ -4,6 +4,7 @@ extends Control
 @onready var mag_doc_sub = $MagnifiedDocument/SVCont/SV
 @onready var button_sfx = $ButtonSFX
 @onready var ticket_validation_sfx = $TicketValidationSFX
+@onready var dialogue = $Box/HBox/Middle/DialogueBox/Dialogue
 
 var passenger
 

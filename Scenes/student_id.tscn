@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2r23wbfg0p8k"]
+[gd_scene load_steps=14 format=3 uid="uid://d2r23wbfg0p8k"]
 
 [ext_resource type="Texture2D" uid="uid://d0xpxrtvmeqne" path="res://Assets/Sprites/student_id.png" id="1_1leoy"]
 [ext_resource type="Script" uid="uid://716lyreksvpy" path="res://Scripts/student_id.gd" id="1_sgl21"]
@@ -10,6 +10,7 @@
 [ext_resource type="Shader" uid="uid://mvcthl1i5nuk" path="res://Shaders/sepia.gdshader" id="8_y0fc1"]
 [ext_resource type="Texture2D" uid="uid://b164d3d1cjr44" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="9_kxmqv"]
 [ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="10_ojrje"]
+[ext_resource type="Texture2D" uid="uid://bdq027i64fcwk" path="res://Assets/Sprites/UIElements/investigate_instruction.png" id="10_qmvtd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y0fc1"]
 shader = ExtResource("8_y0fc1")
@@ -666,12 +667,21 @@ offset_bottom = 66.0
 
 [node name="MagnifyInstruction" type="TextureRect" parent="."]
 visible = false
-offset_left = -24.0
-offset_top = -94.0
-offset_right = 28.0
-offset_bottom = -54.0
+offset_left = -55.0
+offset_top = -93.0
+offset_right = 4.0
+offset_bottom = -53.0
 scale = Vector2(0.938, 0.75)
 texture = ExtResource("9_kxmqv")
+
+[node name="InvestigateInstruction" type="TextureRect" parent="."]
+visible = false
+offset_left = 5.0
+offset_top = -93.0
+offset_right = 64.0
+offset_bottom = -53.0
+scale = Vector2(0.938, 0.75)
+texture = ExtResource("10_qmvtd")
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ojrje")

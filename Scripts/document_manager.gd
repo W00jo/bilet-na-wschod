@@ -20,8 +20,8 @@ func assign_ticket(age, age_range):
 			ticket = "Seniora"
 	
 	if age >=19 and age <= 26:
-		ticket = ["Normalny", "Studencki", "Studencki"].pick_random()
-		#ticket = "Studencki"
+		#ticket = ["Normalny", "Studencki", "Studencki"].pick_random()
+		ticket = "Studencki"
 	assign_document(age)
 
 func assign_document(age):

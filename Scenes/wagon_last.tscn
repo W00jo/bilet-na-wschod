@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://dt4q0p0pagn8w"]
 
 [ext_resource type="Script" uid="uid://bpt4s0ma6hsjy" path="res://Scripts/wagon.gd" id="1_ptmul"]
-[ext_resource type="Texture2D" uid="uid://c35m5r34sl301" path="res://Assets/Sprites/wagon_end.png" id="2_75i4c"]
+[ext_resource type="Texture2D" uid="uid://br3hit0xwrjcw" path="res://Assets/Sprites/wagon_end.png" id="2_75i4c"]
 [ext_resource type="Texture2D" uid="uid://cc0i252pgylxq" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_75i4c"]
 [ext_resource type="Texture2D" uid="uid://dbgqnimhon67a" path="res://Assets/Sprites/suitcase_shelves.png" id="3_ywjie"]
 [ext_resource type="TileSet" uid="uid://c7pvh4kvbyymp" path="res://Resources/chairs_tileset.tres" id="4_xn7w3"]
@@ -32,7 +32,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="RightExitArrow" type="Sprite2D" parent="."]
-position = Vector2(2099, 399)
+position = Vector2(2053, 399)
 scale = Vector2(3, 2.8)
 texture = ExtResource("3_75i4c")
 region_enabled = true

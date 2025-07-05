@@ -810,6 +810,12 @@ position = Vector2(1037.27, 502.727)
 [node name="DocumentMarker" type="Marker2D" parent="."]
 position = Vector2(914.545, 249.091)
 
+[node name="CalendarMark" type="Polygon2D" parent="."]
+position = Vector2(-210, -114.545)
+scale = Vector2(0.909091, 0.909091)
+color = Color(0.529412, 0.12549, 0.168627, 1)
+polygon = PackedVector2Array(419, 703, 423, 703, 423, 728, 451, 728, 451, 703, 419, 703, 419, 700, 455, 700, 455, 731, 419, 731)
+
 [node name="MagnifiedTicket" type="CanvasLayer" parent="."]
 layer = 3
 visible = false
