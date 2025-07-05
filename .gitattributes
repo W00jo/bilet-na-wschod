@@ -25,3 +25,7 @@
 *.otf binary
 *.woff binary
 *.woff2 binary
+
+# Make Git better at handling Godot files
+*.tscn merge=unity
+*.tres merge=unity
