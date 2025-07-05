@@ -62,16 +62,33 @@ func build_bbcode_from_blocks(blocks: Array) -> String:
 		bbcode += block["prefix"] + block["text"] + block["suffix"]
 	return bbcode
 
+#func _ready():
+	#dialogue_box = $Panel/RichTextLabel
+	#bilet_button = $VBoxContainer/Bilet
+	#id_button = $VBoxContainer/Id
+	#var personalities = ["polite", "rude", "fraidy"]
+	#personality = personalities.pick_random()
+	#var greeting = dialogue[personality]["greetings"].pick_random()
+	#var blocks = build_bbcode_blocks([{"align": "left", "text": greeting}])
+	#displayed_bbcode = build_bbcode_from_blocks(blocks)
+	#dialogue_box.text = displayed_bbcode
+
 func _ready():
 	dialogue_box = $Panel/RichTextLabel
 	bilet_button = $VBoxContainer/Bilet
 	id_button = $VBoxContainer/Id
 	var personalities = ["polite", "rude", "fraidy"]
 	personality = personalities.pick_random()
-	var greeting = dialogue[personality]["greetings"].pick_random()
-	var blocks = build_bbcode_blocks([{"align": "left", "text": greeting}])
-	displayed_bbcode = build_bbcode_from_blocks(blocks)
-	dialogue_box.text = displayed_bbcode
+	
+	var player_text = "Dzień dobry."
+	var npc_text = dialogue[personality]["greetings"].pick_random()
+	var new_lines = [
+		{"align": "right", "text": player_text},
+		{"align": "left", "text": npc_text}
+	]
+	var blocks = build_bbcode_blocks(new_lines)
+	await show_text_typewriter(blocks, displayed_bbcode)
+	displayed_bbcode += build_bbcode_from_blocks(blocks)
 
 func _on_bilet_pressed():
 	if is_typing:
