@@ -34,7 +34,7 @@ var dialogue = {
 		"player_ask_ticket": ["Bilet poproszę."],
 		"player_ask_id": ["Proszę pokazać dokument."],
 		"player_investigate": ["Coś się tu nie zgadza..."],
-		"student_invalid": ["Oj... Faktycznie nie podbita...!"],
+		"student_invalid": ["Oj... Faktycznie nie podbita..."],
 		"senior_invalid": ["Czy mógłby Pan przymknąć oko? Tylko troszeczkę mi brakuje..."],
 		"student_defense": ["Podbita jest!"],
 		"senior_defense": ["Zapewniam, że wszystko się zgadza!"],

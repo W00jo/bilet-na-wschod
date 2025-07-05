@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			global_position = lerp(global_position, find_closest().global_position, 20*delta)
 		
-		if doc_visibility_area != null:
+		if doc_visibility_area != null and visible:
 				doc_visibility_area.get_parent().disable_zoom()
 				doc_visibility_area.get_parent().disable_investigation()
 
