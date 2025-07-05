@@ -53,6 +53,12 @@ func build_bbcode_blocks(dialogue_lines: Array) -> Array:
 	for line in dialogue_lines:
 		var prefix = "[%s]" % line.align
 		var suffix = "[/%s]\n" % line.align
+		
+		# Add steel blue color for player (right-aligned) text
+		if line.align == "right":
+			prefix = "[%s][color=steelblue]" % line.align
+			suffix = "[/color][/%s]\n" % line.align
+		
 		blocks.append({"prefix": prefix, "text": line.text, "suffix": suffix})
 	return blocks
 
