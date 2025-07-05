@@ -206,9 +206,11 @@ visible = false
 
 [node name="StartMenu" parent="." instance=ExtResource("7_h4fw4")]
 layer = 4
+visible = false
 
 [node name="KonduktorzySplashScreen" type="CanvasLayer" parent="."]
 layer = 5
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="KonduktorzySplashScreen"]
 position = Vector2(960, 540)
@@ -223,7 +225,6 @@ bus = &"SFX"
 
 [node name="ChooChoo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_o5yvi")
-autoplay = true
 bus = &"SFX"
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]

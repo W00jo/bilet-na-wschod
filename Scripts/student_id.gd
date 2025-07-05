@@ -32,7 +32,7 @@ func assign_stamps():
 	years_of_study = current_passenger.years_of_study
 	for stamp in $Stamps.get_children(): ## hide all stamps
 		stamp.visible = false
-	var stamp_num = (years_of_study-1)*2 + 1
+	var stamp_num = (years_of_study-1)*2 + 2
 	for stamp in $Stamps.get_children():
 		if stamp.get_index() <= stamp_num-1:
 			stamp.visible = true
@@ -50,7 +50,8 @@ func assign_years(stamp_num:int):
 	for i in double_year_num:
 		for j in 2:
 			years.append(first_year+i)
-	years.append(cur_year)
+	for k in 2:
+		years.append(cur_year)
 	for i in years.size():
 		$Years.get_child(i).text = str(years[i])
 		$Years.get_child(i).visible = true
@@ -111,11 +112,11 @@ func _input(event: InputEvent) -> void:
 
 func _on_control_gui_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("LMB"):
-		scale = Vector2(2.2, 2.2)
+		scale = Vector2(2, 2)
 		selected = true
 		z_index = 1
 	if Input.is_action_just_released("LMB"):
-		scale = Vector2(2, 2)
+		scale = Vector2(1.5, 1.5)
 		selected = false
 		#on_disselected()
 		enable_zoom()

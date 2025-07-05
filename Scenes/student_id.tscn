@@ -519,6 +519,12 @@ position = Vector2(22, 41)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
+[node name="Stamp10" type="Sprite2D" parent="Stamps"]
+modulate = Color(1, 0.54, 0.54, 0.392157)
+position = Vector2(42, 41)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("6_kxmqv")
+
 [node name="Years" type="Node2D" parent="."]
 
 [node name="Year_1" type="Label" parent="Years"]
@@ -621,6 +627,18 @@ metadata/_edit_use_anchors_ = true
 offset_left = 18.0
 offset_top = 35.0
 offset_right = 48.0
+offset_bottom = 81.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
+theme_override_fonts/font = ExtResource("3_g8tnp")
+theme_override_font_sizes/font_size = 32
+text = "94"
+metadata/_edit_use_anchors_ = true
+
+[node name="Year_6" type="Label" parent="Years"]
+offset_left = 38.0
+offset_top = 35.0
+offset_right = 68.0
 offset_bottom = 81.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)

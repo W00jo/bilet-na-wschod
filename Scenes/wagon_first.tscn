@@ -80,7 +80,7 @@ position = Vector2(960, 540)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
-polygon = PackedVector2Array(256, 505, 256, 908, 1813, 908, 1813, 880, 1993, 880, 2003, 865, 2007, 847, 2007, 547, 1829, 549, 1828, 578, 1663, 563, 1661, 510, 1632, 492, 1567, 479, 335, 479, 294, 486, 253, 502, 245, 505, 234, 86, 2319, 97, 2319, 927, 238, 924, 245, 508)
+polygon = PackedVector2Array(256, 505, 256, 908, 1813, 908, 1813, 880, 1993, 880, 2003, 865, 2007, 847, 2007, 497, 1829, 497, 1829, 563, 1663, 563, 1661, 510, 1632, 492, 1567, 479, 335, 479, 294, 486, 253, 502, 245, 505, 234, 86, 2319, 97, 2319, 927, 238, 924, 245, 508)
 
 [connection signal="child_entered_tree" from="YSort" to="." method="_on_y_sort_child_entered_tree"]
 [connection signal="area_entered" from="RightExitArea" to="." method="_on_right_exit_area_area_entered"]
