@@ -4,7 +4,8 @@
 
 # Godot-specific ignores
 .import/
-*import
+*.import
+*.tmp
 export.cfg
 export_credentials.cfg
 
@@ -15,3 +16,31 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Godot build outputs
+*.exe
+*.pck
+*.app
+*.dmg
+*.zip
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp

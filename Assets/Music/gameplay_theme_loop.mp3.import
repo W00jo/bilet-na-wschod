@@ -3,11 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://daidu4i5mifs4"
-valid=false
+path="res://.godot/imported/gameplay_theme_loop.mp3-d59770969dda87b1140d1da72f90b8aa.mp3str"
 
 [deps]
 
 source_file="res://Assets/Music/gameplay_theme_loop.mp3"
+dest_files=["res://.godot/imported/gameplay_theme_loop.mp3-d59770969dda87b1140d1da72f90b8aa.mp3str"]
 
 [params]
 
