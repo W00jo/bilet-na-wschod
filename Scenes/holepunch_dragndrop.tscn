@@ -21,6 +21,7 @@ offset_bottom = 10.0
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_sh62t")
+bus = &"SFX"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-17, 17)

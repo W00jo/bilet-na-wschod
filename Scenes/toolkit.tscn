@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dig63qkl2leqy"]
+[gd_scene load_steps=4 format=3 uid="uid://dig63qkl2leqy"]
 
 [ext_resource type="Script" uid="uid://btm12wlm5yhja" path="res://Scripts/toolkit.gd" id="1_tufta"]
+[ext_resource type="AudioStream" uid="uid://wratqk1qt0p2" path="res://Assets/SFX/button_2.wav" id="3_435lr"]
 [ext_resource type="PackedScene" uid="uid://dby7jna7jxxyw" path="res://Scenes/tool_bag.tscn" id="8_3537i"]
 
 [node name="Toolkit" type="Control"]
@@ -25,5 +26,10 @@ offset_left = -18.0
 offset_top = -56.0
 offset_right = 27.0
 offset_bottom = -30.0
+
+[node name="OpenCloseSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_435lr")
+volume_db = 5.0
+bus = &"SFX"
 
 [connection signal="gui_input" from="ToolBag/BagInteraction" to="." method="_on_bag_interaction_gui_input"]

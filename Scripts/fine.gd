@@ -58,6 +58,8 @@ func _on_ready_pressed() -> void:
 	$CloseInstruction.visible = false
 	$CloseLabel.visible = false
 	$PassengerSignature.text = PassengerDataBus.currently_checked_passenger.full_name
+	$SignatureSFX.play()
+	await get_tree().create_timer(1).timeout
 	$PassengerSignature.visible = true
 	PassengerDataBus.currently_checked_passenger.is_fined = true
 	PassengerDataBus.currently_checked_passenger.interactive_look_remover()

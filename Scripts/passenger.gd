@@ -9,8 +9,8 @@ var is_skasowaned = false
 var is_fined = false
 
 var gender = ["m","f"].pick_random()
-var age = randi_range(12, 95)
-#var age = randi_range(19, 20)
+#var age = randi_range(12, 95)
+var age = randi_range(19, 20)
 var age_range:String
 #  15-24  25-39  40-64  65-79  80-95
 #  młodziez  młodsi-dorośli  starsi-dorośli  seniorzy  starcy

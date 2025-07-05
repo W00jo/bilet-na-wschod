@@ -24,11 +24,16 @@ func close():
 
 
 func _on_fines_gui_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("LMB") and PassengerDataBus.currently_checked_passenger != null:
-		var passenger = PassengerDataBus.currently_checked_passenger
-		if passenger.is_skasowaned == false and passenger.is_fined == false:
-			var fine = load("res://Scenes/fine.tscn").instantiate()
-			toolkit.add_child(fine)
+	if Input.is_action_just_pressed("LMB"):
+		if PassengerDataBus.currently_checked_passenger != null:
+			var passenger = PassengerDataBus.currently_checked_passenger
+			if passenger.is_skasowaned == false and passenger.is_fined == false:
+				var fine = load("res://Scenes/fine.tscn").instantiate()
+				toolkit.add_child(fine)
+			else:
+				$DisabledSFX.play()
+		else:
+			$DisabledSFX.play()
 
 func _on_fines_mouse_entered() -> void:
 	$FinesTool.scale = fine_hover_scale

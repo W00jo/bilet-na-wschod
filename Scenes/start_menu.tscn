@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="8_7vuks"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="9_rpttd"]
 [ext_resource type="Texture2D" uid="uid://dksrpfmpepcw8" path="res://Assets/Sprites/UIElements/credits.png" id="10_slhe1"]
-[ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="11_00l4x"]
+[ext_resource type="AudioStream" uid="uid://wratqk1qt0p2" path="res://Assets/SFX/button_2.wav" id="11_00l4x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m6uer"]
 shader = ExtResource("2_jgtwh")
@@ -180,6 +180,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_00l4x")
+bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

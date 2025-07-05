@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 		
 		if doc_visibility_area != null:
 				doc_visibility_area.get_parent().disable_zoom()
+				doc_visibility_area.get_parent().disable_investigation()
 
 func _input(event: InputEvent) -> void:
 	#if Input.is_action_just_released("LMB"):

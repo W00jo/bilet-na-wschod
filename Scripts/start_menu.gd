@@ -8,6 +8,7 @@ func _on_start_button_pressed() -> void:
 	$ButtonSFX.play()
 	$"../MenuMusic".stop()
 	$"../GameMusic".play()
+	$"../TrainSFX".play()
 	#await get_tree().create_timer(2).timeout
 	#get_parent().start_dialogue()
 

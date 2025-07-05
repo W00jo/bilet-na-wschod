@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6v7fjm0tmr2x"]
+[gd_scene load_steps=14 format=3 uid="uid://b6v7fjm0tmr2x"]
 
 [ext_resource type="Script" uid="uid://csyndhjjmsd2a" path="res://Scripts/id_card.gd" id="1_eb8q5"]
 [ext_resource type="Texture2D" uid="uid://cou8yaiuxwc02" path="res://Assets/Sprites/id_card.png" id="1_nd1qd"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="7_8t6xa"]
 [ext_resource type="Texture2D" uid="uid://bhjgpugjg5rls" path="res://Assets/Sprites/student_id_round_stamp.png" id="9_0qw8e"]
 [ext_resource type="Texture2D" uid="uid://b164d3d1cjr44" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="9_u1vt4"]
+[ext_resource type="Texture2D" uid="uid://bdq027i64fcwk" path="res://Assets/Sprites/UIElements/investigate_instruction.png" id="10_u1vt4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y0fc1"]
 shader = ExtResource("5_d12lp")
@@ -336,12 +337,21 @@ texture = ExtResource("9_0qw8e")
 
 [node name="MagnifyInstruction" type="TextureRect" parent="."]
 visible = false
-offset_left = -31.0
+offset_left = -60.0
 offset_top = -90.0
-offset_right = 38.0
+offset_right = 9.0
 offset_bottom = -44.0
 scale = Vector2(0.75, 0.6)
 texture = ExtResource("9_u1vt4")
+
+[node name="InvestigateInstruction" type="TextureRect" parent="."]
+visible = false
+offset_left = -4.0
+offset_top = -90.0
+offset_right = 65.0
+offset_bottom = -44.0
+scale = Vector2(0.75, 0.6)
+texture = ExtResource("10_u1vt4")
 
 [node name="VisibilityArea" type="Area2D" parent="." groups=["VisibilityArea"]]
 
@@ -351,6 +361,8 @@ shape = SubResource("RectangleShape2D_0qw8e")
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_8t6xa")
+volume_db = -5.0
+bus = &"SFX"
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
