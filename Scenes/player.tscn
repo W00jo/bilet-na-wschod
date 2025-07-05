@@ -1,8 +1,8 @@
 [gd_scene load_steps=64 format=3 uid="uid://wwm4tiq852hf"]
 
 [ext_resource type="Script" uid="uid://decdo0yokrms" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://dvdno1or8t6yk" path="res://Assets/Sprites/player.png" id="2_6t5aa"]
-[ext_resource type="AudioStream" uid="uid://clvi26gxwixos" path="res://Assets/SFX/footsteps.wav" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://xf7818kydxhl" path="res://Assets/Sprites/player.png" id="2_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://cc017ywci0d4f" path="res://Assets/SFX/footsteps.wav" id="3_6t5aa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cvnsp"]
 

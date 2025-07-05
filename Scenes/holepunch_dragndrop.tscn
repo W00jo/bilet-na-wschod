@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ormlp34rtbdb"]
 
 [ext_resource type="Script" uid="uid://d2akdbrlvatme" path="res://Scripts/holepunch_dragndrop.gd" id="1_kkgm5"]
-[ext_resource type="Texture2D" uid="uid://csywo326a8e4b" path="res://Assets/Sprites/hole_punch_tool.png" id="2_6ti0c"]
-[ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="3_sh62t"]
+[ext_resource type="Texture2D" uid="uid://dqgeyt6vl0mlv" path="res://Assets/Sprites/hole_punch_tool.png" id="2_6ti0c"]
+[ext_resource type="AudioStream" uid="uid://ck5jeva8vx44k" path="res://Assets/SFX/button.wav" id="3_sh62t"]
 
 [node name="HolepunchDragndrop" type="Node2D"]
 script = ExtResource("1_kkgm5")

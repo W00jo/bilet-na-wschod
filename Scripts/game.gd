@@ -2,23 +2,22 @@ extends Node2D
 
 @onready var tutorial_dialogue = preload("res://Scenes/tutorial_dialogue.tscn").instantiate()
 @onready var ticket_control = $ToolkitLayer/TicketControl
-#########################################
-### set KnduktorzySplashScreen visible
-### set StartScreen visible
+########################################
+## set KnduktorzySplashScreen visible
+## set StartScreen visible
 #func _ready() -> void:
 	#await get_tree().create_timer(5).timeout
 	#$KonduktorzySplashScreen.queue_free()
 	#get_tree().paused = true
 	#$StartMenu.visible = true
 	#### set ChooChoo to Autoplay
-	##await get_tree().create_timer(2).timeout
 	#$MenuMusic.play()
 	#
 #func start_dialogue():
 	#get_tree().paused = false
 	#$ToolkitLayer/TutorialDialogue.start_tutorial_dialogue()
 	#
-#######################################
+######################################
 
 func start_ticket_control():
 	ticket_control.visible = true

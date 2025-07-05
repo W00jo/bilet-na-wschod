@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://4s721feerner" path="res://Scripts/conductor_wagon.gd" id="1_omwpj"]
 [ext_resource type="Texture2D" uid="uid://bu5noj1e8frdf" path="res://Assets/Sprites/wagon_condutor.png" id="1_vkuc8"]
-[ext_resource type="Texture2D" uid="uid://dbgqnimhon67a" path="res://Assets/Sprites/suitcase_shelves.png" id="3_5p62l"]
-[ext_resource type="Texture2D" uid="uid://cc0i252pgylxq" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_omwpj"]
+[ext_resource type="Texture2D" uid="uid://cjv6rvyexfenu" path="res://Assets/Sprites/suitcase_shelves.png" id="3_5p62l"]
+[ext_resource type="Texture2D" uid="uid://dlef4knxhkt1r" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_omwpj"]
 [ext_resource type="TileSet" uid="uid://c7pvh4kvbyymp" path="res://Resources/chairs_tileset.tres" id="4_5p62l"]
 [ext_resource type="PackedScene" uid="uid://4e61xs8kmtjg" path="res://Scenes/camera_on_rail.tscn" id="6_jwpte"]
 

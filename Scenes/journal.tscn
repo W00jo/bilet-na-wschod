@@ -1,0 +1,226 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyk5ycejyhqh4"]
+
+[ext_resource type="Script" uid="uid://bsc268xcao7fv" path="res://Scripts/journal.gd" id="1_nv2gc"]
+[ext_resource type="Texture2D" uid="uid://begp5m85k4fku" path="res://Assets/Sprites/rulebook_closed.png" id="1_x6005"]
+[ext_resource type="Texture2D" uid="uid://dxn3pn7gwcn4j" path="res://Assets/Sprites/rulebook_open.png" id="2_nv2gc"]
+[ext_resource type="Texture2D" uid="uid://mgf60ablla70" path="res://rulebook_blank.png" id="3_jqjty"]
+[ext_resource type="Texture2D" uid="uid://c7yrgyhmmpi7r" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="4_wnnew"]
+[ext_resource type="FontFile" uid="uid://bw4o6hvluv5ah" path="res://Assets/Fonts/ByteBounce.ttf" id="5_16vce"]
+
+[node name="Journal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nv2gc")
+
+[node name="Darken" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.533333)
+
+[node name="Pages" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Cover" type="Control" parent="Pages"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CoverTex" type="TextureRect" parent="Pages/Cover"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0583333
+anchor_top = 0.159259
+anchor_right = 0.676042
+anchor_bottom = 0.873148
+offset_top = -0.000183105
+offset_right = -1024.0
+offset_bottom = -656.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7, 7)
+texture = ExtResource("1_x6005")
+metadata/_edit_use_anchors_ = true
+
+[node name="CoverLabel" type="Label" parent="Pages/Cover"]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 571.0
+offset_right = 1072.0
+offset_bottom = 674.0
+theme_override_colors/font_color = Color(1, 0.974767, 0.937993, 1)
+theme_override_font_sizes/font_size = 75
+text = "Cover"
+
+[node name="ButtonCover" type="TextureButton" parent="Pages/Cover"]
+layout_mode = 0
+offset_left = 665.0
+offset_top = 175.0
+offset_right = 1243.0
+offset_bottom = 969.0
+
+[node name="Pages_1_2" type="Control" parent="Pages"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PagesTex_1_2" type="TextureRect" parent="Pages/Pages_1_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.195833
+anchor_top = 0.159259
+anchor_right = 0.815104
+anchor_bottom = 0.873148
+offset_top = -0.000183105
+offset_right = -1024.0
+offset_bottom = -656.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7, 7)
+texture = ExtResource("2_nv2gc")
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftPageLabel" type="Label" parent="Pages/Pages_1_2"]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 252.0
+offset_right = 828.0
+offset_bottom = 355.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "Left  p.1"
+
+[node name="RightPageLabel" type="Label" parent="Pages/Pages_1_2"]
+layout_mode = 0
+offset_left = 1061.0
+offset_top = 258.0
+offset_right = 1398.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "Rigth  p.2"
+
+[node name="ButtonPage_1" type="TextureButton" parent="Pages/Pages_1_2"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 191.0
+offset_right = 726.0
+offset_bottom = 958.0
+
+[node name="ButtonPage_2" type="TextureButton" parent="Pages/Pages_1_2"]
+layout_mode = 0
+offset_left = 1154.0
+offset_top = 191.0
+offset_right = 1475.0
+offset_bottom = 958.0
+
+[node name="Pages_3_4" type="Control" parent="Pages"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PagesTex_3_4" type="TextureRect" parent="Pages/Pages_3_4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.195833
+anchor_top = 0.159259
+anchor_right = 0.815104
+anchor_bottom = 0.873148
+offset_top = -0.000183105
+offset_right = -1024.0
+offset_bottom = -656.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7, 7)
+texture = ExtResource("3_jqjty")
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftPageLabel" type="Label" parent="Pages/Pages_3_4"]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 252.0
+offset_right = 828.0
+offset_bottom = 355.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "Left  p.3"
+
+[node name="RightPageLabel" type="Label" parent="Pages/Pages_3_4"]
+layout_mode = 0
+offset_left = 1061.0
+offset_top = 258.0
+offset_right = 1398.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "Rigth  p.4"
+
+[node name="ButtonPage_3" type="TextureButton" parent="Pages/Pages_3_4"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 191.0
+offset_right = 726.0
+offset_bottom = 958.0
+
+[node name="ButtonPage_4" type="TextureButton" parent="Pages/Pages_3_4"]
+visible = false
+layout_mode = 0
+offset_left = 1154.0
+offset_top = 191.0
+offset_right = 1475.0
+offset_bottom = 958.0
+
+[node name="CloseInstruction" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 59.0
+offset_right = 1113.0
+offset_bottom = 157.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_wnnew")
+
+[node name="CloseLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 83.0
+offset_right = 1019.0
+offset_bottom = 127.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("5_16vce")
+theme_override_font_sizes/font_size = 52
+text = "ZAMKNIJ"
+
+[connection signal="pressed" from="Pages/Cover/ButtonCover" to="." method="_on_button_cover_pressed"]
+[connection signal="pressed" from="Pages/Pages_1_2/ButtonPage_1" to="." method="_on_button_page_1_pressed"]
+[connection signal="pressed" from="Pages/Pages_1_2/ButtonPage_2" to="." method="_on_button_page_2_pressed"]
+[connection signal="pressed" from="Pages/Pages_3_4/ButtonPage_3" to="." method="_on_button_page_3_pressed"]
