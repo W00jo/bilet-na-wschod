@@ -4,7 +4,7 @@
 # Godot specific files
 *.gd text eol=lf
 *.cs text eol=lf
-*.tscn text eol=lf
+*.tscn text eol=lf diff=unity
 *.tres text eol=lf
 *.cfg text eol=lf
 
@@ -20,7 +20,7 @@
 *.ico binary
 *.wav binary
 *.ogg binary
-*.mp3binary
+*.mp3 binary
 *.ttf binary
 *.otf binary
 *.woff binary
