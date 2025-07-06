@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://dyk5ycejyhqh4"]
 
 [ext_resource type="Script" uid="uid://bsc268xcao7fv" path="res://Scripts/journal.gd" id="1_nv2gc"]
-[ext_resource type="Texture2D" uid="uid://hp3xvddjnf6q" path="res://Assets/Sprites/rulebook_closed.png" id="1_x6005"]
-[ext_resource type="Texture2D" uid="uid://5i36re43otxp" path="res://Assets/Sprites/rulebook_open.png" id="2_nv2gc"]
-[ext_resource type="Texture2D" uid="uid://b6ylw8gmsdi35" path="res://Assets/Sprites/rulebook_blank.png" id="3_jqjty"]
-[ext_resource type="Texture2D" uid="uid://k7jyv5v2nmrg" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="4_wnnew"]
-[ext_resource type="FontFile" uid="uid://csst3yoqdnyvm" path="res://Assets/Fonts/ByteBounce.ttf" id="5_16vce"]
-[ext_resource type="Texture2D" uid="uid://bi12nb3hnljoy" path="res://Assets/Sprites/photos.png" id="5_jqjty"]
-[ext_resource type="FontFile" uid="uid://dy54cuo4rbn8a" path="res://Assets/Fonts/WindSong-Medium.ttf" id="5_q37xc"]
-[ext_resource type="FontFile" uid="uid://dyc16ir87atox" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="7_special"]
+[ext_resource type="Texture2D" uid="uid://cyhhrrhj3lup7" path="res://Assets/Sprites/rulebook_closed.png" id="1_x6005"]
+[ext_resource type="Texture2D" uid="uid://c0m4i6vrvb2it" path="res://Assets/Sprites/rulebook_open.png" id="2_nv2gc"]
+[ext_resource type="Texture2D" uid="uid://dqnrkisk1x428" path="res://Assets/Sprites/rulebook_blank.png" id="3_jqjty"]
+[ext_resource type="Texture2D" uid="uid://t6wxywp8hy8o" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="4_wnnew"]
+[ext_resource type="FontFile" uid="uid://cinom8n1kyrkb" path="res://Assets/Fonts/ByteBounce.ttf" id="5_16vce"]
+[ext_resource type="Texture2D" uid="uid://qhjln1wlf6fi" path="res://Assets/Sprites/photos.png" id="5_jqjty"]
+[ext_resource type="FontFile" uid="uid://dkv62yii3uy4j" path="res://Assets/Fonts/WindSong-Medium.ttf" id="5_q37xc"]
+[ext_resource type="FontFile" uid="uid://cdqmke74ahfhj" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="7_special"]
 
 [node name="Journal" type="Control"]
 layout_mode = 3
@@ -293,11 +293,10 @@ text = "[center][b][color=steelblue]ZASADY WYSTAWIANIA MANDATÓW[/color][/b][/ce
    [color=steelblue]•[/color] Podpisz mandat swoim imieniem
    [color=steelblue]•[/color] Zbierz podpis pasażera
 
-[b]2. TARYFIKATOR MANDATÓW:[/b]
+[b]2. TARYFIKATOR WEZWAŃ DO ZAPŁATY:[/b]
    [color=#f75d5d]•[/color] Brak biletu = [b]280 zł[/b]
    [color=#f75d5d]•[/color] Nieważny bilet = [b]280 zł[/b]
    [color=#f75d5d]•[/color] Brak dokumentu/dokument nieważny = [b]150 zł[/b]
-   [color=#f75d5d]•[/color] Agresywne zachowanie = [b]500 zł[/b]
 
 [b]3. NIEPRAWIDŁOWOŚCI:[/b]
    [color=#f75d5d]•[/color] Brak biletu

@@ -1,19 +1,19 @@
 [gd_scene load_steps=66 format=4 uid="uid://b8isqvx2friyc"]
 
-[ext_resource type="Texture2D" uid="uid://diyn558wypc5q" path="res://Assets/Sprites/fine.png" id="1_gslbi"]
+[ext_resource type="Texture2D" uid="uid://dk2k13mkrvooc" path="res://Assets/Sprites/fine.png" id="1_gslbi"]
 [ext_resource type="Script" uid="uid://bks6drilcl16n" path="res://Scripts/fine.gd" id="1_y8f02"]
-[ext_resource type="FontFile" uid="uid://dsiennjqxr1pc" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="2_j64j4"]
-[ext_resource type="Texture2D" uid="uid://dl8gl00yaoumt" path="res://Assets/Sprites/UIElements/arrow_dropdown.png" id="3_vlsl1"]
-[ext_resource type="FontFile" uid="uid://dd8k47t8mqh2r" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_c47hs"]
-[ext_resource type="Texture2D" uid="uid://bn2xdhg56udbn" path="res://Assets/Sprites/UIElements/fine_signature_indicators.png" id="6_drwaf"]
-[ext_resource type="Texture2D" uid="uid://c7yrgyhmmpi7r" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="7_fenrm"]
-[ext_resource type="FontFile" uid="uid://p2cylvhw3oie" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="7_r7nce"]
-[ext_resource type="Texture2D" uid="uid://n4blq0b4qd6x" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="8_fenrm"]
-[ext_resource type="FontFile" uid="uid://bw4o6hvluv5ah" path="res://Assets/Fonts/ByteBounce.ttf" id="8_hwa0g"]
-[ext_resource type="Texture2D" uid="uid://b0ui2gvln1vss" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_hwa0g"]
-[ext_resource type="Texture2D" uid="uid://dmgyncnp7fiop" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="10_lpeer"]
-[ext_resource type="Texture2D" uid="uid://djmyfnjo67q3d" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="11_l5fba"]
-[ext_resource type="AudioStream" uid="uid://u53hwgsjmyo4" path="res://Assets/SFX/signature.wav" id="14_fenrm"]
+[ext_resource type="FontFile" uid="uid://cdqmke74ahfhj" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="2_j64j4"]
+[ext_resource type="Texture2D" uid="uid://l4jv4j4vte05" path="res://Assets/Sprites/UIElements/arrow_dropdown.png" id="3_vlsl1"]
+[ext_resource type="FontFile" uid="uid://dkv62yii3uy4j" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_c47hs"]
+[ext_resource type="Texture2D" uid="uid://dqxo54jmv726u" path="res://Assets/Sprites/UIElements/fine_signature_indicators.png" id="6_drwaf"]
+[ext_resource type="Texture2D" uid="uid://t6wxywp8hy8o" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="7_fenrm"]
+[ext_resource type="FontFile" uid="uid://djcstjn3xuniv" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="7_r7nce"]
+[ext_resource type="Texture2D" uid="uid://blmrhqtvipdp5" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="8_fenrm"]
+[ext_resource type="FontFile" uid="uid://cinom8n1kyrkb" path="res://Assets/Fonts/ByteBounce.ttf" id="8_hwa0g"]
+[ext_resource type="Texture2D" uid="uid://bt7i7ylp0b5ok" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_hwa0g"]
+[ext_resource type="Texture2D" uid="uid://bx05u5hgtb20s" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="10_lpeer"]
+[ext_resource type="Texture2D" uid="uid://dedols3jtyqvu" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="11_l5fba"]
+[ext_resource type="AudioStream" uid="uid://bdcyihun8ej4p" path="res://Assets/SFX/signature.wav" id="14_fenrm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgu7j"]
 
@@ -1717,11 +1717,11 @@ theme_override_font_sizes/font_size = 36
 autowrap_mode = 2
 fit_to_longest_item = false
 item_count = 3
-popup/item_0/text = "350 zł"
+popup/item_0/text = "150 zł"
 popup/item_0/id = 0
 popup/item_1/id = 2
 popup/item_1/separator = true
-popup/item_2/text = "500 zł"
+popup/item_2/text = "280 zł"
 popup/item_2/id = 1
 
 [node name="PodpisPas" type="Label" parent="."]
