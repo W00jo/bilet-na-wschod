@@ -1,14 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyk5ycejyhqh4"]
+[gd_scene load_steps=8 format=3 uid="uid://dyk5ycejyhqh4"]
 
 [ext_resource type="Script" uid="uid://bsc268xcao7fv" path="res://Scripts/journal.gd" id="1_nv2gc"]
-[ext_resource type="Texture2D" uid="uid://cyhhrrhj3lup7" path="res://Assets/Sprites/rulebook_closed.png" id="1_x6005"]
-[ext_resource type="Texture2D" uid="uid://c0m4i6vrvb2it" path="res://Assets/Sprites/rulebook_open.png" id="2_nv2gc"]
-[ext_resource type="Texture2D" uid="uid://dqnrkisk1x428" path="res://Assets/Sprites/rulebook_blank.png" id="3_jqjty"]
-[ext_resource type="Texture2D" uid="uid://t6wxywp8hy8o" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="4_wnnew"]
-[ext_resource type="FontFile" uid="uid://cinom8n1kyrkb" path="res://Assets/Fonts/ByteBounce.ttf" id="5_16vce"]
-[ext_resource type="Texture2D" uid="uid://qhjln1wlf6fi" path="res://Assets/Sprites/photos.png" id="5_jqjty"]
-[ext_resource type="FontFile" uid="uid://dkv62yii3uy4j" path="res://Assets/Fonts/WindSong-Medium.ttf" id="5_q37xc"]
-[ext_resource type="FontFile" uid="uid://cdqmke74ahfhj" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="7_special"]
+[ext_resource type="Texture2D" uid="uid://hp3xvddjnf6q" path="res://Assets/Sprites/rulebook_closed.png" id="1_x6005"]
+[ext_resource type="Texture2D" uid="uid://5i36re43otxp" path="res://Assets/Sprites/rulebook_open.png" id="2_nv2gc"]
+[ext_resource type="Texture2D" uid="uid://b6ylw8gmsdi35" path="res://Assets/Sprites/rulebook_blank.png" id="3_jqjty"]
+[ext_resource type="Texture2D" uid="uid://bi12nb3hnljoy" path="res://Assets/Sprites/photos.png" id="5_jqjty"]
+[ext_resource type="FontFile" uid="uid://ctlxb0am8gi1m" path="res://Assets/Fonts/WindSong-Medium.ttf" id="5_q37xc"]
+[ext_resource type="FontFile" uid="uid://dyc16ir87atox" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="7_special"]
 
 [node name="Journal" type="Control"]
 layout_mode = 3
@@ -354,7 +352,6 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Cover" type="Control" parent="CreditsPages"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -379,17 +376,18 @@ scale = Vector2(7, 7)
 texture = ExtResource("1_x6005")
 metadata/_edit_use_anchors_ = true
 
-[node name="CoverLabel" type="Label" parent="CreditsPages/Cover"]
+[node name="CoverLabel" type="RichTextLabel" parent="CreditsPages/Cover"]
 layout_mode = 0
-offset_left = 739.0
-offset_top = 550.0
-offset_right = 1201.0
-offset_bottom = 759.0
-theme_override_colors/font_color = Color(1, 0.974767, 0.937993, 1)
-theme_override_font_sizes/font_size = 75
-text = "Konduktorzy
-UMCS"
-horizontal_alignment = 1
+offset_left = 716.0
+offset_top = 547.0
+offset_right = 1211.0
+offset_bottom = 653.0
+theme_override_colors/default_color = Color(1, 0.974767, 0.937993, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center][color=e3ddd1]KONDUKTORZY
+UMCS[/color]"
 
 [node name="CreditsCover" type="TextureButton" parent="CreditsPages/Cover"]
 layout_mode = 0
@@ -399,7 +397,6 @@ offset_right = 1243.0
 offset_bottom = 969.0
 
 [node name="Pages_1_2" type="Control" parent="CreditsPages"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -424,42 +421,68 @@ scale = Vector2(7, 7)
 texture = ExtResource("3_jqjty")
 metadata/_edit_use_anchors_ = true
 
-[node name="LeftPageLabel" type="Label" parent="CreditsPages/Pages_1_2"]
+[node name="LeftPageLabel" type="RichTextLabel" parent="CreditsPages/Pages_1_2"]
 layout_mode = 0
 offset_left = 457.0
-offset_top = 248.0
-offset_right = 888.0
-offset_bottom = 893.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "Kacper Kołdej
+offset_top = 223.0
+offset_right = 913.0
+offset_bottom = 906.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][b][color=steelblue]ZESPÓŁ DEWELOPERSKI[/color][/b][/center]
+----------------------
+[i]Kolejność czysto alfabetyczna![/i]
 
-Roksana Łazarska
+[color=steelblue]Kacper Kołdej[/color]
+[b]• 5-ty muzykant z Bremy[/b]
 
-Filip Łątka
+[color=steelblue]Roksana Łazarska[/color]
+[b]• Graficzka[/b]
 
-Daniel Mazurek
+[color=steelblue]Filip Łątka[/color]
+[b]• Animator[/b]
+[b]• Grafik[/b]
 
-Dominik Puława"
+[color=steelblue]Daniel Mazurek[/color]
+[b]• Grafik[/b]
 
-[node name="RightPageLabel" type="Label" parent="CreditsPages/Pages_1_2"]
+[color=steelblue]Dominik Puława[/color]
+[b]• Game design[/b]
+[b]• Grafik[/b]"
+
+[node name="RightPageLabel" type="RichTextLabel" parent="CreditsPages/Pages_1_2"]
 layout_mode = 0
 offset_left = 983.0
-offset_top = 233.0
+offset_top = 222.0
 offset_right = 1464.0
-offset_bottom = 950.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "Adam Rutkowski
+offset_bottom = 915.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[color=steelblue]Adam Rutkowski[/color]
+[b]• QA i testowanie[/b]
 
-Zuzanna Stańczyk
+[color=steelblue]Zuzanna Stańczyk[/color]
+[b]• SFX[/b]
 
-Julia Turowska
+[color=steelblue]Julia Turowska[/color]
+[b]• Główna programistka i Godociara[/b]
+[b]• Graficzka[/b]
 
-Gabriela Wilczyńska
+[color=steelblue]Daniel Mazurek[/color]
+[b]• Game design[/b]
+[b]• Grafik[/b]
 
-Jakub Wójcik
-"
+[color=steelblue]Gabriela Wilczyńska[/color]
+[b]• Animatorka[/b]
+[b]• Graficzka[/b]
+
+[color=steelblue]Jakub Wójcik[/color]
+[b]• Juniorek programista[/b]
+[b]• PM[/b]"
 
 [node name="CreditsPage_1" type="TextureButton" parent="CreditsPages/Pages_1_2"]
 layout_mode = 0
@@ -474,6 +497,30 @@ offset_left = 1154.0
 offset_top = 191.0
 offset_right = 1475.0
 offset_bottom = 958.0
+
+[node name="PageNumber1" type="RichTextLabel" parent="CreditsPages/Pages_1_2"]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 919.0
+offset_right = 700.0
+offset_bottom = 949.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]1[/center]"
+
+[node name="PageNumber2" type="RichTextLabel" parent="CreditsPages/Pages_1_2"]
+layout_mode = 0
+offset_left = 1190.0
+offset_top = 919.0
+offset_right = 1240.0
+offset_bottom = 949.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]2[/center]"
 
 [node name="Pages_3_4" type="Control" parent="CreditsPages"]
 visible = false
@@ -533,34 +580,26 @@ offset_top = 191.0
 offset_right = 1475.0
 offset_bottom = 958.0
 
-[node name="CloseInstruction" type="TextureRect" parent="."]
+[node name="PageNumber3" type="RichTextLabel" parent="CreditsPages/Pages_3_4"]
 layout_mode = 0
-offset_left = 840.0
-offset_top = 59.0
-offset_right = 1113.0
-offset_bottom = 157.0
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("4_wnnew")
+offset_left = 643.0
+offset_top = 919.0
+offset_right = 693.0
+offset_bottom = 949.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]3[/center]"
 
-[node name="CloseLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 860.0
-offset_top = 83.0
-offset_right = 1019.0
-offset_bottom = 127.0
-scale = Vector2(0.8, 0.8)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 14
-theme_override_fonts/font = ExtResource("5_16vce")
-theme_override_font_sizes/font_size = 52
-text = "ZAMKNIJ"
-
-[connection signal="pressed" from="JournalPages/Cover/ButtonCover" to="." method="_on_button_cover_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_1_2/ButtonPage_1" to="." method="_on_button_page_1_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_1_2/ButtonPage_2" to="." method="_on_button_page_2_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_3_4/ButtonPage_3" to="." method="_on_button_page_3_pressed"]
-[connection signal="pressed" from="CreditsPages/Cover/CreditsCover" to="." method="_on_credits_cover_pressed"]
-[connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_1" to="." method="_on_credits_page_1_pressed"]
-[connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_2" to="." method="_on_credits_page_2_pressed"]
-[connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_3" to="." method="_on_credits_page_3_pressed"]
+[node name="RightPageLabel" type="RichTextLabel" parent="CreditsPages/Pages_3_4"]
+offset_left = 1002.0
+offset_top = 776.0
+offset_right = 1222.0
+offset_bottom = 807.0
+rotation = 0.529013
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[b]DZIĘKUJĘMY ZA ZAGRANIE![/b]"

@@ -22,7 +22,6 @@ buses/default_bus_layout="res://Resources/default_bus_layout.tres"
 [autoload]
 
 PassengerDataBus="*res://Scripts/PassengerDataBus.gd"
-CursorManager="*res://Scripts/cursor_manager.gd"
 
 [display]
 
