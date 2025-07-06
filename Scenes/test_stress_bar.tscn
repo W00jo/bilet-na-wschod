@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhqx8j6o8kp5u"]
+
+[ext_resource type="Script" uid="uid://cm0li17cm02i6" path="res://Scripts/test_stress_bar.gd" id="1_stress_test"]
+[ext_resource type="Texture2D" uid="uid://c1ogeukc0bjco" path="res://Assets/Sprites/UIElements/stressbar_under.png" id="2_under"]
+[ext_resource type="Texture2D" uid="uid://cnn3uydwx1464" path="res://Assets/Sprites/UIElements/stressbar.png" id="3_main"]
+[ext_resource type="Texture2D" uid="uid://be4tk1fj8brc" path="res://Assets/Sprites/UIElements/stress_zero_icon.png" id="4_zero_icon"]
+[ext_resource type="Texture2D" uid="uid://dkprypvqivowf" path="res://Assets/Sprites/UIElements/stress_icon.png" id="5_stress_icon"]
+
+[node name="StressBarTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_stress_test")
+
+[node name="StressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 100.0
+offset_right = 264.0
+offset_bottom = 106.0
+texture_under = ExtResource("2_under")
+texture_progress = ExtResource("3_main")
+
+[node name="StressZeroIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 95.0
+offset_right = 140.0
+offset_bottom = 115.0
+texture = ExtResource("4_zero_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StressIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 95.0
+offset_right = 294.0
+offset_bottom = 115.0
+texture = ExtResource("5_stress_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 400.0
+offset_bottom = 320.0
+
+[node name="SmallStressButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Mały Stres (+15)"
+
+[node name="MediumStressButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Średni Stres (+25)"
+
+[node name="LargeStressButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Duży Stres (+35)"
+
+[node name="ResetButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resetuj Stres"
+
+[node name="InfoLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 160.0
+offset_right = 550.0
+offset_bottom = 200.0
+text = "Stres: 0%"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/SmallStressButton" to="." method="_on_small_stress_pressed"]
+[connection signal="pressed" from="VBoxContainer/MediumStressButton" to="." method="_on_medium_stress_pressed"]
+[connection signal="pressed" from="VBoxContainer/LargeStressButton" to="." method="_on_large_stress_pressed"]
+[connection signal="pressed" from="VBoxContainer/ResetButton" to="." method="_on_reset_pressed"]
