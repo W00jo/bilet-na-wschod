@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhqx8j6o8kp5u"]
+[gd_scene load_steps=6 format=3 uid="uid://bxn8l655av4jc"]
 
 [ext_resource type="Script" uid="uid://cm0li17cm02i6" path="res://Scripts/test_stress_bar.gd" id="1_stress_test"]
 [ext_resource type="Texture2D" uid="uid://c1ogeukc0bjco" path="res://Assets/Sprites/UIElements/stressbar_under.png" id="2_under"]

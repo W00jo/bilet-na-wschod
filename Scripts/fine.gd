@@ -57,12 +57,20 @@ func _input(event: InputEvent) -> void:
 func _on_ready_pressed() -> void:
 	$CloseInstruction.visible = false
 	$CloseLabel.visible = false
-	$PassengerSignature.text = PassengerDataBus.currently_checked_passenger.full_name
+	if PassengerDataBus.currently_checked_passenger != null:
+		$PassengerSignature.text = PassengerDataBus.currently_checked_passenger.full_name
+	elif PassengerDataBus.current_special != null:
+		$PassengerSignature.text = PassengerDataBus.current_special.full_name
 	$SignatureSFX.play()
 	await get_tree().create_timer(1).timeout
 	$PassengerSignature.visible = true
-	PassengerDataBus.currently_checked_passenger.is_fined = true
-	PassengerDataBus.currently_checked_passenger.interactive_look_remover()
-	PassengerDataBus.currently_checked_passenger.hide_interaction_label()
+	if PassengerDataBus.currently_checked_passenger != null:
+		PassengerDataBus.currently_checked_passenger.is_fined = true
+		PassengerDataBus.currently_checked_passenger.interactive_look_remover()
+		PassengerDataBus.currently_checked_passenger.hide_interaction_label()
+	elif PassengerDataBus.current_special != null:
+		PassengerDataBus.current_special.is_fined = true
+		PassengerDataBus.current_special.interactive_look_remover()
+		PassengerDataBus.current_special.hide_interaction_label()
 	await get_tree().create_timer(1.5).timeout
 	queue_free()

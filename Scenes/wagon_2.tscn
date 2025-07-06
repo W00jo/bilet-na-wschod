@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://capbqmp4f3hg6"]
+[gd_scene load_steps=11 format=4 uid="uid://capbqmp4f3hg6"]
 
 [ext_resource type="Script" uid="uid://bpt4s0ma6hsjy" path="res://Scripts/wagon.gd" id="1_mq5fo"]
-[ext_resource type="Texture2D" uid="uid://hh1vqcfhjwgm" path="res://Assets/Sprites/wagon_tileset.png" id="2_g4tbb"]
-[ext_resource type="Texture2D" uid="uid://dlef4knxhkt1r" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_8wkxq"]
+[ext_resource type="Texture2D" uid="uid://dvonca0ltx40o" path="res://Assets/Sprites/wagon_tileset.png" id="2_g4tbb"]
+[ext_resource type="Texture2D" uid="uid://d0kattxs0ic5t" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_8wkxq"]
 [ext_resource type="TileSet" uid="uid://c7pvh4kvbyymp" path="res://Resources/chairs_tileset.tres" id="3_g4tbb"]
-[ext_resource type="Texture2D" uid="uid://cjv6rvyexfenu" path="res://Assets/Sprites/suitcase_shelves.png" id="3_okys2"]
+[ext_resource type="Texture2D" uid="uid://576beul3dw5u" path="res://Assets/Sprites/suitcase_shelves.png" id="3_okys2"]
 [ext_resource type="PackedScene" uid="uid://4e61xs8kmtjg" path="res://Scenes/camera_on_rail.tscn" id="4_8wkxq"]
+[ext_resource type="PackedScene" uid="uid://c5o5fcu144i4x" path="res://Scenes/chair_back_forward.tscn" id="5_c2hmd"]
+[ext_resource type="PackedScene" uid="uid://bf52qdwd17p8u" path="res://Scenes/dres_passenger.tscn" id="6_8wkxq"]
 
 [sub_resource type="Curve2D" id="Curve2D_5p62l"]
 _data = {
@@ -58,11 +60,18 @@ texture = ExtResource("3_okys2")
 region_enabled = true
 region_rect = Rect2(0, 0, 66, 125)
 
+[node name="ChairBackForward" parent="YSort" instance=ExtResource("5_c2hmd")]
+position = Vector2(1485, 515)
+scale = Vector2(2.75, 2.75)
+
 [node name="Chairs" type="TileMapLayer" parent="YSort"]
 y_sort_enabled = true
 scale = Vector2(2.75, 2.75)
-tile_map_data = PackedByteArray("AAAVACUAAQAAAAAAAgAdACUAAQAAAAAAAgAlACUAAQAAAAAAAgAtACUAAQAAAAAAAgA1ACUAAQAAAAAAAgA9ACUAAQAAAAAAAgAUAD4AAQAAAAAAAQAcAD4AAQAAAAAAAQAkAD4AAQAAAAAAAQAsAD4AAQAAAAAAAQA0AD4AAQAAAAAAAQA8AD4AAQAAAAAAAQAVADoAAQAAAAAAAgAdADoAAQAAAAAAAgAlADoAAQAAAAAAAgAtADoAAQAAAAAAAgA1ADoAAQAAAAAAAgA9ADoAAQAAAAAAAgAUACkAAQAAAAAAAQAcACkAAQAAAAAAAQAkACkAAQAAAAAAAQAsACkAAQAAAAAAAQA0ACkAAQAAAAAAAQA8ACkAAQAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAVACUAAQAAAAAAAgAdACUAAQAAAAAAAgAlACUAAQAAAAAAAgAtACUAAQAAAAAAAgA9ACUAAQAAAAAAAgAUAD4AAQAAAAAAAQAcAD4AAQAAAAAAAQAkAD4AAQAAAAAAAQAsAD4AAQAAAAAAAQA0AD4AAQAAAAAAAQA8AD4AAQAAAAAAAQAVADoAAQAAAAAAAgAdADoAAQAAAAAAAgAlADoAAQAAAAAAAgAtADoAAQAAAAAAAgA1ADoAAQAAAAAAAgA9ADoAAQAAAAAAAgAUACkAAQAAAAAAAQAcACkAAQAAAAAAAQAkACkAAQAAAAAAAQAsACkAAQAAAAAAAQA8ACkAAQAAAAAAAQA0ACkAAQAAAAAAAQA=")
 tile_set = ExtResource("3_g4tbb")
+
+[node name="DresPassenger" parent="YSort" instance=ExtResource("6_8wkxq")]
+position = Vector2(1533, 530)
 
 [node name="Passengers" type="Node2D" parent="YSort"]
 y_sort_enabled = true
