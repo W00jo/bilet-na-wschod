@@ -278,6 +278,7 @@ texture_progress = ExtResource("8_1phco")
 texture_progress_offset = Vector2(90, 0)
 
 [node name="DialogueLayer" type="CanvasLayer" parent="."]
+process_priority = 1
 layer = 3
 
 [node name="TutorialDialogue" parent="DialogueLayer" instance=ExtResource("10_85qyi")]
@@ -327,17 +328,20 @@ libraries = {
 &"": SubResource("AnimationLibrary_7t8sx")
 }
 
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 4
+
 [node name="PauseMenu" parent="." instance=ExtResource("6_i6g32")]
 process_mode = 3
-layer = 4
+layer = 5
 visible = false
 
 [node name="StartMenu" parent="." instance=ExtResource("7_h4fw4")]
-layer = 4
+layer = 5
 
 [node name="KonduktorzySplashScreen" type="CanvasLayer" parent="."]
 process_mode = 3
-layer = 5
+layer = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="KonduktorzySplashScreen"]
 position = Vector2(960, 540)

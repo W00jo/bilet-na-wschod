@@ -3,12 +3,14 @@ extends Control
 @onready var button_sfx = $ButtonSFX
 @onready var dialogue = $Box/HBox/Middle/DialogueBox/Dialogue
 
+@onready var tut_dialogue = get_parent().get_parent().get_node('DialogueLayer/TutorialDialogue')
+
 var passenger
 
 
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Interact") and visible:
-		close()
+#func _input(event: InputEvent) -> void:
+	#if Input.is_action_just_pressed("Interact") and visible:
+		#close()
 
 
 func start_dres_control(dres):
@@ -21,15 +23,17 @@ func start_dres_control(dres):
 
 
 func _on_ask_ticket_pressed() -> void:
-	pass
-		
+	await get_tree().create_timer(4).timeout
+	tut_dialogue.start_tutorial_dialogue()
+	
 
 func _on_ask_document_pressed() -> void:
 	pass
 
 
 func _on_button_close_pressed() -> void:
-	close()
+	if passenger.is_fined:
+		close()
 
 func close():
 	if passenger.is_fined == false:
@@ -37,5 +41,10 @@ func close():
 		PassengerDataBus.current_special = null
 		$Box/HBox/Middle/DialogueBox/Dialogue.text = ""
 	get_tree().get_first_node_in_group("Player").can_move = true
-	queue_free()
 	button_sfx.play()
+	visible = false
+	await get_tree().create_timer(2).timeout
+	tut_dialogue.start_tutorial_dialogue()
+	#get_parent().get_parent().get_node('Levels/Tutorial/WagonTutorial/TutGuy')
+	queue_free()
+	

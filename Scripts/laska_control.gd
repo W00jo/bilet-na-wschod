@@ -6,6 +6,7 @@ extends Control
 @onready var button_sfx = $ButtonSFX
 @onready var ticket_validation_sfx = $TicketValidationSFX
 @onready var dialogue = $Box/HBox/Middle/DialogueBox/Dialogue
+@onready var tut_dialogue = get_parent().get_parent().get_node('DialogueLayer/TutorialDialogue')
 
 var passenger
 
@@ -16,9 +17,11 @@ var mag_document
 var is_ticket_checked = false
 var invalid_doc_mistake_rate = [1, 1, 2, 2, 3].pick_random()
 
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Interact") and visible and $MagnifiedDocument.visible == false and $MagnifiedTicket.visible == false:
-		close()
+var id_asked = false
+
+#func _input(event: InputEvent) -> void:
+	#if Input.is_action_just_pressed("Interact") and visible and $MagnifiedDocument.visible == false and $MagnifiedTicket.visible == false:
+		#close()
 
 
 func start_laska_control(laska):
@@ -29,6 +32,7 @@ func start_laska_control(laska):
 	passenger = laska
 	create_ticket()
 	create_document()
+	tut_dialogue.start_tutorial_dialogue()
 	$Box/HBox/Middle/DialogueBox/Dialogue.greet()
 
 func create_ticket():
@@ -92,7 +96,7 @@ func create_document_avatar(doc):
 			duplicate.scale = Vector2(0.75, 0.75)
 
 func validate_ticket():
-	if is_ticket_checked == false and passenger.is_fined == false:
+	if is_ticket_checked == false and passenger.is_fined == false and id_asked:
 		ticket.get_node("TextureAndLabels").material.set_shader_parameter("mask_size", Vector2(0.25, 0.25))
 		ticket.get_node("TextureAndLabels/SubViewport/HoleOutline").visible = true
 		mag_ticket.get_node("TextureAndLabels/SubViewport/HoleOutline").visible = true
@@ -102,6 +106,7 @@ func validate_ticket():
 		passenger.is_skasowaned = true
 		passenger.interactive_look_remover()
 		passenger.hide_interaction_label()
+		tut_dialogue.start_tutorial_dialogue()
 
 
 func _on_ask_ticket_pressed() -> void:
@@ -109,11 +114,16 @@ func _on_ask_ticket_pressed() -> void:
 		print(ticket)
 		ticket.visible = true
 		button_sfx.play()
+		$Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument.visible = true
+		tut_dialogue.start_tutorial_dialogue()
+		
 
 
 func _on_ask_document_pressed() -> void:
 	document.visible = true
 	button_sfx.play()
+	id_asked = true
+	tut_dialogue.start_tutorial_dialogue()
 
 func disable_markers():
 	pass

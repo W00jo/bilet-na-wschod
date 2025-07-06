@@ -13,6 +13,7 @@ var player_scene = load("res://Scenes/player.tscn")
 var wagon_count = randi_range(min_wagons, max_wagons)
 var all_wagons = []
 
+var tutorial_guy
 
 func _ready() -> void:
 	spawn_wagons()
@@ -64,6 +65,12 @@ func put_player_in_first_wagon():
 	var player_instance = player_scene.instantiate()
 	first_wagon.get_node('YSort').add_child(player_instance)
 	player_instance.position = first_wagon.get_node('LeftEntranceMarker').position
+	var tut_guy = Sprite2D.new()
+	tut_guy.texture = load("res://Assets/Sprites/tutorial_conductor.png")
+	first_wagon.get_node('YSort').add_child(tut_guy)
+	tut_guy.position = player_instance.position + Vector2(200, -20)
+	tut_guy.scale = Vector2(3.75, 3.75)
+	tutorial_guy = tut_guy
 
 func change_wagons(player, side):
 	var current_wagon = player.get_parent().get_parent()

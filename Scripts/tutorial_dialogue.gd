@@ -44,7 +44,7 @@ var dialogue = {
 		
 		"Starszy konduktor",
 		
-		["Dobra młody, słuchaj bo dwa razy powtarzał nie będę.",
+		["Dobra, słuchaj bo dwa razy powtarzał nie będę.",
 		"Najpierw prosisz o bilet."]
 	],
 	"seq_6": [
@@ -84,9 +84,17 @@ var dialogue = {
 		
 		"Starszy konduktor",
 		
-		["No młody, uważaj na stres! ,
-		W tej robocie nie ma lekko, jak serducho ci wysiądzie w połowie trasy to nic z tego nie będzie!"]
+		["Pamiętasz gdzie masz bloczek wezwań?",
+		"Zawsze trzymaj obok podręcznika, to ci się w stresie nie pogubi."]
 	],
+	#"seq_10": [
+		#load("res://Assets/Sprites/TutorialAvatars/TutorialGuy/tutorial_guy_default.png"),
+		#
+		#"Starszy konduktor",
+		#
+		#["No młody, uważaj na stres! ,
+		#W tej robocie nie ma lekko, jak serducho ci wysiądzie w połowie trasy to nic z tego nie będzie!"]
+	#],
 	
 	"seq_11":  [
 		load("res://Assets/Sprites/TutorialAvatars/dres_tutorial.png"),
@@ -96,7 +104,7 @@ var dialogue = {
 		["Te konduktor!"]
 	],
 	
-	"seq12":  [
+	"seq_12":  [
 		load("res://Assets/Sprites/TutorialAvatars/conductor_tutorial.png"),
 		
 		"Janusz Efinowicz",
@@ -142,6 +150,7 @@ var text_array_id = 2
 var dialogue_started = false
 
 func start_tutorial_dialogue():
+	dialogue_started = true
 	get_parent().get_parent().disable_player_movement()
 	$Test/ArrowIndicator.visible = false
 	visible = true
@@ -175,26 +184,34 @@ func _input(event: InputEvent) -> void:
 			match sequence_num:
 				4:
 					stop_dialogue()
+					get_parent().get_parent().get_node('Levels/Tutorial').tutorial_guy.queue_free()
 				5:
 					stop_dialogue()
 				6:
 					stop_dialogue()
 				7:
 					stop_dialogue()
-				8:
-					stop_dialogue()
 				9:
 					stop_dialogue()
+					get_parent().get_parent().get_node('ToolkitLayer/LaskaControl').close()
+					get_parent().get_parent().get_node('Levels/Tutorial/WagonTutorial/TutGuy').position = get_parent().get_parent().get_node('Levels/Tutorial/WagonTutorial/TutorialGuyMarker').position
+				10:
+					stop_dialogue()
+					#get_parent().get_parent().get_node('ToolkitLayer/DresControl').close()
+					#get_parent().get_parent().get_node('Levels/Tutorial/WagonTutorial/TutGuy').queue_free()
 				13:
 					stop_dialogue()
 				15:
 					stop_dialogue()
 
 func stop_dialogue():
+	print("stoped")
 	visible = false
 	dialogue_started = false
 	page = 0
-	get_parent().get_parent().enable_player_movement()
+	if get_parent().get_parent().get_node('ToolkitLayer/LaskaControl') != null and get_parent().get_parent().get_node('ToolkitLayer/DresControl') != null:
+		if get_parent().get_parent().get_node('ToolkitLayer/LaskaControl').visible == false and get_parent().get_parent().get_node('ToolkitLayer/DresControl').visible == false:
+			get_parent().get_parent().enable_player_movement()
 
 
 #func _on_button_1_pressed() -> void:

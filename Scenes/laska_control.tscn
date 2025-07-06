@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://btbw7os5skpdj"]
+[gd_scene load_steps=30 format=3 uid="uid://btbw7os5skpdj"]
 
 [ext_resource type="Script" uid="uid://b3r0pfbn4x8k3" path="res://Scripts/laska_control.gd" id="1_fn56y"]
 [ext_resource type="Texture2D" uid="uid://cbd207ygutxuy" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_8yswx"]
@@ -15,9 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://clwi3j1xf4w5u" path="res://Assets/Sprites/UIElements/ui_document_box.png" id="12_ydauk"]
 [ext_resource type="Texture2D" uid="uid://ba8jqis2ody8y" path="res://Assets/Sprites/UIElements/calendar.png" id="13_6vls5"]
 [ext_resource type="FontFile" uid="uid://cinom8n1kyrkb" path="res://Assets/Fonts/ByteBounce.ttf" id="14_0hqrd"]
-[ext_resource type="Texture2D" uid="uid://cmakuxsmlqmfj" path="res://Assets/Sprites/UIElements/button_close.png" id="15_jfhje"]
-[ext_resource type="Texture2D" uid="uid://bvtfnlslw41cw" path="res://Assets/Sprites/UIElements/button_close_pressed.png" id="16_ycbmj"]
-[ext_resource type="Texture2D" uid="uid://uvaubtgrcnq8" path="res://Assets/Sprites/UIElements/button_close_hover.png" id="17_3fk4e"]
 [ext_resource type="Texture2D" uid="uid://t6wxywp8hy8o" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="18_4hhec"]
 [ext_resource type="AudioStream" uid="uid://bumf7stah4hcs" path="res://Assets/SFX/button_2.wav" id="19_2drpo"]
 [ext_resource type="AudioStream" uid="uid://booxa7ig534x3" path="res://Assets/SFX/ticket_validation.wav" id="20_ihoh5"]
@@ -225,6 +222,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_g7ygy")
 text = "Poproś o bilet"
 
 [node name="AskDocument" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0.67, 0.424333, 0.3015, 1)
@@ -302,21 +300,6 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "[table=7] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell]    1[/cell] [cell][color=#87202b][outline_color=#87202b]    2[/outline_color][/color][/cell] [cell]    3[/cell] [cell]    4[/cell] [cell]    5[/cell] [cell]    6[/cell] [cell]    7[/cell] [cell]    8[/cell] [cell][color=#87202b][outline_color=#87202b]    9[/outline_color][/color][/cell] [cell]  10[/cell] [cell]  11[/cell] [cell]  12[/cell] [cell]  13[/cell] [cell]  14[/cell] [cell]  15[/cell] [cell][color=#87202b][outline_color=#87202b]  16[/outline_color][/color][/cell] [cell]  17[/cell] [cell]  18[/cell] [cell]  19[/cell] [cell]  20[/cell] [cell]  21[/cell] [cell]  22[/cell] [cell][color=#87202b][outline_color=#87202b]  23[/outline_color][/color][/cell] [cell]  24[/cell] [cell]  25[/cell] [cell]  26[/cell] [cell]  27[/cell] [cell]  28[/cell] [cell]  29[/cell] [cell][color=#87202b][outline_color=#87202b]  30[/outline_color][/color][/cell]  [/table]"
-
-[node name="ButtonClose" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.91521
-anchor_top = 0.0223655
-anchor_right = 0.999728
-anchor_bottom = 0.179384
-offset_right = -81.0
-offset_bottom = -76.5
-scale = Vector2(3, 3)
-texture_normal = ExtResource("15_jfhje")
-texture_pressed = ExtResource("16_ycbmj")
-texture_hover = ExtResource("17_3fk4e")
-metadata/_edit_use_anchors_ = true
 
 [node name="Markers" type="Node2D" parent="."]
 position = Vector2(987.273, 381.818)
@@ -907,4 +890,3 @@ bus = &"SFX"
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket" to="Box/HBox/Middle/DialogueBox/Dialogue" method="_on_ask_ticket_pressed"]
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument" to="." method="_on_ask_document_pressed"]
 [connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument" to="Box/HBox/Middle/DialogueBox/Dialogue" method="_on_ask_document_pressed"]
-[connection signal="pressed" from="ButtonClose" to="." method="_on_button_close_pressed"]
