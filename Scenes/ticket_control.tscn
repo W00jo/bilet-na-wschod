@@ -1,26 +1,26 @@
 [gd_scene load_steps=33 format=3 uid="uid://b80uyautrg11t"]
 
 [ext_resource type="Script" uid="uid://cyfqyufsg3au3" path="res://Scripts/ticket_control.gd" id="1_o2i80"]
-[ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_4tmf3"]
-[ext_resource type="Texture2D" uid="uid://dtro4ywj78emd" path="res://Assets/Sprites/UIElements/ui_inner_box.png" id="3_a7phc"]
-[ext_resource type="Texture2D" uid="uid://cy0c1s0yjqobc" path="res://Assets/Sprites/UIElements/ui_inner_box_empty.png" id="4_2aeyl"]
-[ext_resource type="Texture2D" uid="uid://dxjurjn5vjgmi" path="res://Assets/Sprites/UIElements/button_close_pressed.png" id="4_d7iwj"]
+[ext_resource type="Texture2D" uid="uid://cbd207ygutxuy" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_4tmf3"]
+[ext_resource type="Texture2D" uid="uid://cd1q8mgpg4ehg" path="res://Assets/Sprites/UIElements/ui_inner_box.png" id="3_a7phc"]
+[ext_resource type="Texture2D" uid="uid://ce3praa08kpf4" path="res://Assets/Sprites/UIElements/ui_inner_box_empty.png" id="4_2aeyl"]
+[ext_resource type="Texture2D" uid="uid://bvtfnlslw41cw" path="res://Assets/Sprites/UIElements/button_close_pressed.png" id="4_d7iwj"]
 [ext_resource type="PackedScene" uid="uid://l5od68vreoyv" path="res://Scenes/passenger_avatar.tscn" id="5_4tmf3"]
-[ext_resource type="Texture2D" uid="uid://cxiqi60hmpdii" path="res://Assets/Sprites/UIElements/ui_document_box.png" id="5_7fm02"]
-[ext_resource type="Texture2D" uid="uid://mnpjkiv43ens" path="res://Assets/Sprites/UIElements/button_close_hover.png" id="5_xpyt6"]
-[ext_resource type="Texture2D" uid="uid://cond2jaipmxpy" path="res://Assets/Sprites/UIElements/button_close.png" id="6_wctca"]
-[ext_resource type="Texture2D" uid="uid://drnegoyywdsto" path="res://Assets/Sprites/UIElements/ui_inner_box_under_buttons.png" id="7_ivvik"]
+[ext_resource type="Texture2D" uid="uid://clwi3j1xf4w5u" path="res://Assets/Sprites/UIElements/ui_document_box.png" id="5_7fm02"]
+[ext_resource type="Texture2D" uid="uid://uvaubtgrcnq8" path="res://Assets/Sprites/UIElements/button_close_hover.png" id="5_xpyt6"]
+[ext_resource type="Texture2D" uid="uid://cmakuxsmlqmfj" path="res://Assets/Sprites/UIElements/button_close.png" id="6_wctca"]
+[ext_resource type="Texture2D" uid="uid://do2fce0cj36tw" path="res://Assets/Sprites/UIElements/ui_inner_box_under_buttons.png" id="7_ivvik"]
 [ext_resource type="Script" uid="uid://bh21ypvmh88pj" path="res://Scripts/passenger_dialogue.gd" id="7_okt6h"]
-[ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="7_w25t7"]
-[ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="8_oyhfx"]
-[ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="8_w25t7"]
-[ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_fa7hl"]
-[ext_resource type="Texture2D" uid="uid://dvqlfbbfqlj13" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="10_fa7hl"]
-[ext_resource type="Texture2D" uid="uid://cc0yevf72i7va" path="res://Assets/Sprites/UIElements/calendar.png" id="13_jwvxh"]
-[ext_resource type="AudioStream" uid="uid://dkuchwlj8aal" path="res://Assets/SFX/ticket_validation.wav" id="17_ivvik"]
-[ext_resource type="Texture2D" uid="uid://k7jyv5v2nmrg" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="17_t4xp8"]
-[ext_resource type="FontFile" uid="uid://csst3yoqdnyvm" path="res://Assets/Fonts/ByteBounce.ttf" id="18_jwvxh"]
-[ext_resource type="AudioStream" uid="uid://c50211rsyikp1" path="res://Assets/SFX/button_2.wav" id="20_jwvxh"]
+[ext_resource type="Texture2D" uid="uid://dedols3jtyqvu" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="7_w25t7"]
+[ext_resource type="Texture2D" uid="uid://bx05u5hgtb20s" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="8_oyhfx"]
+[ext_resource type="FontFile" uid="uid://djcstjn3xuniv" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="8_w25t7"]
+[ext_resource type="Texture2D" uid="uid://bt7i7ylp0b5ok" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="9_fa7hl"]
+[ext_resource type="Texture2D" uid="uid://blmrhqtvipdp5" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="10_fa7hl"]
+[ext_resource type="Texture2D" uid="uid://ba8jqis2ody8y" path="res://Assets/Sprites/UIElements/calendar.png" id="13_jwvxh"]
+[ext_resource type="AudioStream" uid="uid://booxa7ig534x3" path="res://Assets/SFX/ticket_validation.wav" id="17_ivvik"]
+[ext_resource type="Texture2D" uid="uid://t6wxywp8hy8o" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="17_t4xp8"]
+[ext_resource type="FontFile" uid="uid://cinom8n1kyrkb" path="res://Assets/Fonts/ByteBounce.ttf" id="18_jwvxh"]
+[ext_resource type="AudioStream" uid="uid://bumf7stah4hcs" path="res://Assets/SFX/button_2.wav" id="20_jwvxh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okt6h"]
 
@@ -244,16 +244,16 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_okt6h")
 theme_override_styles/normal = SubResource("StyleBoxTexture_x8ygp")
 text = "Zapytaj  o  dokument"
 
-[node name="Option3" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
+[node name="AskDocument2" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0.67, 0.424333, 0.3015, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.0714149, 0.260118, 0.311629, 1)
-theme_override_colors/font_color = Color(0.0705882, 0.258824, 0.309804, 1)
-theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
 theme_override_fonts/font = ExtResource("8_w25t7")
 theme_override_font_sizes/font_size = 20
@@ -262,7 +262,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_t4xp8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jwvxh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_okt6h")
 theme_override_styles/normal = SubResource("StyleBoxTexture_x8ygp")
-text = "Zapytaj  o  dowód   osobisty"
+text = "Zapytaj  o  dokument"
 
 [node name="DocumentBox" type="NinePatchRect" parent="Box/HBox"]
 layout_mode = 2

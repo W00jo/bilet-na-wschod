@@ -1,0 +1,333 @@
+[gd_scene load_steps=31 format=3 uid="uid://chlnxioi8ehr6"]
+
+[ext_resource type="Script" uid="uid://vjf46nxrq1en" path="res://Scripts/dres_control.gd" id="1_0kckx"]
+[ext_resource type="Texture2D" uid="uid://cbd207ygutxuy" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_f4yh1"]
+[ext_resource type="Texture2D" uid="uid://cd1q8mgpg4ehg" path="res://Assets/Sprites/UIElements/ui_inner_box.png" id="3_cm54v"]
+[ext_resource type="Texture2D" uid="uid://1oarnc8741kq" path="res://Assets/Sprites/ProblematicPassangers/Dres_ava.png" id="4_0kckx"]
+[ext_resource type="Texture2D" uid="uid://ce3praa08kpf4" path="res://Assets/Sprites/UIElements/ui_inner_box_empty.png" id="4_sre04"]
+[ext_resource type="FontFile" uid="uid://djcstjn3xuniv" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="5_iv8es"]
+[ext_resource type="Texture2D" uid="uid://do2fce0cj36tw" path="res://Assets/Sprites/UIElements/ui_inner_box_under_buttons.png" id="6_423x1"]
+[ext_resource type="Script" uid="uid://bjj8vq30l5xeu" path="res://Scripts/dres_dialogue.gd" id="6_qeuq2"]
+[ext_resource type="Texture2D" uid="uid://blmrhqtvipdp5" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="7_h6bmm"]
+[ext_resource type="Texture2D" uid="uid://bt7i7ylp0b5ok" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="8_tmluj"]
+[ext_resource type="Texture2D" uid="uid://bx05u5hgtb20s" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="9_qsydm"]
+[ext_resource type="Texture2D" uid="uid://dedols3jtyqvu" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="10_31582"]
+[ext_resource type="Texture2D" uid="uid://clwi3j1xf4w5u" path="res://Assets/Sprites/UIElements/ui_document_box.png" id="11_rkwp7"]
+[ext_resource type="Texture2D" uid="uid://ba8jqis2ody8y" path="res://Assets/Sprites/UIElements/calendar.png" id="12_wfogm"]
+[ext_resource type="FontFile" uid="uid://cinom8n1kyrkb" path="res://Assets/Fonts/ByteBounce.ttf" id="13_jj0up"]
+[ext_resource type="Texture2D" uid="uid://cmakuxsmlqmfj" path="res://Assets/Sprites/UIElements/button_close.png" id="14_1fnqk"]
+[ext_resource type="Texture2D" uid="uid://bvtfnlslw41cw" path="res://Assets/Sprites/UIElements/button_close_pressed.png" id="15_a337b"]
+[ext_resource type="Texture2D" uid="uid://uvaubtgrcnq8" path="res://Assets/Sprites/UIElements/button_close_hover.png" id="16_0hdc8"]
+[ext_resource type="AudioStream" uid="uid://bumf7stah4hcs" path="res://Assets/SFX/button_2.wav" id="18_3y303"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okt6h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x8ygp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksdtc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00svc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgxtj"]
+
+[sub_resource type="Theme" id="Theme_1htim"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_okt6h")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_x8ygp")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_ksdtc")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_00svc")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_rgxtj")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqq8y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p5rre"]
+texture = ExtResource("7_h6bmm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5qtp"]
+texture = ExtResource("8_tmluj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ijohy"]
+texture = ExtResource("9_qsydm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_udgvo"]
+texture = ExtResource("10_31582")
+
+[node name="DresControl" type="Control"]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 227.0
+offset_top = 128.0
+offset_right = -356.0
+offset_bottom = -261.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("1_0kckx")
+
+[node name="Box" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0209424
+anchor_top = -0.0173661
+anchor_right = 1.00187
+anchor_bottom = 1.08357
+offset_right = -267.5
+offset_bottom = -174.75
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+mouse_filter = 0
+texture = ExtResource("2_f4yh1")
+region_rect = Rect2(0, 0, 120.007, 120.017)
+patch_margin_left = 46
+patch_margin_top = 47
+patch_margin_right = 43
+patch_margin_bottom = 43
+metadata/_edit_use_anchors_ = true
+
+[node name="HBox" type="HBoxContainer" parent="Box"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 54.0
+offset_right = -46.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="Box/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.35
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Box/HBox/Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("3_cm54v")
+region_rect = Rect2(0, 0, 120, 120)
+patch_margin_left = 18
+patch_margin_top = 28
+patch_margin_right = 17
+patch_margin_bottom = 19
+
+[node name="DresAvatar" type="TextureRect" parent="Box/HBox/Left/NinePatchRect"]
+layout_mode = 0
+offset_left = -3.23637
+offset_top = 40.6909
+offset_right = 199.764
+offset_bottom = 243.691
+texture = ExtResource("4_0kckx")
+
+[node name="Container" type="Container" parent="Box/HBox/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.96
+
+[node name="Middle" type="VBoxContainer" parent="Box/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.51
+theme_override_constants/separation = 15
+
+[node name="DialogueBox" type="NinePatchRect" parent="Box/HBox/Middle"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.49
+mouse_filter = 0
+texture = ExtResource("4_sre04")
+region_rect = Rect2(0, 0, 60.0266, 60.0212)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Dialogue" type="RichTextLabel" parent="Box/HBox/Middle/DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043771
+anchor_top = 0.0483871
+anchor_right = 0.955
+anchor_bottom = 0.95
+offset_right = 270.365
+offset_bottom = 223.4
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_1htim")
+theme_override_constants/line_separation = 15
+theme_override_fonts/normal_font = ExtResource("5_iv8es")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[right]Dzień dobry!
+[left]Dzień dobry."
+scroll_following = true
+script = ExtResource("6_qeuq2")
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionBox" type="NinePatchRect" parent="Box/HBox/Middle"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.45
+texture = ExtResource("6_423x1")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Box/HBox/Middle/OptionBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0208333
+anchor_right = 0.975694
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="AskTicket" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0.67, 0.424333, 0.3015, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
+theme_override_fonts/font = ExtResource("5_iv8es")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uqq8y")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_p5rre")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h5qtp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ijohy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_udgvo")
+text = "Poproś o bilet"
+
+[node name="AskDocument" type="Button" parent="Box/HBox/Middle/OptionBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0.67, 0.424333, 0.3015, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.431373, 0.25098, 0.105882, 1)
+theme_override_fonts/font = ExtResource("5_iv8es")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uqq8y")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_p5rre")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h5qtp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ijohy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_udgvo")
+text = "Zapytaj  o  dokument"
+
+[node name="DocumentBox" type="NinePatchRect" parent="Box/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.84
+mouse_filter = 0
+texture = ExtResource("11_rkwp7")
+region_rect = Rect2(0, 0, 292, 292)
+patch_margin_left = 27
+patch_margin_top = 58
+patch_margin_right = 61
+patch_margin_bottom = 30
+
+[node name="Calendar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 0.909093
+offset_top = 363.636
+offset_right = 139.909
+offset_bottom = 506.636
+scale = Vector2(2.15, 2.15)
+texture = ExtResource("12_wfogm")
+
+[node name="Year" type="Label" parent="."]
+layout_mode = 2
+offset_left = 122.727
+offset_top = 426.364
+offset_right = 190.727
+offset_bottom = 455.364
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_fonts/font = ExtResource("13_jj0up")
+theme_override_font_sizes/font_size = 42
+text = "1995"
+
+[node name="Month" type="Label" parent="."]
+layout_mode = 2
+offset_left = 64.5454
+offset_top = 453.636
+offset_right = 246.545
+offset_bottom = 491.636
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_fonts/font = ExtResource("13_jj0up")
+theme_override_font_sizes/font_size = 54
+text = "KWIECIEŃ"
+
+[node name="Days" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 44.5454
+offset_top = 497.273
+offset_right = 268.546
+offset_bottom = 674.273
+theme_override_colors/default_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_colors/font_outline_color = Color(0.321569, 0.12549, 0.145098, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[table=7] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell] [/cell] [cell]    1[/cell] [cell][color=#87202b][outline_color=#87202b]    2[/outline_color][/color][/cell] [cell]    3[/cell] [cell]    4[/cell] [cell]    5[/cell] [cell]    6[/cell] [cell]    7[/cell] [cell]    8[/cell] [cell][color=#87202b][outline_color=#87202b]    9[/outline_color][/color][/cell] [cell]  10[/cell] [cell]  11[/cell] [cell]  12[/cell] [cell]  13[/cell] [cell]  14[/cell] [cell]  15[/cell] [cell][color=#87202b][outline_color=#87202b]  16[/outline_color][/color][/cell] [cell]  17[/cell] [cell]  18[/cell] [cell]  19[/cell] [cell]  20[/cell] [cell]  21[/cell] [cell]  22[/cell] [cell][color=#87202b][outline_color=#87202b]  23[/outline_color][/color][/cell] [cell]  24[/cell] [cell]  25[/cell] [cell]  26[/cell] [cell]  27[/cell] [cell]  28[/cell] [cell]  29[/cell] [cell][color=#87202b][outline_color=#87202b]  30[/outline_color][/color][/cell]  [/table]"
+
+[node name="ButtonClose" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91521
+anchor_top = 0.0223655
+anchor_right = 0.999728
+anchor_bottom = 0.179384
+offset_right = -81.0
+offset_bottom = -76.4998
+scale = Vector2(3, 3)
+texture_normal = ExtResource("14_1fnqk")
+texture_pressed = ExtResource("15_a337b")
+texture_hover = ExtResource("16_0hdc8")
+metadata/_edit_use_anchors_ = true
+
+[node name="TicketMarker" type="Marker2D" parent="."]
+position = Vector2(1037.27, 502.727)
+
+[node name="DocumentMarker" type="Marker2D" parent="."]
+position = Vector2(914.545, 249.091)
+
+[node name="CalendarMark" type="Polygon2D" parent="."]
+position = Vector2(-210, -114.545)
+scale = Vector2(0.909091, 0.909091)
+color = Color(0.529412, 0.12549, 0.168627, 1)
+polygon = PackedVector2Array(419, 703, 423, 703, 423, 728, 451, 728, 451, 703, 419, 703, 419, 700, 455, 700, 455, 731, 419, 731)
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_3y303")
+bus = &"SFX"
+
+[connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket" to="." method="_on_ask_ticket_pressed"]
+[connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket" to="Box/HBox/Middle/DialogueBox/Dialogue" method="_on_ask_ticket_pressed"]
+[connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument" to="." method="_on_ask_document_pressed"]
+[connection signal="pressed" from="Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument" to="Box/HBox/Middle/DialogueBox/Dialogue" method="_on_ask_document_pressed"]
+[connection signal="pressed" from="ButtonClose" to="." method="_on_button_close_pressed"]

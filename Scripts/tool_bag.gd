@@ -32,6 +32,10 @@ func _on_fines_gui_input(event: InputEvent) -> void:
 				toolkit.add_child(fine)
 			else:
 				$DisabledSFX.play()
+		elif PassengerDataBus.current_special != null:
+			if PassengerDataBus.current_special.is_fined == false:
+				var fine = load("res://Scenes/fine.tscn").instantiate()
+				toolkit.add_child(fine)
 		else:
 			$DisabledSFX.play()
 
