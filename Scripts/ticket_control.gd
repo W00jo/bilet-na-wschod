@@ -5,7 +5,7 @@ extends Control
 @onready var button_sfx = $ButtonSFX
 @onready var ticket_validation_sfx = $TicketValidationSFX
 @onready var dialogue = $Box/HBox/Middle/DialogueBox/Dialogue
-@onready var wagon_cont = get_parent().get_parent().get_node('Levels/WagonController')
+@onready var wagon_cont = PassengerDataBus.get_node('Levels/WagonController')
 
 var passenger
 
