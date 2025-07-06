@@ -238,4 +238,5 @@ bus = &"Music"
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_1phco")
+autoplay = true
 bus = &"Music"

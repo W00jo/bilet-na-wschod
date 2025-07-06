@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bf52qdwd17p8u"]
+[gd_scene load_steps=8 format=3 uid="uid://bf52qdwd17p8u"]
 
 [ext_resource type="Shader" uid="uid://wpdbogbbxu46" path="res://Shaders/hsv_outline.gdshader" id="1_2ebrb"]
 [ext_resource type="Script" uid="uid://dlq227j5v3enj" path="res://Scripts/dres_passenger.gd" id="1_kufso"]
 [ext_resource type="Texture2D" uid="uid://cxg7sqgrojsph" path="res://Assets/Sprites/ProblematicPassangers/Dres_sit.png" id="2_kufso"]
+[ext_resource type="AudioStream" uid="uid://dt4y1e0y4sf2c" path="res://Assets/Music/hiphop_troubleguy_loop.mp3" id="4_1sdhw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a5ttb"]
 shader = ExtResource("1_2ebrb")
@@ -16,6 +17,9 @@ shader_parameter/thickness = 2.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyrvh"]
 size = Vector2(40.25, 33.0667)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1sdhw"]
+radius = 68.0084
 
 [node name="DresPassenger" type="Area2D" groups=["Passenger"]]
 scale = Vector2(4, 3.75)
@@ -61,5 +65,23 @@ theme_override_font_sizes/font_size = 30
 text = "[E] Porozmawiaj"
 metadata/_edit_use_anchors_ = true
 
+[node name="Boombox" type="AudioStreamPlayer2D" parent="."]
+rotation = 2.0944
+stream = ExtResource("4_1sdhw")
+volume_db = 10.0
+autoplay = true
+max_distance = 350.0
+attenuation = 1.93187
+parameters/looping = false
+
+[node name="MusicArea" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicArea"]
+position = Vector2(4.5, 3.2)
+shape = SubResource("CircleShape2D_1sdhw")
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="area_entered" from="MusicArea" to="." method="_on_music_area_area_entered"]
+[connection signal="area_exited" from="MusicArea" to="." method="_on_music_area_area_exited"]
