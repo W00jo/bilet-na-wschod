@@ -256,49 +256,13 @@ func _process(delta):
 	
 	# Aktualizuj etykietę informacyjną stresu
 	_update_stress_info_label()
-		# Posuń zegar do przodu (time_scale = minut na sekundę)
-		current_time_minutes += (delta * time_scale)
-		
-		# Zaktualizuj wyświetlacz czasu
-		_update_time_display()
-		
-		# Oblicz postęp na podstawie czasu
-		var time_progress = (current_time_minutes - (start_time_hour * 60 + start_time_minute)) / total_journey_minutes
-		time_progress = clamp(time_progress, 0.0, 1.0)
-		
-		# Synchronizuj pasek postępu podróży z zegarem, jeśli włączono
-		if update_travel_bar:
-			progress_bar.set_progress_by_time(time_progress)
-		
-		# Sprawdź, czy osiągnęliśmy godzinę końcową
-		if current_time_minutes >= end_time_hour * 60 + end_time_minute:
-			is_clock_running = false
-			start_button.disabled = false
-			print("Podróż zakończona o godzinie końcowej!")
-	
-	# Animacja "migania" przy "dostawaniu" stresu
-	if is_flashing:
-		flash_timer += delta
-		
-		# Interwał animacji
-		var flash_cycle = fmod(flash_timer, flash_interval * 2.0)
-		if flash_cycle < flash_interval:
-			stress_bar.texture_progress = texture_flash  # Migający kolor
-		else:
-			stress_bar.texture_progress = texture_normal  # Normalny kolor
-		
-		# Zatrzymaj miganie po flash_duration
-		if flash_timer >= flash_duration:
-			_stop_flashing()
-	
-	# Aktualizuj etykietę informacyjną stresu
-	_update_stress_info_label()
 
 func _update_time_display():
 	var total_minutes = int(current_time_minutes)
-	var hours = total_minutes / 60
+	var hours = int(total_minutes / 60)  # Explicit integer division
 	var minutes = total_minutes % 60
-	time_label.text = "%02d:%02d" % [hours, minutes]
+	if time_label:
+		time_label.text = "%02d:%02d" % [hours, minutes]
 
 func _update_info_label():
 	var progress_percent = progress_bar.get_progress_percent()

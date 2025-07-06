@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://diy4mfcqrgmmy"]
 
-[ext_resource type="Script" uid="uid://bcsqurv7vihew" path="res://Scripts/test_travel_progress.gd" id="1_hud_script"]
+[ext_resource type="Script" uid="uid://bsq8r88up4dx1" path="res://Scripts/test_hud.gd" id="1_hud_script"]
 [ext_resource type="Script" uid="uid://cdxpyhip48he1" path="res://Scripts/test_texture_progress_bar.gd" id="2_t6uv5"]
 [ext_resource type="Texture2D" uid="uid://x74xpxpp560m" path="res://Assets/Sprites/UIElements/travel_bar_progress.png" id="3_track"]
 [ext_resource type="Texture2D" uid="uid://5rab3r8hljkc" path="res://Assets/Sprites/UIElements/travel_bar_over.png" id="4_train"]
@@ -81,10 +81,10 @@ stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 370.0
-offset_top = 201.0
-offset_right = 513.0
-offset_bottom = 407.0
+offset_left = 290.0
+offset_top = 250.0
+offset_right = 433.0
+offset_bottom = 456.0
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -121,8 +121,8 @@ offset_bottom = 180.0
 layout_mode = 0
 offset_left = 10.0
 offset_top = 45.0
-offset_right = 200.0
-offset_bottom = 65.0
+offset_right = 410.0
+offset_bottom = 85.0
 text = "Stres: 0%"
 horizontal_alignment = 1
 
