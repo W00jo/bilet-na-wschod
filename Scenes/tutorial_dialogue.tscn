@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dw378puvhlvou"]
 
 [ext_resource type="Script" uid="uid://m32lr1ntq7vr" path="res://Scripts/tutorial_dialogue.gd" id="1_sgmdw"]
-[ext_resource type="Texture2D" uid="uid://cbd207ygutxuy" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_v1laq"]
-[ext_resource type="Texture2D" uid="uid://dqen65tsum38i" path="res://Assets/Sprites/TutorialAvatars/TutorialGuy/tutorial_guy_default.png" id="3_3cu57"]
-[ext_resource type="FontFile" uid="uid://djcstjn3xuniv" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="4_fpvfr"]
-[ext_resource type="Texture2D" uid="uid://chelfoy3fxxey" path="res://Assets/Sprites/UIElements/arrow_indicator.png" id="5_qfs1g"]
+[ext_resource type="Texture2D" uid="uid://73mkhk2nqwp4" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_v1laq"]
+[ext_resource type="Texture2D" uid="uid://numpr3jc1044" path="res://Assets/Sprites/TutorialAvatars/TutorialGuy/tutorial_guy_default.png" id="3_3cu57"]
+[ext_resource type="FontFile" uid="uid://w35csfewadyq" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="4_fpvfr"]
+[ext_resource type="Texture2D" uid="uid://davcd2r3hmejb" path="res://Assets/Sprites/UIElements/arrow_indicator.png" id="5_qfs1g"]
 
 [sub_resource type="Animation" id="Animation_v1laq"]
 length = 0.001
