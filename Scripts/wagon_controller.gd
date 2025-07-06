@@ -49,7 +49,7 @@ func put_player_in_first_wagon():
 	var player_instance = player_scene.instantiate()
 	first_wagon.get_node('YSort').add_child(player_instance)
 	player_instance.position = first_wagon.get_node('LeftEntranceMarker').position
-	
+	await get_tree().create_timer(20).timeout
 	list_all_passengers()
 
 func list_all_passengers():
