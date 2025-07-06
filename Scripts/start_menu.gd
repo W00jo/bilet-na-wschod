@@ -9,8 +9,8 @@ func _on_start_button_pressed() -> void:
 	$"../MenuMusic".stop()
 	$"../GameMusic".play()
 	$"../TrainSFX".play()
-	#await get_tree().create_timer(2).timeout
-	#get_parent().start_dialogue()
+	if get_parent().get_node('Levels').has_node('Tutorial'):
+		get_parent().get_node('Levels/Tutorial').on_started()
 
 
 func _on_credits_button_pressed() -> void:

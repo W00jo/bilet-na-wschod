@@ -9,7 +9,7 @@ var typing_speed := 0.02 # seconds per character
 var is_typing := false
 var displayed_bbcode := ""
 
-var player_greeting = "Dzień dobry. Proszę wyłączyć tego boomboxa, przeszkadza pan innym pasażerom."
+var player_greeting = "Dzień dobry. Proszę wyłączyć to radio, przeszkadza pan innym pasażerom."
 
 var dialogue = {
 	
