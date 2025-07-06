@@ -4,8 +4,8 @@
 # Godot specific files
 *.gd text eol=lf
 *.cs text eol=lf
-*.tscn text eol=lf diff=unity
-*.tres text eol=lf
+*.tscn text eol=lf diff=godot-scene
+*.tres text eol=lf diff=godot-resource
 *.cfg text eol=lf
 
 # Ensure these files are treated as binary
