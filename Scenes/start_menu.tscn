@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://dg4cgtxqjd65l"]
 
 [ext_resource type="Script" uid="uid://bnvy4p3oxmmb7" path="res://Scripts/start_menu.gd" id="1_626he"]
-[ext_resource type="Texture2D" uid="uid://bja5caruj5lxp" path="res://Assets/Sprites/start_screen_temporary.png" id="1_juhg0"]
+[ext_resource type="Texture2D" uid="uid://qip4lsyfewd0" path="res://Assets/Sprites/start_screen_temporary.png" id="1_juhg0"]
 [ext_resource type="Shader" uid="uid://cdqv8dxeu1wh2" path="res://Shaders/gradient_blur.gdshader" id="2_jgtwh"]
-[ext_resource type="FontFile" uid="uid://bw4o6hvluv5ah" path="res://Assets/Fonts/ByteBounce.ttf" id="3_a43kq"]
-[ext_resource type="FontFile" uid="uid://p2cylvhw3oie" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="4_626he"]
-[ext_resource type="Texture2D" uid="uid://n4blq0b4qd6x" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="6_77ila"]
-[ext_resource type="Texture2D" uid="uid://b0ui2gvln1vss" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="7_00l4x"]
-[ext_resource type="Texture2D" uid="uid://dmgyncnp7fiop" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="8_7vuks"]
-[ext_resource type="Texture2D" uid="uid://djmyfnjo67q3d" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="9_rpttd"]
-[ext_resource type="AudioStream" uid="uid://wratqk1qt0p2" path="res://Assets/SFX/button_2.wav" id="11_00l4x"]
+[ext_resource type="FontFile" uid="uid://fynah10q3ipg" path="res://Assets/Fonts/ByteBounce.ttf" id="3_a43kq"]
+[ext_resource type="FontFile" uid="uid://d135idhorta3f" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="4_626he"]
+[ext_resource type="Texture2D" uid="uid://wxssctxv484n" path="res://Assets/Sprites/UIElements/button_dialogue_option_disabled.png" id="6_77ila"]
+[ext_resource type="Texture2D" uid="uid://cl4da34e7gab6" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="7_00l4x"]
+[ext_resource type="Texture2D" uid="uid://c2mg56dos8dja" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="8_7vuks"]
+[ext_resource type="Texture2D" uid="uid://j5vxf5xk2lo0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="9_rpttd"]
+[ext_resource type="AudioStream" uid="uid://287usk1h848t" path="res://Assets/SFX/button_2.wav" id="11_00l4x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m6uer"]
 shader = ExtResource("2_jgtwh")
@@ -114,12 +114,12 @@ text = "START"
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_626he")
