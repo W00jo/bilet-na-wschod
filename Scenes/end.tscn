@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://dol0x2as7xw8n"]
+
+[ext_resource type="Texture2D" uid="uid://c2r0g8iaj5fn5" path="res://Assets/Sprites/start_screen_temporary.png" id="1_02kpm"]
+[ext_resource type="Shader" uid="uid://cxnskg0bi7o7w" path="res://Shaders/blur.gdshader" id="2_ql4ve"]
+[ext_resource type="FontFile" uid="uid://cdqmke74ahfhj" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="3_q5l5q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t3us6"]
+shader = ExtResource("2_ql4ve")
+shader_parameter/lod = 1.973
+
+[node name="End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Texture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -294.0
+offset_top = -360.0
+offset_right = 246.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_02kpm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.611765)
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_t3us6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 158.0
+offset_right = 1686.0
+offset_bottom = 433.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_q5l5q")
+theme_override_font_sizes/font_size = 101
+text = "Pierwszy poziom ukończony!"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 342.0
+offset_right = 1558.0
+offset_bottom = 960.0
+theme_override_fonts/normal_font = ExtResource("3_q5l5q")
+theme_override_font_sizes/normal_font_size = 35
+text = "...a także i ta domonstracyjna wersja gry Bilet na Wschód.
+
+
+
+Ale nie przejmuj się, z naszym Januszem będziesz mógł się już niedługo spotkać...
+
+
+...W PEŁNEJ WERSJI WYDAWANEJ NA PLATFORMIE STEAM! 
+
+Do zobaczenia!
+~Konduktorzy UMCS
+
+
+
+[dźwięk gwizdka]"

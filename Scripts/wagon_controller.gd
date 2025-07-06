@@ -10,6 +10,8 @@ var player_scene = load("res://Scenes/player.tscn")
 var wagon_count = randi_range(min_wagons, max_wagons)
 var all_wagons = []
 
+var all_passengers = []
+var done_passengers = 0
 
 func _ready() -> void:
 	spawn_wagons()
@@ -47,6 +49,27 @@ func put_player_in_first_wagon():
 	var player_instance = player_scene.instantiate()
 	first_wagon.get_node('YSort').add_child(player_instance)
 	player_instance.position = first_wagon.get_node('LeftEntranceMarker').position
+	
+	list_all_passengers()
+
+func list_all_passengers():
+	for child in get_children():
+		var pas = child.get_node('YSort/Passengers').get_children()
+		for p in pas:
+			all_passengers.append(p)
+
+func check_all_done():
+	for pas in all_passengers:
+		if pas.is_skasowaned or pas.is_fined:
+			done_passengers +=1
+	
+	if done_passengers == all_passengers.size():
+		var end = load("res://Scenes/end.tscn").instantiate()
+		get_parent().get_parent().get_node('HUD').add_child(end)
+
+		
+	else:
+		done_passengers = 0
 
 func change_wagons(player, side):
 	var current_wagon = player.get_parent().get_parent()
