@@ -15,6 +15,10 @@ run/main_scene="uid://biklendtsf7dq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Resources/default_bus_layout.tres"
+
 [autoload]
 
 PassengerDataBus="*res://Scripts/PassengerDataBus.gd"

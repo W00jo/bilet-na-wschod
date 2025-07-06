@@ -1,37 +1,75 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw378puvhlvou"]
+[gd_scene load_steps=9 format=3 uid="uid://dw378puvhlvou"]
 
 [ext_resource type="Script" uid="uid://m32lr1ntq7vr" path="res://Scripts/tutorial_dialogue.gd" id="1_sgmdw"]
-[ext_resource type="Texture2D" uid="uid://di7ikk0cocgc2" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_v1laq"]
-[ext_resource type="Texture2D" uid="uid://eqxrct6u4h0p" path="res://Assets/Sprites/TutorialGuy/tutorial_guy_default.png" id="3_3cu57"]
-[ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="4_fpvfr"]
-[ext_resource type="Texture2D" uid="uid://gwryjk5prq1e" path="res://Assets/Sprites/UIElements/arrow_indicator.png" id="5_qfs1g"]
+[ext_resource type="Texture2D" uid="uid://cbd207ygutxuy" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_v1laq"]
+[ext_resource type="Texture2D" uid="uid://dqen65tsum38i" path="res://Assets/Sprites/TutorialAvatars/TutorialGuy/tutorial_guy_default.png" id="3_3cu57"]
+[ext_resource type="FontFile" uid="uid://djcstjn3xuniv" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="4_fpvfr"]
+[ext_resource type="Texture2D" uid="uid://chelfoy3fxxey" path="res://Assets/Sprites/UIElements/arrow_indicator.png" id="5_qfs1g"]
+
+[sub_resource type="Animation" id="Animation_v1laq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Test/ArrowIndicator:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1677, 901)]
+}
+
+[sub_resource type="Animation" id="Animation_sgmdw"]
+resource_name = "arrow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Test/ArrowIndicator:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1677, 901), Vector2(1677, 928), Vector2(1677, 901)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3cu57"]
+_data = {
+&"RESET": SubResource("Animation_v1laq"),
+&"arrow": SubResource("Animation_sgmdw")
+}
 
 [node name="TutorialDialogue" type="Control"]
 layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = -151.0
-offset_right = 25.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_sgmdw")
 
-[node name="DialogueBox" type="NinePatchRect" parent="."]
+[node name="Test" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueRect" type="NinePatchRect" parent="Test"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.1
-anchor_right = 0.85
-anchor_bottom = 0.7
-offset_left = 73.0
-offset_top = -154.1
-offset_right = 24.0
-offset_bottom = -11.7
+anchor_left = 0.288021
+anchor_top = 0.715741
+anchor_right = 0.919271
+anchor_bottom = 0.930556
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("2_v1laq")
@@ -41,17 +79,13 @@ patch_margin_top = 42
 patch_margin_right = 41
 patch_margin_bottom = 42
 
-[node name="AvatarBox" type="NinePatchRect" parent="."]
+[node name="AvatarRect" type="NinePatchRect" parent="Test"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.1
-anchor_right = 0.85
-anchor_bottom = 0.7
-offset_left = -300.0
-offset_top = -272.1
-offset_right = -1100.0
-offset_bottom = -11.7
+anchor_left = 0.0671875
+anchor_top = 0.598148
+anchor_right = 0.264062
+anchor_bottom = 0.925926
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("2_v1laq")
@@ -61,17 +95,14 @@ patch_margin_top = 42
 patch_margin_right = 41
 patch_margin_bottom = 42
 
-[node name="AvatarBox2" type="NinePatchRect" parent="."]
+[node name="NameRect" type="NinePatchRect" parent="Test"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.1
-anchor_right = 0.85
-anchor_bottom = 0.7
-offset_left = 73.0
-offset_top = -272.1
-offset_right = -781.0
-offset_bottom = -267.7
+anchor_left = 0.288021
+anchor_top = 0.601852
+anchor_right = 0.557813
+anchor_bottom = 0.700926
+offset_top = -6.10352e-05
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("2_v1laq")
@@ -81,57 +112,82 @@ patch_margin_top = 42
 patch_margin_right = 41
 patch_margin_bottom = 42
 
-[node name="Avatar" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 207.0
-offset_top = -215.0
-offset_right = 1712.0
-offset_bottom = 1290.0
+[node name="Avatar" type="TextureRect" parent="Test"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0848958
+anchor_top = 0.636111
+anchor_right = 0.241667
+anchor_bottom = 0.914815
+offset_top = -6.10352e-05
+offset_right = 1204.0
+offset_bottom = 1204.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_3cu57")
+metadata/_edit_use_anchors_ = true
 
-[node name="NameLabel" type="Label" parent="."]
+[node name="NameLabel" type="Label" parent="Test"]
 layout_mode = 0
-offset_left = 591.0
-offset_top = -235.0
-offset_right = 915.0
-offset_bottom = -151.0
+anchor_left = 0.309896
+anchor_top = 0.62963
+anchor_right = 0.518229
+anchor_bottom = 0.691852
+offset_right = 99.9999
+offset_bottom = 16.8
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("4_fpvfr")
 theme_override_font_sizes/font_size = 42
-text = "Maszynista"
+text = "Starszy   Cvntyktor"
 
-[node name="ArrowIndicator" type="TextureRect" parent="."]
-modulate = Color(0.282353, 0.105882, 0.121569, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.042
-offset_left = 1584.0
-offset_top = 4.00001
-offset_right = 1575.36
-offset_bottom = 88.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("5_qfs1g")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.02
-autostart = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="DialogueBox" type="RichTextLabel" parent="Test"]
 layout_mode = 0
-offset_left = 587.0
-offset_top = -104.0
-offset_right = 1610.0
-offset_bottom = 61.0
+anchor_left = 0.3125
+anchor_top = 0.746296
+anchor_right = 0.845312
+anchor_bottom = 0.899074
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/normal_font = ExtResource("4_fpvfr")
 theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
 text = "Test test dkfjkdjk djkfjnf dfkufhnn  sdjkskjfn efjsjkfn jdsnfksfjkfnejsn esfeskj fesnkjfneskjf jfkjsfn sdjfkjes dkjfhuyrewiuhfjnd eukjd"
 scroll_active = false
 
+[node name="ArrowIndicator" type="TextureRect" parent="Test"]
+visible = false
+modulate = Color(0.282353, 0.105882, 0.121569, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.042
+offset_left = 1677.0
+offset_top = 901.0
+offset_right = 1669.36
+offset_bottom = 978.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_qfs1g")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.03
+autostart = true
+
+[node name="Button1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 829.0
+offset_top = 329.0
+offset_right = 1152.0
+offset_bottom = 454.0
+theme_override_font_sizes/font_size = 35
+text = "Dialogue!
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3cu57")
+}
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
