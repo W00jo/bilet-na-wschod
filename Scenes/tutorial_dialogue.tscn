@@ -2,9 +2,24 @@
 
 [ext_resource type="Script" uid="uid://m32lr1ntq7vr" path="res://Scripts/tutorial_dialogue.gd" id="1_sgmdw"]
 [ext_resource type="Texture2D" uid="uid://cbd207ygutxuy" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_v1laq"]
-[ext_resource type="Texture2D" uid="uid://dqen65tsum38i" path="res://Assets/Sprites/TutorialGuy/tutorial_guy_default.png" id="3_3cu57"]
+[ext_resource type="Texture2D" uid="uid://dqen65tsum38i" path="res://Assets/Sprites/TutorialAvatars/TutorialGuy/tutorial_guy_default.png" id="3_3cu57"]
 [ext_resource type="FontFile" uid="uid://djcstjn3xuniv" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="4_fpvfr"]
 [ext_resource type="Texture2D" uid="uid://chelfoy3fxxey" path="res://Assets/Sprites/UIElements/arrow_indicator.png" id="5_qfs1g"]
+
+[sub_resource type="Animation" id="Animation_v1laq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Test/ArrowIndicator:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1677, 901)]
+}
 
 [sub_resource type="Animation" id="Animation_sgmdw"]
 resource_name = "arrow"
@@ -20,21 +35,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1677, 901), Vector2(1677, 928), Vector2(1677, 901)]
-}
-
-[sub_resource type="Animation" id="Animation_v1laq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Test/ArrowIndicator:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1677, 901)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3cu57"]

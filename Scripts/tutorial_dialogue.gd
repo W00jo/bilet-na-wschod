@@ -46,7 +46,7 @@ var dialogue = {
 	],
 	
 	"seq_5":  [
-		load("res://Assets/Sprites/TutorialAvatars/dres.png"),
+		load("res://Assets/Sprites/TutorialAvatars/dres_tutorial.png"),
 		
 		"Dres",
 		
