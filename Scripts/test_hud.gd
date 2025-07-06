@@ -1,3 +1,4 @@
+@tool
 extends Control
 
 @onready var progress_bar = $TravelAnimation
@@ -5,6 +6,7 @@ extends Control
 @onready var start_button = $VBoxContainer/StartButton
 @onready var reset_button = $VBoxContainer/ResetButton
 @onready var time_label = $ClockContainer/TimeLabel
+@onready var date_label = $CalendarContainer/DateLabel
 
 # Stress bar components
 @onready var stress_bar = $StressBar
@@ -25,6 +27,40 @@ var current_destination_index = 0
 @export var time_scale: float = 60.0  # Jak szybko porusza się zegar (60.0 = 1 minuta na sekundę)
 @export var update_travel_bar: bool = true  # Czy synchronizować pasek podróży z zegarem
 
+@export_group("Pozycjonowanie UI")
+# Pozycje paska stresu (lewy górny róg)
+@export var stress_bar_position: Vector2 = Vector2(40, 20)
+@export var stress_zero_icon_position: Vector2 = Vector2(10, 15)
+@export var stress_icon_position: Vector2 = Vector2(164, 15)
+@export var stress_info_position: Vector2 = Vector2(10, 45)
+
+# Pozycje zegara i kalendarza (prawy górny róg)
+@export var clock_margin_right: float = 20.0
+@export var clock_margin_top: float = 10.0
+@export var calendar_margin_top: float = 35.0
+
+# Pozycja paska podróży (środek górnej części)
+@export var travel_bar_offset_top: float = 80.0
+@export var travel_bar_width: float = 474.0
+
+# Pozycje przycisków sterowania
+@export var controls_position: Vector2 = Vector2(290, 250)
+@export var info_label_position: Vector2 = Vector2(200, 140)
+
+@export_group("Rozmiary UI")
+@export var stress_bar_size: Vector2 = Vector2(114, 6)
+@export var icon_size: Vector2 = Vector2(20, 20)
+@export var clock_container_width: float = 130.0
+@export var info_label_size: Vector2 = Vector2(400, 40)
+
+@export_group("Funkcje Edytora")
+@export var apply_positions_in_editor: bool = false : set = _apply_positions_setter
+
+func _apply_positions_setter(value: bool):
+	if value and Engine.is_editor_hint():
+		_apply_ui_positions()
+		apply_positions_in_editor = false
+
 var current_time_minutes: float = 0.0
 var total_journey_minutes: float = 0.0
 var is_clock_running: bool = false
@@ -44,13 +80,85 @@ var flash_duration := 0.5  # Jak długo ma migać po dodaniu stresu
 var flash_interval := 0.1  # Częstotliwość migania
 
 func _ready():
-	print("=== SCENA TESTOWA POSTĘPU PODRÓŻY ===")
+	print("=== SCENA TESTOWA HUD ===")
+	
+	if Engine.is_editor_hint():
+		# W edytorze, tylko zastosuj pozycje UI
+		_apply_ui_positions()
+		return
+	
 	print("Zegar konfigurowany od %02d:%02d do %02d:%02d" % [start_time_hour, start_time_minute, end_time_hour, end_time_minute])
 	print("Prędkość zegara: %.1f minut/sekunda" % time_scale)
 	
+	_apply_ui_positions()
 	_initialize_clock()
+	_initialize_date()
 	_initialize_stress_bar()
 	_update_info_label()
+
+func _apply_ui_positions():
+	if not is_inside_tree():
+		return
+		
+	print("Aplikowanie pozycji UI z Inspektora...")
+	
+	# Ustaw pozycje i rozmiary paska stresu
+	var stress_bar_node = get_node_or_null("StressBar")
+	if stress_bar_node:
+		stress_bar_node.position = stress_bar_position
+		stress_bar_node.size = stress_bar_size
+	
+	var stress_zero_icon_node = get_node_or_null("StressZeroIcon")
+	if stress_zero_icon_node:
+		stress_zero_icon_node.position = stress_zero_icon_position
+		stress_zero_icon_node.size = icon_size
+	
+	var stress_icon_node = get_node_or_null("StressIcon")
+	if stress_icon_node:
+		stress_icon_node.position = stress_icon_position
+		stress_icon_node.size = icon_size
+	
+	var stress_info_label_node = get_node_or_null("StressInfoLabel")
+	if stress_info_label_node:
+		stress_info_label_node.position = stress_info_position
+		stress_info_label_node.size = info_label_size
+	
+	# Ustaw pozycje zegara i kalendarza (prawy górny róg)
+	var clock_container_node = get_node_or_null("ClockContainer")
+	if clock_container_node:
+		clock_container_node.offset_left = -clock_container_width - clock_margin_right
+		clock_container_node.offset_right = -clock_margin_right
+		clock_container_node.offset_top = clock_margin_top
+		clock_container_node.offset_bottom = clock_margin_top + 20.0
+	
+	var calendar_container_node = get_node_or_null("CalendarContainer")
+	if calendar_container_node:
+		calendar_container_node.offset_left = -clock_container_width - clock_margin_right
+		calendar_container_node.offset_right = -clock_margin_right
+		calendar_container_node.offset_top = calendar_margin_top
+		calendar_container_node.offset_bottom = calendar_margin_top + 20.0
+	
+	# Ustaw pozycję paska podróży
+	var progress_bar_node = get_node_or_null("TravelAnimation")
+	if progress_bar_node:
+		var half_width = travel_bar_width / 2.0
+		progress_bar_node.offset_left = -half_width
+		progress_bar_node.offset_right = half_width
+		progress_bar_node.offset_top = travel_bar_offset_top
+		progress_bar_node.offset_bottom = travel_bar_offset_top + 40.0
+	
+	# Ustaw pozycje przycisków sterowania
+	var vbox_container_node = get_node_or_null("VBoxContainer")
+	if vbox_container_node:
+		vbox_container_node.position = controls_position
+	
+	# Ustaw pozycję etykiety informacyjnej
+	var info_label_node = get_node_or_null("InfoLabel")
+	if info_label_node:
+		info_label_node.position = info_label_position
+		info_label_node.size = info_label_size
+	
+	print("Pozycje UI zastosowane pomyślnie")
 
 func _initialize_clock():
 	# Konwertuj godziny początkowe i końcowe na minuty
@@ -64,6 +172,17 @@ func _initialize_clock():
 	print("Zegar zainicjowany: %02d:%02d do %02d:%02d (%.1f minut)" % [
 		start_time_hour, start_time_minute, end_time_hour, end_time_minute, total_journey_minutes
 	])
+
+func _initialize_date():
+	if Engine.is_editor_hint():
+		return
+		
+	# Ustaw dzisiejszą datę (6 lipca 2025)
+	var current_date = Time.get_date_dict_from_system()
+	var date_label_node = get_node_or_null("CalendarContainer/DateLabel")
+	if date_label_node:
+		date_label_node.text = "%02d.%02d.%d" % [current_date.day, current_date.month, current_date.year]
+		print("Data ustawiona na: ", date_label_node.text)
 
 func _initialize_stress_bar():
 	print("Inicjalizacja paska stresu...")
@@ -94,9 +213,49 @@ func _setup_stress_bar():
 		print("Pasek stresu skonfigurowany - zakres: 0-100, wartość: ", stress_bar.value)
 
 func _process(delta):
+	if Engine.is_editor_hint():
+		return
+		
 	_update_info_label()
 	
 	if is_clock_running:
+		# Posuń zegar do przodu (time_scale = minut na sekundę)
+		current_time_minutes += (delta * time_scale)
+		
+		# Zaktualizuj wyświetlacz czasu
+		_update_time_display()
+		
+		# Oblicz postęp na podstawie czasu
+		var time_progress = (current_time_minutes - (start_time_hour * 60 + start_time_minute)) / total_journey_minutes
+		time_progress = clamp(time_progress, 0.0, 1.0)
+		
+		# Synchronizuj pasek postępu podróży z zegarem, jeśli włączono
+		if update_travel_bar:
+			progress_bar.set_progress_by_time(time_progress)
+		
+		# Sprawdź, czy osiągnęliśmy godzinę końcową
+		if current_time_minutes >= end_time_hour * 60 + end_time_minute:
+			is_clock_running = false
+			start_button.disabled = false
+			print("Podróż zakończona o godzinie końcowej!")
+	
+	# Animacja "migania" przy "dostawaniu" stresu
+	if is_flashing:
+		flash_timer += delta
+		
+		# Interwał animacji
+		var flash_cycle = fmod(flash_timer, flash_interval * 2.0)
+		if flash_cycle < flash_interval:
+			stress_bar.texture_progress = texture_flash  # Migający kolor
+		else:
+			stress_bar.texture_progress = texture_normal  # Normalny kolor
+		
+		# Zatrzymaj miganie po flash_duration
+		if flash_timer >= flash_duration:
+			_stop_flashing()
+	
+	# Aktualizuj etykietę informacyjną stresu
+	_update_stress_info_label()
 		# Posuń zegar do przodu (time_scale = minut na sekundę)
 		current_time_minutes += (delta * time_scale)
 		
