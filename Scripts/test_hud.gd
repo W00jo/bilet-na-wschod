@@ -16,6 +16,7 @@ extends Control
 @onready var large_stress_button = $VBoxContainer/LargeStressButton
 @onready var reset_stress_button = $VBoxContainer/ResetStressButton
 
+# Cel jazdy
 var destinations = ["Sandomierz"]
 var current_destination_index = 0
 
@@ -27,17 +28,15 @@ var current_destination_index = 0
 @export var time_step_interval: float = 1.0  # Ile sekund realnych na jeden krok czasu (1s = jeden krok co sekundę)
 @export var update_travel_bar: bool = true  # Czy synchronizować pasek podróży z zegarem
 
-# UI positioning removed - handled manually in scene editor
-
 var current_time_minutes: float = 0.0
 var total_journey_minutes: float = 0.0
 var is_clock_running: bool = false
 
-# Nowy system skokowego zegara (co 5 minut)
+# Zegar tyka co 5 minut
 var time_step_minutes: int = 5  # Krok czasu w minutach (5 = co 5 minut)
 var step_timer: float = 0.0  # Timer dla kroków czasu
 
-# Zmienne systemu stresu
+# Arbitralne zmienne systemu stresu
 var max_stress := 100.0
 var current_stress := 0.0
 
@@ -71,21 +70,17 @@ func _initialize_clock():
 	var end_time_minutes = end_time_hour * 60 + end_time_minute
 	total_journey_minutes = end_time_minutes - current_time_minutes
 	
-	# Zresetuj timer kroków
 	step_timer = 0.0
 	
 	_update_time_display()
 	
-	print("Zegar zainicjowany: %02d:%02d do %02d:%02d (%.1f minut)" % [
-		start_time_hour, start_time_minute, end_time_hour, end_time_minute, total_journey_minutes
-	])
 	print("Zegar będzie skakać co %d minut, co %.1f sekund realnych" % [time_step_minutes, time_step_interval])
 
 func _initialize_date():
 	if Engine.is_editor_hint():
 		return
 		
-	# Ustaw dzisiejszą datę (6 lipca 2025)
+	# Ustawia dzisiejszą datę (6 lipca 2025) dla testu
 	var current_date = Time.get_date_dict_from_system()
 	var date_label_node = get_node_or_null("CalendarContainer/DateLabel")
 	if date_label_node:
@@ -194,7 +189,6 @@ func _update_info_label():
 	]
 
 func _on_start_pressed():
-	print("Naciśnięto przycisk startu!")
 	var destination = destinations[current_destination_index]
 	current_destination_index = (current_destination_index + 1) % destinations.size()
 	
@@ -203,10 +197,9 @@ func _on_start_pressed():
 	is_clock_running = true
 	start_button.disabled = true
 	
-	print("Zegar uruchomiony, podróż się rozpoczyna!")
+	print ("No to w drogę!")
 
 func _on_reset_pressed():
-	print("Naciśnięto przycisk resetu!")
 	progress_bar.reset_progress()
 	
 	# Zresetuj zegar
@@ -251,12 +244,8 @@ func add_stress(amount: float, reason: String = "Nieznany"):
 	_update_stress_visual()
 
 func _update_stress_visual():
-	# Nowy system: im więcej stresu, tym więcej wypełniony pasek
 	var stress_percent = current_stress / max_stress
 	
-	print("Aktualizacja wizualna - Stres: %.1f%%" % [stress_percent * 100])
-	
-	# Ustaw wartość paska na procent stresu (0% = pusty, 100% = pełny)
 	if stress_bar:
 		stress_bar.value = stress_percent * 100.0
 
