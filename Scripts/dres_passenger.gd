@@ -30,3 +30,13 @@ func _input(event: InputEvent) -> void:
 	if interaction_enabled and $InteractLabel.visible and Input.is_action_just_pressed("Interact") and is_fined == false:
 		interaction_enabled = false
 		PassengerDataBus.game.get_node('ToolkitLayer/DresControl').start_dres_control(self)
+
+
+func _on_music_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group('Player'):
+		print("ciszej!")
+		PassengerDataBus.game.get_node('GameMusic').volume_db = -15
+
+func _on_music_area_area_exited(area: Area2D) -> void:
+	if area.is_in_group('Player'):
+		PassengerDataBus.game.get_node('GameMusic').volume_db = 0
