@@ -130,7 +130,14 @@ var dialogue = {
 		"Nie śpij, trzeba kasować pasażerów!"]
 	],
 	
-	"seq15":  [
+	"seq_15":  [
+		load("res://Assets/Sprites/TutorialAvatars/conductor_tutorial.png"),
+		
+		"Janusz Efinowicz",
+		
+		["Nie śpię, nie śpię, już lecę..."]
+	],
+	"seq_16":  [
 		load("res://Assets/Sprites/TutorialAvatars/conductor_tutorial.png"),
 		
 		"Janusz Efinowicz",
@@ -179,7 +186,7 @@ func _input(event: InputEvent) -> void:
 				page = 0
 				start_tutorial_dialogue()
 			else:
-				get_tree().quit()
+				return
 			
 			match sequence_num:
 				4:
@@ -201,8 +208,20 @@ func _input(event: InputEvent) -> void:
 					#get_parent().get_parent().get_node('Levels/Tutorial/WagonTutorial/TutGuy').queue_free()
 				13:
 					stop_dialogue()
+					$"../DeathScreen".visible = true
+					$Bam.play()
+					await get_tree().create_timer(0.75).timeout
+					$Bam.play()
+					$"../../Levels/Tutorial".queue_free()
+					var wagon_cont = load("res://Scenes/wagon_controller.tscn").instantiate()
+					$"../../Levels".add_child(wagon_cont)
+					await get_tree().create_timer(3).timeout
+					start_tutorial_dialogue()
+					
 				15:
 					stop_dialogue()
+					get_tree().get_first_node_in_group("Player").can_move = true
+					get_parent().queue_free()
 
 func stop_dialogue():
 	print("stoped")

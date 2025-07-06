@@ -535,6 +535,7 @@ sprite_frames = SubResource("SpriteFrames_l4h8m")
 animation = &"back"
 
 [node name="FinesTool" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-17, 36)
 rotation = 1.5708
 scale = Vector2(0.75, 0.75)

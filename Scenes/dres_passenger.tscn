@@ -68,10 +68,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Boombox" type="AudioStreamPlayer2D" parent="."]
 rotation = 2.0944
 stream = ExtResource("4_1sdhw")
-volume_db = 10.0
+volume_db = 13.0
 autoplay = true
-max_distance = 350.0
-attenuation = 1.93187
+max_distance = 500.0
 bus = &"Music"
 parameters/looping = true
 
