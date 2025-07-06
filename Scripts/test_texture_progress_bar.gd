@@ -18,12 +18,8 @@ var horizontal_margin: float = 0.0  # Margines od brzegów toru (zmniejsza zakre
 var scale_factor: float = 0.5  # Skala pociągu (0.5 = połowa oryginalnego rozmiaru dla lepszego dopasowania)
 
 func _ready():
-	print("Odpalam 'animację'...")
-	
 	# Tylko konfiguracja pozycji
 	_setup_positions()
-	
-	print("Animacja działa")
 
 func _setup_positions():
 	# Czekaj na załadowanie tekstur
