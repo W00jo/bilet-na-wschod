@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf52qdwd17p8u"]
+[gd_scene load_steps=6 format=3 uid="uid://cd8ldvmca48t6"]
 
-[ext_resource type="Shader" uid="uid://wpdbogbbxu46" path="res://Shaders/hsv_outline.gdshader" id="1_2ebrb"]
-[ext_resource type="Script" uid="uid://dlq227j5v3enj" path="res://Scripts/dres_passenger.gd" id="1_kufso"]
-[ext_resource type="Texture2D" uid="uid://cxg7sqgrojsph" path="res://Assets/Sprites/ProblematicPassangers/Dres_sit.png" id="2_kufso"]
-[ext_resource type="AudioStream" uid="uid://dt4y1e0y4sf2c" path="res://Assets/Music/hiphop_troubleguy_loop.mp3" id="4_1sdhw"]
+[ext_resource type="Script" uid="uid://cqixavel2loq4" path="res://Scripts/laska_passenger.gd" id="1_k0uot"]
+[ext_resource type="Shader" uid="uid://wpdbogbbxu46" path="res://Shaders/hsv_outline.gdshader" id="2_p2jub"]
+[ext_resource type="Texture2D" uid="uid://bqb266gm7b21g" path="res://Assets/Sprites/ProblematicPassangers/Girl_sit.png" id="3_oacip"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a5ttb"]
-shader = ExtResource("1_2ebrb")
+shader = ExtResource("2_p2jub")
 shader_parameter/hue_shift_deg = 0.0
 shader_parameter/saturation = 1.0
 shader_parameter/value = 1.0
@@ -18,14 +17,11 @@ shader_parameter/thickness = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyrvh"]
 size = Vector2(28.1875, 22.1333)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1sdhw"]
-radius = 68.0084
-
-[node name="DresPassenger" type="Area2D" groups=["Passenger"]]
+[node name="LaskaPassenger" type="Area2D" groups=["Passenger"]]
 scale = Vector2(4, 3.75)
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_kufso")
+script = ExtResource("1_k0uot")
 
 [node name="TexContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
@@ -45,10 +41,10 @@ render_target_update_mode = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="TexContainer/Sprites"]
 position = Vector2(35.5, 32.2666)
-texture = ExtResource("2_kufso")
+texture = ExtResource("3_oacip")
 
 [node name="InteractionArea" type="CollisionShape2D" parent="."]
-position = Vector2(4.25, 26.6667)
+position = Vector2(9.25, 20)
 shape = SubResource("RectangleShape2D_lyrvh")
 
 [node name="InteractLabel" type="Label" parent="."]
@@ -65,24 +61,5 @@ theme_override_font_sizes/font_size = 30
 text = "[E] Porozmawiaj"
 metadata/_edit_use_anchors_ = true
 
-[node name="Boombox" type="AudioStreamPlayer2D" parent="."]
-rotation = 2.0944
-stream = ExtResource("4_1sdhw")
-volume_db = 10.0
-autoplay = true
-max_distance = 350.0
-attenuation = 1.93187
-bus = &"Music"
-parameters/looping = true
-
-[node name="MusicArea" type="Area2D" parent="."]
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicArea"]
-position = Vector2(4.5, 3.2)
-shape = SubResource("CircleShape2D_1sdhw")
-
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
-[connection signal="area_entered" from="MusicArea" to="." method="_on_music_area_area_entered"]
-[connection signal="area_exited" from="MusicArea" to="." method="_on_music_area_area_exited"]

@@ -1,5 +1,4 @@
 extends Area2D
-class_name SpecialPassenger
 
 var full_name = "Sebastian Radomski"
 

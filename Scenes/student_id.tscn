@@ -32,6 +32,7 @@ offset_top = -67.0
 offset_right = 105.0
 offset_bottom = 68.0
 texture = ExtResource("1_1leoy")
+metadata/_edit_use_anchors_ = true
 
 [node name="PhotoBase" type="Polygon2D" parent="."]
 position = Vector2(27, 15)
@@ -58,6 +59,7 @@ theme_override_fonts/font = ExtResource("2_wt25s")
 theme_override_font_sizes/font_size = 32
 text = "LEGITYMACJA
 STUDENCKA"
+metadata/_edit_use_anchors_ = true
 
 [node name="NrAlbumu" type="Label" parent="."]
 anchors_preset = -1
@@ -163,6 +165,7 @@ scale = Vector2(0.08, 0.08)
 theme_override_constants/h_separation = 97
 theme_override_constants/v_separation = 9
 columns = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="Date1" type="Label" parent="GridContainer"]
 layout_mode = 2
@@ -413,6 +416,7 @@ theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
 text = "56514"
+metadata/_edit_use_anchors_ = true
 
 [node name="Signature" type="Label" parent="."]
 offset_left = -73.0
@@ -424,6 +428,7 @@ theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("4_sgl21")
 theme_override_font_sizes/font_size = 32
 text = "JanKowalski"
+metadata/_edit_use_anchors_ = true
 
 [node name="Name" type="Label" parent="."]
 offset_left = -65.0
@@ -435,6 +440,7 @@ theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
 text = "Jan Kowalski"
+metadata/_edit_use_anchors_ = true
 
 [node name="Stamp" type="Label" parent="."]
 offset_left = -78.0
@@ -451,6 +457,7 @@ Wydział Humanistyczny
 tel. 81 121 34 00 fax 81 121 34 03
 "
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Date" type="Label" parent="."]
 offset_left = -40.0
@@ -462,6 +469,7 @@ theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
 text = "Lbn 01.09.89r."
+metadata/_edit_use_anchors_ = true
 
 [node name="Stamps" type="Node2D" parent="."]
 
@@ -654,6 +662,7 @@ offset_top = -46.0
 offset_right = 37.0
 offset_bottom = 82.0
 scale = Vector2(0.75, 0.81)
+metadata/_edit_use_anchors_ = true
 
 [node name="Photo" type="SubViewport" parent="PhotoCont"]
 transparent_bg = true
@@ -682,6 +691,7 @@ offset_left = -98.0
 offset_top = -62.0
 offset_right = 103.0
 offset_bottom = 66.0
+metadata/_edit_use_anchors_ = true
 
 [node name="MagnifyInstruction" type="TextureRect" parent="."]
 visible = false

@@ -7,6 +7,7 @@ var hover_scale = Vector2(0.95, 0.95)
 var selected_scale = Vector2(1.5, 1.5)
 
 var selected = false
+var passenger
 
 func _physics_process(delta: float) -> void:
 	if selected:
@@ -20,17 +21,22 @@ func _physics_process(delta: float) -> void:
 func look_for_ticket_areas():
 	var collider = $RayCast2D.get_collider()
 	if selected == false and collider != null and collider.is_in_group("TicketArea"):
-		if PassengerDataBus.currently_checked_passenger.is_fined == false:
-			ticket_control.validate_ticket()
-		if collider.get_parent().get_node('ForbiddenLabel').visible:
-			collider.get_parent().get_node('ForbiddenLabel').visible = false
+		print("ticket area")
+		if PassengerDataBus.currently_checked_passenger != null:
+			if PassengerDataBus.currently_checked_passenger.is_fined == false:
+				ticket_control.validate_ticket()
+			if collider.get_parent().get_node('ForbiddenLabel').visible:
+				collider.get_parent().get_node('ForbiddenLabel').visible = false
+		elif PassengerDataBus.current_special != null and PassengerDataBus.current_special.has_ticket:
+			PassengerDataBus.game.get_node('ToolkitLayer/LaskaControl').validate_ticket()
 
 func check_forbidden():
 	var collider = $RayCast2D.get_collider()
-	if collider != null and collider.is_in_group("TicketArea") and PassengerDataBus.currently_checked_passenger.is_fined:
-		collider.get_parent().get_node('ForbiddenLabel').visible = true
-	elif get_parent().get_parent().get_parent().get_node('TicketControl').has_node('Ticket') == true:
-			get_parent().get_parent().get_parent().get_node('TicketControl/Ticket/ForbiddenLabel').visible = false
+	if PassengerDataBus.currently_checked_passenger != null:
+		if collider != null and collider.is_in_group("TicketArea") and PassengerDataBus.currently_checked_passenger.is_fined:
+			collider.get_parent().get_node('ForbiddenLabel').visible = true
+		elif get_parent().get_parent().get_parent().get_node('TicketControl').has_node('Ticket') == true:
+				get_parent().get_parent().get_parent().get_node('TicketControl/Ticket/ForbiddenLabel').visible = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

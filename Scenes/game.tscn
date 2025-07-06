@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://biklendtsf7dq"]
+[gd_scene load_steps=36 format=3 uid="uid://biklendtsf7dq"]
 
 [ext_resource type="Script" uid="uid://dvwkktrn6dvo0" path="res://Scripts/game.gd" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bekremb8qkq02" path="res://Scenes/parallax_morning.tscn" id="1_wrm1d"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chlnxioi8ehr6" path="res://Scenes/dres_control.tscn" id="5_nnt18"]
 [ext_resource type="PackedScene" uid="uid://dig63qkl2leqy" path="res://Scenes/toolkit.tscn" id="5_wowpa"]
 [ext_resource type="PackedScene" uid="uid://db0se2prb2bru" path="res://Scenes/pause_menu.tscn" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://btbw7os5skpdj" path="res://Scenes/laska_control.tscn" id="6_iivbl"]
 [ext_resource type="Texture2D" uid="uid://c0avjblhdygoc" path="res://Assets/Sprites/UIElements/stress_bar_under.png" id="6_rku1e"]
 [ext_resource type="PackedScene" uid="uid://dg4cgtxqjd65l" path="res://Scenes/start_menu.tscn" id="7_h4fw4"]
 [ext_resource type="Texture2D" uid="uid://dkvtjjoddbdxs" path="res://Assets/Sprites/UIElements/stress_bar_over.png" id="7_rfjv2"]
@@ -257,6 +258,9 @@ layer = 2
 visible = false
 
 [node name="DresControl" parent="ToolkitLayer" instance=ExtResource("5_nnt18")]
+visible = false
+
+[node name="LaskaControl" parent="ToolkitLayer" instance=ExtResource("6_iivbl")]
 visible = false
 
 [node name="Toolkit" parent="ToolkitLayer" instance=ExtResource("5_wowpa")]

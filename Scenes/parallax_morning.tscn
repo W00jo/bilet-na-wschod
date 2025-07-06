@@ -1,24 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bekremb8qkq02"]
 
 [ext_resource type="Script" uid="uid://ce45d8nxc6n2w" path="res://Scripts/parallax_bg.gd" id="1_5jlwn"]
-<<<<<<< Updated upstream
-[ext_resource type="Texture2D" uid="uid://0u7s8aic3vck" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_1.png" id="2_5jlwn"]
-[ext_resource type="Texture2D" uid="uid://dw50vkjy14cin" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_2.png" id="3_07g6k"]
-[ext_resource type="Texture2D" uid="uid://b5gasunhmbcd8" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_3.png" id="4_5jlwn"]
-[ext_resource type="Texture2D" uid="uid://vej646cauca5" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_4.png" id="5_eyrgb"]
-[ext_resource type="Texture2D" uid="uid://b3ad28b71p2m6" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_5.png" id="6_tvyr1"]
-[ext_resource type="Texture2D" uid="uid://hwmn24strw3g" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_6.png" id="7_g75ex"]
-[ext_resource type="Texture2D" uid="uid://crfv4mopn78l5" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_7.png" id="8_dd85f"]
-[ext_resource type="Texture2D" uid="uid://dofiofyyhwj4m" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_8.png" id="9_g75ex"]
-[ext_resource type="Texture2D" uid="uid://cx4fmnni2tjff" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_14.png" id="10_dd85f"]
-[ext_resource type="Texture2D" uid="uid://nod574sobg17" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_9.png" id="10_gitjd"]
-[ext_resource type="Texture2D" uid="uid://knp2v0etgeyi" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_10.png" id="11_vhdxy"]
-[ext_resource type="Texture2D" uid="uid://clu2o57ii4t2e" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_11.png" id="12_ekjqf"]
-[ext_resource type="Texture2D" uid="uid://diurmyu0kjcmt" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_16.png" id="12_igite"]
-[ext_resource type="Texture2D" uid="uid://c4i4n7xfwsl5b" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_12.png" id="13_pwheb"]
-[ext_resource type="Texture2D" uid="uid://dpqghmx3kvqey" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_13.png" id="14_ekjqf"]
-[ext_resource type="Texture2D" uid="uid://hktd1tdhj1dq" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_15.png" id="15_qi2ij"]
-=======
 [ext_resource type="Texture2D" uid="uid://c5c6l07koosr1" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_1.png" id="2_5jlwn"]
 [ext_resource type="Texture2D" uid="uid://d1bv37l3ustcg" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_2.png" id="3_07g6k"]
 [ext_resource type="Texture2D" uid="uid://bhmps4544lcp6" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_3.png" id="4_5jlwn"]
@@ -35,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://d1n3vn88ijvp0" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_12.png" id="13_pwheb"]
 [ext_resource type="Texture2D" uid="uid://dp3h0g1s2grdd" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_13.png" id="14_ekjqf"]
 [ext_resource type="Texture2D" uid="uid://bqp7cr6g65hy" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_15.png" id="15_qi2ij"]
->>>>>>> Stashed changes
 
 [sub_resource type="Animation" id="Animation_5jlwn"]
 resource_name = "scroll"

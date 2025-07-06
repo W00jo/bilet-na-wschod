@@ -37,7 +37,5 @@ func close():
 		PassengerDataBus.current_special = null
 		$Box/HBox/Middle/DialogueBox/Dialogue.text = ""
 	get_tree().get_first_node_in_group("Player").can_move = true
-	$Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket.disabled = false
-	$Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument.disabled = false
-	visible = false
+	queue_free()
 	button_sfx.play()
