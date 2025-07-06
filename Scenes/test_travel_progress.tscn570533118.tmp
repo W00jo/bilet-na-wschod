@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1pb8rk5fdbbn"]
+
+[ext_resource type="Script" uid="uid://bcsqurv7vihew" path="res://test_travel_progress.gd" id="1_87hj8"]
+[ext_resource type="Script" uid="uid://cdxpyhip48he1" path="res://Scripts/test_texture_progress_bar.gd" id="2_t6uv5"]
+
+[node name="TravelProgressTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87hj8")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_t6uv5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SpeedSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+min_value = 5.0
+max_value = 50.0
+step = 5.0
+value = 10.0
+
+[node name="InfoLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
