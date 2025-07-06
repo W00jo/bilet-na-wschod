@@ -11,19 +11,16 @@ var dialogue = {
 		
 		"Starszy konduktor",
 		
-		["Pierwszy dialog starszego konduktorka!",
-		"Testowa sekwencja lalala",
-		"Fifarafa robimy sobie szkolenie",
-		"Jedzieeemy panowie!"]
+		["Dobra młody, będziesz mieć kurs przyspieszony, jestem umówiony na wódke z chłopakami w Piaskach.",
+		"Zrobimy szybką powtórke ze szkoleń"]
 	],
 	
 	"seq_2":  [
 		load("res://Assets/Sprites/TutorialAvatars/conductor_tutorial.png"),
 		
-		"Nowy",
+		"Janusz Efinowicz",
 		
-		["Teraz mówi nasz konduktor",
-		"Ale fajne szkolenie fiu fiuu"]
+		["N...No dobrze."]
 	],
 	
 	"seq_3":  [
@@ -31,55 +28,106 @@ var dialogue = {
 		
 		"Starszy konduktor",
 		
-		["Znowu na linii pan Sienkiewicz, halo halo",
-		"Ciąg dalszy szkolenia, kasować ich!",
-		"Zaczynamy od kobiet i dzieci"]
+		["Pamiętaj, młody… jak zobaczysz pasażera bez biletu, to nie krzycz. On się już wystarczająco zestresował, że zamiast do Krasnego jedzie do Kołobrzegu."]
 	],
 	
 	"seq_4":  [
 		load("res://Assets/Sprites/TutorialAvatars/conductor_tutorial.png"),
 		
-		"Nowy",
+		"Janusz Efinowicz",
 		
-		["Nasz konduktor here!",
-		"Co ja mam z tymi wąsaczami ehh..."]
+		["Taa… znam to."]
 	],
 	
 	"seq_5":  [
-		load("res://Assets/Sprites/TutorialAvatars/dres_tutorial.png"),
-		
-		"Dres",
-		
-		["YO z tej strony Rychu Peja",
-		"Wiesz co się liczy?",
-		"Szacunek konduktorów ulicy!"]
-	],
-	
-	"seq_6":  [
 		load("res://Assets/Sprites/TutorialAvatars/TutorialGuy/tutorial_guy_default.png"),
 		
 		"Starszy konduktor",
 		
-		["(starszy) O w morde! Ten to jakis nafurany!",
-		"Dzwonie po policje"]
+		["Dobra młody, słuchaj bo dwa razy powtarzał nie będę.",
+		"Najpierw prosisz o bilet."]
+	],
+	"seq_6": [
+		load("res://Assets/Sprites/TutorialAvatars/TutorialGuy/tutorial_guy_default.png"),
+		
+		"Starszy konduktor",
+		
+		["Ta pani jakaś młoda jest, zapytaj o legitymację."]
 	],
 	
-	"seq_7":  [
+	"seq_7": [
+		load("res://Assets/Sprites/TutorialAvatars/TutorialGuy/tutorial_guy_default.png"),
+		
+		"Starszy konduktor",
+		
+		["Teraz szukaj w torbie dziurkacza i kasuj bilet."]
+	],
+	
+	"seq_8": [
+		load("res://Assets/Sprites/TutorialAvatars/TutorialGuy/tutorial_guy_default.png"),
+		
+		"Starszy konduktor",
+		
+		["Ładnie młody, pasażerka w futrze puściła ci oczko, a ty tylko bilet skasowałeś."]
+	],
+	
+	"seq_9": [
+		load("res://Assets/Sprites/TutorialAvatars/TutorialGuy/tutorial_guy_default.png"),
+		
+		"Starszy konduktor",
+		
+		["Teraz idź i skasuj tego ortaliona z jamnikiem, bilet w sensie."]
+	],
+	
+	"seq_10": [
+		load("res://Assets/Sprites/TutorialAvatars/TutorialGuy/tutorial_guy_default.png"),
+		
+		"Starszy konduktor",
+		
+		["No młody, uważaj na stres! ,
+		W tej robocie nie ma lekko, jak serducho ci wysiądzie w połowie trasy to nic z tego nie będzie!"]
+	],
+	
+	"seq_11":  [
+		load("res://Assets/Sprites/TutorialAvatars/dres_tutorial.png"),
+		
+		"Dres",
+		
+		["Te konduktor!"]
+	],
+	
+	"seq12":  [
 		load("res://Assets/Sprites/TutorialAvatars/conductor_tutorial.png"),
 		
-		"Nowy",
+		"Janusz Efinowicz",
 		
-		["O kurcze, pierwszy dzień w pracy a już takie rzeczy!",
-		"Mam nadzieję że mnie nie pobije"]
+		["Huh?"]
 	],
 	
-	"seq_8":  [
+	"seq_13":  [
+		load("res://Assets/Sprites/TutorialAvatars/dres_tutorial.png"),
+		
+		"Dres",
+		
+		["Masz rodzine?",
+		"To zadzwoń i sie pożegnaj!"]
+	],
+	
+	"seq_14":  [
 		load("res://Assets/Sprites/TutorialAvatars/friend_tutorial.png"),
 		
-		"Współkonduktor",
+		"Kolega",
 		
-		[" (koleżka) Siema siema o tej porze-",
-		"-każdy wypić może"]
+		["Janusz, ej Janusz!",
+		"Nie śpij, trzeba kasować pasażerów!"]
+	],
+	
+	"seq15":  [
+		load("res://Assets/Sprites/TutorialAvatars/conductor_tutorial.png"),
+		
+		"Janusz Efinowicz",
+		
+		["Nie śpię, nie śpię, już lecę..."]
 	],
 }
 
@@ -91,12 +139,12 @@ var avatar_texture_id = 0
 var name_id = 1
 var text_array_id = 2
 
-var batch_breakpoints = [2,4,7,8]
 var dialogue_started = false
 
 func start_tutorial_dialogue():
+	get_parent().get_parent().disable_player_movement()
 	$Test/ArrowIndicator.visible = false
-	$Test.visible = true
+	visible = true
 	current_sequence = "seq_" + str(sequence_num+1)
 	
 	dialogue_box.set_text(dialogue[current_sequence][text_array_id][page])
@@ -125,24 +173,33 @@ func _input(event: InputEvent) -> void:
 				get_tree().quit()
 			
 			match sequence_num:
-				2:
-					stop_dialogue()
 				4:
+					stop_dialogue()
+				5:
+					stop_dialogue()
+				6:
 					stop_dialogue()
 				7:
 					stop_dialogue()
 				8:
 					stop_dialogue()
+				9:
+					stop_dialogue()
+				13:
+					stop_dialogue()
+				15:
+					stop_dialogue()
 
 func stop_dialogue():
-	$Test.visible = false
+	visible = false
 	dialogue_started = false
 	page = 0
+	get_parent().get_parent().enable_player_movement()
 
 
-func _on_button_1_pressed() -> void:
-	dialogue_started = true
-	start_tutorial_dialogue()
+#func _on_button_1_pressed() -> void:
+	#dialogue_started = true
+	#start_tutorial_dialogue()
 
 
 #func setup_dialogue_label():

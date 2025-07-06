@@ -1,8 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://biklendtsf7dq"]
+[gd_scene load_steps=35 format=3 uid="uid://biklendtsf7dq"]
 
 [ext_resource type="Script" uid="uid://dvwkktrn6dvo0" path="res://Scripts/game.gd" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bekremb8qkq02" path="res://Scenes/parallax_morning.tscn" id="1_wrm1d"]
-[ext_resource type="Script" uid="uid://bbqr58l40g7ue" path="res://Scripts/wagon_controller.gd" id="2_3dryh"]
+[ext_resource type="PackedScene" uid="uid://dvlct2f77hags" path="res://Scenes/tutorial.tscn" id="2_ewbju"]
 [ext_resource type="PackedScene" uid="uid://b80uyautrg11t" path="res://Scenes/ticket_control.tscn" id="3_3dryh"]
 [ext_resource type="PackedScene" uid="uid://chlnxioi8ehr6" path="res://Scenes/dres_control.tscn" id="5_nnt18"]
 [ext_resource type="PackedScene" uid="uid://dig63qkl2leqy" path="res://Scenes/toolkit.tscn" id="5_wowpa"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://d1wcawmw0fvgm" path="res://Assets/Sprites/UIElements/stress_bar_progress.png" id="8_1phco"]
 [ext_resource type="Texture2D" uid="uid://bxsgnupsqh2n2" path="res://Assets/Sprites/UIElements/splash_screen.png" id="8_ldgsr"]
 [ext_resource type="AudioStream" uid="uid://bpx5nn8v8x4yw" path="res://Assets/SFX/Choochoo_spedup.mp3" id="9_o5yvi"]
+[ext_resource type="PackedScene" uid="uid://dw378puvhlvou" path="res://Scenes/tutorial_dialogue.tscn" id="10_85qyi"]
+[ext_resource type="FontFile" uid="uid://cdqmke74ahfhj" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="11_85qyi"]
 [ext_resource type="AudioStream" uid="uid://c1405gwhx07qp" path="res://Assets/SFX/train_rails.wav" id="12_1phco"]
 [ext_resource type="AudioStream" uid="uid://bjbqwwvqmn8gt" path="res://Assets/Music/gameplay_theme_loop.mp3" id="13_1phco"]
 [ext_resource type="AudioStream" uid="uid://bw8wowl7aqbot" path="res://Assets/Music/main_menu_disco_polo_loop.mp3" id="13_rfjv2"]
@@ -71,6 +73,74 @@ _data = {
 &"RESET": SubResource("Animation_wowpa"),
 &"enter_wagon": SubResource("Animation_i6g32"),
 &"leave_wagon": SubResource("Animation_3dryh")
+}
+
+[sub_resource type="Animation" id="Animation_iivbl"]
+resource_name = "5_lat_temu"
+length = 3.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarkScreen/5years:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7nbq1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarkScreen/5years:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DarkScreen/first_day:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_exi56"]
+resource_name = "pierwszy"
+length = 3.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarkScreen/first_day:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7t8sx"]
+_data = {
+&"5_lat_temu": SubResource("Animation_iivbl"),
+&"RESET": SubResource("Animation_7nbq1"),
+&"pierwszy": SubResource("Animation_exi56")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rku1e"]
@@ -134,9 +204,9 @@ animations = [{
 process_mode = 3
 script = ExtResource("1_3dryh")
 
-[node name="WagonController" type="Node2D" parent="."]
-process_mode = 1
-script = ExtResource("2_3dryh")
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="Tutorial" parent="Levels" instance=ExtResource("2_ewbju")]
 
 [node name="Background" type="CanvasLayer" parent="."]
 process_mode = 1
@@ -203,6 +273,56 @@ texture_over = ExtResource("7_rfjv2")
 texture_progress = ExtResource("8_1phco")
 texture_progress_offset = Vector2(90, 0)
 
+[node name="DialogueLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="TutorialDialogue" parent="DialogueLayer" instance=ExtResource("10_85qyi")]
+process_mode = 1
+
+[node name="DarkScreen" type="Control" parent="DialogueLayer"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="DialogueLayer/DarkScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="5years" type="Label" parent="DialogueLayer/DarkScreen"]
+layout_mode = 0
+offset_left = 671.0
+offset_top = 471.0
+offset_right = 1286.0
+offset_bottom = 572.0
+theme_override_fonts/font = ExtResource("11_85qyi")
+theme_override_font_sizes/font_size = 100
+text = "5 lat temu..."
+
+[node name="first_day" type="Label" parent="DialogueLayer/DarkScreen"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 317.0
+offset_top = 471.0
+offset_right = 1613.0
+offset_bottom = 572.0
+theme_override_fonts/font = ExtResource("11_85qyi")
+theme_override_font_sizes/font_size = 100
+text = "Pierwszy dzień w robocie"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogueLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_7t8sx")
+}
+
 [node name="PauseMenu" parent="." instance=ExtResource("6_i6g32")]
 process_mode = 3
 layer = 4
@@ -210,11 +330,10 @@ visible = false
 
 [node name="StartMenu" parent="." instance=ExtResource("7_h4fw4")]
 layer = 4
-visible = false
 
 [node name="KonduktorzySplashScreen" type="CanvasLayer" parent="."]
+process_mode = 3
 layer = 5
-visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="KonduktorzySplashScreen"]
 position = Vector2(960, 540)
@@ -229,6 +348,7 @@ bus = &"SFX"
 
 [node name="ChooChoo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_o5yvi")
+autoplay = true
 bus = &"SFX"
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
@@ -238,5 +358,4 @@ bus = &"Music"
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_1phco")
-autoplay = true
 bus = &"Music"

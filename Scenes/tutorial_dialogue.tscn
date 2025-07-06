@@ -54,6 +54,15 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_sgmdw")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.458824)
+
 [node name="Test" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -140,7 +149,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("4_fpvfr")
 theme_override_font_sizes/font_size = 42
-text = "Starszy   Cvntyktor"
 
 [node name="DialogueBox" type="RichTextLabel" parent="Test"]
 layout_mode = 0
@@ -154,7 +162,6 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/normal_font = ExtResource("4_fpvfr")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "Test test dkfjkdjk djkfjnf dfkufhnn  sdjkskjfn efjsjkfn jdsnfksfjkfnejsn esfeskj fesnkjfneskjf jfkjsfn sdjfkjes dkjfhuyrewiuhfjnd eukjd"
 scroll_active = false
 
 [node name="ArrowIndicator" type="TextureRect" parent="Test"]
@@ -174,20 +181,9 @@ texture = ExtResource("5_qfs1g")
 wait_time = 0.03
 autostart = true
 
-[node name="Button1" type="Button" parent="."]
-layout_mode = 0
-offset_left = 829.0
-offset_top = 329.0
-offset_right = 1152.0
-offset_bottom = 454.0
-theme_override_font_sizes/font_size = 35
-text = "Dialogue!
-"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_3cu57")
 }
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]

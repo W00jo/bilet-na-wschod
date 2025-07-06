@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var chairs = $YSort/Chairs
 
-var min_passengers:int = 8
-var max_passengers:int = 10
+var min_passengers:int = 4
+var max_passengers:int = 8
 
 signal player_entered
 

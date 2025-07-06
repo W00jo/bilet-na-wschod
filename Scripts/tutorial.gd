@@ -1,10 +1,13 @@
 extends Node2D
 
 @onready var anim = $"../../AnimationPlayer"
+@onready var intro_anim = $"../../DialogueLayer/AnimationPlayer"
+
 
 var min_wagons = 3
 var max_wagons = 3
-var wagon_scenes = ["res://Scenes/wagon_2.tscn"]
+#var wagon_scenes = ["res://Scenes/wagon_tutorial.tscn"]
+var wagon_scenes = ["res://Scenes/wagon_tutorial.tscn"]
 var player_scene = load("res://Scenes/player.tscn")
 
 var wagon_count = randi_range(min_wagons, max_wagons)
@@ -13,8 +16,22 @@ var all_wagons = []
 
 func _ready() -> void:
 	spawn_wagons()
-	print("wagon count: "+str(wagon_count))
 
+func on_started():
+	start_indroduction_animations()
+
+func start_indroduction_animations():
+	get_tree().paused = false
+	intro_anim.play("5_lat_temu")
+	await intro_anim.animation_finished
+	intro_anim.play("pierwszy")
+	await intro_anim.animation_finished
+	$"../../DialogueLayer/DarkScreen".queue_free()
+	start_dialogue()
+
+func start_dialogue():
+	$"../../DialogueLayer/TutorialDialogue".dialogue_started = true
+	$"../../DialogueLayer/TutorialDialogue".start_tutorial_dialogue()
 
 func spawn_wagons():
 	# first wagon

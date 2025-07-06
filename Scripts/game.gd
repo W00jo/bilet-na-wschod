@@ -5,28 +5,36 @@ extends Node2D
 ########################################
 ## set KnduktorzySplashScreen visible
 ## set StartScreen visible
-#func _ready() -> void:
-	#await get_tree().create_timer(5).timeout
-	#$KonduktorzySplashScreen.queue_free()
-	#get_tree().paused = true
-	#$StartMenu.visible = true
-	#### set ChooChoo to Autoplay
-	#$MenuMusic.play()
-	#
+func _ready() -> void:
+	get_tree().paused = true
+	await get_tree().create_timer(5).timeout
+	$KonduktorzySplashScreen.queue_free()
+	$StartMenu.visible = true
+	### set ChooChoo to Autoplay
+	$MenuMusic.play()
+	
+	#start_tutorial()
+	
 #func start_dialogue():
 	#get_tree().paused = false
 	#$ToolkitLayer/TutorialDialogue.start_tutorial_dialogue()
 	#
 ######################################
 
-func start_ticket_control():
-	ticket_control.visible = true
-	ticket_control.start_control()
+func disable_player_movement():
 	get_tree().get_first_node_in_group("Player").can_move = false
 	get_tree().get_first_node_in_group("Player").get_node('WalkSFX').stop()
 
-func end_ticket_control():
+func enable_player_movement():
 	get_tree().get_first_node_in_group("Player").can_move = true
+
+func start_ticket_control():
+	ticket_control.visible = true
+	ticket_control.start_control()
+	disable_player_movement()
+
+func end_ticket_control():
+	enable_player_movement()
 	ticket_control.visible = false
 
 func _input(event: InputEvent) -> void:

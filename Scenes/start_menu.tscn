@@ -109,7 +109,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_1u5ka")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jfkjl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rl2bw")
 theme_override_styles/normal = SubResource("StyleBoxTexture_l146v")
-text = "START"
+text = "NOWA  GRA"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

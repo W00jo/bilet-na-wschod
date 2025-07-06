@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfnt5v153g2xb"]
+
+[ext_resource type="Script" uid="uid://bbqr58l40g7ue" path="res://Scripts/wagon_controller.gd" id="1_ey5cl"]
+
+[node name="WagonController" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_ey5cl")

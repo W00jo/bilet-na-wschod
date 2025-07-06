@@ -34,7 +34,6 @@ func _input(event: InputEvent) -> void:
 
 func _on_music_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group('Player'):
-		print("ciszej!")
 		PassengerDataBus.game.get_node('GameMusic').volume_db = -15
 
 func _on_music_area_area_exited(area: Area2D) -> void:
