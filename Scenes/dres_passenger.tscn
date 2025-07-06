@@ -72,6 +72,7 @@ volume_db = 10.0
 autoplay = true
 max_distance = 350.0
 attenuation = 1.93187
+bus = &"Music"
 parameters/looping = false
 
 [node name="MusicArea" type="Area2D" parent="."]
