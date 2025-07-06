@@ -3,7 +3,7 @@ extends Control
 @onready var track_rect: TextureRect = $Trasa
 @onready var train_rect: TextureRect = $Train
 
-var travel_time := 8.0  # Całkowity czas podróży w sekundach
+var travel_time := 96.0  # Całkowity czas podróży w sekundach (96s = 96 kroków po 5 minut = 8h)
 var is_traveling := false
 var destination := "Następna stacja"
 var start_position: float = 5.0
@@ -13,39 +13,53 @@ var elapsed_time: float = 0.0
 var time_controlled := false  # Czy pociąg jest kontrolowany przez zewnętrzny system czasu
 
 # Ustawienia pozycji pociągu na torze
-var vertical_offset: float = -20.0  # Przesunięcie w pionie (dodatnie = w dół, ujemne = w górę)
-var horizontal_margin: float = 0.0  # Margines od brzegów toru (zmniejsza zakres ruchu)
-var scale_factor: float = 0.5  # Skala pociągu (0.5 = połowa oryginalnego rozmiaru dla lepszego dopasowania)
+@export var vertical_offset: float = -20.0  # Przesunięcie w pionie (dodatnie = w dół, ujemne = w górę)
+@export var horizontal_margin: float = 0.0  # Margines od brzegów toru (zmniejsza zakres ruchu)
+@export var scale_factor: float = 0.5  # Skala pociągu (0.5 = połowa oryginalnego rozmiaru dla lepszego dopasowania)
+
+# Dodatkowe ustawienia skalowania
+@export var track_scale: float = 1.0  # Skala toru (1.0 = oryginalny rozmiar)
+@export var track_position_offset: Vector2 = Vector2(0, 0)  # Przesunięcie pozycji toru
 
 func _ready():
+	print("Odpalam 'animację'...")
+	
 	# Tylko konfiguracja pozycji
 	_setup_positions()
+	
+	print("Animacja działa")
 
 func _setup_positions():
 	# Czekaj na załadowanie tekstur
 	await get_tree().process_frame
 	
 	if track_rect.texture and train_rect.texture:
-		# Ustaw rozmiar TrackRect na rozmiar tekstury toru
-		track_rect.size = track_rect.texture.get_size()
-		track_rect.position = Vector2(0, 0)
+		# Ustaw skalę toru
+		track_rect.scale = Vector2(track_scale, track_scale)
 		
-		# Ustaw rozmiar głównej kontrolki na rozmiar toru
-		custom_minimum_size = track_rect.texture.get_size()
-		size = track_rect.texture.get_size()
+		# Ustaw rozmiar TrackRect na rozmiar tekstury toru (ze skalą)
+		track_rect.size = track_rect.texture.get_size()
+		track_rect.position = track_position_offset
+		
+		# Ustaw rozmiar głównej kontrolki na rozmiar toru (ze skalą)
+		var scaled_track_size = track_rect.texture.get_size() * track_scale
+		custom_minimum_size = scaled_track_size
+		size = scaled_track_size
 		
 		# Zastosuj skalę do pociągu
 		train_rect.scale = Vector2(scale_factor, scale_factor)
 		
-		# Oblicz zakres ruchu z uwzględnieniem marginesów
-		start_position = horizontal_margin
-		end_position = track_rect.texture.get_width() - train_rect.texture.get_width() * scale_factor - horizontal_margin
+		# Oblicz zakres ruchu z uwzględnieniem marginesów i skali toru
+		var effective_track_width = track_rect.texture.get_width() * track_scale
+		start_position = horizontal_margin + track_position_offset.x
+		end_position = effective_track_width - train_rect.texture.get_width() * scale_factor - horizontal_margin + track_position_offset.x
 		
 		# Umieść pociąg na początku
 		train_rect.position.x = start_position
-		train_rect.position.y = vertical_offset
+		train_rect.position.y = vertical_offset + track_position_offset.y
 		
 		print("Start: ", start_position, " Koniec: ", end_position)
+		print("Skala toru: ", track_scale, " Skala pociągu: ", scale_factor)
 
 func _process(delta):
 	# Posuń automatycznie tylko wtedy, gdy nie jest kontrolowany przez zewnętrzny system czasu

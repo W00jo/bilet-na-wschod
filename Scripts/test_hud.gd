@@ -24,7 +24,7 @@ var current_destination_index = 0
 @export var start_time_minute: int = 0
 @export var end_time_hour: int = 17
 @export var end_time_minute: int = 0
-@export var time_scale: float = 60.0  # Jak szybko porusza się zegar (60.0 = 1 minuta na sekundę)
+@export var time_step_interval: float = 1.0  # Ile sekund realnych na jeden krok czasu (1s = jeden krok co sekundę)
 @export var update_travel_bar: bool = true  # Czy synchronizować pasek podróży z zegarem
 
 # UI positioning removed - handled manually in scene editor
@@ -32,6 +32,10 @@ var current_destination_index = 0
 var current_time_minutes: float = 0.0
 var total_journey_minutes: float = 0.0
 var is_clock_running: bool = false
+
+# Nowy system skokowego zegara (co 5 minut)
+var time_step_minutes: int = 5  # Krok czasu w minutach (5 = co 5 minut)
+var step_timer: float = 0.0  # Timer dla kroków czasu
 
 # Zmienne systemu stresu
 var max_stress := 100.0
@@ -54,7 +58,7 @@ func _ready():
 		return
 	
 	print("Zegar konfigurowany od %02d:%02d do %02d:%02d" % [start_time_hour, start_time_minute, end_time_hour, end_time_minute])
-	print("Prędkość zegara: %.1f minut/sekunda" % time_scale)
+	print("Zegar będzie skakać co %d minut, co %.1f sekund realnych" % [time_step_minutes, time_step_interval])
 	
 	_initialize_clock()
 	_initialize_date()
@@ -67,7 +71,15 @@ func _initialize_clock():
 	var end_time_minutes = end_time_hour * 60 + end_time_minute
 	total_journey_minutes = end_time_minutes - current_time_minutes
 	
+	# Zresetuj timer kroków
+	step_timer = 0.0
+	
 	_update_time_display()
+	
+	print("Zegar zainicjowany: %02d:%02d do %02d:%02d (%.1f minut)" % [
+		start_time_hour, start_time_minute, end_time_hour, end_time_minute, total_journey_minutes
+	])
+	print("Zegar będzie skakać co %d minut, co %.1f sekund realnych" % [time_step_minutes, time_step_interval])
 
 func _initialize_date():
 	if Engine.is_editor_hint():
@@ -105,7 +117,6 @@ func _setup_stress_bar():
 		stress_bar.max_value = 100.0
 		stress_bar.value = 0.0  # Początek z pustym paskiem
 		stress_bar.texture_progress = texture_normal
-		
 
 func _process(delta):
 	if Engine.is_editor_hint():
@@ -114,20 +125,33 @@ func _process(delta):
 	_update_info_label()
 	
 	if is_clock_running:
-		# Posuń zegar do przodu (time_scale = minut na sekundę)
-		current_time_minutes += (delta * time_scale)
+		# Nowy system: skokowy zegar co 5 minut
+		step_timer += delta
 		
-		# Zaktualizuj wyświetlacz czasu
-		_update_time_display()
+		# Sprawdź, czy minął czas na kolejny krok
+		if step_timer >= time_step_interval:
+			step_timer = 0.0  # Zresetuj timer
+			
+			# Dodaj krok czasu (5 minut)
+			current_time_minutes += time_step_minutes
+			
+			# Zaktualizuj wyświetlacz czasu
+			_update_time_display()
+			
+			# Oblicz postęp na podstawie czasu
+			var time_progress = (current_time_minutes - (start_time_hour * 60 + start_time_minute)) / total_journey_minutes
+			time_progress = clamp(time_progress, 0.0, 1.0)
+			
+			if update_travel_bar:
+				progress_bar.set_progress_by_time(time_progress)
+			
+			print("Zegar: %02d:%02d (postęp: %.1f%%)" % [
+				int(current_time_minutes) / 60.0, 
+				int(current_time_minutes) % 60, 
+				time_progress * 100.0
+			])
 		
-		# Oblicz postęp na podstawie czasu
-		var time_progress = (current_time_minutes - (start_time_hour * 60 + start_time_minute)) / total_journey_minutes
-		time_progress = clamp(time_progress, 0.0, 1.0)
-		
-		if update_travel_bar:
-			progress_bar.set_progress_by_time(time_progress)
-		
-		# Sprawdź, czy osiągnęliśmy dobrą godzinę, na końcu drogi
+		# Sprawdź, czy osiągnęliśmy godzinę końcową
 		if current_time_minutes >= end_time_hour * 60 + end_time_minute:
 			is_clock_running = false
 			start_button.disabled = false
@@ -153,10 +177,10 @@ func _process(delta):
 
 func _update_time_display():
 	var total_minutes = int(current_time_minutes)
-	var hours = int(total_minutes / 60)  # Explicit integer division
+	var hours = total_minutes / 60.0  # Float division to avoid integer division warning
 	var minutes = total_minutes % 60
 	if time_label:
-		time_label.text = "%02d:%02d" % [hours, minutes]
+		time_label.text = "%02d:%02d" % [int(hours), minutes]
 
 func _update_info_label():
 	var progress_percent = progress_bar.get_progress_percent()
@@ -187,6 +211,7 @@ func _on_reset_pressed():
 	
 	# Zresetuj zegar
 	current_time_minutes = start_time_hour * 60 + start_time_minute
+	step_timer = 0.0  # Zresetuj timer kroków
 	_update_time_display()
 	is_clock_running = false
 	start_button.disabled = false
