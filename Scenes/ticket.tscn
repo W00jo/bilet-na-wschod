@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://c8hjil3ghytl"]
 
-[ext_resource type="Texture2D" uid="uid://ssupasc1lnty" path="res://Assets/Sprites/ticket.png" id="1_41og6"]
+[ext_resource type="Texture2D" uid="uid://bgoo4slfvfd4n" path="res://Assets/Sprites/ticket.png" id="1_41og6"]
 [ext_resource type="Script" uid="uid://cj8m6m8ykovap" path="res://Scripts/ticket.gd" id="2_5yuud"]
 [ext_resource type="Shader" uid="uid://buw4fbxdvts4i" path="res://Shaders/cutout.gdshader" id="2_l3hpt"]
-[ext_resource type="Texture2D" uid="uid://b3t6njsfq0aso" path="res://Assets/Sprites/hole.png" id="3_ppn6r"]
-[ext_resource type="FontFile" uid="uid://cdqmke74ahfhj" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="5_0xb0e"]
-[ext_resource type="Texture2D" uid="uid://b76yycdaly6qq" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="6_0xb0e"]
-[ext_resource type="AudioStream" uid="uid://cxnsy4t33ly7g" path="res://Assets/SFX/button.wav" id="6_ppn6r"]
-[ext_resource type="FontFile" uid="uid://cinom8n1kyrkb" path="res://Assets/Fonts/ByteBounce.ttf" id="7_juejw"]
+[ext_resource type="Texture2D" uid="uid://dvr68x13d5tk7" path="res://Assets/Sprites/hole.png" id="3_ppn6r"]
+[ext_resource type="FontFile" uid="uid://cego08elbun1h" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="5_0xb0e"]
+[ext_resource type="Texture2D" uid="uid://csanslbqplumu" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="6_0xb0e"]
+[ext_resource type="AudioStream" uid="uid://dbgsg4y7r5a63" path="res://Assets/SFX/button.wav" id="6_ppn6r"]
+[ext_resource type="FontFile" uid="uid://ce5sq10m31wpe" path="res://Assets/Fonts/ByteBounce.ttf" id="7_juejw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l3hpt"]
 shader = ExtResource("2_l3hpt")
@@ -191,7 +191,6 @@ horizontal_alignment = 1
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ppn6r")
 volume_db = -5.0
-bus = &"SFX"
 
 [connection signal="area_entered" from="VisibilityArea" to="." method="_on_visibility_area_area_entered"]
 [connection signal="area_exited" from="VisibilityArea" to="." method="_on_visibility_area_area_exited"]
