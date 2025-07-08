@@ -2,8 +2,8 @@
 
 [ext_resource type="Shader" uid="uid://wpdbogbbxu46" path="res://Shaders/hsv_outline.gdshader" id="1_2ebrb"]
 [ext_resource type="Script" uid="uid://dlq227j5v3enj" path="res://Scripts/dres_passenger.gd" id="1_kufso"]
-[ext_resource type="Texture2D" uid="uid://cxg7sqgrojsph" path="res://Assets/Sprites/ProblematicPassangers/Dres_sit.png" id="2_kufso"]
-[ext_resource type="AudioStream" uid="uid://dt4y1e0y4sf2c" path="res://Assets/Music/hiphop_troubleguy_loop.mp3" id="4_1sdhw"]
+[ext_resource type="Texture2D" uid="uid://cbg17ev8xuusa" path="res://Assets/Sprites/ProblematicPassangers/Dres_sit.png" id="2_kufso"]
+[ext_resource type="AudioStream" uid="uid://cxq7gtrtgujof" path="res://Assets/Music/hiphop_troubleguy_loop.mp3" id="4_1sdhw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a5ttb"]
 shader = ExtResource("1_2ebrb")

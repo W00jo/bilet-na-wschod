@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://bw0c1u2pm75mp"]
 
 [ext_resource type="Script" uid="uid://ce45d8nxc6n2w" path="res://Scripts/parallax_bg.gd" id="1_ya5b4"]
-[ext_resource type="Texture2D" uid="uid://fbtaa4kg6u8g" path="res://Assets/Sprites/Parallaxes/City/parallax_city_1.png" id="2_hn7xr"]
-[ext_resource type="Texture2D" uid="uid://cos7ayvtonq1w" path="res://Assets/Sprites/Parallaxes/City/parallax_city_2.png" id="3_whvsy"]
-[ext_resource type="Texture2D" uid="uid://sh6yg2ltjnkg" path="res://Assets/Sprites/Parallaxes/City/parallax_city_3.png" id="4_ylrrv"]
-[ext_resource type="Texture2D" uid="uid://ckk0ubyjggnph" path="res://Assets/Sprites/Parallaxes/City/parallax_city_4.png" id="5_b64b2"]
-[ext_resource type="Texture2D" uid="uid://d0gavmsde651u" path="res://Assets/Sprites/Parallaxes/City/parallax_city_5.png" id="6_b1bug"]
-[ext_resource type="Texture2D" uid="uid://gi6exxeqaua7" path="res://Assets/Sprites/Parallaxes/City/parallax_city_6.png" id="7_eyxxd"]
-[ext_resource type="Texture2D" uid="uid://hktd1tdhj1dq" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_15.png" id="8_j0phq"]
-[ext_resource type="Texture2D" uid="uid://diurmyu0kjcmt" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_16.png" id="9_ejpxj"]
+[ext_resource type="Texture2D" uid="uid://bspwkpr06jxyr" path="res://Assets/Sprites/Parallaxes/City/parallax_city_1.png" id="2_hn7xr"]
+[ext_resource type="Texture2D" uid="uid://cb5yvdsbwax7a" path="res://Assets/Sprites/Parallaxes/City/parallax_city_2.png" id="3_whvsy"]
+[ext_resource type="Texture2D" uid="uid://bi8tts3lfrsvj" path="res://Assets/Sprites/Parallaxes/City/parallax_city_3.png" id="4_ylrrv"]
+[ext_resource type="Texture2D" uid="uid://byetre1ujlece" path="res://Assets/Sprites/Parallaxes/City/parallax_city_4.png" id="5_b64b2"]
+[ext_resource type="Texture2D" uid="uid://cbsv0rf325ctb" path="res://Assets/Sprites/Parallaxes/City/parallax_city_5.png" id="6_b1bug"]
+[ext_resource type="Texture2D" uid="uid://dmskkvwrcncen" path="res://Assets/Sprites/Parallaxes/City/parallax_city_6.png" id="7_eyxxd"]
+[ext_resource type="Texture2D" uid="uid://bh5fwnrh4kma7" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_15.png" id="8_j0phq"]
+[ext_resource type="Texture2D" uid="uid://che5nk41ufivt" path="res://Assets/Sprites/Parallaxes/Morning/parallax_morning_16.png" id="9_ejpxj"]
 
 [sub_resource type="Animation" id="Animation_5jlwn"]
 resource_name = "scroll"

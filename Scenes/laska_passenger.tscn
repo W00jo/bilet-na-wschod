@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqixavel2loq4" path="res://Scripts/laska_passenger.gd" id="1_k0uot"]
 [ext_resource type="Shader" uid="uid://wpdbogbbxu46" path="res://Shaders/hsv_outline.gdshader" id="2_p2jub"]
-[ext_resource type="Texture2D" uid="uid://bqb266gm7b21g" path="res://Assets/Sprites/ProblematicPassangers/Girl_sit.png" id="3_oacip"]
+[ext_resource type="Texture2D" uid="uid://c4ra2kwc03d7b" path="res://Assets/Sprites/ProblematicPassangers/Girl_sit.png" id="3_oacip"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a5ttb"]
 shader = ExtResource("2_p2jub")

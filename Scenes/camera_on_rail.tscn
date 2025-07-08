@@ -9,6 +9,7 @@ script = ExtResource("1_jvngo")
 lerp_speed = 7.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(960, 3)
 rotates = false
 cubic_interp = false
 loop = false

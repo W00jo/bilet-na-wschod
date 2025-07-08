@@ -1,16 +1,16 @@
 [gd_scene load_steps=15 format=4 uid="uid://cn4hwdvf45ygd"]
 
 [ext_resource type="Script" uid="uid://bpt4s0ma6hsjy" path="res://Scripts/wagon.gd" id="1_rvs8b"]
-[ext_resource type="Texture2D" uid="uid://dvonca0ltx40o" path="res://Assets/Sprites/wagon_tileset.png" id="2_8f32o"]
-[ext_resource type="Texture2D" uid="uid://d0kattxs0ic5t" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_m1qn6"]
-[ext_resource type="Texture2D" uid="uid://576beul3dw5u" path="res://Assets/Sprites/suitcase_shelves.png" id="4_64wxe"]
+[ext_resource type="Texture2D" uid="uid://bh25v4o4visb4" path="res://Assets/Sprites/wagon_tileset.png" id="2_8f32o"]
+[ext_resource type="Texture2D" uid="uid://bgds7l25kireh" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_m1qn6"]
+[ext_resource type="Texture2D" uid="uid://dm2pyt4kijo7l" path="res://Assets/Sprites/suitcase_shelves.png" id="4_64wxe"]
 [ext_resource type="PackedScene" uid="uid://c5o5fcu144i4x" path="res://Scenes/chair_back_forward.tscn" id="5_1v30c"]
 [ext_resource type="TileSet" uid="uid://c7pvh4kvbyymp" path="res://Resources/chairs_tileset.tres" id="6_opypt"]
 [ext_resource type="PackedScene" uid="uid://bf52qdwd17p8u" path="res://Scenes/dres_passenger.tscn" id="7_ilqvh"]
 [ext_resource type="PackedScene" uid="uid://cd8ldvmca48t6" path="res://Scenes/laska_passenger.tscn" id="8_8f32o"]
 [ext_resource type="PackedScene" uid="uid://4e61xs8kmtjg" path="res://Scenes/camera_on_rail.tscn" id="8_a3o8w"]
 [ext_resource type="Script" uid="uid://csnlwdq3iku0f" path="res://Scripts/tut_guy.gd" id="10_64wxe"]
-[ext_resource type="Texture2D" uid="uid://xxy2sst81vis" path="res://Assets/Sprites/tutorial_conductor.png" id="10_m1qn6"]
+[ext_resource type="Texture2D" uid="uid://c1wvdp7sdcioa" path="res://Assets/Sprites/tutorial_conductor.png" id="10_m1qn6"]
 
 [sub_resource type="Curve2D" id="Curve2D_5p62l"]
 _data = {

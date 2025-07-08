@@ -13,7 +13,7 @@
 - **[Strzałki]** lub **[WASD]** - Poruszanie postacią gracza (jeśli ruch jest włączony)
 - **[Mysz]** - Nawigacja po elementach UI i przeciąganie dokumentów
 
-## 📄 Obsługa Dokumentów
+## Obsługa Dokumentów
 
 ### Sprawdzanie Biletów
 1. **Podejdź do pasażera** - Podejdź do fotela pasażera
@@ -28,7 +28,7 @@
 3. **Powiększ** - Naciśnij **[Q]** aby sprawdzić szczegóły dokumentu
 4. **Zweryfikuj informacje** - Sprawdź daty, ważność i autentyczność
 
-## 🎒 Zestaw Narzędzi Konduktora
+## Narzędzia/ekwipunek konduktora
 
 ### Dostęp do Torby
 - **Torba konduktora** zawiera wszystkie niezbędne narzędzia
@@ -41,9 +41,9 @@
 - **Pieczątka** - Oficjalna pieczątka konduktora
 - **Podręcznik** - Podręcznik z zasadami i procedurami
 
-## 💰 System Mandatów
+## System mandatów
 
-### Wystawianie Mandatów
+### Wystawianie mandatów
 1. **Wykryj naruszenie** - Zidentyfikuj problemy z biletem lub dokumentem
 2. **Otwórz formularz mandatu** - Dostęp z zestawu narzędzi konduktora
 3. **Wybierz typ naruszenia**:
@@ -53,70 +53,52 @@
 4. **Wypełnij szczegóły** - Uzupełnij wszystkie wymagane pola
 5. **Uzyskaj podpisy** - Wymagane podpisy pasażera i konduktora
 
-## 📚 Nawigacja po Podręczniku
+## Nawigacja po podręczniku
 
-### Czytanie Instrukcji
-- **[LMB]** - Przewracanie stron
-- **[Kółko myszy]** - Przewijanie treści
+### Czytanie instrukcji
+- **[LMB]** - Przewracanie stron, po kliknięciu na nie
 - **[ESC]** - Zamknij podręcznik
 
-### Sekcje Szybkiego Dostępu
-- **Strona 1** - Ogólne wskazówki i sterowanie
-- **Strona 2** - Rozwiązywanie konfliktów i porady
-- **Strona 3** - Typy biletów i weryfikacja dokumentów
-- **Strona 4** - Procedury mandatów i taryfy
-
-## 💬 System Dialogów
-
-### Sterowanie Konwersacjami
-- **[LMB]** - Wybierz opcję dialogową
-- **[Mysz]** - Najedź na opcje aby je podejrzeć
-- **Auto-kontynuacja** - Niektóre konwersacje kontynuują się automatycznie
+## System dialogów
 
 ### Interakcje z Pasażerami
 - **Bądź uprzejmy** - Wybieraj grzeczne opcje dialogowe
 - **Zachowaj profesjonalizm** - Postępuj zgodnie z wytycznymi konduktora
 - **Zarządzaj stresem** - Trudni pasażerowie zwiększają poziom stresu
 
-## 😤 Zarządzanie Stresem
+## Zarządzanie stresem
 
-### Wskaźniki Stresu
+### Wskaźniki stresu
 - **Pasek stresu** - Wizualny wskaźnik obecnego poziomu stresu
 - **Efekty ekranowe** - Zniekształcenia wizualne przy wysokim stresie
 - **Wpływ na wydajność** - Wysoki stres wpływa na efektywność pracy
 
-### Redukowanie Stresu
+### Redukowanie stresu
 - **Udane interakcje** - Prawidłowe sprawdzanie biletów redukuje stres
 - **Postępowanie zgodnie z procedurami** - Używanie poprawnych protokołów pomaga
 - **Robienie przerw** - Pauzowanie między interakcjami z pasażerami
 
-## ♿ Funkcje Dostępności
+## Funkcje dostępności
 
-### Pomoce Wizualne
+### Pomoce wizualne
 - **Powiększanie dokumentów** - Naciśnij **[Q]** dla szczegółowego widoku
 - **Tryb wysokiego kontrastu** - Dostępny w ustawieniach
 - **Opcje rozmiaru tekstu** - Regulowane w ustawieniach gry
 
-### Sygnały Dźwiękowe
+### Sygnały dźwiękowe
 - **Efekty dźwiękowe** - Dźwiękowe potwierdzenia akcji
 - **Zmiany muzyki** - Poziom stresu wpływa na muzykę w tle
 - **Dialogi głosowe** - Dialogi postaci (jeśli włączone)
 
-## ⌨️ Skróty Klawiszowe
+## Skróty klawiszowe
 
-### Szybkie Akcje
+### Szybkie akcje
 - **[1-9]** - Szybki wybór elementów zestawu narzędzi (jeśli zaimplementowane)
 - **[Tab]** - Przechodzenie między elementami interaktywnymi
 - **[Spacja]** - Potwierdź akcję / Kontynuuj dialog
 - **[Enter]** - Prześlij formularze
 
-### Sterowanie Debugowe (Tylko Tryb Deweloperski)
-- **[F1]** - Przełącz informacje debugowe
-- **[F2]** - Przeładuj obecną scenę
-- **[F3]** - Przełącz kształty kolizji
-- **[F12]** - Zrób zrzut ekranu
-
-## 💡 Porady dla Nowych Konduktorów
+## Porady dla nowych konduktorów
 
 1. **Przeczytaj podręcznik na początku** - Zapoznaj się z procedurami
 2. **Nie spiesz się** - Pośpieszne sprawdzanie prowadzi do błędów
@@ -125,29 +107,29 @@
 5. **Postępuj zgodnie z przepisami** - Podręcznik zawiera wszystkie niezbędne zasady
 6. **Praktyka czyni mistrza** - Użyj tutoriala aby nauczyć się systemów
 
-## 🔧 Rozwiązywanie Problemów ze Sterowaniem
+## Rozwiązywanie problemów ze sterowaniem
 
-### Najczęstsze Problemy
+### Najczęstsze problemy
 - **Sterowanie nie odpowiada** - Sprawdź czy okno gry ma fokus
 - **Mysz nie działa** - Spróbuj najpierw kliknąć w obszar gry
 - **Skróty klawiszowe wyłączone** - Sprawdź czy nie jest otwarty żaden dialog
 
-### Opcje Resetowania
+### Opcje resetowania
 - **ESC** - Zwykle anuluje obecną akcję i wraca do normalnego stanu
 - **Restart sceny** - Dostępne w menu pauzy jeśli potrzeba
 
-## 🎯 Zaawansowane Techniki
+## Zaawansowane techniki
 
-### Efektywne Sprawdzanie
+### Efektywne sprawdzanie
 - **Szybka identyfikacja** - Naucz się rozpoznawać typowe problemy
 - **Kolejność działań** - Opracuj stały porządek sprawdzania
 - **Zarządzanie czasem** - Planuj trasę przez wagony pociągu
 
-### Obsługa Trudnych Sytuacji
+### Obsługa trudnych sytuacji
 - **Techniki deeskalacji** - Uspokajanie agresywnych pasażerów
 - **Asertywność** - Stanowczość przy zachowaniu profesjonalizmu
 - **Dokumentacja** - Dokładne wypełnianie formularzy mandatów
 
 ---
 
-**Miłego konduktorowania! 🚂**
+**Miłego konduktorowania!**
