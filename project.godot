@@ -29,7 +29,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="uid://clas8kwm47hxn"
+mouse_cursor/custom_image="uid://bs0y8bfshtn7i"
 
 [dotnet]
 
@@ -46,7 +46,8 @@ folder_colors={
 "res://Resources/": "gray",
 "res://Scenes/": "orange",
 "res://Scripts/": "green",
-"res://Shaders/": "purple"
+"res://Shaders/": "purple",
+"res://docs/": "blue"
 }
 
 [global_group]
