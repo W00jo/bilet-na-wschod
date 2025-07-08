@@ -28,7 +28,8 @@ PassengerDataBus="*res://Scripts/PassengerDataBus.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 mouse_cursor/custom_image="res://Assets/Sprites/UIElements/cursor.png"
 
 [dotnet]
