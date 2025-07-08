@@ -1,12 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyk5ycejyhqh4"]
+[gd_scene load_steps=11 format=3 uid="uid://dyk5ycejyhqh4"]
 
 [ext_resource type="Script" uid="uid://bsc268xcao7fv" path="res://Scripts/journal.gd" id="1_nv2gc"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://c43vdy0wyceiv" path="res://Assets/Sprites/rulebook_closed.png" id="1_x6005"]
 [ext_resource type="Texture2D" uid="uid://dyfkxrarwte0k" path="res://Assets/Sprites/rulebook_open.png" id="2_nv2gc"]
 [ext_resource type="Texture2D" uid="uid://bd50m7a0wajop" path="res://Assets/Sprites/rulebook_blank.png" id="3_jqjty"]
 [ext_resource type="Texture2D" uid="uid://c2ybwpordyys1" path="res://Assets/Sprites/photos.png" id="5_jqjty"]
 [ext_resource type="FontFile" uid="uid://ljpdlp85a6j2" path="res://Assets/Fonts/WindSong-Medium.ttf" id="5_q37xc"]
 [ext_resource type="FontFile" uid="uid://dilbepmoi4xkm" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="7_special"]
+=======
+[ext_resource type="Texture2D" uid="uid://cyhhrrhj3lup7" path="res://Assets/Sprites/rulebook_closed.png" id="1_x6005"]
+[ext_resource type="Texture2D" uid="uid://c0m4i6vrvb2it" path="res://Assets/Sprites/rulebook_open.png" id="2_nv2gc"]
+[ext_resource type="Texture2D" uid="uid://dqnrkisk1x428" path="res://Assets/Sprites/rulebook_blank.png" id="3_jqjty"]
+[ext_resource type="Texture2D" uid="uid://qhjln1wlf6fi" path="res://Assets/Sprites/photos.png" id="5_jqjty"]
+[ext_resource type="FontFile" uid="uid://dkv62yii3uy4j" path="res://Assets/Fonts/WindSong-Medium.ttf" id="5_q37xc"]
+[ext_resource type="FontFile" uid="uid://cdqmke74ahfhj" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="7_special"]
+[ext_resource type="Texture2D" uid="uid://t6wxywp8hy8o" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="8_16vce"]
+[ext_resource type="FontFile" uid="uid://cinom8n1kyrkb" path="res://Assets/Fonts/ByteBounce.ttf" id="9_q37xc"]
+[ext_resource type="AudioStream" uid="uid://i15m5xxxbhjd" path="res://Assets/SFX/page.wav" id="10_q37xc"]
+>>>>>>> Stashed changes
 
 [node name="Journal" type="Control"]
 layout_mode = 3
@@ -44,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CoverTex" type="TextureRect" parent="JournalPages/Cover"]
+[node name="CoverTexture" type="TextureRect" parent="JournalPages/Cover"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0583333
@@ -60,7 +72,7 @@ scale = Vector2(7, 7)
 texture = ExtResource("1_x6005")
 metadata/_edit_use_anchors_ = true
 
-[node name="CoverText" type="RichTextLabel" parent="JournalPages/Cover"]
+[node name="SubTitle" type="RichTextLabel" parent="JournalPages/Cover"]
 layout_mode = 0
 offset_left = 715.0
 offset_top = 400.0
@@ -75,12 +87,12 @@ Krajowa Państwowa Komunikacja Pociągowa[/b][/color]"
 
 [node name="ButtonCover" type="TextureButton" parent="JournalPages/Cover"]
 layout_mode = 0
-offset_left = 665.0
-offset_top = 175.0
+offset_left = 842.0
+offset_top = 195.0
 offset_right = 1243.0
-offset_bottom = 969.0
+offset_bottom = 938.0
 
-[node name="CoverLabel" type="RichTextLabel" parent="JournalPages/Cover"]
+[node name="Title" type="RichTextLabel" parent="JournalPages/Cover"]
 layout_mode = 0
 offset_left = 716.0
 offset_top = 513.0
@@ -94,6 +106,7 @@ text = "[center][color=e3ddd1]KOMPENDIUM
 DLA KONDUKTORA POCIĄGU SU45[/color]"
 
 [node name="Pages_1_2" type="Control" parent="JournalPages"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -220,6 +233,7 @@ bbcode_enabled = true
 text = "[center]2[/center]"
 
 [node name="Pages_3_4" type="Control" parent="JournalPages"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -352,6 +366,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Cover" type="Control" parent="CreditsPages"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -397,6 +412,7 @@ offset_right = 1243.0
 offset_bottom = 969.0
 
 [node name="Pages_1_2" type="Control" parent="CreditsPages"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -604,3 +620,39 @@ theme_override_fonts/normal_font = ExtResource("7_special")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[b]DZIĘKUJĘMY ZA ZAGRANIE![/b]"
+
+[node name="CloseInstruction" type="TextureRect" parent="."]
+offset_left = 846.0
+offset_top = 64.0
+offset_right = 1119.0
+offset_bottom = 162.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_16vce")
+
+[node name="CloseLabel" type="Label" parent="."]
+offset_left = 867.0
+offset_top = 92.0
+offset_right = 1026.0
+offset_bottom = 136.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("9_q37xc")
+theme_override_font_sizes/font_size = 52
+text = "ZAMKNIJ"
+
+[node name="PageSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_q37xc")
+volume_db = 5.0
+
+[connection signal="pressed" from="JournalPages/Cover/ButtonCover" to="." method="_on_button_cover_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_1_2/ButtonPage_1" to="." method="_on_button_page_1_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_1_2/ButtonPage_2" to="." method="_on_button_page_2_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_3_4/ButtonPage_3" to="." method="_on_button_page_3_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_3_4/ButtonPage_4" to="." method="_on_button_page_4_pressed"]
+[connection signal="pressed" from="CreditsPages/Cover/CreditsCover" to="." method="_on_credits_cover_pressed"]
+[connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_1" to="." method="_on_credits_page_1_pressed"]
+[connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_2" to="." method="_on_credits_page_2_pressed"]
+[connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_3" to="." method="_on_credits_page_3_pressed"]
+[connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_4" to="." method="_on_credits_page_4_pressed"]
