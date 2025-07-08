@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dol0x2as7xw8n"]
 
-[ext_resource type="Texture2D" uid="uid://bgu5kdjswkmt5" path="res://Assets/Sprites/start_screen_temporary.png" id="1_02kpm"]
+[ext_resource type="Texture2D" uid="uid://c2r0g8iaj5fn5" path="res://Assets/Sprites/start_screen_temporary.png" id="1_02kpm"]
 [ext_resource type="Shader" uid="uid://cxnskg0bi7o7w" path="res://Shaders/blur.gdshader" id="2_ql4ve"]
-[ext_resource type="FontFile" uid="uid://dilbepmoi4xkm" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="3_q5l5q"]
+[ext_resource type="FontFile" uid="uid://cdqmke74ahfhj" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="3_q5l5q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t3us6"]
 shader = ExtResource("2_ql4ve")
