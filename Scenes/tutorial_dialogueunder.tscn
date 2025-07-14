@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://d260cq6tqnmqj"]
+
+[ext_resource type="Script" uid="uid://sv0yn5pgrhfo" path="res://Scripts/tutorial_dialogueunder.gd" id="1_t3sgb"]
+[ext_resource type="Texture2D" uid="uid://dmnub0isc04ep" path="res://Assets/Sprites/UIElements/ui_box.png" id="2_mxyok"]
+[ext_resource type="FontFile" uid="uid://d0r8rutmamiuj" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="4_rshgt"]
+
+[node name="DialogueSystem" type="Node2D"]
+z_index = 4096
+script = ExtResource("1_t3sgb")
+
+[node name="DialogueRect" type="NinePatchRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.288021
+anchor_top = 0.715741
+anchor_right = 0.919271
+anchor_bottom = 0.930556
+offset_left = 508.0
+offset_top = 752.0
+offset_right = 1809.0
+offset_bottom = 1028.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_mxyok")
+region_rect = Rect2(0, 1, 120, 119)
+patch_margin_left = 43
+patch_margin_top = 42
+patch_margin_right = 41
+patch_margin_bottom = 42
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 539.0
+offset_top = 779.0
+offset_right = 1778.0
+offset_bottom = 996.0
+
+[node name="SpeakerParent" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SpeakerParent"]
+position = Vector2(28, 28)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("4_rshgt")
+bbcode_enabled = true
+scroll_active = false
+visible_characters_behavior = 1
+
+[node name="ButtonContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2

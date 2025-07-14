@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var anim = $"../../AnimationPlayer"
 @onready var intro_anim = $"../../DialogueLayer/AnimationPlayer"
-
+const DialogueScene = preload("res://Scenes/tutorial_dialogue.tscn")
 
 var min_wagons = 3
 var max_wagons = 3
@@ -31,8 +31,12 @@ func start_indroduction_animations():
 	start_dialogue()
 
 func start_dialogue():
-	$"../../DialogueLayer/TutorialDialogue".dialogue_started = true
-	$"../../DialogueLayer/TutorialDialogue".start_tutorial_dialogue()
+	var panel = DialogueScene.instantiate()
+	add_child(panel)
+	panel.start_tutorial_dialogue()
+#func start_dialogue():
+	#$"../../DialogueLayer/TutorialDialogue".dialogue_started = true
+	#$"../../DialogueLayer/TutorialDialogue".start_tutorial_dialogue()
 
 func spawn_wagons():
 	# first wagon
