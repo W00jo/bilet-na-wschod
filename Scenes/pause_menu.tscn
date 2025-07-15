@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://fr68yidptdhf" path="res://Scripts/pause.gd" id="1_sjs17"]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_myy0f"]
 [ext_resource type="Texture2D" uid="uid://bp4cjngglpiyf" path="res://Assets/Sprites/UIElements/button_dialogue_option_not_working.png" id="4_stj27"]
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="4_u8tnp"]
@@ -13,6 +14,8 @@
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 [ext_resource type="FontFile" uid="uid://bwsqjdp81vqr4" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_myy0f"]
 [ext_resource type="Texture2D" uid="uid://d2goym3ft4nyr" path="res://Assets/Sprites/UIElements/button_dialogue_option_not_working.png" id="4_stj27"]
 [ext_resource type="Texture2D" uid="uid://dfxtodpi20udb" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="4_u8tnp"]
@@ -20,6 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://df8nud72s0g8v" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="6_ix48p"]
 [ext_resource type="AudioStream" uid="uid://c7xiaacjoy0vy" path="res://Assets/SFX/button.wav" id="8_u8tnp"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
