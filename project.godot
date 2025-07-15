@@ -29,8 +29,13 @@ CursorManager="*res://Scripts/cursor_manager.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+<<<<<<< Updated upstream
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://dawg41gxctg4a"
+=======
+window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://Assets/Sprites/UIElements/cursor.png"
+>>>>>>> Stashed changes
 
 [dotnet]
 

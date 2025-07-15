@@ -2,12 +2,21 @@
 
 [ext_resource type="Shader" uid="uid://cxnskg0bi7o7w" path="res://Shaders/blur.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://fr68yidptdhf" path="res://Scripts/pause.gd" id="1_sjs17"]
+<<<<<<< Updated upstream
 [ext_resource type="FontFile" uid="uid://2bpgap7mit3p" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_myy0f"]
 [ext_resource type="Texture2D" uid="uid://bp4cjngglpiyf" path="res://Assets/Sprites/UIElements/button_dialogue_option_not_working.png" id="4_stj27"]
 [ext_resource type="Texture2D" uid="uid://c7wumorjh7jav" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="4_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://bndxvwk6ycv3h" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="5_stj27"]
 [ext_resource type="Texture2D" uid="uid://m1tjor2u3qh0" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="6_ix48p"]
 [ext_resource type="AudioStream" uid="uid://cjalxpmb33ke2" path="res://Assets/SFX/button.wav" id="8_u8tnp"]
+=======
+[ext_resource type="FontFile" uid="uid://bwsqjdp81vqr4" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_myy0f"]
+[ext_resource type="Texture2D" uid="uid://d2goym3ft4nyr" path="res://Assets/Sprites/UIElements/button_dialogue_option_not_working.png" id="4_stj27"]
+[ext_resource type="Texture2D" uid="uid://dfxtodpi20udb" path="res://Assets/Sprites/UIElements/button_dialogue_option_hover.png" id="4_u8tnp"]
+[ext_resource type="Texture2D" uid="uid://dnao5kkpsegta" path="res://Assets/Sprites/UIElements/button_dialogue_option_pressed.png" id="5_stj27"]
+[ext_resource type="Texture2D" uid="uid://df8nud72s0g8v" path="res://Assets/Sprites/UIElements/button_dialogue_option.png" id="6_ix48p"]
+[ext_resource type="AudioStream" uid="uid://c7xiaacjoy0vy" path="res://Assets/SFX/button.wav" id="8_u8tnp"]
+>>>>>>> Stashed changes
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0w1u"]
 shader = ExtResource("1_emv3i")
