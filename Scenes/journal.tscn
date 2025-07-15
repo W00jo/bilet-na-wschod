@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsc268xcao7fv" path="res://Scripts/journal.gd" id="1_nv2gc"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://cyhhrrhj3lup7" path="res://Assets/Sprites/rulebook_closed.png" id="1_x6005"]
 [ext_resource type="Texture2D" uid="uid://c0m4i6vrvb2it" path="res://Assets/Sprites/rulebook_open.png" id="2_nv2gc"]
 [ext_resource type="Texture2D" uid="uid://dqnrkisk1x428" path="res://Assets/Sprites/rulebook_blank.png" id="3_jqjty"]
@@ -11,6 +12,8 @@
 [ext_resource type="FontFile" uid="uid://dkv62yii3uy4j" path="res://Assets/Fonts/WindSong-Medium.ttf" id="5_q37xc"]
 [ext_resource type="FontFile" uid="uid://cdqmke74ahfhj" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="7_special"]
 =======
+=======
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://c43vdy0wyceiv" path="res://Assets/Sprites/rulebook_closed.png" id="1_x6005"]
 [ext_resource type="Texture2D" uid="uid://dyfkxrarwte0k" path="res://Assets/Sprites/rulebook_open.png" id="2_nv2gc"]
 [ext_resource type="Texture2D" uid="uid://bd50m7a0wajop" path="res://Assets/Sprites/rulebook_blank.png" id="3_jqjty"]
@@ -20,6 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://crf1mic0k8e5e" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="8_16vce"]
 [ext_resource type="FontFile" uid="uid://cft0shgp6r5ym" path="res://Assets/Fonts/ByteBounce.ttf" id="9_q37xc"]
 [ext_resource type="AudioStream" uid="uid://bwanoqdqf50yo" path="res://Assets/SFX/page.wav" id="10_q37xc"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [node name="Journal" type="Control"]
@@ -545,11 +551,14 @@ offset_bottom = 958.0
 [node name="CloseInstruction" type="TextureRect" parent="."]
 layout_mode = 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 offset_left = 840.0
 offset_top = 59.0
 offset_right = 1113.0
 offset_bottom = 157.0
 =======
+=======
+>>>>>>> Stashed changes
 offset_left = 834.0
 offset_top = 68.0
 offset_right = 1107.0
@@ -561,11 +570,14 @@ texture = ExtResource("4_wnnew")
 [node name="CloseLabel" type="Label" parent="."]
 layout_mode = 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 offset_left = 860.0
 offset_top = 83.0
 offset_right = 1019.0
 offset_bottom = 127.0
 =======
+=======
+>>>>>>> Stashed changes
 offset_left = 850.8
 offset_top = 90.4
 offset_right = 1009.8

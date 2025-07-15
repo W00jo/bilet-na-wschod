@@ -11,10 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://c0avjblhdygoc" path="res://Assets/Sprites/UIElements/stress_bar_under.png" id="6_rku1e"]
 [ext_resource type="PackedScene" uid="uid://dg4cgtxqjd65l" path="res://Scenes/start_menu.tscn" id="7_h4fw4"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://dkvtjjoddbdxs" path="res://Assets/Sprites/UIElements/stress_bar_over.png" id="7_rfjv2"]
 [ext_resource type="Texture2D" uid="uid://d1wcawmw0fvgm" path="res://Assets/Sprites/UIElements/stress_bar_progress.png" id="8_1phco"]
 [ext_resource type="Texture2D" uid="uid://bxsgnupsqh2n2" path="res://Assets/Sprites/UIElements/splash_screen.png" id="8_ldgsr"]
 [ext_resource type="AudioStream" uid="uid://bpx5nn8v8x4yw" path="res://Assets/SFX/Choochoo_spedup.mp3" id="9_o5yvi"]
+=======
+[ext_resource type="Texture2D" uid="uid://b1u7eyo34j8j1" path="res://Assets/Sprites/UIElements/splash_screen.png" id="8_ldgsr"]
+[ext_resource type="AudioStream" uid="uid://c5rmex5cixl10" path="res://Assets/SFX/Choochoo_spedup.mp3" id="9_o5yvi"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="Texture2D" uid="uid://b1u7eyo34j8j1" path="res://Assets/Sprites/UIElements/splash_screen.png" id="8_ldgsr"]
 [ext_resource type="AudioStream" uid="uid://c5rmex5cixl10" path="res://Assets/SFX/Choochoo_spedup.mp3" id="9_o5yvi"]
