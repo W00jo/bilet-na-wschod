@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxn8l655av4jc"]
 
 [ext_resource type="Script" uid="uid://cm0li17cm02i6" path="res://Scripts/test_stress_bar.gd" id="1_stress_test"]
-[ext_resource type="Texture2D" uid="uid://c1ogeukc0bjco" path="res://Assets/Sprites/UIElements/stressbar_under.png" id="2_under"]
-[ext_resource type="Texture2D" uid="uid://cnn3uydwx1464" path="res://Assets/Sprites/UIElements/stressbar.png" id="3_main"]
-[ext_resource type="Texture2D" uid="uid://be4tk1fj8brc" path="res://Assets/Sprites/UIElements/stress_zero_icon.png" id="4_zero_icon"]
-[ext_resource type="Texture2D" uid="uid://dkprypvqivowf" path="res://Assets/Sprites/UIElements/stress_icon.png" id="5_stress_icon"]
+[ext_resource type="Texture2D" uid="uid://ckbda01nik4yv" path="res://Assets/Sprites/UIElements/stressbar_under.png" id="2_under"]
+[ext_resource type="Texture2D" uid="uid://bo0nnyqafa124" path="res://Assets/Sprites/UIElements/stressbar.png" id="3_main"]
+[ext_resource type="Texture2D" uid="uid://dcn22os25pe5t" path="res://Assets/Sprites/UIElements/stress_zero_icon.png" id="4_zero_icon"]
+[ext_resource type="Texture2D" uid="uid://ciwu0wvi0qto1" path="res://Assets/Sprites/UIElements/stress_icon.png" id="5_stress_icon"]
 
 [node name="StressBarTest" type="Control"]
 layout_mode = 3

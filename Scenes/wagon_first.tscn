@@ -53,9 +53,6 @@ tile_set = ExtResource("4_5p62l")
 [node name="CameraOnRail" parent="." instance=ExtResource("6_jwpte")]
 position = Vector2(0, 487)
 
-[node name="PathFollow2D" parent="CameraOnRail" index="0"]
-position = Vector2(960, 3)
-
 [node name="RightExitArea" type="Area2D" parent="."]
 position = Vector2(2003, 593)
 scale = Vector2(1.75, 1.75)

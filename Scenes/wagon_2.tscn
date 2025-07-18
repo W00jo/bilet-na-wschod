@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=4 uid="uid://capbqmp4f3hg6"]
 
 [ext_resource type="Script" uid="uid://bpt4s0ma6hsjy" path="res://Scripts/wagon.gd" id="1_mq5fo"]
-[ext_resource type="Texture2D" uid="uid://dvonca0ltx40o" path="res://Assets/Sprites/wagon_tileset.png" id="2_g4tbb"]
-[ext_resource type="Texture2D" uid="uid://d0kattxs0ic5t" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_8wkxq"]
+[ext_resource type="Texture2D" uid="uid://bh25v4o4visb4" path="res://Assets/Sprites/wagon_tileset.png" id="2_g4tbb"]
+[ext_resource type="Texture2D" uid="uid://bgds7l25kireh" path="res://Assets/Sprites/wagon_door_exit_arrows.png" id="3_8wkxq"]
 [ext_resource type="TileSet" uid="uid://c7pvh4kvbyymp" path="res://Resources/chairs_tileset.tres" id="3_g4tbb"]
-[ext_resource type="Texture2D" uid="uid://576beul3dw5u" path="res://Assets/Sprites/suitcase_shelves.png" id="3_okys2"]
+[ext_resource type="Texture2D" uid="uid://dm2pyt4kijo7l" path="res://Assets/Sprites/suitcase_shelves.png" id="3_okys2"]
 [ext_resource type="PackedScene" uid="uid://4e61xs8kmtjg" path="res://Scenes/camera_on_rail.tscn" id="4_8wkxq"]
 
 [sub_resource type="Curve2D" id="Curve2D_5p62l"]

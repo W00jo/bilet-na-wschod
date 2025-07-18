@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://brthvps20ines"]
 
-[ext_resource type="Texture2D" uid="uid://hp3xvddjnf6q" path="res://Assets/Sprites/rulebook_closed.png" id="1_8sqce"]
+[ext_resource type="Texture2D" uid="uid://c43vdy0wyceiv" path="res://Assets/Sprites/rulebook_closed.png" id="1_8sqce"]
 [ext_resource type="Script" uid="uid://dujerb8ojjwud" path="res://Scripts/test_rulebook.gd" id="1_onuke"]
-[ext_resource type="Texture2D" uid="uid://4astocb3u2sn" path="res://icon.svg" id="3_2grib"]
+[ext_resource type="Texture2D" uid="uid://dxairxnitj2o5" path="res://icon.svg" id="3_2grib"]
 
 [node name="Rulebook" type="Sprite2D"]
 position = Vector2(385, 147)

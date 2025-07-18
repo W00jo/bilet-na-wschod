@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bsq8r88up4dx1" path="res://Scripts/test_hud.gd" id="1_hud_script"]
 [ext_resource type="Script" uid="uid://cdxpyhip48he1" path="res://Scripts/test_texture_progress_bar.gd" id="2_t6uv5"]
-[ext_resource type="Texture2D" uid="uid://x74xpxpp560m" path="res://Assets/Sprites/UIElements/travel_bar_progress.png" id="3_track"]
-[ext_resource type="Texture2D" uid="uid://5rab3r8hljkc" path="res://Assets/Sprites/UIElements/travel_bar_over.png" id="4_train"]
-[ext_resource type="Texture2D" uid="uid://dqdp8nrbwmaiq" path="res://Assets/Sprites/UIElements/time_icon.png" id="5_time_icon"]
-[ext_resource type="Texture2D" uid="uid://c1ogeukc0bjco" path="res://Assets/Sprites/UIElements/stressbar_under.png" id="6_stress_under"]
-[ext_resource type="Texture2D" uid="uid://cnn3uydwx1464" path="res://Assets/Sprites/UIElements/stressbar.png" id="7_stress_main"]
-[ext_resource type="Texture2D" uid="uid://be4tk1fj8brc" path="res://Assets/Sprites/UIElements/stress_zero_icon.png" id="8_stress_zero_icon"]
-[ext_resource type="Texture2D" uid="uid://dkprypvqivowf" path="res://Assets/Sprites/UIElements/stress_icon.png" id="9_stress_icon"]
-[ext_resource type="Texture2D" uid="uid://dlpco2g3kv5uo" path="res://Assets/Sprites/UIElements/date_icon.png" id="10_date_icon"]
+[ext_resource type="Texture2D" uid="uid://dyq5c2ye7et30" path="res://Assets/Sprites/UIElements/travel_bar_progress.png" id="3_track"]
+[ext_resource type="Texture2D" uid="uid://bp3dok4maxwle" path="res://Assets/Sprites/UIElements/travel_bar_over.png" id="4_train"]
+[ext_resource type="Texture2D" uid="uid://xl482b5u3spv" path="res://Assets/Sprites/UIElements/time_icon.png" id="5_time_icon"]
+[ext_resource type="Texture2D" uid="uid://ckbda01nik4yv" path="res://Assets/Sprites/UIElements/stressbar_under.png" id="6_stress_under"]
+[ext_resource type="Texture2D" uid="uid://bo0nnyqafa124" path="res://Assets/Sprites/UIElements/stressbar.png" id="7_stress_main"]
+[ext_resource type="Texture2D" uid="uid://dcn22os25pe5t" path="res://Assets/Sprites/UIElements/stress_zero_icon.png" id="8_stress_zero_icon"]
+[ext_resource type="Texture2D" uid="uid://ciwu0wvi0qto1" path="res://Assets/Sprites/UIElements/stress_icon.png" id="9_stress_icon"]
+[ext_resource type="Texture2D" uid="uid://cyascns7la2is" path="res://Assets/Sprites/UIElements/date_icon.png" id="10_date_icon"]
 
 [node name="TestHUD" type="Control"]
 layout_mode = 3

@@ -372,7 +372,8 @@ autoplay = true
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_rfjv2")
-volume_db = -10.0
+volume_db = -15.0
+bus = &"Music"
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_1phco")
