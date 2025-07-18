@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dvwkktrn6dvo0" path="res://Scripts/game.gd" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bekremb8qkq02" path="res://Scenes/parallax_morning.tscn" id="1_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://dvlct2f77hags" path="res://Scenes/tutorial.tscn" id="2_ewbju"]
+[ext_resource type="PackedScene" path="res://Scenes/tutorial.tscn" id="2_ewbju"]
 [ext_resource type="PackedScene" uid="uid://b80uyautrg11t" path="res://Scenes/ticket_control.tscn" id="3_3dryh"]
-[ext_resource type="PackedScene" uid="uid://chlnxioi8ehr6" path="res://Scenes/dres_control.tscn" id="5_nnt18"]
+[ext_resource type="PackedScene" path="res://Scenes/dres_control.tscn" id="5_nnt18"]
 [ext_resource type="PackedScene" uid="uid://dig63qkl2leqy" path="res://Scenes/toolkit.tscn" id="5_wowpa"]
 [ext_resource type="PackedScene" uid="uid://db0se2prb2bru" path="res://Scenes/pause_menu.tscn" id="6_i6g32"]
-[ext_resource type="PackedScene" uid="uid://btbw7os5skpdj" path="res://Scenes/laska_control.tscn" id="6_iivbl"]
+[ext_resource type="PackedScene" path="res://Scenes/laska_control.tscn" id="6_iivbl"]
 [ext_resource type="PackedScene" uid="uid://dg4cgtxqjd65l" path="res://Scenes/start_menu.tscn" id="7_h4fw4"]
-[ext_resource type="Texture2D" uid="uid://bxsgnupsqh2n2" path="res://Assets/Sprites/UIElements/splash_screen.png" id="8_ldgsr"]
-[ext_resource type="AudioStream" uid="uid://bpx5nn8v8x4yw" path="res://Assets/SFX/Choochoo_spedup.mp3" id="9_o5yvi"]
+[ext_resource type="Texture2D" uid="uid://d0qiv2vglk2b3" path="res://Assets/Sprites/UIElements/splash_screen.png" id="8_ldgsr"]
+[ext_resource type="AudioStream" uid="uid://cg711bsqliflt" path="res://Assets/SFX/Choochoo_spedup.mp3" id="9_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://dw378puvhlvou" path="res://Scenes/tutorial_dialogue.tscn" id="10_85qyi"]
-[ext_resource type="FontFile" uid="uid://cdqmke74ahfhj" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="11_85qyi"]
-[ext_resource type="AudioStream" uid="uid://c1405gwhx07qp" path="res://Assets/SFX/train_rails.wav" id="12_1phco"]
-[ext_resource type="AudioStream" uid="uid://bjbqwwvqmn8gt" path="res://Assets/Music/gameplay_theme_loop.mp3" id="13_1phco"]
-[ext_resource type="AudioStream" uid="uid://bw8wowl7aqbot" path="res://Assets/Music/main_menu_disco_polo_loop.mp3" id="13_rfjv2"]
+[ext_resource type="FontFile" uid="uid://cego08elbun1h" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="11_85qyi"]
+[ext_resource type="AudioStream" uid="uid://c5lvg4rgk2se8" path="res://Assets/SFX/train_rails.wav" id="12_1phco"]
+[ext_resource type="AudioStream" uid="uid://cf60abyas3yld" path="res://Assets/Music/gameplay_theme_loop.mp3" id="13_1phco"]
+[ext_resource type="AudioStream" uid="uid://h143mrtamlqx" path="res://Assets/Music/main_menu_disco_polo_loop.mp3" id="13_rfjv2"]
 
 [sub_resource type="Animation" id="Animation_wowpa"]
 length = 0.001
@@ -365,12 +365,10 @@ autoplay = "default"
 [node name="TrainSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_1phco")
 volume_db = -5.0
-bus = &"SFX"
 
 [node name="ChooChoo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_o5yvi")
 autoplay = true
-bus = &"SFX"
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_rfjv2")
@@ -379,4 +377,3 @@ bus = &"Music"
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_1phco")
-bus = &"Music"

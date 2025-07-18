@@ -1,22 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2r23wbfg0p8k"]
+[gd_scene load_steps=12 format=3 uid="uid://d2r23wbfg0p8k"]
 
-[ext_resource type="Texture2D" uid="uid://dyvsf633nw6c6" path="res://Assets/Sprites/student_id.png" id="1_1leoy"]
+[ext_resource type="Texture2D" uid="uid://dpamqipswjn2q" path="res://Assets/Sprites/student_id.png" id="1_1leoy"]
 [ext_resource type="Script" uid="uid://716lyreksvpy" path="res://Scripts/student_id.gd" id="1_sgl21"]
-[ext_resource type="FontFile" uid="uid://bwsqjdp81vqr4" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_wt25s"]
-[ext_resource type="FontFile" uid="uid://c0tk6arhl6jyd" path="res://Assets/Fonts/CoveredByYourGrace-Regular.ttf" id="3_g8tnp"]
-[ext_resource type="FontFile" uid="uid://ljpdlp85a6j2" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_sgl21"]
-[ext_resource type="FontFile" uid="uid://cft0shgp6r5ym" path="res://Assets/Fonts/ByteBounce.ttf" id="5_y0fc1"]
-[ext_resource type="Texture2D" uid="uid://du726q1dim61o" path="res://Assets/Sprites/student_id_round_stamp.png" id="6_kxmqv"]
+[ext_resource type="FontFile" uid="uid://d0r8rutmamiuj" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_wt25s"]
+[ext_resource type="FontFile" uid="uid://dw67ma3322hee" path="res://Assets/Fonts/CoveredByYourGrace-Regular.ttf" id="3_g8tnp"]
+[ext_resource type="FontFile" uid="uid://bqwthfw5txir1" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_sgl21"]
+[ext_resource type="FontFile" uid="uid://ce5sq10m31wpe" path="res://Assets/Fonts/ByteBounce.ttf" id="5_y0fc1"]
+[ext_resource type="Texture2D" uid="uid://bgn0bkyrg07m1" path="res://Assets/Sprites/student_id_round_stamp.png" id="6_kxmqv"]
 [ext_resource type="Shader" uid="uid://mvcthl1i5nuk" path="res://Shaders/sepia.gdshader" id="8_y0fc1"]
-[ext_resource type="Texture2D" uid="uid://c5c0mc785vdxc" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="9_kxmqv"]
-[ext_resource type="AudioStream" uid="uid://c7xiaacjoy0vy" path="res://Assets/SFX/button.wav" id="10_ojrje"]
-[ext_resource type="Texture2D" uid="uid://7dcoxiakivbn" path="res://Assets/Sprites/UIElements/investigate_instruction.png" id="10_qmvtd"]
+[ext_resource type="Texture2D" uid="uid://csanslbqplumu" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="9_kxmqv"]
+[ext_resource type="AudioStream" uid="uid://dbgsg4y7r5a63" path="res://Assets/SFX/button.wav" id="10_ojrje"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y0fc1"]
 shader = ExtResource("8_y0fc1")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojrje"]
-size = Vector2(172, 100)
 
 [node name="StudentID" type="Node2D"]
 script = ExtResource("1_sgl21")
@@ -32,7 +28,6 @@ offset_top = -67.0
 offset_right = 105.0
 offset_bottom = 68.0
 texture = ExtResource("1_1leoy")
-metadata/_edit_use_anchors_ = true
 
 [node name="PhotoBase" type="Polygon2D" parent="."]
 position = Vector2(27, 15)
@@ -59,7 +54,6 @@ theme_override_fonts/font = ExtResource("2_wt25s")
 theme_override_font_sizes/font_size = 32
 text = "LEGITYMACJA
 STUDENCKA"
-metadata/_edit_use_anchors_ = true
 
 [node name="NrAlbumu" type="Label" parent="."]
 anchors_preset = -1
@@ -165,7 +159,6 @@ scale = Vector2(0.08, 0.08)
 theme_override_constants/h_separation = 97
 theme_override_constants/v_separation = 9
 columns = 4
-metadata/_edit_use_anchors_ = true
 
 [node name="Date1" type="Label" parent="GridContainer"]
 layout_mode = 2
@@ -416,7 +409,6 @@ theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
 text = "56514"
-metadata/_edit_use_anchors_ = true
 
 [node name="Signature" type="Label" parent="."]
 offset_left = -73.0
@@ -428,7 +420,6 @@ theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("4_sgl21")
 theme_override_font_sizes/font_size = 32
 text = "JanKowalski"
-metadata/_edit_use_anchors_ = true
 
 [node name="Name" type="Label" parent="."]
 offset_left = -65.0
@@ -440,7 +431,6 @@ theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
 text = "Jan Kowalski"
-metadata/_edit_use_anchors_ = true
 
 [node name="Stamp" type="Label" parent="."]
 offset_left = -78.0
@@ -457,7 +447,6 @@ Wydział Humanistyczny
 tel. 81 121 34 00 fax 81 121 34 03
 "
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Date" type="Label" parent="."]
 offset_left = -40.0
@@ -469,7 +458,6 @@ theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
 theme_override_fonts/font = ExtResource("3_g8tnp")
 theme_override_font_sizes/font_size = 32
 text = "Lbn 01.09.89r."
-metadata/_edit_use_anchors_ = true
 
 [node name="Stamps" type="Node2D" parent="."]
 
@@ -524,12 +512,6 @@ texture = ExtResource("6_kxmqv")
 [node name="Stamp9" type="Sprite2D" parent="Stamps"]
 modulate = Color(1, 0.54, 0.54, 0.392157)
 position = Vector2(22, 41)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("6_kxmqv")
-
-[node name="Stamp10" type="Sprite2D" parent="Stamps"]
-modulate = Color(1, 0.54, 0.54, 0.392157)
-position = Vector2(42, 41)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
@@ -643,18 +625,6 @@ theme_override_font_sizes/font_size = 32
 text = "94"
 metadata/_edit_use_anchors_ = true
 
-[node name="Year_6" type="Label" parent="Years"]
-offset_left = 38.0
-offset_top = 35.0
-offset_right = 68.0
-offset_bottom = 81.0
-scale = Vector2(0.2, 0.2)
-theme_override_colors/font_color = Color(0.175695, 0.000100112, 0.572508, 1)
-theme_override_fonts/font = ExtResource("3_g8tnp")
-theme_override_font_sizes/font_size = 32
-text = "94"
-metadata/_edit_use_anchors_ = true
-
 [node name="PhotoCont" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_y0fc1")
 offset_left = -91.0
@@ -662,7 +632,6 @@ offset_top = -46.0
 offset_right = 37.0
 offset_bottom = 82.0
 scale = Vector2(0.75, 0.81)
-metadata/_edit_use_anchors_ = true
 
 [node name="Photo" type="SubViewport" parent="PhotoCont"]
 transparent_bg = true
@@ -678,12 +647,6 @@ position = Vector2(-57, -12)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_kxmqv")
 
-[node name="VisibilityArea" type="Area2D" parent="." groups=["VisibilityArea"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisibilityArea"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_ojrje")
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -691,33 +654,19 @@ offset_left = -98.0
 offset_top = -62.0
 offset_right = 103.0
 offset_bottom = 66.0
-metadata/_edit_use_anchors_ = true
 
 [node name="MagnifyInstruction" type="TextureRect" parent="."]
 visible = false
-offset_left = -55.0
-offset_top = -93.0
-offset_right = 4.0
-offset_bottom = -53.0
+offset_left = -24.0
+offset_top = -94.0
+offset_right = 28.0
+offset_bottom = -54.0
 scale = Vector2(0.938, 0.75)
 texture = ExtResource("9_kxmqv")
 
-[node name="InvestigateInstruction" type="TextureRect" parent="."]
-visible = false
-offset_left = 5.0
-offset_top = -93.0
-offset_right = 64.0
-offset_bottom = -53.0
-scale = Vector2(0.938, 0.75)
-texture = ExtResource("10_qmvtd")
-
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ojrje")
-volume_db = -5.0
-bus = &"SFX"
 
-[connection signal="area_entered" from="VisibilityArea" to="." method="_on_visibility_area_area_entered"]
-[connection signal="area_exited" from="VisibilityArea" to="." method="_on_visibility_area_area_exited"]
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]

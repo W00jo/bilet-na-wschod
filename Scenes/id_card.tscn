@@ -1,16 +1,16 @@
 [gd_scene load_steps=14 format=3 uid="uid://b6v7fjm0tmr2x"]
 
 [ext_resource type="Script" uid="uid://csyndhjjmsd2a" path="res://Scripts/id_card.gd" id="1_eb8q5"]
-[ext_resource type="Texture2D" uid="uid://bkoqk2ypgdat0" path="res://Assets/Sprites/id_card.png" id="1_nd1qd"]
-[ext_resource type="FontFile" uid="uid://djcstjn3xuniv" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_eb8q5"]
-[ext_resource type="FontFile" uid="uid://ce5a8ntilsalp" path="res://Assets/Fonts/CoveredByYourGrace-Regular.ttf" id="3_8t6xa"]
-[ext_resource type="FontFile" uid="uid://cdqmke74ahfhj" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="4_d12lp"]
-[ext_resource type="FontFile" uid="uid://dkv62yii3uy4j" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_rfsya"]
+[ext_resource type="Texture2D" uid="uid://b1x5nu83wk3qm" path="res://Assets/Sprites/id_card.png" id="1_nd1qd"]
+[ext_resource type="FontFile" uid="uid://d0r8rutmamiuj" path="res://Assets/Fonts/Minecraftia-Regular.ttf" id="2_eb8q5"]
+[ext_resource type="FontFile" uid="uid://dw67ma3322hee" path="res://Assets/Fonts/CoveredByYourGrace-Regular.ttf" id="3_8t6xa"]
+[ext_resource type="FontFile" uid="uid://cego08elbun1h" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="4_d12lp"]
+[ext_resource type="FontFile" uid="uid://bqwthfw5txir1" path="res://Assets/Fonts/WindSong-Medium.ttf" id="4_rfsya"]
 [ext_resource type="Shader" uid="uid://mvcthl1i5nuk" path="res://Shaders/sepia.gdshader" id="5_d12lp"]
-[ext_resource type="AudioStream" uid="uid://cxnsy4t33ly7g" path="res://Assets/SFX/button.wav" id="7_8t6xa"]
-[ext_resource type="Texture2D" uid="uid://c4m0d21dl2rwr" path="res://Assets/Sprites/student_id_round_stamp.png" id="9_0qw8e"]
-[ext_resource type="Texture2D" uid="uid://b76yycdaly6qq" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="9_u1vt4"]
-[ext_resource type="Texture2D" uid="uid://854f7p5ef4k" path="res://Assets/Sprites/UIElements/investigate_instruction.png" id="10_u1vt4"]
+[ext_resource type="AudioStream" uid="uid://dbgsg4y7r5a63" path="res://Assets/SFX/button.wav" id="7_8t6xa"]
+[ext_resource type="Texture2D" uid="uid://bgn0bkyrg07m1" path="res://Assets/Sprites/student_id_round_stamp.png" id="9_0qw8e"]
+[ext_resource type="Texture2D" uid="uid://csanslbqplumu" path="res://Assets/Sprites/UIElements/magnify_instruction.png" id="9_u1vt4"]
+[ext_resource type="Texture2D" uid="uid://d2vyi2g60v01u" path="res://Assets/Sprites/UIElements/investigate_instruction.png" id="10_u1vt4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y0fc1"]
 shader = ExtResource("5_d12lp")
@@ -362,7 +362,6 @@ shape = SubResource("RectangleShape2D_0qw8e")
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_8t6xa")
 volume_db = -5.0
-bus = &"SFX"
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
