@@ -6,12 +6,24 @@ extends Node2D
 ## set KnduktorzySplashScreen visible
 ## set StartScreen visible
 func _ready() -> void:
+	# Log game initialization
+	Logger.info("Game scene initializing", "GAME_MANAGER")
+	
+	# Enable crash testing in debug builds
+	if OS.is_debug_build():
+		var crash_tester = CrashTester.new()
+		add_child(crash_tester)
+		crash_tester.add_crash_testing_to_game()
+	
 	get_tree().paused = true
 	await get_tree().create_timer(5).timeout
+	
+	Logger.info("Splash screen timeout completed", "GAME_MANAGER")
 	$KonduktorzySplashScreen.queue_free()
 	$StartMenu.visible = true
 	### set ChooChoo to Autoplay
 	$MenuMusic.play()
+	Logger.info("Menu music started", "AUDIO")
 	
 	#start_tutorial()
 	
@@ -22,10 +34,12 @@ func _ready() -> void:
 ######################################
 
 func disable_player_movement():
+	Logger.debug("Disabling player movement", "PLAYER_CONTROL")
 	get_tree().get_first_node_in_group("Player").can_move = false
 	get_tree().get_first_node_in_group("Player").get_node('WalkSFX').stop()
 
 func enable_player_movement():
+	Logger.debug("Enabling player movement", "PLAYER_CONTROL")
 	get_tree().get_first_node_in_group("Player").can_move = true
 
 func start_ticket_control():

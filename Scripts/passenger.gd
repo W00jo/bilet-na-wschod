@@ -55,8 +55,10 @@ var interaction_enabled:bool = false
 
 
 func _ready() -> void:
+	Logger.debug("Creating new passenger: age=%d, gender=%s" % [age, gender], "PASSENGER_SPAWN")
 	age_range_assigner()
 	personal_data_assigner()
+	Logger.info("Passenger created: %s (Age: %d, Type: %s, Personality: %s)" % [full_name, age, age_range, personality], "PASSENGER_SYSTEM")
 
 func age_range_assigner():
 	if age>=12 and age<=24:
@@ -202,8 +204,10 @@ func hide_interaction_label():
 	
 func _input(event: InputEvent) -> void:
 	if interaction_enabled and $InteractLabel.visible and Input.is_action_just_pressed("Interact") and is_skasowaned == false and is_fined == false:
+		Logger.info("Player initiated interaction with passenger: %s" % full_name, "PASSENGER_INTERACTION")
 		PassengerDataBus.currently_checked_passenger = self
 		interaction_enabled = false
 		PassengerDataBus.transfer_passenger_data(avatar_textures, avatar_colors, eye_color)
 		PassengerDataBus.game.start_ticket_control()
+		Logger.debug("Ticket control started for passenger: %s" % full_name, "TICKET_CONTROL")
 		
