@@ -454,15 +454,3 @@ func build_bbcode_from_blocks(blocks: Array) -> String:
 	for block in blocks:
 		bbcode += block["prefix"] + block["text"] + block["suffix"]
 	return bbcode
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

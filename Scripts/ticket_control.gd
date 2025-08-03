@@ -101,6 +101,8 @@ func validate_ticket():
 		passenger.hide_interaction_label()
 
 func _on_ask_ticket_pressed() -> void:
+	if dialogue.is_typing:
+		return
 	if is_ticket_checked == false and passenger.has_ticket:
 		ticket.visible = true
 		#PassengerDataBus.game.get_node('ToolkitLayer/Toolkit').control_started()
@@ -108,6 +110,8 @@ func _on_ask_ticket_pressed() -> void:
 		button_sfx.play()
 
 func _on_ask_document_pressed() -> void:
+	if dialogue.is_typing:
+		return
 	if passenger.has_document:
 		document.visible = true
 		button_sfx.play()

@@ -110,6 +110,8 @@ func validate_ticket():
 
 
 func _on_ask_ticket_pressed() -> void:
+	if dialogue.is_typing:
+		return
 	if is_ticket_checked == false:
 		print(ticket)
 		ticket.visible = true
@@ -120,10 +122,13 @@ func _on_ask_ticket_pressed() -> void:
 
 
 func _on_ask_document_pressed() -> void:
-	document.visible = true
-	button_sfx.play()
-	id_asked = true
-	tut_dialogue.start_tutorial_dialogue()
+	if dialogue.is_typing:
+		return
+	if not id_asked:
+		document.visible = true
+		button_sfx.play()
+		id_asked = true
+		tut_dialogue.start_tutorial_dialogue()
 
 func disable_markers():
 	pass
@@ -137,6 +142,8 @@ func close():
 		passenger.interaction_enabled = true
 		PassengerDataBus.current_special = null
 		$Box/HBox/Middle/DialogueBox/Dialogue.text = ""
+	$Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket.disabled = false
+	$Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument.disabled = false
 	get_tree().get_first_node_in_group("Player").can_move = true
 	queue_free()
 	button_sfx.play()
