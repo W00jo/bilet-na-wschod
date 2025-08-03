@@ -5,7 +5,7 @@ extends Control
 @onready var button_sfx = $ButtonSFX
 @onready var ticket_validation_sfx = $TicketValidationSFX
 @onready var dialogue = $Box/HBox/Middle/DialogueBox/Dialogue
-@onready var wagon_cont = PassengerDataBus.get_node('Levels/WagonController')
+@onready var wagon_cont = null  # Will be set dynamically
 
 var passenger
 
@@ -129,4 +129,9 @@ func close():
 	$Box/HBox/Middle/OptionBox/VBoxContainer/AskTicket.disabled = false
 	$Box/HBox/Middle/OptionBox/VBoxContainer/AskDocument.disabled = false
 	button_sfx.play()
-	wagon_cont.check_all_done()
+	
+	# Safely try to call check_all_done
+	if wagon_cont == null:
+		wagon_cont = PassengerDataBus.game.get_node_or_null('Levels/WagonController')
+	if wagon_cont != null:
+		wagon_cont.check_all_done()
