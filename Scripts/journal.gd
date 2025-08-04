@@ -56,12 +56,23 @@ func _on_button_page_5_pressed() -> void:
 
 func _on_button_page_6_pressed() -> void:
 	hide_all_journal_pages()
+	$JournalPages/Pages_7_8.visible = true
+	update_statistics()
+	page_sound.play()
+
+func _on_button_page_7_pressed() -> void:
+	hide_all_journal_pages()
+	$JournalPages/Pages_5_6.visible = true
+	page_sound.play()
+
+func _on_button_page_8_pressed() -> void:
+	hide_all_journal_pages()
 	$JournalPages/Cover.visible = true
 	page_sound.play()
 
 func _on_stats_tab_pressed() -> void:
 	hide_all_journal_pages()
-	$JournalPages/Pages_5_6.visible = true
+	$JournalPages/Pages_7_8.visible = true
 	update_statistics()
 	page_sound.play()
 
@@ -69,9 +80,9 @@ func update_statistics():
 	var toolkit = PassengerDataBus.game.get_node_or_null("ToolkitLayer/Toolkit")
 	if toolkit:
 		var tickets_count = toolkit.get_tickets_punched()
-		$JournalPages/Pages_5_6/TicketsCount.text = "[center][b]" + str(tickets_count) + "[/b][/center]"
+		$JournalPages/Pages_7_8/TicketsCount.text = "[center][b]" + str(tickets_count) + "[/b][/center]"
 	else:
-		$JournalPages/Pages_5_6/TicketsCount.text = "[center][b]0[/b][/center]"
+		$JournalPages/Pages_7_8/TicketsCount.text = "[center][b]0[/b][/center]"
 
 ###############################################
 
