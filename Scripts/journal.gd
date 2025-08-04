@@ -107,5 +107,8 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Magnify"):
 		queue_free()
 
+func _on_close_button_pressed() -> void:
+	queue_free()
+
 func _on_credits_page_4_pressed() -> void:
 	pass # Replace with function body.
