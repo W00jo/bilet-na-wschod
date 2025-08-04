@@ -347,6 +347,191 @@ offset_top = 191.0
 offset_right = 1475.0
 offset_bottom = 958.0
 
+[node name="Pages_5_6" type="Control" parent="JournalPages"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PagesTex_5_6" type="TextureRect" parent="JournalPages/Pages_5_6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.195833
+anchor_top = 0.159259
+anchor_right = 0.815104
+anchor_bottom = 0.873148
+offset_top = -0.000183105
+offset_right = -1024.0
+offset_bottom = -656.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7, 7)
+texture = ExtResource("3_jqjty")
+metadata/_edit_use_anchors_ = true
+
+[node name="StatsTitle" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 224.0
+offset_right = 908.0
+offset_bottom = 274.0
+theme_override_colors/default_color = Color(0.2, 0.15, 0.1, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][b][color=steelblue]STATYSTYKI KONDUKTORA[/color][/b][/center]"
+
+[node name="TicketsLabel" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 320.0
+offset_right = 768.0
+offset_bottom = 350.0
+theme_override_colors/default_color = Color(0.2, 0.15, 0.1, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[b]Skasowane bilety:[/b]"
+
+[node name="TicketsCount" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 320.0
+offset_right = 908.0
+offset_bottom = 350.0
+theme_override_colors/default_color = Color(0.4, 0.2, 0.1, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][b]0[/b][/center]"
+
+[node name="SkippedLabel" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 380.0
+offset_right = 768.0
+offset_bottom = 410.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[b]Pominięte kontrole:[/b]"
+
+[node name="SkippedCount" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 380.0
+offset_right = 908.0
+offset_bottom = 410.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][color=gray]---[/color][/center]"
+
+[node name="StressLabel" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 440.0
+offset_right = 768.0
+offset_bottom = 470.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[b]Najbardziej stresujące:[/b]"
+
+[node name="StressEvent" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 440.0
+offset_right = 908.0
+offset_bottom = 470.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][color=gray]---[/color][/center]"
+
+[node name="DaysLabel" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 500.0
+offset_right = 768.0
+offset_bottom = 530.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[b]Dni na stanowisku:[/b]"
+
+[node name="DaysCount" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 500.0
+offset_right = 908.0
+offset_bottom = 530.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][color=gray]---[/color][/center]"
+
+[node name="PlaceholderText" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 350.0
+offset_right = 1383.0
+offset_bottom = 550.0
+rotation = 0.349066
+theme_override_colors/default_color = Color(0.3, 0.3, 0.3, 0.5)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center][i]placeholder[/i][/center]"
+
+[node name="PageNumber5" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 919.0
+offset_right = 693.0
+offset_bottom = 949.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]5[/center]"
+
+[node name="PageNumber6" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 919.0
+offset_right = 1243.0
+offset_bottom = 949.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]6[/center]"
+
+[node name="ButtonPage_5" type="TextureButton" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 191.0
+offset_right = 726.0
+offset_bottom = 958.0
+
+[node name="ButtonPage_6" type="TextureButton" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 1154.0
+offset_top = 191.0
+offset_right = 1475.0
+offset_bottom = 958.0
+
 [node name="CreditsPages" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -621,6 +806,17 @@ offset_bottom = 166.0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("8_16vce")
 
+[node name="StatsTab" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 200.0
+offset_right = 1450.0
+offset_bottom = 250.0
+theme_override_colors/font_color = Color(0.2, 0.15, 0.1, 1)
+theme_override_fonts/font = ExtResource("7_special")
+theme_override_font_sizes/font_size = 16
+text = "STATS"
+
 [node name="CloseLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 850.8
@@ -644,8 +840,11 @@ volume_db = 5.0
 [connection signal="pressed" from="JournalPages/Pages_1_2/ButtonPage_2" to="." method="_on_button_page_2_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_3_4/ButtonPage_3" to="." method="_on_button_page_3_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_3_4/ButtonPage_4" to="." method="_on_button_page_4_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_5_6/ButtonPage_5" to="." method="_on_button_page_5_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_5_6/ButtonPage_6" to="." method="_on_button_page_6_pressed"]
 [connection signal="pressed" from="CreditsPages/Cover/CreditsCover" to="." method="_on_credits_cover_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_1" to="." method="_on_credits_page_1_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_2" to="." method="_on_credits_page_2_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_3" to="." method="_on_credits_page_3_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_4" to="." method="_on_credits_page_4_pressed"]
+[connection signal="pressed" from="StatsTab" to="." method="_on_stats_tab_pressed"]

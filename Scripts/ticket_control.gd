@@ -99,6 +99,11 @@ func validate_ticket():
 		passenger.is_skasowaned = true
 		passenger.interactive_look_remover()
 		passenger.hide_interaction_label()
+		
+		# Record statistics
+		var toolkit = PassengerDataBus.game.get_node_or_null("ToolkitLayer/Toolkit")
+		if toolkit:
+			toolkit.record_ticket_punched()
 
 func _on_ask_ticket_pressed() -> void:
 	if dialogue.is_typing:

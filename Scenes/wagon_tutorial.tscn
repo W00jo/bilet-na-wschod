@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bf52qdwd17p8u" path="res://Scenes/dres_passenger.tscn" id="7_ilqvh"]
 [ext_resource type="PackedScene" uid="uid://cd8ldvmca48t6" path="res://Scenes/laska_passenger.tscn" id="8_8f32o"]
 [ext_resource type="PackedScene" uid="uid://4e61xs8kmtjg" path="res://Scenes/camera_on_rail.tscn" id="8_a3o8w"]
-[ext_resource type="Script" uid="uid://csnlwdq3iku0f" path="res://Scripts/tut_guy.gd" id="10_64wxe"]
+[ext_resource type="Script" path="res://Scripts/tut_guy.gd" id="10_64wxe"]
 [ext_resource type="Texture2D" uid="uid://c1wvdp7sdcioa" path="res://Assets/Sprites/tutorial_conductor.png" id="10_m1qn6"]
 
 [sub_resource type="Curve2D" id="Curve2D_5p62l"]
