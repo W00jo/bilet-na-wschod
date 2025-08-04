@@ -14,7 +14,7 @@ func _ready():
 	if get_tree() and get_tree().root:
 		game = get_tree().root.get_node_or_null('Game')
 		if not game:
-			push_error("PassengerDataBus: Game node not found! Make sure the main scene is named 'Game'")
+			push_error("PassengerDataBus: Game node not found!")
 	else:
 		push_error("PassengerDataBus: Scene tree not available!")
 
