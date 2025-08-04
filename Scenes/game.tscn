@@ -369,6 +369,7 @@ autoplay = "default"
 stream = ExtResource("12_1phco")
 volume_db = -5.0
 bus = &"SFX"
+loop = true
 
 [node name="ChooChoo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_o5yvi")
@@ -379,7 +380,9 @@ bus = &"SFX"
 stream = ExtResource("13_rfjv2")
 volume_db = -15.0
 bus = &"Music"
+loop = true
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_1phco")
 bus = &"Music"
+loop = true
