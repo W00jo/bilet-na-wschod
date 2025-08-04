@@ -399,7 +399,6 @@ theme_override_font_sizes/font_size = 24
 text = "▶"
 
 [node name="Pages_5_6" type="Control" parent="JournalPages"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -424,6 +423,18 @@ scale = Vector2(7, 7)
 texture = ExtResource("7_3thhg")
 metadata/_edit_use_anchors_ = true
 
+[node name="PlaceholderText" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+offset_left = 491.0
+offset_top = 322.0
+offset_right = 891.0
+offset_bottom = 522.0
+rotation = 0.349066
+theme_override_colors/default_color = Color(0.3, 0.3, 0.3, 0.5)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center][i]placeholder[/i][/center]"
+
 [node name="LeftPageContent" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
 layout_mode = 0
 offset_left = 445.0
@@ -432,17 +443,6 @@ offset_right = 903.0
 offset_bottom = 826.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "Ogólne rady i wskazówki
-
-[color=red]Uwaga![/color] Zawsze sprawdzaj datę biletu. Przeterminowane bilety są nieważne.
-
-[b]Podstawowe sprawdzenia:[/b]
-• Sprawdź datę
-• Sprawdź nazwę linii
-• Sprawdź ulgę
-• Sprawdź ważność dokumentu tożsamości
-
-[i]Pamiętaj o grzeczności wobec pasażerów![/i]"
 
 [node name="RightPageContent" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
 layout_mode = 0
@@ -1183,29 +1183,29 @@ stream = ExtResource("10_q37xc")
 volume_db = 5.0
 
 [connection signal="pressed" from="JournalPages/Cover/ButtonCover" to="." method="_on_button_cover_pressed"]
+[connection signal="pressed" from="JournalPages/Cover/ArrowRight" to="." method="_on_button_cover_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_1_2/ButtonPage_1" to="." method="_on_button_page_1_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_1_2/ButtonPage_2" to="." method="_on_button_page_2_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_1_2/ArrowLeft" to="." method="_on_button_page_1_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_1_2/ArrowRight" to="." method="_on_button_page_2_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_3_4/ButtonPage_3" to="." method="_on_button_page_3_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_3_4/ButtonPage_4" to="." method="_on_button_page_4_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_3_4/ArrowLeft" to="." method="_on_button_page_3_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_3_4/ArrowRight" to="." method="_on_button_page_4_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_5_6/ButtonPage_5" to="." method="_on_button_page_5_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_5_6/ButtonPage_6" to="." method="_on_button_page_6_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_5_6/ArrowLeft" to="." method="_on_button_page_3_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_5_6/ArrowRight" to="." method="_on_button_page_6_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_7_8/ButtonPage_7" to="." method="_on_button_page_7_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_7_8/ButtonPage_8" to="." method="_on_button_page_8_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_7_8/ArrowLeft" to="." method="_on_button_page_5_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_7_8/ArrowRight" to="." method="_on_button_page_8_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_9_10/ButtonPage_9" to="." method="_on_button_page_9_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_9_10/ButtonPage_10" to="." method="_on_button_page_10_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_9_10/ArrowLeft" to="." method="_on_button_page_7_pressed"]
 [connection signal="pressed" from="CreditsPages/Cover/CreditsCover" to="." method="_on_credits_cover_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_1" to="." method="_on_credits_page_1_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_2" to="." method="_on_credits_page_2_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_3" to="." method="_on_credits_page_3_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_4" to="." method="_on_credits_page_4_pressed"]
 [connection signal="pressed" from="StatisticsButton" to="." method="_on_statistics_button_pressed"]
-[connection signal="pressed" from="JournalPages/Cover/ArrowRight" to="." method="_on_button_cover_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_1_2/ArrowLeft" to="." method="_on_button_cover_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_1_2/ArrowRight" to="." method="_on_button_page_3_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_3_4/ArrowLeft" to="." method="_on_button_page_1_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_3_4/ArrowRight" to="." method="_on_button_page_5_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_5_6/ArrowLeft" to="." method="_on_button_page_3_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_5_6/ArrowRight" to="." method="_on_button_page_7_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_7_8/ArrowLeft" to="." method="_on_button_page_5_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_7_8/ArrowRight" to="." method="_on_button_page_9_pressed"]
-[connection signal="pressed" from="JournalPages/Pages_9_10/ArrowLeft" to="." method="_on_button_page_7_pressed"]
