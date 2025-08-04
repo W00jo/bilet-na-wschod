@@ -669,6 +669,69 @@ scale = Vector2(7, 7)
 texture = ExtResource("8_3thhg")
 metadata/_edit_use_anchors_ = true
 
+[node name="LeftPageContent" type="RichTextLabel" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 221.0
+offset_right = 903.0
+offset_bottom = 826.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][b][color=steelblue]GLOSARIUSZ KOLEJOWY[/color][/b][/center]
+------------------------------
+[b]Konduktor[/b] - osoba odpowiedzialna za kontrolę biletów i bezpieczeństwo w pociągu
+
+[b]Skasowanie[/b] - proces oznaczania biletu jako używanego
+
+[b]Mandat[/b] - kara pieniężna za naruszenie regulaminu
+
+[b]Ulga[/b] - zniżka na bilet dla określonych grup pasażerów
+
+[b]Legitymacja[/b] - dokument potwierdzający prawo do ulgi
+
+[b]Taryfa[/b] - cennik za przejazdy kolejowe
+
+[b]Wagon[/b] - część składu pociągu
+
+[b]SU45[/b] - elektryczny zespół trakcyjny używany w komunikacji podmiejskiej"
+
+[node name="RightPageContent" type="RichTextLabel" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 218.0
+offset_right = 1459.0
+offset_bottom = 918.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center][b][color=steelblue]INFORMACJE WYDAWNICZE[/color][/b][/center]
+------------------------------
+
+[b]ISBN:[/b] 978-83-7777-1989
+[b]Wydanie:[/b] I
+[b]Nakład:[/b] 1337 egzemplarzy
+
+[b]Redakcja:[/b]
+Główny Redaktor: [color=steelblue]Prof. zw. dr hab. Janusz Efranowicz[/color]
+Redaktor techniczny: [color=steelblue]Mgr inż. Krzysztof Nowakowski[/color]
+Korekta: [color=steelblue]Dr Małgorzata Wiśniewska[/color]
+
+[b]Skład komputerowy:[/b]
+[color=steelblue]Zakład Graficzny \"Rzemiosło\"
+ul. Dworcowa 13, 00-950 Warszawa[/color]
+
+[b]Druk:[/b]
+[color=steelblue]Drukarnia Państwowa nr 2
+ul. Kolejowa 45, 00-123 Warszawa[/color]
+
+[i]© 1989 Ministerstwo Transportu i Gospodarki Morskiej
+Wszelkie prawa zastrzeżone[/i]
+
+[color=gray][size=12]Egzemplarz nr: 0420[/size][/color]"
+
 [node name="PageNumber9" type="RichTextLabel" parent="JournalPages/Pages_9_10"]
 layout_mode = 0
 offset_left = 643.0
