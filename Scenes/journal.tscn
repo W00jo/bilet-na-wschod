@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dyk5ycejyhqh4"]
+[gd_scene load_steps=13 format=3 uid="uid://dyk5ycejyhqh4"]
 
 [ext_resource type="Script" uid="uid://bsc268xcao7fv" path="res://Scripts/journal.gd" id="1_nv2gc"]
 [ext_resource type="Texture2D" uid="uid://c43vdy0wyceiv" path="res://Assets/Sprites/rulebook_closed.png" id="1_x6005"]
-[ext_resource type="Texture2D" uid="uid://dyfkxrarwte0k" path="res://Assets/Sprites/journal_first.png" id="2_nv2gc"]
-[ext_resource type="Texture2D" uid="uid://bd50m7a0wajop" path="res://Assets/Sprites/journal_blank.png" id="3_jqjty"]
-[ext_resource type="Texture2D" uid="uid://c2ybwpordyys1" path="res://Assets/Sprites/journal_last.png" id="4_jqjty"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/rulebook_blank.png" id="3_jqjty"]
+[ext_resource type="Texture2D" uid="uid://bmaoyeb273vk6" path="res://Assets/Sprites/journal_first.png" id="4_3thhg"]
 [ext_resource type="Texture2D" uid="uid://c2ybwpordyys1" path="res://Assets/Sprites/photos.png" id="5_jqjty"]
 [ext_resource type="FontFile" uid="uid://ljpdlp85a6j2" path="res://Assets/Fonts/WindSong-Medium.ttf" id="5_q37xc"]
+[ext_resource type="Texture2D" uid="uid://ddbf033ff5v0n" path="res://Assets/Sprites/journal_blank.png" id="7_3thhg"]
 [ext_resource type="FontFile" uid="uid://dilbepmoi4xkm" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="7_special"]
+[ext_resource type="Texture2D" uid="uid://7qlwq144fu75" path="res://Assets/Sprites/journal_last.png" id="8_3thhg"]
 [ext_resource type="Texture2D" uid="uid://crf1mic0k8e5e" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="8_16vce"]
 [ext_resource type="FontFile" uid="uid://cft0shgp6r5ym" path="res://Assets/Fonts/ByteBounce.ttf" id="9_q37xc"]
 [ext_resource type="AudioStream" uid="uid://bwanoqdqf50yo" path="res://Assets/SFX/page.wav" id="10_q37xc"]
@@ -98,7 +99,6 @@ offset_right = 1243.0
 offset_bottom = 969.0
 
 [node name="Pages_1_2" type="Control" parent="JournalPages"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -120,7 +120,7 @@ offset_bottom = -656.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(7, 7)
-texture = ExtResource("2_nv2gc")
+texture = ExtResource("4_3thhg")
 metadata/_edit_use_anchors_ = true
 
 [node name="LeftPageText" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
@@ -161,19 +161,27 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("7_special")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[center][b][color=steelblue]ZBIÓR PORAD OGÓLNYCH[/color][/b][/center]
+text = "[center][b][color=steelblue]SPIS TREŚCI[/color][/b][/center]
 -------------------------------
-[b]SYTUACJE KONFLIKTOWE:[/b]
-   [color=steelblue]•[/color] Zachowaj spokój
-   [color=steelblue]•[/color] Nie eskaluj
-   [color=steelblue]•[/color] Stosuj przepisy (tak do pasażerów, jak i względem siebie)
-   [color=#f75d5d]• Wzywaj pomoc gdy trzeba![/color]
 
-[b]WSKAZÓWKI:[/b]
-	[color=steelblue]•[/color] Torba najlepszym przyjacielem każdego konduktora!
-	[color=steelblue]•[/color] [b][E][/b] - rozmawiaj z pasażerem
-	[color=steelblue]•[/color] [b][LMB][/b] - pobierz dokument
-	[color=steelblue]•[/color] [b][Q][/b] - powiększ dokument"
+[b]Strona 3-4:[/b]
+[color=steelblue]• Zasady kontroli biletów[/color]
+[color=steelblue]• Zasady wystawiania mandatów[/color]
+
+[b]Strona 5-6:[/b]
+[color=steelblue]• Zbiór porad ogólnych[/color]
+[color=steelblue]• Wskazówki dla konduktora[/color]
+
+[b]Strona 7-8:[/b]
+[color=steelblue]• Statystyki konduktora[/color]
+[color=steelblue]• Dane o pracy[/color]
+
+[b]Strona 9-10:[/b]
+[color=steelblue]• Końcowe strony[/color]
+
+-------------------------------
+[center][i]Kliknij na odpowiednią stronę
+aby przejść do treści[/i][/center]"
 
 [node name="Signature" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
 layout_mode = 0
@@ -247,7 +255,7 @@ offset_bottom = -656.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(7, 7)
-texture = ExtResource("3_jqjty")
+texture = ExtResource("7_3thhg")
 metadata/_edit_use_anchors_ = true
 
 [node name="LeftPageLabel" type="RichTextLabel" parent="JournalPages/Pages_3_4"]
@@ -371,8 +379,32 @@ offset_bottom = -656.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(7, 7)
-texture = ExtResource("3_jqjty")
+texture = ExtResource("7_3thhg")
 metadata/_edit_use_anchors_ = true
+
+[node name="RightPageContent" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 218.0
+offset_right = 1459.0
+offset_bottom = 918.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][b][color=steelblue]ZBIÓR PORAD OGÓLNYCH[/color][/b][/center]
+-------------------------------
+[b]SYTUACJE KONFLIKTOWE:[/b]
+   [color=steelblue]•[/color] Zachowaj spokój
+   [color=steelblue]•[/color] Nie eskaluj
+   [color=steelblue]•[/color] Stosuj przepisy (tak do pasażerów, jak i względem siebie)
+   [color=#f75d5d]• Wzywaj pomoc gdy trzeba![/color]
+
+[b]WSKAZÓWKI:[/b]
+	[color=steelblue]•[/color] Torba najlepszym przyjacielem każdego konduktora!
+	[color=steelblue]•[/color] [b][E][/b] - rozmawiaj z pasażerem
+	[color=steelblue]•[/color] [b][LMB][/b] - pobierz dokument
+	[color=steelblue]•[/color] [b][Q][/b] - powiększ dokument"
 
 [node name="PageNumber5" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
 layout_mode = 0
@@ -435,7 +467,7 @@ offset_bottom = -656.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(7, 7)
-texture = ExtResource("4_jqjty")
+texture = ExtResource("7_3thhg")
 metadata/_edit_use_anchors_ = true
 
 [node name="StatsTitle" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
@@ -591,6 +623,70 @@ offset_right = 726.0
 offset_bottom = 958.0
 
 [node name="ButtonPage_8" type="TextureButton" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 1154.0
+offset_top = 191.0
+offset_right = 1475.0
+offset_bottom = 958.0
+
+[node name="Pages_9_10" type="Control" parent="JournalPages"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PagesTex_9_10" type="TextureRect" parent="JournalPages/Pages_9_10"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.195833
+anchor_top = 0.159259
+anchor_right = 0.815104
+anchor_bottom = 0.873148
+offset_top = -0.000183105
+offset_right = -1024.0
+offset_bottom = -656.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7, 7)
+texture = ExtResource("8_3thhg")
+metadata/_edit_use_anchors_ = true
+
+[node name="PageNumber9" type="RichTextLabel" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 919.0
+offset_right = 693.0
+offset_bottom = 949.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]9[/center]"
+
+[node name="PageNumber10" type="RichTextLabel" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 919.0
+offset_right = 1243.0
+offset_bottom = 949.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]10[/center]"
+
+[node name="ButtonPage_9" type="TextureButton" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 191.0
+offset_right = 726.0
+offset_bottom = 958.0
+
+[node name="ButtonPage_10" type="TextureButton" parent="JournalPages/Pages_9_10"]
 layout_mode = 0
 offset_left = 1154.0
 offset_top = 191.0
@@ -871,16 +967,27 @@ offset_bottom = 166.0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("8_16vce")
 
-[node name="StatsTab" type="TextureButton" parent="."]
+[node name="StatisticsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1369.0
+offset_top = 90.4
+offset_right = 1590.0
+offset_bottom = 134.4
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("9_q37xc")
+theme_override_font_sizes/font_size = 52
+text = "STATYSTYKI"
+
+[node name="StatisticsButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1350.0
-offset_top = 200.0
-offset_right = 1450.0
-offset_bottom = 250.0
-theme_override_colors/font_color = Color(0.2, 0.15, 0.1, 1)
-theme_override_fonts/font = ExtResource("7_special")
-theme_override_font_sizes/font_size = 16
-text = "STATS"
+offset_top = 68.0
+offset_right = 1623.0
+offset_bottom = 166.0
+scale = Vector2(0.8, 0.8)
 
 [node name="CloseLabel" type="Label" parent="."]
 layout_mode = 0
@@ -909,9 +1016,11 @@ volume_db = 5.0
 [connection signal="pressed" from="JournalPages/Pages_5_6/ButtonPage_6" to="." method="_on_button_page_6_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_7_8/ButtonPage_7" to="." method="_on_button_page_7_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_7_8/ButtonPage_8" to="." method="_on_button_page_8_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_9_10/ButtonPage_9" to="." method="_on_button_page_9_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_9_10/ButtonPage_10" to="." method="_on_button_page_10_pressed"]
 [connection signal="pressed" from="CreditsPages/Cover/CreditsCover" to="." method="_on_credits_cover_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_1" to="." method="_on_credits_page_1_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_2" to="." method="_on_credits_page_2_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_3" to="." method="_on_credits_page_3_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_4" to="." method="_on_credits_page_4_pressed"]
-[connection signal="pressed" from="StatsTab" to="." method="_on_stats_tab_pressed"]
+[connection signal="pressed" from="StatisticsButton" to="." method="_on_statistics_button_pressed"]
