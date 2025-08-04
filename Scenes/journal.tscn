@@ -812,10 +812,6 @@ offset_left = 1350.0
 offset_top = 200.0
 offset_right = 1450.0
 offset_bottom = 250.0
-theme_override_colors/font_color = Color(0.2, 0.15, 0.1, 1)
-theme_override_fonts/font = ExtResource("7_special")
-theme_override_font_sizes/font_size = 16
-text = "STATS"
 
 [node name="CloseLabel" type="Label" parent="."]
 layout_mode = 0

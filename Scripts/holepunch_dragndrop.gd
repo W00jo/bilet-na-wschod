@@ -28,7 +28,15 @@ func look_for_ticket_areas():
 			if collider.get_parent().get_node('ForbiddenLabel').visible:
 				collider.get_parent().get_node('ForbiddenLabel').visible = false
 		elif PassengerDataBus.current_special != null and PassengerDataBus.current_special.has_ticket:
-			PassengerDataBus.game.get_node('ToolkitLayer/LaskaControl').validate_ticket()
+			var game = PassengerDataBus.get_game()
+			if game:
+				var laska_control = game.get_node_or_null('ToolkitLayer/LaskaControl')
+				if laska_control:
+					laska_control.validate_ticket()
+				else:
+					print("Warning: LaskaControl node not found for ticket validation")
+			else:
+				print("Warning: Cannot validate ticket - game node not available")
 
 func check_forbidden():
 	var collider = $RayCast2D.get_collider()
