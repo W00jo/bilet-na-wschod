@@ -20,9 +20,17 @@ func start_clock_after_tutorial():
 	"""Called when tutorial is completed to start the game clock"""
 	if clock_ui:
 		print("Game: Tutorial completed - starting game clock!")
+		# Connect the clock finished signal to show end scene
+		clock_ui.clock_finished.connect(_on_clock_finished)
 		clock_ui.start_clock()
 	else:
 		print("Game: Error - clock_ui not found!")
+
+func _on_clock_finished():
+	"""Called when the game clock reaches the end time (15:15)"""
+	print("Game: Time limit reached - showing end scene!")
+	var end_scene = load("res://Scenes/end.tscn").instantiate()
+	$HUD.add_child(end_scene)
 	
 #func start_dialogue():
 	#get_tree().paused = false
