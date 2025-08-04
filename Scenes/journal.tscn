@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dyk5ycejyhqh4"]
+[gd_scene load_steps=13 format=3 uid="uid://dyk5ycejyhqh4"]
 
 [ext_resource type="Script" uid="uid://bsc268xcao7fv" path="res://Scripts/journal.gd" id="1_nv2gc"]
 [ext_resource type="Texture2D" uid="uid://c43vdy0wyceiv" path="res://Assets/Sprites/rulebook_closed.png" id="1_x6005"]
-[ext_resource type="Texture2D" uid="uid://cd30h2bmvpqok" path="res://Assets/Sprites/rulebook_open.png" id="2_nv2gc"]
-[ext_resource type="Texture2D" uid="uid://7ieig1jcanrs" path="res://Assets/Sprites/rulebook_blank.png" id="3_jqjty"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/rulebook_blank.png" id="3_jqjty"]
+[ext_resource type="Texture2D" uid="uid://bmaoyeb273vk6" path="res://Assets/Sprites/journal_first.png" id="4_3thhg"]
 [ext_resource type="Texture2D" uid="uid://c2ybwpordyys1" path="res://Assets/Sprites/photos.png" id="5_jqjty"]
 [ext_resource type="FontFile" uid="uid://ljpdlp85a6j2" path="res://Assets/Fonts/WindSong-Medium.ttf" id="5_q37xc"]
+[ext_resource type="Texture2D" uid="uid://ddbf033ff5v0n" path="res://Assets/Sprites/journal_blank.png" id="7_3thhg"]
 [ext_resource type="FontFile" uid="uid://dilbepmoi4xkm" path="res://Assets/Fonts/SpecialElite-Regular.ttf" id="7_special"]
+[ext_resource type="Texture2D" uid="uid://7qlwq144fu75" path="res://Assets/Sprites/journal_last.png" id="8_3thhg"]
 [ext_resource type="Texture2D" uid="uid://crf1mic0k8e5e" path="res://Assets/Sprites/UIElements/magnify_close_instruction.png" id="8_16vce"]
 [ext_resource type="FontFile" uid="uid://cft0shgp6r5ym" path="res://Assets/Fonts/ByteBounce.ttf" id="9_q37xc"]
 [ext_resource type="AudioStream" uid="uid://bwanoqdqf50yo" path="res://Assets/SFX/page.wav" id="10_q37xc"]
@@ -96,8 +98,17 @@ offset_top = 175.0
 offset_right = 1243.0
 offset_bottom = 969.0
 
+[node name="ArrowRight" type="Button" parent="JournalPages/Cover"]
+layout_mode = 0
+offset_left = 1530.0
+offset_top = 500.0
+offset_right = 1570.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.4, 0.6, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "▶"
+
 [node name="Pages_1_2" type="Control" parent="JournalPages"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -119,10 +130,10 @@ offset_bottom = -656.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(7, 7)
-texture = ExtResource("2_nv2gc")
+texture = ExtResource("4_3thhg")
 metadata/_edit_use_anchors_ = true
 
-[node name="LeftPageText" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
+[node name="LeftPageContent" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
 layout_mode = 0
 offset_left = 445.0
 offset_top = 221.0
@@ -133,24 +144,22 @@ theme_override_fonts/normal_font = ExtResource("7_special")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center][b][color=steelblue]PODRĘCZNIK KONDUKTORA W TWOJEJ TORBIE[/color][/b][/center]
------------------------------
-Ów swoisty poradnik zawiera niezbędne wskazówki oraz doktryny jakimi winien kierować się każdy szanujący \"III Rzeczpospolitą Polskę\" obywatel oraz przede wszystkim konduktor Polskich kolei!
+------------------------------
+[i]Ów swoisty poradnik zawiera niezbędne wskazówki oraz doktryny jakimi winien kierować się każdy szanujący \"III Rzeczpospolitą Polskę\" obywatel oraz przede wszystkim konduktor Polskich kolei![/i]
 
-[b]NAPISANA POD PRZEWODNICTWEMl:
-Ministra Transportu i Gospodarki Morskiej
-1989
+[b]NAPISANA POD PRZEWODNICTWEM:[/b]
+[color=steelblue]• Ministra Transportu i Gospodarki Morskiej[/color]
+[color=steelblue]• Zarządu Głównego PKP[/color]
 
-WYDRUKOWANO W:
-Miasto stoleczne Warszawa
-1989[/b]
+[b]WYDRUKOWANO W:[/b]
+[color=steelblue]Miasto stoleczne Warszawa
+Rok Pański 1989[/color]
 
+[b]NAKŁAD:[/b] [color=steelblue]1337 egzemplarzy[/color]
 
+[center][b][color=#8B4513]Ów informator jest własnością:[/color][/b][/center]"
 
-
-Ów informator jest
-własnością:"
-
-[node name="RightPageLabel" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
+[node name="RightPageContent" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
 layout_mode = 0
 offset_left = 978.0
 offset_top = 218.0
@@ -160,19 +169,22 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("7_special")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[center][b][color=steelblue]ZBIÓR PORAD OGÓLNYCH[/color][/b][/center]
+text = "[center][b][color=steelblue]SPIS TREŚCI[/color][/b][/center]
 -------------------------------
-[b]SYTUACJE KONFLIKTOWE:[/b]
-   [color=steelblue]•[/color] Zachowaj spokój
-   [color=steelblue]•[/color] Nie eskaluj
-   [color=steelblue]•[/color] Stosuj przepisy (tak do pasażerów, jak i względem siebie)
-   [color=#f75d5d]• Wzywaj pomoc gdy trzeba![/color]
+[b]Strona 3-4:[/b]
+[color=steelblue]• Zasady kontroli biletów[/color]
+[color=steelblue]• Zasady wystawiania mandatów[/color]
 
-[b]WSKAZÓWKI:[/b]
-	[color=steelblue]•[/color] Torba najlepszym przyjacielem każdego konduktora!
-	[color=steelblue]•[/color] [b][E][/b] - rozmawiaj z pasażerem
-	[color=steelblue]•[/color] [b][LMB][/b] - pobierz dokument
-	[color=steelblue]•[/color] [b][Q][/b] - powiększ dokument"
+[b]Strona 5-6:[/b]
+[color=steelblue]• Zbiór porad ogólnych[/color]
+[color=steelblue]• Wskazówki dla konduktora[/color]
+
+[b]Strona 7-8:[/b]
+[color=steelblue]• Statystyki konduktora[/color]
+[color=steelblue]• Dane o pracy[/color]
+
+[b]Strona 9-10:[/b]
+[color=steelblue]• Końcowe strony[/color]"
 
 [node name="Signature" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
 layout_mode = 0
@@ -223,8 +235,27 @@ offset_top = 191.0
 offset_right = 1475.0
 offset_bottom = 958.0
 
+[node name="ArrowLeft" type="Button" parent="JournalPages/Pages_1_2"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 500.0
+offset_right = 390.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.4, 0.6, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "◀"
+
+[node name="ArrowRight" type="Button" parent="JournalPages/Pages_1_2"]
+layout_mode = 0
+offset_left = 1530.0
+offset_top = 500.0
+offset_right = 1570.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.4, 0.6, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "▶"
+
 [node name="Pages_3_4" type="Control" parent="JournalPages"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -246,15 +277,15 @@ offset_bottom = -656.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(7, 7)
-texture = ExtResource("3_jqjty")
+texture = ExtResource("7_3thhg")
 metadata/_edit_use_anchors_ = true
 
-[node name="LeftPageLabel" type="RichTextLabel" parent="JournalPages/Pages_3_4"]
+[node name="LeftPageContent" type="RichTextLabel" parent="JournalPages/Pages_3_4"]
 layout_mode = 0
-offset_left = 448.0
-offset_top = 224.0
-offset_right = 908.0
-offset_bottom = 924.0
+offset_left = 445.0
+offset_top = 221.0
+offset_right = 903.0
+offset_bottom = 826.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("7_special")
 theme_override_font_sizes/normal_font_size = 24
@@ -277,12 +308,12 @@ text = "[center][b][color=steelblue] ZASADY KONTROLI BILETÓW[/color][/b][/cente
      ulgach
    [color=steelblue]•[/color] Zwracaj uwagę na daty w pieczątkach"
 
-[node name="RightPageText" type="RichTextLabel" parent="JournalPages/Pages_3_4"]
+[node name="RightPageContent" type="RichTextLabel" parent="JournalPages/Pages_3_4"]
 layout_mode = 0
-offset_left = 983.0
-offset_top = 221.0
-offset_right = 1446.0
-offset_bottom = 921.0
+offset_left = 978.0
+offset_top = 218.0
+offset_right = 1459.0
+offset_bottom = 918.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("7_special")
 theme_override_font_sizes/normal_font_size = 24
@@ -347,8 +378,27 @@ offset_top = 191.0
 offset_right = 1475.0
 offset_bottom = 958.0
 
+[node name="ArrowLeft" type="Button" parent="JournalPages/Pages_3_4"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 500.0
+offset_right = 390.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.4, 0.6, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "◀"
+
+[node name="ArrowRight" type="Button" parent="JournalPages/Pages_3_4"]
+layout_mode = 0
+offset_left = 1530.0
+offset_top = 500.0
+offset_right = 1570.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.4, 0.6, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "▶"
+
 [node name="Pages_5_6" type="Control" parent="JournalPages"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -370,129 +420,53 @@ offset_bottom = -656.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(7, 7)
-texture = ExtResource("3_jqjty")
+texture = ExtResource("7_3thhg")
 metadata/_edit_use_anchors_ = true
 
-[node name="StatsTitle" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 224.0
-offset_right = 908.0
-offset_bottom = 274.0
-theme_override_colors/default_color = Color(0.2, 0.15, 0.1, 1)
-theme_override_fonts/normal_font = ExtResource("7_special")
-theme_override_font_sizes/normal_font_size = 32
-bbcode_enabled = true
-text = "[center][b][color=steelblue]STATYSTYKI KONDUKTORA[/color][/b][/center]"
-
-[node name="TicketsLabel" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 320.0
-offset_right = 768.0
-offset_bottom = 350.0
-theme_override_colors/default_color = Color(0.2, 0.15, 0.1, 1)
-theme_override_fonts/normal_font = ExtResource("7_special")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[b]Skasowane bilety:[/b]"
-
-[node name="TicketsCount" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
-layout_mode = 0
-offset_left = 768.0
-offset_top = 320.0
-offset_right = 908.0
-offset_bottom = 350.0
-theme_override_colors/default_color = Color(0.4, 0.2, 0.1, 1)
-theme_override_fonts/normal_font = ExtResource("7_special")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center][b]0[/b][/center]"
-
-[node name="SkippedLabel" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 380.0
-offset_right = 768.0
-offset_bottom = 410.0
-theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
-theme_override_fonts/normal_font = ExtResource("7_special")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[b]Pominięte kontrole:[/b]"
-
-[node name="SkippedCount" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
-layout_mode = 0
-offset_left = 768.0
-offset_top = 380.0
-offset_right = 908.0
-offset_bottom = 410.0
-theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
-theme_override_fonts/normal_font = ExtResource("7_special")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center][color=gray]---[/color][/center]"
-
-[node name="StressLabel" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 440.0
-offset_right = 768.0
-offset_bottom = 470.0
-theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
-theme_override_fonts/normal_font = ExtResource("7_special")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[b]Najbardziej stresujące:[/b]"
-
-[node name="StressEvent" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
-layout_mode = 0
-offset_left = 768.0
-offset_top = 440.0
-offset_right = 908.0
-offset_bottom = 470.0
-theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
-theme_override_fonts/normal_font = ExtResource("7_special")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center][color=gray]---[/color][/center]"
-
-[node name="DaysLabel" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 500.0
-offset_right = 768.0
-offset_bottom = 530.0
-theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
-theme_override_fonts/normal_font = ExtResource("7_special")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[b]Dni na stanowisku:[/b]"
-
-[node name="DaysCount" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
-layout_mode = 0
-offset_left = 768.0
-offset_top = 500.0
-offset_right = 908.0
-offset_bottom = 530.0
-theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
-theme_override_fonts/normal_font = ExtResource("7_special")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center][color=gray]---[/color][/center]"
-
 [node name="PlaceholderText" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
-layout_mode = 0
-offset_left = 983.0
-offset_top = 350.0
-offset_right = 1383.0
-offset_bottom = 550.0
+offset_left = 491.0
+offset_top = 322.0
+offset_right = 891.0
+offset_bottom = 522.0
 rotation = 0.349066
 theme_override_colors/default_color = Color(0.3, 0.3, 0.3, 0.5)
 theme_override_fonts/normal_font = ExtResource("7_special")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[center][i]placeholder[/i][/center]"
+
+[node name="LeftPageContent" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 221.0
+offset_right = 903.0
+offset_bottom = 826.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+
+[node name="RightPageContent" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 218.0
+offset_right = 1459.0
+offset_bottom = 918.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][b][color=steelblue]ZBIÓR PORAD OGÓLNYCH[/color][/b][/center]
+-------------------------------
+[b]SYTUACJE KONFLIKTOWE:[/b]
+   [color=steelblue]•[/color] Zachowaj spokój
+   [color=steelblue]•[/color] Nie eskaluj
+   [color=steelblue]•[/color] Stosuj przepisy (tak do pasażerów, jak i względem siebie)
+   [color=#f75d5d]• Wzywaj pomoc gdy trzeba![/color]
+
+[b]WSKAZÓWKI:[/b]
+	[color=steelblue]•[/color] Torba najlepszym przyjacielem każdego konduktora!
+	[color=steelblue]•[/color] [b][E][/b] - rozmawiaj z pasażerem
+	[color=steelblue]•[/color] [b][LMB][/b] - pobierz dokument
+	[color=steelblue]•[/color] [b][Q][/b] - powiększ dokument"
 
 [node name="PageNumber5" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
 layout_mode = 0
@@ -531,6 +505,368 @@ offset_left = 1154.0
 offset_top = 191.0
 offset_right = 1475.0
 offset_bottom = 958.0
+
+[node name="ArrowLeft" type="Button" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 500.0
+offset_right = 390.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.4, 0.6, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "◀"
+
+[node name="ArrowRight" type="Button" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 1530.0
+offset_top = 500.0
+offset_right = 1570.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.4, 0.6, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "▶"
+
+[node name="Pages_7_8" type="Control" parent="JournalPages"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PagesTex_7_8" type="TextureRect" parent="JournalPages/Pages_7_8"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.195833
+anchor_top = 0.159259
+anchor_right = 0.815104
+anchor_bottom = 0.873148
+offset_top = -0.000183105
+offset_right = -1024.0
+offset_bottom = -656.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7, 7)
+texture = ExtResource("7_3thhg")
+metadata/_edit_use_anchors_ = true
+
+[node name="StatsTitle" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 224.0
+offset_right = 908.0
+offset_bottom = 274.0
+theme_override_colors/default_color = Color(0.2, 0.15, 0.1, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][b][color=steelblue]STATYSTYKI KONDUKTORA[/color][/b][/center]"
+
+[node name="TicketsLabel" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 320.0
+offset_right = 768.0
+offset_bottom = 350.0
+theme_override_colors/default_color = Color(0.2, 0.15, 0.1, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[b]Skasowane bilety:[/b]"
+
+[node name="TicketsCount" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 320.0
+offset_right = 908.0
+offset_bottom = 350.0
+theme_override_colors/default_color = Color(0.4, 0.2, 0.1, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][b]0[/b][/center]"
+
+[node name="SkippedLabel" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 380.0
+offset_right = 768.0
+offset_bottom = 410.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[b]Pominięte kontrole:[/b]"
+
+[node name="SkippedCount" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 380.0
+offset_right = 908.0
+offset_bottom = 410.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][color=gray]---[/color][/center]"
+
+[node name="StressLabel" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 440.0
+offset_right = 768.0
+offset_bottom = 470.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[b]Najbardziej stresujące:[/b]"
+
+[node name="StressEvent" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 440.0
+offset_right = 908.0
+offset_bottom = 470.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][color=gray]---[/color][/center]"
+
+[node name="DaysLabel" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 500.0
+offset_right = 768.0
+offset_bottom = 530.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[b]Dni na stanowisku:[/b]"
+
+[node name="DaysCount" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 500.0
+offset_right = 908.0
+offset_bottom = 530.0
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][color=gray]---[/color][/center]"
+
+[node name="PlaceholderText" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 350.0
+offset_right = 1383.0
+offset_bottom = 550.0
+rotation = 0.349066
+theme_override_colors/default_color = Color(0.3, 0.3, 0.3, 0.5)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center][i]placeholder[/i][/center]"
+
+[node name="PageNumber7" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 919.0
+offset_right = 693.0
+offset_bottom = 949.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]7[/center]"
+
+[node name="PageNumber8" type="RichTextLabel" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 919.0
+offset_right = 1243.0
+offset_bottom = 949.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]8[/center]"
+
+[node name="ButtonPage_7" type="TextureButton" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 191.0
+offset_right = 726.0
+offset_bottom = 958.0
+
+[node name="ButtonPage_8" type="TextureButton" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 1154.0
+offset_top = 191.0
+offset_right = 1475.0
+offset_bottom = 958.0
+
+[node name="ArrowLeft" type="Button" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 500.0
+offset_right = 390.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.4, 0.6, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "◀"
+
+[node name="ArrowRight" type="Button" parent="JournalPages/Pages_7_8"]
+layout_mode = 0
+offset_left = 1530.0
+offset_top = 500.0
+offset_right = 1570.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.4, 0.6, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "▶"
+
+[node name="Pages_9_10" type="Control" parent="JournalPages"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PagesTex_9_10" type="TextureRect" parent="JournalPages/Pages_9_10"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.195833
+anchor_top = 0.159259
+anchor_right = 0.815104
+anchor_bottom = 0.873148
+offset_top = -0.000183105
+offset_right = -1024.0
+offset_bottom = -656.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7, 7)
+texture = ExtResource("8_3thhg")
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftPageContent" type="RichTextLabel" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 221.0
+offset_right = 903.0
+offset_bottom = 826.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][b][color=steelblue]GLOSARIUSZ KOLEJOWY[/color][/b][/center]
+------------------------------
+[b]Konduktor[/b] - osoba odpowiedzialna za kontrolę biletów i bezpieczeństwo w pociągu
+
+[b]Skasowanie[/b] - proces oznaczania biletu jako używanego
+
+[b]Mandat[/b] - kara pieniężna za naruszenie regulaminu
+
+[b]Ulga[/b] - zniżka na bilet dla określonych grup pasażerów
+
+[b]Legitymacja[/b] - dokument potwierdzający prawo do ulgi
+
+[b]Taryfa[/b] - cennik za przejazdy kolejowe
+
+[b]Wagon[/b] - część składu pociągu
+
+[b]SU45[/b] - elektryczny zespół trakcyjny używany w komunikacji podmiejskiej"
+
+[node name="RightPageContent" type="RichTextLabel" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 218.0
+offset_right = 1459.0
+offset_bottom = 918.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center][b][color=steelblue]INFORMACJE WYDAWNICZE[/color][/b][/center]
+------------------------------
+
+[b]ISBN:[/b] 978-83-7777-1989
+[b]Wydanie:[/b] I
+[b]Nakład:[/b] 1337 egzemplarzy
+
+[b]Redakcja:[/b]
+Główny Redaktor: [color=steelblue]Prof. zw. dr hab. Janusz Efranowicz[/color]
+Redaktor techniczny: [color=steelblue]Mgr inż. Krzysztof Nowakowski[/color]
+Korekta: [color=steelblue]Dr Małgorzata Wiśniewska[/color]
+
+[b]Skład komputerowy:[/b]
+[color=steelblue]Zakład Graficzny \"Rzemiosło\"
+ul. Dworcowa 13, 00-950 Warszawa[/color]
+
+[b]Druk:[/b]
+[color=steelblue]Drukarnia Państwowa nr 2
+ul. Kolejowa 45, 00-123 Warszawa[/color]
+
+[i]© 1989 Ministerstwo Transportu i Gospodarki Morskiej
+Wszelkie prawa zastrzeżone[/i]
+
+[color=gray][size=12]Egzemplarz nr: 0420[/size][/color]"
+
+[node name="PageNumber9" type="RichTextLabel" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 919.0
+offset_right = 693.0
+offset_bottom = 949.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]9[/center]"
+
+[node name="PageNumber10" type="RichTextLabel" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 919.0
+offset_right = 1243.0
+offset_bottom = 949.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_special")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]10[/center]"
+
+[node name="ButtonPage_9" type="TextureButton" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 191.0
+offset_right = 726.0
+offset_bottom = 958.0
+
+[node name="ButtonPage_10" type="TextureButton" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 1154.0
+offset_top = 191.0
+offset_right = 1475.0
+offset_bottom = 958.0
+
+[node name="ArrowLeft" type="Button" parent="JournalPages/Pages_9_10"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 500.0
+offset_right = 390.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.4, 0.6, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "◀"
 
 [node name="CreditsPages" type="Control" parent="."]
 layout_mode = 1
@@ -806,29 +1142,27 @@ offset_bottom = 166.0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("8_16vce")
 
-[node name="StatsTab" type="TextureButton" parent="."]
+[node name="StatisticsLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1600.0
-offset_top = 300.0
-offset_right = 1750.0
-offset_bottom = 380.0
+offset_left = 1369.0
+offset_top = 90.4
+offset_right = 1590.0
+offset_bottom = 134.4
 scale = Vector2(0.8, 0.8)
-
-[node name="StatsLabel" type="Label" parent="StatsTab"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("9_q37xc")
 theme_override_font_sizes/font_size = 52
-text = "STATS"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "STATYSTYKI"
+
+[node name="StatisticsButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 68.0
+offset_right = 1623.0
+offset_bottom = 166.0
+scale = Vector2(0.8, 0.8)
 
 [node name="CloseLabel" type="Label" parent="."]
 layout_mode = 0
@@ -857,16 +1191,29 @@ stream = ExtResource("10_q37xc")
 volume_db = 5.0
 
 [connection signal="pressed" from="JournalPages/Cover/ButtonCover" to="." method="_on_button_cover_pressed"]
+[connection signal="pressed" from="JournalPages/Cover/ArrowRight" to="." method="_on_button_cover_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_1_2/ButtonPage_1" to="." method="_on_button_page_1_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_1_2/ButtonPage_2" to="." method="_on_button_page_2_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_1_2/ArrowLeft" to="." method="_on_button_page_1_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_1_2/ArrowRight" to="." method="_on_button_page_2_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_3_4/ButtonPage_3" to="." method="_on_button_page_3_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_3_4/ButtonPage_4" to="." method="_on_button_page_4_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_3_4/ArrowLeft" to="." method="_on_button_page_3_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_3_4/ArrowRight" to="." method="_on_button_page_4_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_5_6/ButtonPage_5" to="." method="_on_button_page_5_pressed"]
 [connection signal="pressed" from="JournalPages/Pages_5_6/ButtonPage_6" to="." method="_on_button_page_6_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_5_6/ArrowLeft" to="." method="_on_button_page_3_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_5_6/ArrowRight" to="." method="_on_button_page_6_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_7_8/ButtonPage_7" to="." method="_on_button_page_7_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_7_8/ButtonPage_8" to="." method="_on_button_page_8_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_7_8/ArrowLeft" to="." method="_on_button_page_5_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_7_8/ArrowRight" to="." method="_on_button_page_8_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_9_10/ButtonPage_9" to="." method="_on_button_page_9_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_9_10/ButtonPage_10" to="." method="_on_button_page_10_pressed"]
+[connection signal="pressed" from="JournalPages/Pages_9_10/ArrowLeft" to="." method="_on_button_page_7_pressed"]
 [connection signal="pressed" from="CreditsPages/Cover/CreditsCover" to="." method="_on_credits_cover_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_1" to="." method="_on_credits_page_1_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_1_2/CreditsPage_2" to="." method="_on_credits_page_2_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_3" to="." method="_on_credits_page_3_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_4" to="." method="_on_credits_page_4_pressed"]
-[connection signal="pressed" from="StatsTab" to="." method="_on_stats_tab_pressed"]
-[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="StatisticsButton" to="." method="_on_statistics_button_pressed"]
