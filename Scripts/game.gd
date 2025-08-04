@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var tutorial_dialogue = preload("res://Scenes/tutorial_dialogue.tscn").instantiate()
 @onready var ticket_control = $ToolkitLayer/TicketControl
+@onready var clock_ui = $HUD/GameUI
 ########################################
 ## set KnduktorzySplashScreen visible
 ## set StartScreen visible
@@ -14,6 +15,14 @@ func _ready() -> void:
 	$MenuMusic.play()
 	
 	#start_tutorial()
+
+func start_clock_after_tutorial():
+	"""Called when tutorial is completed to start the game clock"""
+	if clock_ui:
+		print("Game: Tutorial completed - starting game clock!")
+		clock_ui.start_clock()
+	else:
+		print("Game: Error - clock_ui not found!")
 	
 #func start_dialogue():
 	#get_tree().paused = false

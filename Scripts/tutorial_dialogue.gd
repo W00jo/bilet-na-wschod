@@ -221,6 +221,10 @@ func _input(event: InputEvent) -> void:
 				15:
 					stop_dialogue()
 					get_tree().get_first_node_in_group("Player").can_move = true
+					# Start the game clock after tutorial completion
+					var game_node = get_parent().get_parent()
+					if game_node.has_method("start_clock_after_tutorial"):
+						game_node.start_clock_after_tutorial()
 					get_parent().queue_free()
 
 func stop_dialogue():

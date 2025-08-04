@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://biklendtsf7dq"]
+[gd_scene load_steps=34 format=3 uid="uid://biklendtsf7dq"]
 
 [ext_resource type="Script" uid="uid://dvwkktrn6dvo0" path="res://Scripts/game.gd" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bekremb8qkq02" path="res://Scenes/parallax_morning.tscn" id="1_wrm1d"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dn68j34dtdi1u" path="res://Assets/SFX/train_rails.wav" id="12_1phco"]
 [ext_resource type="AudioStream" uid="uid://db8gupn6jd1pj" path="res://Assets/Music/gameplay_theme_loop.mp3" id="13_1phco"]
 [ext_resource type="AudioStream" uid="uid://mi13uu7vgs1l" path="res://Assets/Music/main_menu_disco_polo_loop.mp3" id="13_rfjv2"]
+[ext_resource type="PackedScene" uid="uid://blxdxumikn588" path="res://Scenes/game_ui.tscn" id="14_game_ui"]
 
 [sub_resource type="Animation" id="Animation_wowpa"]
 length = 0.001
@@ -343,6 +344,8 @@ libraries = {
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 4
+
+[node name="GameUI" parent="HUD" instance=ExtResource("14_game_ui")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_i6g32")]
 process_mode = 3
