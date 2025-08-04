@@ -808,14 +808,27 @@ texture = ExtResource("8_16vce")
 
 [node name="StatsTab" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1350.0
-offset_top = 200.0
-offset_right = 1450.0
-offset_bottom = 250.0
-theme_override_colors/font_color = Color(0.2, 0.15, 0.1, 1)
-theme_override_fonts/font = ExtResource("7_special")
-theme_override_font_sizes/font_size = 16
+offset_left = 1600.0
+offset_top = 300.0
+offset_right = 1750.0
+offset_bottom = 380.0
+scale = Vector2(0.8, 0.8)
+
+[node name="StatsLabel" type="Label" parent="StatsTab"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("9_q37xc")
+theme_override_font_sizes/font_size = 52
 text = "STATS"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CloseLabel" type="Label" parent="."]
 layout_mode = 0
@@ -830,6 +843,14 @@ theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("9_q37xc")
 theme_override_font_sizes/font_size = 52
 text = "ZAMKNIJ"
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 850.8
+offset_top = 90.4
+offset_right = 1009.8
+offset_bottom = 134.4
+scale = Vector2(0.8, 0.8)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_q37xc")
@@ -848,3 +869,4 @@ volume_db = 5.0
 [connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_3" to="." method="_on_credits_page_3_pressed"]
 [connection signal="pressed" from="CreditsPages/Pages_3_4/CreditsPage_4" to="." method="_on_credits_page_4_pressed"]
 [connection signal="pressed" from="StatsTab" to="." method="_on_stats_tab_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

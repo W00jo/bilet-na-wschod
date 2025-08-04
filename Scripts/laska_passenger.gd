@@ -49,5 +49,13 @@ func hide_interaction_label():
 func _input(event: InputEvent) -> void:
 	if interaction_enabled and $InteractLabel.visible and Input.is_action_just_pressed("Interact") and is_skasowaned == false:
 		interaction_enabled = false
-		PassengerDataBus.game.get_node('ToolkitLayer/LaskaControl').start_laska_control(self)
+		var game = PassengerDataBus.get_game()
+		if game:
+			var laska_control = game.get_node_or_null('ToolkitLayer/LaskaControl')
+			if laska_control:
+				laska_control.start_laska_control(self)
+			else:
+				print("Warning: LaskaControl node not found")
+		else:
+			print("Warning: Cannot start laska control - game node not available")
 		

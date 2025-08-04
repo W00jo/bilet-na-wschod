@@ -66,7 +66,13 @@ func _on_stats_tab_pressed() -> void:
 	page_sound.play()
 
 func update_statistics():
-	var toolkit = PassengerDataBus.game.get_node_or_null("ToolkitLayer/Toolkit")
+	var game = PassengerDataBus.get_game()
+	if not game:
+		print("Warning: Game node not available in journal statistics update")
+		$JournalPages/Pages_5_6/TicketsCount.text = "[center][b]0[/b][/center]"
+		return
+	
+	var toolkit = game.get_node_or_null("ToolkitLayer/Toolkit")
 	if toolkit:
 		var tickets_count = toolkit.get_tickets_punched()
 		$JournalPages/Pages_5_6/TicketsCount.text = "[center][b]" + str(tickets_count) + "[/b][/center]"
@@ -100,6 +106,9 @@ func _on_credits_page_3_pressed() -> void:
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Magnify"):
 		queue_free()
+
+func _on_close_button_pressed() -> void:
+	queue_free()
 
 func _on_credits_page_4_pressed() -> void:
 	pass # Replace with function body.
