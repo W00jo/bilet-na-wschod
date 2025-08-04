@@ -135,21 +135,19 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center][b][color=steelblue]PODRĘCZNIK KONDUKTORA W TWOJEJ TORBIE[/color][/b][/center]
 ------------------------------
-Ów swoisty poradnik zawiera niezbędne wskazówki oraz doktryny jakimi winien kierować się każdy szanujący \"III Rzeczpospolitą Polskę\" obywatel oraz przede wszystkim konduktor Polskich kolei!
+[i]Ów swoisty poradnik zawiera niezbędne wskazówki oraz doktryny jakimi winien kierować się każdy szanujący \"III Rzeczpospolitą Polskę\" obywatel oraz przede wszystkim konduktor Polskich kolei![/i]
 
-[b]NAPISANA POD PRZEWODNICTWEMl:
-Ministra Transportu i Gospodarki Morskiej
-1989
+[b]NAPISANA POD PRZEWODNICTWEM:[/b]
+[color=steelblue]• Ministra Transportu i Gospodarki Morskiej[/color]
+[color=steelblue]• Zarządu Głównego PKP[/color]
 
-WYDRUKOWANO W:
-Miasto stoleczne Warszawa
-1989[/b]
+[b]WYDRUKOWANO W:[/b]
+[color=steelblue]Miasto stoleczne Warszawa
+Rok Pański 1989[/color]
 
+[b]NAKŁAD:[/b] [color=steelblue]1337 egzemplarzy[/color]
 
-
-
-Ów informator jest
-własnością:"
+[center][b][color=#8B4513]Ów informator jest własnością:[/color][/b][/center]"
 
 [node name="RightPageContent" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
 layout_mode = 0
