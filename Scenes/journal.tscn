@@ -123,7 +123,7 @@ scale = Vector2(7, 7)
 texture = ExtResource("4_3thhg")
 metadata/_edit_use_anchors_ = true
 
-[node name="LeftPageText" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
+[node name="LeftPageContent" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
 layout_mode = 0
 offset_left = 445.0
 offset_top = 221.0
@@ -134,7 +134,7 @@ theme_override_fonts/normal_font = ExtResource("7_special")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center][b][color=steelblue]PODRĘCZNIK KONDUKTORA W TWOJEJ TORBIE[/color][/b][/center]
------------------------------
+------------------------------
 Ów swoisty poradnik zawiera niezbędne wskazówki oraz doktryny jakimi winien kierować się każdy szanujący \"III Rzeczpospolitą Polskę\" obywatel oraz przede wszystkim konduktor Polskich kolei!
 
 [b]NAPISANA POD PRZEWODNICTWEMl:
@@ -151,7 +151,7 @@ Miasto stoleczne Warszawa
 Ów informator jest
 własnością:"
 
-[node name="RightPageLabel" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
+[node name="RightPageContent" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
 layout_mode = 0
 offset_left = 978.0
 offset_top = 218.0
@@ -163,7 +163,6 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center][b][color=steelblue]SPIS TREŚCI[/color][/b][/center]
 -------------------------------
-
 [b]Strona 3-4:[/b]
 [color=steelblue]• Zasady kontroli biletów[/color]
 [color=steelblue]• Zasady wystawiania mandatów[/color]
@@ -177,11 +176,7 @@ text = "[center][b][color=steelblue]SPIS TREŚCI[/color][/b][/center]
 [color=steelblue]• Dane o pracy[/color]
 
 [b]Strona 9-10:[/b]
-[color=steelblue]• Końcowe strony[/color]
-
--------------------------------
-[center][i]Kliknij na odpowiednią stronę
-aby przejść do treści[/i][/center]"
+[color=steelblue]• Końcowe strony[/color]"
 
 [node name="Signature" type="RichTextLabel" parent="JournalPages/Pages_1_2"]
 layout_mode = 0
@@ -233,7 +228,6 @@ offset_right = 1475.0
 offset_bottom = 958.0
 
 [node name="Pages_3_4" type="Control" parent="JournalPages"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -258,12 +252,12 @@ scale = Vector2(7, 7)
 texture = ExtResource("7_3thhg")
 metadata/_edit_use_anchors_ = true
 
-[node name="LeftPageLabel" type="RichTextLabel" parent="JournalPages/Pages_3_4"]
+[node name="LeftPageContent" type="RichTextLabel" parent="JournalPages/Pages_3_4"]
 layout_mode = 0
-offset_left = 448.0
-offset_top = 224.0
-offset_right = 908.0
-offset_bottom = 924.0
+offset_left = 445.0
+offset_top = 221.0
+offset_right = 903.0
+offset_bottom = 826.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("7_special")
 theme_override_font_sizes/normal_font_size = 24
@@ -286,12 +280,12 @@ text = "[center][b][color=steelblue] ZASADY KONTROLI BILETÓW[/color][/b][/cente
      ulgach
    [color=steelblue]•[/color] Zwracaj uwagę na daty w pieczątkach"
 
-[node name="RightPageText" type="RichTextLabel" parent="JournalPages/Pages_3_4"]
+[node name="RightPageContent" type="RichTextLabel" parent="JournalPages/Pages_3_4"]
 layout_mode = 0
-offset_left = 983.0
-offset_top = 221.0
-offset_right = 1446.0
-offset_bottom = 921.0
+offset_left = 978.0
+offset_top = 218.0
+offset_right = 1459.0
+offset_bottom = 918.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("7_special")
 theme_override_font_sizes/normal_font_size = 24
@@ -381,6 +375,26 @@ grow_vertical = 2
 scale = Vector2(7, 7)
 texture = ExtResource("7_3thhg")
 metadata/_edit_use_anchors_ = true
+
+[node name="LeftPageContent" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 221.0
+offset_right = 903.0
+offset_bottom = 826.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Ogólne rady i wskazówki
+
+[color=red]Uwaga![/color] Zawsze sprawdzaj datę biletu. Przeterminowane bilety są nieważne.
+
+[b]Podstawowe sprawdzenia:[/b]
+• Sprawdź datę
+• Sprawdź nazwę linii
+• Sprawdź ulgę
+• Sprawdź ważność dokumentu tożsamości
+
+[i]Pamiętaj o grzeczności wobec pasażerów![/i]"
 
 [node name="RightPageContent" type="RichTextLabel" parent="JournalPages/Pages_5_6"]
 layout_mode = 0
