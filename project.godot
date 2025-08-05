@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Bilet na Wschod"
+config/version="0.4.0"
 run/main_scene="uid://biklendtsf7dq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

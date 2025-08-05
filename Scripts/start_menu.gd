@@ -1,6 +1,11 @@
 extends CanvasLayer
 
 
+func _ready() -> void:
+	# Set the version label from project settings
+	var version = ProjectSettings.get_setting("application/config/version", "1.0.0")
+	$VersionLabel.text = "v" + version
+
 
 func _on_start_button_pressed() -> void:
 	get_tree().paused = false
