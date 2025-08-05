@@ -28,6 +28,33 @@
 
 ---
 
+## [05.08.2025] - Implementacja ustawień audio
+
+**Jira ID:** [BNW-101](https://konduktorzy.atlassian.net/browse/BNW-101)
+
+### Zmiany Techniczne
+- Utworzono nową scenę `settings_menu.tscn` z dedykowanym skryptem `settings_menu.gd`
+- Implementacja sliderów audio dla muzyki i efektów dźwiękowych (0-100%)
+- Implementacja sygnału `settings_closed` dla komunikacji z parent scenes
+- Dodanie przycisku "Ustawienia" do głównego menu (`start_menu.tscn`)
+- Aktywacja i podłączenie przycisku "Opcje" w menu pauzy (`pause_menu.tscn`)
+- Stylizacja interfejsu zgodnie z motywem gry
+
+### Sprint Notes
+- Wybór **sliderów** zamiast **discrete scale** dla lepszego UX i precyzji
+- Testowanie persistencji ustawień między sesjami gry
+- Implementacja [ESC] dla zamykania menu ustawień
+
+### Decyzje Techniczne
+- Signal-based communication
+
+### Następne Kroki
+- Dodanie dodatkowych opcji audio (master volume, voice)
+- Implementacja video/graphics settings (resolution, fullscreen, vsync)
+- *(potencjalnie)* Rozszerzenie ustawień o accessibility options 
+
+---
+
 ## [05.08.2025] - Refaktoryzacja dokumentacji
 
 **Jira ID:** [BNW-138](https://konduktorzy.atlassian.net/browse/BNW-138)

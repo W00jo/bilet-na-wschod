@@ -24,6 +24,21 @@ func _on_credits_button_pressed() -> void:
 	add_child(credits)
 
 
+func _on_settings_button_pressed() -> void:
+	$ButtonSFX.play()
+	var settings_scene = load("res://Scenes/settings_menu.tscn")
+	var settings_instance = settings_scene.instantiate()
+	add_child(settings_instance)
+	
+	# Connect to the close signal to handle cleanup
+	settings_instance.settings_closed.connect(_on_settings_closed)
+
+
+func _on_settings_closed():
+	# Settings menu closed, nothing special needed for now
+	pass
+
+
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 	$ButtonSFX.play()

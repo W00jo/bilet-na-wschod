@@ -111,6 +111,26 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_rl2bw")
 theme_override_styles/normal = SubResource("StyleBoxTexture_l146v")
 text = "NOWA  GRA"
 
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0.202534, 0.230113, 0.290135, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.0705882, 0.258824, 0.309804, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_626he")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qnxl2")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_1u5ka")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jfkjl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rl2bw")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l146v")
+text = "Ustawienia"
+
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -184,5 +204,6 @@ stream = ExtResource("11_00l4x")
 bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
