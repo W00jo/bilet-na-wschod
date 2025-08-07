@@ -7,12 +7,14 @@
 ## Przygotowanie do Build'u
 
 ### Wymagania systemowe
+
 - **Godot Engine 4.4** lub nowszy
 - **Min. 4GB RAM** podczas kompilacji
 - **Min. 2GB miejsca** na dysku dla target platform
 - **Internetowe połączenie** dla export templates
 
 ### Export Templates
+
 ```bash
 # Pobieranie w Godot Editor:
 Project → Export → Manage Export Templates → Download and Install
@@ -21,6 +23,7 @@ Project → Export → Manage Export Templates → Download and Install
 ## Konfiguracja Export Presets
 
 ### Windows (PC)
+
 ```gdscript
 # Ustawienia w Project → Export
 Platform: Windows Desktop
@@ -32,6 +35,7 @@ Executable Name: "BiletNaWschod.exe"
 ## Proces Buildowania
 
 ### Development Build
+
 ```bash
 # W Godot Editor:
 1. Project → Export
@@ -41,6 +45,7 @@ Executable Name: "BiletNaWschod.exe"
 ```
 
 ### Production Release
+
 ```bash
 # Kroki dla oficjalnego release:
 1. Aktualizuj VERSION w project.godot
@@ -52,6 +57,7 @@ Executable Name: "BiletNaWschod.exe"
 ```
 
 ### Build Scripts *(do implementacji)*
+
 ```bash
 # Planowane automatyczne skrypty:
 ./scripts/build-windows.sh    # Windows build
@@ -61,12 +67,14 @@ Executable Name: "BiletNaWschod.exe"
 ## Optymalizacja
 
 ### Redukcja rozmiaru
+
 - **Kompresja audio** - OGG Vorbis quality 0.8
 - **Kompresja tekstur** - Lossy dla sprites, Lossless dla UI
 - **Usuwanie debug info** - Export bez debug symbols
 - **Exclude unused assets** - Tylko potrzebne pliki
 
 ### Performance settings
+
 ```gdscript
 # Zalecane ustawienia exportu:
 Binary Format: 64-bit (lepszej wydajności)
@@ -77,16 +85,19 @@ Optimization: Speed (nie Size)
 
 ## Platformy
 
-### Systemy operacyjne:
+### Systemy operacyjne
+
 - **Windows 10/11** (64-bit) - Główna platforma
 
-### Gdzie wydamy:
+### Gdzie wydamy
+
 - **Steam** - Po dopracowaniu
 - **GOG** - To my Polacy
 
 ## Testing Builds
 
 ### Pre-release Checklist
+
 - [ ] Wszystkie sceny ładują się poprawnie
 - [ ] Brak error logów w konsoli
 - [ ] Tutorial działa od początku do końca
@@ -97,6 +108,7 @@ Optimization: Speed (nie Size)
 - [ ] Gra uruchamia się bez Godot Editora
 
 ### Testy wydajności / Performance testing
+
 ```bash
 - FPS stabilny na min. 30 fps
 - RAM usage < 1GB
@@ -107,6 +119,7 @@ Optimization: Speed (nie Size)
 ## CI/CD Pipeline *(przyszłościowe)*
 
 ### GitHub Actions
+
 ```yaml
 # Planowana automatyzacja:
 name: Build Game
@@ -123,6 +136,7 @@ jobs:
 ```
 
 ### Release Automation
+
 - **Automatyczne buildowanie** na każdy tag
 - **Wrzucanie na itch.io** przez CI
 - **Steam upload** przez Steamworks SDK
@@ -131,18 +145,21 @@ jobs:
 ## Dystrybucja
 
 ### itch.io *(główna platforma)*
+
 ```bash
 # Upload przez butler CLI:
 butler push build/ w00jo/bilet-na-wschod:windows
 ```
 
 ### Steam *(planowane)*
+
 - **Steam Direct** - $100 fee
 - **Steamworks SDK** integration
 - **Achievements** system
 - **Steam Workshop** dla modów
 
 ### Własna strona
+
 - **Direct download** z GitHub Releases
 - **Update checker** w grze
 - **Crash reporting** system
@@ -150,6 +167,7 @@ butler push build/ w00jo/bilet-na-wschod:windows
 ## Debug i Diagnostyka
 
 ### Debug Build Features
+
 ```gdscript
 # Dostępne w debug builds:
 - Console commands
@@ -160,6 +178,7 @@ butler push build/ w00jo/bilet-na-wschod:windows
 ```
 
 ### Crash Reporting
+
 ```gdscript
 # Planowany system:
 class CrashReporter:
@@ -170,6 +189,7 @@ class CrashReporter:
 ```
 
 ### Profiling Tools
+
 - **Godot Profiler** - CPU/GPU/Memory usage
 - **Custom metrics** - Gameplay statistics
 - **Performance graphs** - Frame time analysis
@@ -177,12 +197,14 @@ class CrashReporter:
 ## Rozwiązywanie Problemów
 
 ### Najczęstsze błędy budowania
+
 - **Missing export templates** → Pobierz z Project Settings
 - **Scene errors** → Sprawdź wszystkie .tscn files
 - **Asset missing** → Sprawdź paths w FileSystem
 - **Script errors** → Fix wszystkie GDScript errors
 
 ### Platform-specific Issues
+
 - **Windows**: Antivirus blocking .exe
 - **Potential future platforms**: Currently not supported
 

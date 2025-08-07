@@ -1,14 +1,18 @@
 # Bilet na Wschód
 
-**Gra symulacyjna konduktora pociągu / Train Conductor Simulation Game**
+## Opis projektu
+
+Gra symulacyjna konduktora pociągu / Train Conductor Simulation Game
 
 Przenosi gracza w charakterystyczny klimat wschodniej Polski lat 90. - daj mandaty, sprawdzaj bilety i użeraj się z niesfornymi pasażerami na gapę! Trudne decyzje moralne czekają w tej immersyjnej grze 2D z pixel art grafiką.
 
-*Experience the authentic atmosphere of 1990s eastern Poland - issue fines, check tickets, and deal with unruly fare dodgers! Tough moral decisions await in this immersive 2D game with pixel art graphics.*
+## English description
+
+Experience the authentic atmosphere of 1990s eastern Poland - issue fines, check tickets, and deal with unruly fare dodgers! Tough moral decisions await in this immersive 2D game with pixel art graphics.
 
 ![Game Screenshot](docs/images/screenshot.png) <!-- Dodamy potem! -->
 
-## Opis Gry / Game Description
+## Opis gry / Game description
 
 **Polski:**
 "Bilet na Wschód" to gra symulacyjna w 2D, inspirowana klasykami jak "Papers, Please". Wciel się w rolę konduktora wschodniej kolei polskiej tuż po transformacjach ustrojowych z 1989. Sprawdzaj bilety, weryfikuj dokumenty, wystawiaj mandaty i radź sobie z niesfornymi pasażerami - ale uważaj na swój stres! Kolej ma swoje zasady i trzeba się ich trzymać.
@@ -28,29 +32,35 @@ Przenosi gracza w charakterystyczny klimat wschodniej Polski lat 90. - daj manda
 - **Grafika 2D z normal mapami** / 2D graphics with normal maps
 
 ### Inspiracje / Inspirations
+
 - **Papers, Please** (Lucas Pope, 2013) - główna inspiracja mechanik
 - **Death and Taxes** (Placeholder Gameworks, 2020) - moralny aspekt decyzji
 - **Klimat wschodu Polski** lat 90. - autentyczna atmosfera
 
-*Main inspiration from Papers, Please for mechanics and authentic 1990s eastern Poland atmosphere*
+#### Główne inspiracje
+
+Main inspiration from Papers, Please for mechanics and authentic 1990s eastern Poland atmosphere
 
 ## Rozgrywka / Gameplay
 
-### Typy Biletów / Ticket Types
+### Typy biletów / Ticket types
+
 - **Normalny** - dla dorosłych / for adults
 - **Ulgowy** - dla młodzieży i seniorów / for youth and seniors  
 - **Studencki** - wymaga legitymacji / requires student ID
 
-### Typy Dokumentów / Document Types
+### Typy dokumentów / Document types
+
 - **Dowód osobisty** / ID card
 - **Legitymacja studencka** / Student ID
 - **Legitymacja szkolna** / School ID
 
-### Typy Pasażerów / Passenger Types
-- **Grzeczni** - współpracują chętnie / Polite - cooperate willingly
-- **Przesadnie grzeczni** - powolni ale uprzejmi / Overly polite - slow but courteous
-- **Nieuprzejmi** - trudni w obsłudze / Rude - difficult to handle
-- **Przestraszeni** - nerwowi i zestresowani / Anxious - nervous and stressed
+### Typy pasażerów / Passenger types
+
+- **Grzeczni** - współpracują chętnie / **Polite** - cooperate willingly
+- **Przesadnie grzeczni** - powolni ale uprzejmi / **Overly polite** - slow but courteous
+- **Nieuprzejmi** - trudni w obsłudze / **Rude** - difficult to handle
+- **Przestraszeni** - nerwowi i zestresowani / **Anxious** - nervous and stressed
 
 ## Sterowanie / Controls
 
@@ -62,30 +72,32 @@ Przenosi gracza w charakterystyczny klimat wschodniej Polski lat 90. - daj manda
 ## Wymagania Techniczne / Technical Requirements
 
 ### MINIMALNE / MINIMUM
-- **System:** Windows 10 64-bit (build 1903+)
-- **Procesor:** Intel Core i3-6100 / AMD FX-6300
-- **Pamięć:** 4 GB RAM
-- **Grafika:** DirectX 11, 1GB VRAM (Intel HD Graphics 520 / AMD Radeon R5)
-- **DirectX:** Wersja 11
-- **Miejsce:** 512 MB wolnego miejsca
+
+- **System:** Windows 7 64-bit lub nowszy
+- **Procesor:** Intel Pentium 4 / AMD Athlon 64 lub równoważny
+- **Pamięć:** 1 GB RAM
+- **Grafika:** Zintegrowana karta graficzna (Intel HD Graphics lub równoważna)
+- **Miejsce:** 200 MB wolnego miejsca
 - **Dodatkowe:** Mysz i klawiatura wymagane
 
-### ZALECANE / RECOMMENDED  
-- **System:** Windows 10/11 64-bit (najnowsze aktualizacje)
-- **Procesor:** Intel Core i5-8400 / AMD Ryzen 5 2600
-- **Pamięć:** 8 GB RAM
-- **Grafika:** DirectX 11, 2GB VRAM (GTX 1050 / RX 560)
-- **DirectX:** Wersja 12
-- **Miejsce:** 1 GB wolnego miejsca
+### ZALECANE / RECOMMENDED
+
+- **System:** Windows 10/11 64-bit
+- **Procesor:** Intel Core i3 / AMD FX-4300 lub nowszy
+- **Pamięć:** 2 GB RAM
+- **Grafika:** Dowolna karta graficzna z ostatnich 10 lat
+- **Miejsce:** 500 MB wolnego miejsca
 - **Rozdzielczość:** 1920x1080 (Full HD)
 
 ### PLATFORMY / PLATFORMS
+
 - **Windows** - Główna platforma ⭐
 - **Steam** - Planowane wydanie
 
 ## Instalacja / Installation
 
 ### Dla Graczy / For Players
+
 1. **Pobierz grę**:
    - [itch.io](https://wuj0.itch.io/bilet-na-wschd) - Najnowsza wersja
    - [GitHub Releases](../../releases) - Wersje deweloperskie
@@ -94,21 +106,25 @@ Przenosi gracza w charakterystyczny klimat wschodniej Polski lat 90. - daj manda
 4. **Jeśli Windows wyświetli ostrzeżenie**: Kliknij "Więcej informacji" → "Uruchom mimo to"
 
 ### Dla Deweloperów / For Developers
+
 1. **Zainstaluj wymagane narzędzia**:
    - [Godot Engine 4.4+](https://godotengine.org/)
    - [Git for Windows](https://git-scm.com/)
    - [VS Code](https://code.visualstudio.com/) z rozszerzeniem godot-tools
+
 2. **Sklonuj repozytorium**:
+
    ```bash
    git clone https://github.com/W00jo/BiletNaWschod.git
    cd BiletNaWschod
    ```
+
 3. **Otwórz w Godot**: Import → Wybierz `project.godot`
 4. **Uruchom**: Scenę główną `Scenes/game.tscn` (F6)
 
 ## Struktura Projektu / Project Structure
 
-```
+```text
 BiletNaWschod/
 ├── Assets/           # Zasoby gry (sprites, audio, fonts)
 ├── Scenes/           # Sceny Godot (.tscn)
@@ -120,6 +136,7 @@ BiletNaWschod/
 ```
 
 ### Technologie / Technologies
+
 - **Godot Engine 4.x** - Silnik gry / Game engine
 - **GDScript** - Główny język programowania / Main programming language  
 - **LibreSprite/Aseprite** - Pixel art i sprite'y / Pixel art and sprites
@@ -128,12 +145,14 @@ BiletNaWschod/
 
 ## Dokumentacja / Documentation
 
-### Dla Graczy / For Players
+### Dokumentacja dla graczy
+
 - **[Szybki Start](docs/QUICKSTART.md)** - Jak zacząć grać / How to start playing
 - **[Sterowanie](docs/CONTROLS.md)** - Pełna lista kontrolek / Complete controls list
 - **[Instalacja](docs/SETUP.md)** - Szczegółowa instalacja / Detailed installation
 
-### Dla Deweloperów / For Developers
+### Dokumentacja dla deweloperów
+
 - **[Game Design Document](docs/GDD.md)** - Wizja i mechaniki gry / Game vision and mechanics
 - **[Dokumentacja deweloperska](docs/dev/INDEX.md)** - Centrum dokumentacji technicznej / Technical documentation hub
 - **[Architektura](docs/dev/ARCHITEKTURA.md)** - Struktura systemu / System architecture
@@ -146,24 +165,17 @@ Projekt powstał podczas **Cyberiady** - Mistrzostw w Projektowaniu Gier Kompute
 **KONDUKTORZY UMCS** *(obecnie: Platform Ten!)*
 
 ### Podziękowania
+
 - **Michał Sieńko** i **Wojciech Miedziocha** - opiekunowie zespołów
-- **Julia** - najzdolniejsza z Godociar 
+- **Julia** - najzdolniejsza z Godociar
 - Społeczność **Cyberiady** za wsparcie i inspirację
 
-*"Bez nich by się nam nie udało :)"*
+#### Komentarz zespołu
 
-## Zgłaszanie Błędów / Bug Reports
+"Bez nich by się nam nie udało :)"
+
+## Zgłaszanie błędów / Bug reports
 
 Jeśli znajdziesz błąd, proszę [zgłoś go tutaj](../../issues).
 
 *If you find a bug, please [report it here](../../issues).*
-
-## Wkład / Contributing
-
-Zapraszamy do współpracy! Zobacz [przewodnik współpracy](docs/dev/CONTRIBUTING.md) po szczegóły.
-
-*Contributions are welcome! See [contribution guide](docs/dev/CONTRIBUTING.md) for details.*
-
----
-
-**Miłej gry! / Happy gaming!**

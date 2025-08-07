@@ -5,6 +5,7 @@
 ## Zasady Clean Code
 
 ### Fundamenty
+
 1. **Czytelność ponad wszystko** - kod jest czytany częściej niż pisany
 2. **Jedna odpowiedzialność** - klasa/funkcja robi jedną rzecz i robi ją dobrze
 3. **DRY (Don't Repeat Yourself)** - eliminuj duplikację kodu
@@ -14,6 +15,7 @@
 ## Konwencje nazewnictwa
 
 ### GDScript
+
 - **Klasy:** `PascalCase` - `TicketValidator`, `PassengerGenerator`
 - **Zmienne:** `snake_case` - `is_valid`, `passenger_count`
 - **Funkcje:** `snake_case` - `validate_ticket()`, `generate_passenger()`
@@ -22,6 +24,7 @@
 - **Interfejsy:** suffix `Interface` - `ValidatorInterface`
 
 ### C# (przyszłościowe)
+
 - **Klasy:** `PascalCase` - `TicketValidator`, `PassengerGenerator`
 - **Metody:** `PascalCase` - `ValidateTicket()`, `GeneratePassenger()`
 - **Zmienne:** `camelCase` - `isValid`, `passengerCount`
@@ -33,6 +36,7 @@
 ### Nazwy opisowe
 
 **GDScript:**
+
 ```gdscript
 # ✅ DOBRE - jasne i konkretne
 func calculate_fine_amount(violation_type: String) -> int
@@ -46,6 +50,10 @@ const DISC = 50
 ```
 
 **C# (przyszłościowe):**
+
+```csharp
+**C# (przyszłościowe):**
+
 ```csharp
 // ✅ DOBRE - jasne i konkretne
 public int CalculateFineAmount(string violationType)
@@ -61,7 +69,8 @@ public const int Disc = 50;
 ## Struktura projektu
 
 ### Organizacja folderów
-```
+
+```text
 src/
 ├── core/              # Logika biznesowa (clean architecture)
 │   ├── entities/      # Pasażer, Bilet, Dokument
@@ -79,6 +88,7 @@ src/
 ```
 
 ### Nazewnictwo plików
+
 - **Klasy biznesowe GDScript:** `PascalCase.gd` - `TicketValidator.gd`
 - **Klasy biznesowe C#:** `PascalCase.cs` - `TicketValidator.cs`
 - **Controllers:** `PascalCaseController.gd/.cs` - `PassengerController.gd`
@@ -91,6 +101,7 @@ src/
 ### Zasada Single Responsibility
 
 **GDScript:**
+
 ```gdscript
 # ✅ DOBRE - jedna odpowiedzialność
 class TicketValidator:
@@ -114,6 +125,10 @@ class TicketManager:
 ```
 
 **C# (przyszłościowe):**
+
+```csharp
+**C# (przyszłościowe):**
+
 ```csharp
 // ✅ DOBRE - jedna odpowiedzialność
 public class TicketValidator : ITicketValidator
@@ -149,11 +164,15 @@ public class TicketManager
 ```
 
 ### Małe funkcje
+
 - **Maksymalnie 20 linii** na funkcję
 - **Jeden poziom abstrakcji** w funkcji
 - **Brak zagnieżdżonych if-ów** głębszych niż 2 poziomy
 
 **GDScript:**
+
+```gdscript
+# ✅ DOBRE - mała i czytelna
 ```gdscript
 # ✅ DOBRE - mała i czytelna
 func calculate_student_discount(base_price: int) -> int:
@@ -167,6 +186,10 @@ func process_ticket_with_all_validations_and_discounts(...):
 ```
 
 **C# (przyszłościowe):**
+
+```csharp
+**C# (przyszłościowe):**
+
 ```csharp
 // ✅ DOBRE - mała i czytelna
 public int CalculateStudentDiscount(int basePrice)
@@ -189,6 +212,7 @@ public void ProcessTicketWithAllValidationsAndDiscounts(...)
 ### SOLID Principles
 
 #### Single Responsibility Principle (SRP)
+
 ```gdscript
 # ✅ DOBRE - jedna odpowiedzialność
 class PassengerGenerator:
@@ -209,6 +233,7 @@ class PassengerManager:
 ```
 
 #### Open/Closed Principle (OCP)
+
 ```gdscript
 # ✅ DOBRE - rozszerzalne bez modyfikacji
 class TicketValidator:
@@ -227,6 +252,7 @@ class ExpiryDateRule extends ValidationRule:
 ```
 
 #### Dependency Inversion Principle (DIP)
+
 ```gdscript
 # ✅ DOBRE - zależy od abstrakcji
 class TicketService:
@@ -244,6 +270,7 @@ class TicketService:
 ```
 
 ### Kompozycja nad dziedziczeniem
+
 ```gdscript
 # ✅ DOBRE - kompozycja
 class Passenger:
@@ -262,6 +289,7 @@ class VIPPassenger extends Passenger:
 ## Obsługa błędów
 
 ### Result Pattern zamiast wyjątków
+
 ```gdscript
 # ✅ DOBRE - explicite handling
 class ValidationResult:
@@ -294,6 +322,7 @@ proceed_with_validation()
 ```
 
 ### Logging z poziomami
+
 ```gdscript
 # ✅ DOBRE - strukturowany logging
 enum LogLevel { DEBUG, INFO, WARNING, ERROR, CRITICAL }
@@ -316,6 +345,7 @@ Logger.error("Validation failed", {"reason": "expired_ticket", "ticket_id": tick
 ## Testowanie
 
 ### Test-Driven Development (TDD)
+
 ```gdscript
 # 1. Napisz test (który failuje)
 extends GutTest
@@ -338,11 +368,13 @@ func test_ticket_validation_rejects_expired_ticket():
 ```
 
 ### Struktura testów AAA
+
 - **Arrange** - przygotuj dane testowe
 - **Act** - wykonaj akcję
 - **Assert** - sprawdź rezultat
 
 ### Testy jednostkowe vs integracyjne
+
 ```gdscript
 # ✅ Test jednostkowy - testuje jedną klasę
 func test_passenger_generator_creates_valid_passenger():
@@ -365,6 +397,7 @@ func test_full_ticket_validation_flow():
 ## Formatowanie i style
 
 ### Czytelność kodu
+
 ```gdscript
 # ✅ DOBRE - czytelne i jednoznaczne
 class TicketValidator:
@@ -399,6 +432,8 @@ func check(t):
 ## Przykłady zastosowania Clean Code
 
 ### Przed: Legacy kod
+
+```gdscript
 ```gdscript
 # ❌ ZŁY PRZYKŁAD
 extends Node2D
@@ -428,7 +463,8 @@ func check():
 ```
 
 ### Po: Clean Code
-```gdscript
+
+```gdscriptgdscript
 # ✅ DOBRY PRZYKŁAD
 class_name StudentTicketValidator
 extends TicketValidator
@@ -476,6 +512,7 @@ func _validate_ticket_not_expired(ticket: StudentTicket) -> ValidationResult:
 ```
 
 ### Wzorzec Factory dla tworzenia pasażerów
+
 ```gdscript
 # ✅ Clean Factory Pattern
 class PassengerFactory:
@@ -496,6 +533,7 @@ class PassengerFactory:
 ## Migracja z legacy kodu
 
 ### Krok po kroku
+
 1. **Identyfikuj najgorsze części** - długie funkcje, zagnieżdżone if-y
 2. **Napisz testy** dla istniejącej funkcjonalności
 3. **Refaktoryzuj małymi krokami** - Extract Method, Extract Class
@@ -503,17 +541,20 @@ class PassengerFactory:
 5. **Zastąp if-y polimorfizmem** - Strategy Pattern
 
 ### Boy Scout Rule
-*"Zawsze zostaw kod w lepszym stanie niż go zastałeś"*
+
+"Zawsze zostaw kod w lepszym stanie niż go zastałeś"
 
 ## Status języków programowania
 
 ### GDScript - język główny
+
 - **Status:** ✅ **Aktywnie używany**
 - **Zastosowanie:** Cała logika gry, UI, systemy gameplay
 - **Zalety:** Natywna integracja z Godot, szybki rozwój prototypów
 - **Wady:** Brak silnego typowania, mniejsza wydajność
 
 ### C# - język przyszłościowy
+
 - **Status:** 📋 **Planowany do wprowadzenia**
 - **Zastosowanie:** Krytyczne systemy wymagające wydajności
 - **Kandydaci do przepisania:**
@@ -523,7 +564,8 @@ class PassengerFactory:
 - **Zalety:** Silne typowanie, lepsza wydajność, zaawansowane narzędzia
 - **Wady:** Większa złożoność, dłuższy czas kompilacji
 
-### Strategia migracji
+### Strategia migracji *(potencjalna)*
+
 1. **Faza 1:** Wszystko w GDScript (obecna)
 2. **Faza 2:** Krytyczne systemy w C# + interfejsy
 3. **Faza 3:** Stopniowa migracja pozostałych komponentów
